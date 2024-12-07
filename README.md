@@ -1,4 +1,5 @@
 <img src="https://github.com/user-attachments/assets/444a5465-05df-42d0-9a54-5f5bbf97d547" alt="Logo hindutva" width="200" height="200">
+
 Hindutva 🌄
 Discover the World’s Oldest Religion
 
@@ -6,7 +7,7 @@ Discover the World’s Oldest Religion
 Hindutva is a web-based platform dedicated to the rich spiritual and cultural heritage of Sanatan Hindu Dharma. It offers insights into Hindu gods, temples, scriptures, rituals, and much more, making ancient knowledge accessible and engaging.
 
 🚀 Features
-1️⃣ Hindu Gods & Temples 🕌
+1️⃣ Hindu Gods & Temples 
 Learn about different Hindu gods and famous temples of india.
 
 <img src="https://github.com/user-attachments/assets/36999869-bd5c-4881-8b23-d07ec095effe" alt="Hindu Temple" width="auto" height="200">
@@ -38,7 +39,7 @@ Gain deep insights into the four Vedas and other ancient scriptures.
 <img src="https://github.com/user-attachments/assets/94f3efad-0449-4502-8a01-d2c020067ba4" alt="Vedas" width="auto" height="200">
 
 🔧 Tech Stack
-Frontend: React.js, Tailwind css 
+Frontend: React.js, Tailwind css etc.
 Backend: Node.js 
 
 🧡 Contributing
