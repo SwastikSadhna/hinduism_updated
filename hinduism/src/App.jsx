@@ -15,9 +15,9 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <img
-            src={imageDetails.logo.src}
+            src={imageDetails.loading.src}
             className="logo react"
-            alt={imageDetails.logo.alt}
+            alt={imageDetails.loading.alt}
           />
         </a>
       </div>
