@@ -1,0 +1,47 @@
+#content-part{
+    margin-left: 18%;
+}
+
+/* Media Query Starts From Here */
+@media (min-width:200px) and (max-width:500px) {
+    #content-part{
+        margin-left: 1%;
+    }
+    .card img{
+        height: 180px;
+    }
+}
+
+
+@media (min-width:650px) {
+    #content-part{
+        padding: 0%;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+@media (min-width:700px) and (max-width:1574px) {
+    #content-part{
+        margin-left: 18rem ;
+    } 
+} 
+
+#card-title {
+        font-size: 40px;
+        background: linear-gradient(to left,
+                indigo,
+                blue,
+                green,
+                violet,
+                yellow,
+                orange,
+                red);
+        -webkit-background-clip: text;
+        color: transparent;
+}
+
+.img-fluid {
+    height: 250px;
+}

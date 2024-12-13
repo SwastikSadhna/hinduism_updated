@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    /* background: url(../IMG/radhakrishna.gif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+
+.list-bhajan a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (min-width:200px) and (max-width:500px) {
+    #content-part{
+        margin-left: 1%;
+    }
+    .card img{
+        height: 180px;
+    }
+}
+
+@media (min-width:650px) {
+    #content-part{
+        padding: 0%;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+@media (min-width:700px) and (max-width:1574px) {
+    #content-part{
+        margin-left: 18rem ;
+    } 
+} 
+
+@media (max-width:950px) {
+    .card{
+        margin-left: auto;
+    }
+}
+
+@media (max-width:1200px) {
+    .carousel-card .card{
+        display: none;
+    }
+    .carousel-card h4{
+        display: none;
+    }
+}
