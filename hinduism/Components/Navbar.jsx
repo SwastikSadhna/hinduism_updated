@@ -1,13 +1,17 @@
 import React from 'react';
-import '../src/css/hinduism.css'
-import Icon from '../src/IMG/others/Om img.jpeg'
-
+import '../src/css/hinduism.css';
+import { imageDetails } from '../resources.js';
 
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg" id="navigation">
-            <div className="container-fluid Navbar">
-                <img src={Icon} alt="Om" height={35} width={35} />
+        <div className="container-fluid Navbar">
+            <img 
+                src={imageDetails.logo.src} 
+                alt={imageDetails.logo.alt} 
+                height={35} 
+                width={35} 
+            />
                 <h3 className="mx-auto my-auto m-lg-1 fw-bold">सनातन</h3>
                 <button
                     className="navbar-toggler"

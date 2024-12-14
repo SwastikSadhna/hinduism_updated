@@ -1,15 +1,15 @@
-import logo from './public/Resources/Logo.png';
-import loading from './public/Resources/loading.gif'
-import carousel1 from './public/Resources/carousel2.png'
-import carousel2 from './public/Resources/carousel2.png'
-import dhwarika from './public/Resources/Dhwarika.jpg'
-import badrinath from './public/Resources/Badrinath.jpg'
-import jagganathpuri from './public/Resources/JagganathPuri.jpeg'
-import rameshwaram from './public/Resources/Rameshwaram.jpg'
-import sanatan from './public/Resources/sanatan.png'
-import brahmaji from './public/Resources/Brahma.png'
-import vishnuji from './public/Resources/Vishnu.png'
-import shivji from './public/Resources/Mahadev.png'
+import logo from './src/Resources/Logo.png';
+import loading from './src/Resources/loading.gif'
+import carousel1 from './src/Resources/carousel2.png'
+import carousel2 from './src/Resources/carousel2.png'
+import Dhwarika from './src/Resources/Dhwarika.jpg'
+import Badrinath from './src/Resources/Badrinath.jpg'
+import Jagganathpuri from './src/Resources/JagganathPuri.jpeg'
+import Rameshwaram from './src/Resources/Rameshwaram.jpg'
+import Sanatan from './src/Resources/sanatan.png'
+import Brahma from './src/Resources/Brahma.png'
+import Vishnu from './src/Resources/Vishnu.png'
+import Shiv from './src/Resources/Mahadev.png'
 
 const images = [logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv];
 const imageDetails = {
@@ -30,35 +30,35 @@ const imageDetails = {
         alt: 'carousel-2',
     },
     Dhwarika: {
-        src: dhwarika,
+        src: Dhwarika,
         alt: 'Dhwarika', 
     },
     Rameshwaram: {
-        src: rameshwaram,
+        src: Rameshwaram,
         alt: 'Rameshwaram', 
     },
     Jagganathpuri: {
-        src: jagganathpuri,
+        src: Jagganathpuri,
         alt: 'Jagganath Puri', 
     },
     Badrinath: {
-        src: badrinath,
+        src: Badrinath,
         alt: 'Badrinath', 
     },
     Sanatan: {
-        src: sanatan,
+        src: Sanatan,
         alt: 'Sanatan', 
     },
     Brahma: {
-        src: brahmaji,
+        src: Brahma,
         alt: 'Brahma dev', 
     },
     Vishnu: {
-        src: vishnuji,
+        src: Vishnu,
         alt: 'Shree Hari Vishnu', 
     },
     Shiv: {
-        src: shivji,
+        src: Shiv,
         alt: 'Mahadev', 
     },
 };
