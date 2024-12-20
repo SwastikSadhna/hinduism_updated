@@ -1,0 +1,440 @@
+{
+    "vishnu": [
+        {
+            "id": 1,
+            "name": "Matsya",
+            "image": "Matsya-avatar.png",
+            "books": "https://books.google.co.in/books?id=yS1AAQAAIAAJ&q=matsya+consort&redir_esc=y",
+            "yug": "Satya yug",
+            "temples": "Chennakeshava Temple",
+            "sloka": "ॐ नमो भगवते मत्स्य देवाय",
+            "festival": "Matsya Jayanti",
+            "about": "मत्स्य को वह अवतार कहा जाता है जिसने पहले मनुष्य के साथ-साथ पृथ्वी के अन्य प्राणियों को भी एक बड़ी बाढ़ से बचाया था। मत्स्य को कभी-कभी एक बड़ी मछली के रूप में या मछली की पूंछ से जुड़े मानव धड़ के रूप में चित्रित किया जाता है।"
+        },
+        {
+            "id": 2,
+            "name": "Kurma",
+            "image": "Kurma-avatar.png",
+            "books": "https://en.wikipedia.org/wiki/Naradiya_Purana",
+            "yug": "Satya yug",
+            "temples": "Kurma Temple,srikurmam,Andhra pradesh",
+            "sloka": "ॐ नमो भगवते अकुपराय सर्वशक्ति स्वरूपिणे नमः",
+            "festival": "Kurma Jayanti on the full moon day of Vaisakha month",
+            "about": "कूर्म या कूर्मा हिंदू भगवान विष्णु का दूसरा अवतार है, जिन्होंने दूध के सागर के मंथन का समर्थन करने के लिए एक विशाल कछुए का रूप लिया, एक लौकिक घटना जिसने अमरता के अमृत सहित कई दिव्य वस्तुओं का उत्पादन किया।"
+        },
+        {
+            "id": 3,
+            "name": "Vamana",
+            "image": "Vamana-avatar.png",
+            "books": "https://www.britannica.com/topic/Vamana",
+            "yug": "Treta yug",
+            "temples": "Vamana Temple in Khajuraho,Madhya Pradesh",
+            "sloka": "ॐ नमो भगवते वासुदेवाय नमः",
+            "festival": "Onam in Kerala",
+            "about": "वामन या वामन हिंदू भगवान विष्णु के पांचवें अवतार हैं, जिन्होंने राक्षस राजा बाली को वश में करने के लिए एक बौने ब्राह्मण का रूप लिया था, जिसने पृथ्वी, स्वर्ग और उनके बीच की जगह की तीन दुनियाओं पर विजय प्राप्त की थी। वामन ने बाली से उतनी भूमि मांगी जितनी वह तीन चरणों में कवर कर सकते थे, और फिर दो चरणों में पूरे ब्रह्मांड को कवर करने के लिए खुद का विस्तार किया, बाली को केवल पाताल लोक ही छोड़ दिया।"
+        },
+        {
+            "id": 4,
+            "name": "Varaha",
+            "image": "Varaha-avatar.png",
+            "books": "https://www.templepurohit.com/varaha-avatar-story/",
+            "yug": "Satya yug",
+            "temples": "Varahaperumal Temple,kumbakonam,Tamilnadu",
+            "sloka": "ॐ नमो नारायणाय नमः",
+            "festival": "Varaha Jayanti",
+            "about": "वराह या वाराह हिंदू भगवान विष्णु का तीसरा अवतार है, जिन्होंने पृथ्वी को हिरण्याक्ष नामक राक्षस से बचाने के लिए जंगली सूअर का रूप लिया था। वराह ने राक्षस के साथ एक हजार वर्षों तक युद्ध किया और पृथ्वी को अपने दांतों से ब्रह्मांड महासागर से बाहर निकाला।"
+        },
+        {
+            "id": 5,
+            "name": "Parsuram",
+            "image": "Parsuram-avatar.png",
+            "books": "https://bing.com/search?q=Parasuram+avatar",
+            "yug": "Treta yug",
+            "temples": "Parshuram Temple in Chiplun, Maharashtra",
+            "sloka": "ॐ नमो भगवते वासुदेवाय नमः",
+            "festival": "Parashurama Jayanti,Parshuram Kund Mela",
+            "about": "परशुराम या परशुराम हिंदू भगवान विष्णु के छठे अवतार हैं। उन्हें राम जामदग्न्य, राम भार्गव और वीराराम के नाम से भी जाना जाता है। वह एक ब्राह्मण योद्धा है जिसने कुल्हाड़ी उठाई और शासक वर्ग, दमनकारी क्षत्रियों के खिलाफ लड़ाई लड़ी।"
+        },
+        {
+            "id": 6,
+            "name": "Balaram",
+            "image": "Balaram-avatar.png",
+            "books": "Balarama: A Royal Tale,Balarama in Hindu and Jain Mythology",
+            "yug": "Dwapar yug",
+            "temples": "Baladevjew Temple in Kendrapara, Odisha",
+            "sloka": "ॐ नमो भगवते वासुदेवाय नमः",
+            "festival": "Balaram Jayanti",
+            "about": "बलराम या बलदेव एक हिंदू देवता और कृष्ण के बड़े भाई हैं। उन्हें कभी-कभी सर्वोच्च देवता विष्णु का आठवां अवतार माना जाता है। वह अपनी ताकत, साहस, वफादारी और कृष्ण के प्रति भक्ति के लिए जाने जाते हैं। उन्हें आम तौर पर एक गोरी चमड़ी वाले व्यक्ति के रूप में चित्रित किया जाता है जिसके पास हथियार के रूप में हल या गदा होता है।"
+        },
+        {
+            "id": 7,
+            "name": "Ram",
+            "image": "Ram-avatar.png",
+            "books": "Asura, Tale of the Vanquished,names of Gods by Ram Swarup",
+            "yug": "Treta yug",
+            "temples": "Ram Mandir in Ayodhya, Uttar Pradesh",
+            "sloka": "श्री राम जय राम जय जय राम",
+            "festival": "Rama Navami",
+            "about": "राम हिंदू भगवान विष्णु के सातवें अवतार हैं। वह महाकाव्य रामायण के नायक हैं, जो उनकी जीवन कहानी, उनके निर्वासन, राक्षस राजा रावण के साथ उनकी लड़ाई और उनके राज्य में वापसी का वर्णन करता है। उन्हें एक आदर्श राजा, एक धर्मी योद्धा, एक वफादार पति और एक समर्पित पुत्र के रूप में सम्मान दिया जाता है।"
+        },
+        {
+            "id": 8,
+            "name": "Krishna",
+            "image": "Krishna-avatar.png",
+            "books": "Bhagavad Gita, Mahabharata, Srimad Bhagavatam, Harivamsa, Vishnu Purana, etc.",
+            "yug": "Dwapar yug",
+            "temples": "Banke Bihari Temple - Vrindavan,Dwarakadheesh Temple - Gujarat",
+            "sloka": "यदा यदा हि धर्मस्य, ग्लानिर्वा भवति भारत, अभ्युत्थानं अधर्मस्य, तदात्मानं सृजामि अहम्। परित्राणाय साधुनाम, विनाशाय च दुष्कृताम, धर्म संस्थापनार्थाय, संभवामि युगे युगे।",
+            "festival": "Janmashtami",
+            "about": "कृष्ण एक प्रमुख हिंदू देवता हैं जिन्हें विष्णु के आठवें अवतार के साथ-साथ अपने आप में सर्वोच्च देवता के रूप में भी पूजा जाता है। वह महाकाव्य महाभारत के नायक और हिंदू धर्म के पवित्र ग्रंथ भगवद गीता के वक्ता हैं।"
+        },
+        {
+            "id": 9,
+            "name": "Narsimha",
+            "image": "Narasimha-avatar.png",
+            "books": "Srimad Bhagavatam, Vishnu Purana, Narasimha Purana, Agni Purana, etc.",
+            "yug": "Satya yug",
+            "temples": "Ahobilam, Simhachalam, Mangalagiri, Yadagirigutta",
+            "sloka": "श्री नरसिम्हा महा मंत्र: उग्रं विरामं महा विष्णुं ज्वलन्तं सर्वतो मुखं नृसिंहं भीषणं भद्रं मृत्युं मृत्युं नमाम्य अहं",
+            "festival": "Narasimha Jayanti",
+            "about": "वह राक्षस राजा हिरण्यकशिपु को मारने के लिए प्रकट हुए थे, जिन्होंने ब्रह्मा से वरदान प्राप्त किया था कि उन्हें मनुष्य या जानवर, अंदर या बाहर, दिन या रात, पृथ्वी या सितारों पर, जीवित या निर्जीव किसी हथियार से नहीं मारा जा सकता।"
+        },
+        {
+            "id": 10,
+            "name": "Kalki",
+            "image": "Kalki-avatar.png",
+            "books": "Srimad Bhagavatam, Vishnu Purana, Matsya Purana, Garuda Purana",
+            "yug": "Kaliyug",
+            "temples": "Kalki Temple in Jaipur, Rajasthan",
+            "sloka": "श्री कल्कि महा मंत्र: ओम देवकी सुधा गोविंदा वासुदेव जगत्पते देहिमे तनयं कृष्ण त्वामहं शरणं गतः",
+            "festival": "Kalki Jayanti: The last day of the Shravana month",
+            "about": "वह भगवान विष्णु के दसवें और अंतिम अवतार हैं और उनके पास एक सफेद घोड़े और एक ज्वलंत तलवार के साथ एक मानव रूप है। वह कलियुग के अंत में प्रकट होंगे, जब धर्म और पुण्य गायब हो गए हैं और दुनिया पर अन्यायियों का शासन है।"
+        }
+    ],
+    "folder": "./IMG/Avatars/",
+    "count": 10,
+    "shiva": [
+        {
+            "id": 1,
+            "name": "Piplaad",
+            "image": "Piplaad.jpg",
+            "books": null,
+            "temples": "Shani Temple in Kokilavan , Piplaad Temple in Ujjain",
+            "yug": "Satya Yuga",
+            "sloka": null,
+            "festival": "Shani Jayanti",
+            "about": "शनि के कारण अपने पिता की मृत्यु का बदला लेने के लिए भगवान शिव ने पिप्लाद के रूप में जन्म लिया। उन्होंने शनि को आकाश से गिरने का श्राप दिया और बाद में इस शर्त पर उन्हें माफ कर दिया कि वह 16 वर्ष से कम उम्र के किसी भी व्यक्ति को नुकसान नहीं पहुंचाएंगे।"
+        },
+        {
+            "id": 2,
+            "name": "Nandi",
+            "image": "Nandi.png",
+            "books": null,
+            "temples": "Nandi Temple in Karnataka , Nandikeshwar Temple in Uttarakhand",
+            "yug": "Satya Yuga",
+            "sloka": null,
+            "festival": "Nandikeshwar Jayanti",
+            "about": "भगवान शिव ने ऋषि शिलाद के यहां नंदी के रूप में जन्म लिया, जिन्होंने पुत्र प्राप्ति के लिए तपस्या की। नंदी शिव के प्रबल भक्त थे और उनके वाहन और द्वारपाल बन गए। उन्हें शिव से आगमिक और तांत्रिक विद्या का ज्ञान भी प्राप्त हुआ।"
+        },
+        {
+            "id": 3,
+            "name": "Veerabhadra",
+            "books": null,
+            "image": "Veerbhadra.png",
+            "temples": "Veerabhadra Temple in Lepakshi , Veerabhadra Swamy Temple in Telangana",
+            "yug": "Treta Yuga",
+            "sloka": null,
+            "festival": "Veerabhadra Jayanti",
+            "about": "भगवान शिव ने दक्ष के यज्ञ को नष्ट करने के लिए अपने बालों की जटा से वीरभद्र को उत्पन्न किया, जिन्होंने अपनी पत्नी सती का अपमान किया था। वीरभद्र ने काली और अन्य भयंकर प्राणियों के साथ मिलकर समारोह पर कहर बरपाया और दक्ष का सिर काट दिया।"
+        },
+        {
+            "id": 4,
+            "name": "Kaal Bhairava",
+            "books": null,
+            "image": "kalbhairava.jpg",
+            "temples": "Kaal Bhairav Temple in Varanasi , Bhairav Nath Temple in Nepal",
+            "yug": "Treta Yuga",
+            "sloka": null,
+            "festival": "Bhairava Ashtami",
+            "about": "शिव का एक उग्र और भयानक रूप, जो भक्तों का रक्षक और बुराई का संहारक भी है। उन्हें अक्सर सवारी के रूप में कुत्ते और हथियार के रूप में त्रिशूल के साथ चित्रित किया गया है। वह समय, मृत्यु और तंत्र के रहस्यों से भी जुड़े हुए हैं। उनकी आठ अभिव्यक्तियाँ हैं, जिन्हें अष्ट भैरव के नाम से जाना जाता है, जो आठ दिशाओं की रक्षा करते हैं।"
+        },
+        {
+            "id": 5,
+            "name": "Ashwatthama",
+            "books": "Mahabharata",
+            "image": "Ashwathama.png",
+            "temples": "Ashwatthama Temple in Haryana , Ashwatthama Temple in Gujarat",
+            "yug": "Dwapara Yuga",
+            "sloka": null,
+            "festival": null,
+            "about": "शिव का एक आंशिक अवतार, जो महाभारत में पांडवों और कौरवों के शाही गुरु द्रोणाचार्य के पुत्र के रूप में पैदा हुए थे। वह एक महान योद्धा और कौरवों के नेता दुर्योधन का मित्र था। वह कुरूक्षेत्र के युद्ध में कौरवों की ओर से लड़ा और अनेक अत्याचार किये। उन्हें भगवान कृष्ण ने अपने माथे पर एक घाव के साथ अनंत काल तक पृथ्वी पर घूमते रहने का श्राप दिया था जो कभी ठीक नहीं होगा।"
+        },
+        {
+            "id": 6,
+            "name": "Hanuman",
+            "books": "Ramayana , Mahabharata",
+            "image": "Hanuman.png",
+            "temples": "Hanuman Temple in Delhi , Sri Panchamukha Anjaneya Swami Temple in Karnataka",
+            "yug": "Treta Yuga",
+            "festival": "Hanuman Jayanti",
+            "sloka": null,
+            "about": "शिव का एक आंशिक अवतार, जो एक दिव्य अप्सरा अंजना और एक वानर राजा केसरी के पुत्र के रूप में पैदा हुआ था। उन्हें पवन देवता वायु का भी आशीर्वाद प्राप्त था, जिन्होंने उन्हें असाधारण शक्तियाँ प्रदान कीं। वह विष्णु के अवतार भगवान राम के कट्टर अनुयायी थे और उन्होंने लंका के राक्षस राजा रावण से अपनी पत्नी सीता को बचाने की खोज में उनकी मदद की थी। उन्हें भक्ति, शक्ति, साहस और वफादारी के प्रतीक के रूप में पूजा जाता है।"
+        },
+        {
+            "id": 7,
+            "name": "Keerateshwar",
+            "books": "Mahabharata",
+            "festival": "",
+            "image": "Kirat.jpg",
+            "temples": "Keerateshwar Temple in Nepal , Keerateshwar Temple in West Bengal",
+            "yug": "Dwapara Yuga",
+            "sloka": null,
+            "about": "पांडव राजकुमार अर्जुन की वीरता और भक्ति का परीक्षण करने के लिए भगवान शिव ने कीरतेश्वर के रूप में जन्म लिया। वह एक शिकारी के रूप में प्रकट हुए और अर्जुन को एक जंगली सूअर पर द्वंद्वयुद्ध के लिए चुनौती दी, जिसे उन दोनों ने मारने का दावा किया था। उसने अर्जुन को हरा दिया और उसके धनुष-बाण तोड़ दिये। तब उन्होंने अपनी असली पहचान बताई और अर्जुन को पाशुपतास्त्र का आशीर्वाद दिया, जो एक शक्तिशाली हथियार था जो किसी भी दुश्मन को नष्ट कर सकता था।"
+        },
+        {
+            "id": 8,
+            "name": "Rishi Durvasa",
+            "books": "Mahabharata , Bhagavata Purana",
+            "image": "Durvasa.jpg",
+            "temples": null,
+            "yug": "Dwapara Yuga",
+            "sloka": null,
+            "about": "शिव का एक आंशिक अवतार, जो दो ऋषियों अत्रि और अनसूया के पुत्र के रूप में पैदा हुआ था। वह अपने क्रोधी स्वभाव और श्रापों के लिए जाना जाता था, जो अक्सर देवताओं और मनुष्यों के लिए समान रूप से परेशानी का कारण बनता था। उन्होंने अम्बरीष, द्रौपदी और कृष्ण जैसे कई लोगों की भक्ति और धैर्य की भी परीक्षा ली।"
+        },
+        {
+            "id": 9,
+            "name": "Grihapati",
+            "books": null,
+            "temples": null,
+            "image": "Grihpati.jpg",
+            "yug": "Dwapara Yuga",
+            "sloka": null,
+            "about": "भगवान शिव ने अपनी पत्नी पार्वती की पवित्रता की परीक्षा लेने के लिए गृहपति के रूप में जन्म लिया, जिनका पुनर्जन्म एक मछुआरे की बेटी अंजनी के रूप में हुआ था। उन्होंने खुद को एक मछुआरे के रूप में प्रच्छन्न किया और अंजनी से शादी की, जो उनकी गरीबी और कठिनाइयों के बावजूद उनके प्रति वफादार रही। बाद में उन्होंने अपनी असली पहचान बताई और उन्हें एक पुत्र हनुमान का आशीर्वाद दिया।"
+        },
+        {
+            "id": 10,
+            "name": "Yatinath",
+            "books": null,
+            "temples": null,
+            "festival": "",
+            "image": "Yatinath.jpg",
+            "yug": "Dwapara Yuga",
+            "sloka": null,
+            "about": " भगवान शिव ने अर्जुन नामक एक घमंडी राजा (पांडव राजकुमार के साथ भ्रमित न हों) को सबक सिखाने के लिए यतिनाथ के रूप में जन्म लिया। वह एक भटकते हुए तपस्वी के रूप में प्रकट हुए और अर्जुन को द्वंद्वयुद्ध के लिए चुनौती दी। उन्होंने अर्जुन को हरा दिया और अपना विश्वरूप दिखाकर उन्हें विनम्र कर दिया। फिर उन्होंने अर्जुन को ज्ञान और भक्ति का आशीर्वाद दिया।"
+        },
+        {
+            "id": 11,
+            "name": "Krishna Darshan",
+            "books": "Mahabharata",
+            "festival": "",
+            "image": "Krishna-darshan.jpg",
+            "temples": null,
+            "yug": " Dwapara Yuga",
+            "sloka": null,
+            "about": " भगवान शिव ने अपने भक्त घटोत्कच के पुत्र और भीम के पोते बर्बरीक को वरदान देने के लिए कृष्ण दर्शन के रूप में जन्म लिया। बर्बरीक ने कुरुक्षेत्र युद्ध में कमजोर सेना की ओर से लड़ने की कसम खाई थी, लेकिन दोनों पक्षों को उसकी शक्ति का डर था और उन्होंने कृष्ण से उसे रोकने के लिए कहा। कृष्ण ने एक ब्राह्मण का भेष धारण किया और बर्बरीक से उसका सिर दान में मांग लिया। बर्बरीक सहमत हो गए, लेकिन युद्ध देखने का अनुरोध किया। तब कृष्ण ने अपना सिर एक पहाड़ी की चोटी पर रख दिया, जहाँ से वे पूरा युद्ध देख सकते थे।"
+        },
+        {
+            "id": 12,
+            "name": "Avadhoot",
+            "books": null,
+            "temples": null,
+            "yug": "Dwapara Yuga",
+            "festival": "",
+            "image": "Avadhut.jpg",
+            "sloka": null,
+            "about": "भगवान शिव ने ब्रह्मा के पुत्र चार कुमारों को शैव धर्म का सार सिखाने के लिए अवधूत के रूप में जन्म लिया। वह मटके हुए बालों और त्रिशूल के साथ एक नग्न तपस्वी के रूप में प्रकट हुआ। उन्होंने कुमारों को वेदों, उपनिषदों और आगमों का ज्ञान प्रदान किया, जो शिव के प्रति प्रबुद्ध और समर्पित हो गए।"
+        },
+        {
+            "id": 13,
+            "name": "Sureshwar",
+            "books": null,
+            "temples": null,
+            "yug": "Dwapara Yuga",
+            "festival": "",
+            "image": "sureshwar.jpg",
+            "sloka": null,
+            "about": " भगवान शिव ने अपने भक्त मार्कंडेय को मृत्यु के देवता यम के चंगुल से बचाने के लिए सुरेश्वर के रूप में जन्म लिया। मार्कंडेय की मृत्यु 16 वर्ष की आयु में हो गई थी, लेकिन वह शिव के कट्टर उपासक थे। जब यम उसके प्राण लेने आये तो वह शिव लिंग से लिपट गया। तब शिव सुरेश्वर के रूप में प्रकट हुए और यम को लात मारकर दूर कर दिया, जिससे मार्कंडेय को अमरता प्राप्त हुई।"
+        },
+        {
+            "id": 14,
+            "name": "Sunatnartak",
+            "books": null,
+            "temples": null,
+            "yug": "Dwapara Yuga",
+            "festival": "",
+            "image": "sunatnartak.jpg",
+            "sloka": null,
+            "about": " भगवान शिव ने अपनी पत्नी पार्वती की भक्ति की परीक्षा लेने के लिए सुनतनर्तक के रूप में जन्म लिया, जिनका पुनर्जन्म हिमवान की पुत्री पार्वती के रूप में हुआ। वह एक सुंदर नर्तक के रूप में प्रकट हुए और पार्वती को लुभाने की कोशिश की, जो शिव को प्रसन्न करने के लिए तपस्या कर रही थीं। पार्वती ने उन्हें पहचान लिया और उनके प्रति वफादार रहीं। फिर उसने अपनी असली पहचान बताई और उससे शादी कर ली।"
+        },
+        {
+            "id": 15,
+            "name": "Brahmachari",
+            "books": "Ramayana",
+            "temples": null,
+            "festival": "",
+            "image": "Bhramhachari.jpg",
+            "yug": " Treta Yuga",
+            "sloka": null,
+            "about": " लंका के राक्षस राजा रावण के खिलाफ युद्ध में विष्णु के अवतार भगवान राम की मदद करने के लिए भगवान शिव ने ब्रह्मचारी के रूप में जन्म लिया। वह एक युवा तपस्वी के रूप में प्रकट हुए और राम को सूर्य देव की स्तुति में एक भजन, आदित्य हृदयम सिखाया। उन्होंने राम को ब्रह्मास्त्र नामक एक दिव्य तीर भी दिया, जो रावण को मारने में सहायक था।"
+        },
+        {
+            "id": 16,
+            "name": "Rudra",
+            "books": "Vedas & Puranas",
+            "festival": "Rudra Abhishekam",
+            "image": "Rudra.jpg",
+            "temples": "Kashi Vishwanath, Kedarnath Temple, Omkareshwar Temple",
+            "yug": "Treta Yuga",
+            "sloka": null,
+            "about": "रुद्र भगवान शिव के कई अवतारों में से एक है। वह शिव का एक उग्र और क्रोधी रूप है, और उसे अक्सर नीले या लाल रंग, तीन आँखों और उलझे हुए बालों के साथ चित्रित किया जाता है। वह एक त्रिशूल और एक ड्रम रखता है, और अक्सर आग की लपटों से घिरा रहता है। रुद्र विनाश और पुनर्जनन से जुड़े हैं, और कहा जाता है कि वह दुनिया का अंत करते हैं। हालाँकि, उन्हें देवताओं और धर्मियों के रक्षक के रूप में भी देखा जाता है, और बुराई को नष्ट करने के लिए उनका आह्वान किया जाता है।"
+        },
+        {
+            "id": 17,
+            "name": "Dattatreya",
+            "books": "Mahabharata , Bhagavata Purana , Dattatreya Upanishad",
+            "temples": "Dattatreya Temple in Maharashtra , Dattatreya Temple in Gujarat",
+            "festival": "",
+            "image": "dattatrey.jpg",
+            "yug": "Varies",
+            "sloka": "सर्व अपराधा नाशय सर्व पाप हराय च | देवा देवाय देवाय श्री दत्तात्रेय नमोस्तुते ||",
+            "about": "दत्तात्रेय एक आदर्श संन्यासी (भिक्षु) और योग के भगवानों में से एक हैं, जिन्हें हिंदू भगवान के रूप में पूजा जाता है। उन्हें तीन हिंदू देवताओं ब्रह्मा, विष्णु और शिव का अवतार और संयुक्त रूप माना जाता है, जिन्हें सामूहिक रूप से त्रिमूर्ति और सर्वोच्च ब्रह्म की अभिव्यक्ति के रूप में भी जाना जाता है। उसे तीन सिर, छह हाथ और उसके साथी के रूप में चार कुत्तों के साथ दर्शाया गया है। उन्होंने परशुराम, प्रह्लाद और कार्तवीर्य अर्जुन जैसे कई शिष्यों को योग, तंत्र और वेदांत के रहस्य सिखाए।"
+        },
+        {
+            "id": 18,
+            "name": "Yaksheshwar",
+            "books": null,
+            "temples": null,
+            "yug": "Varies",
+            "festival": "",
+            "image": "Yakseshwar.jpg",
+            "sloka": null,
+            "about": "देवताओं द्वारा अमृत पीने के बाद उनके गर्व को कुचलने के लिए भगवान शिव ने यक्षेश्वर के रूप में जन्म लिया। उसने उनसे घास का एक तिनका काटने को कहा, और वे अपनी संयुक्त शक्तियों से भी उसे नष्ट करने में असफल रहे। इसके बाद, उन्होंने भगवान शिव से माफी मांगी और उनकी सर्वोच्चता का एहसास किया। यक्षेश्वर को यक्ष के नाम से भी जाना जाता है, जो धन और समृद्धि के स्वामी हैं। उन्हें मोटे शरीर, गोल चेहरे और मूंछों के साथ दर्शाया गया है। उनके पास गदा, कमल, अनार और रत्नों से भरा थैला है चार हाथ। वह यक्षों के नेता भी हैं, जो प्रकृति की आत्माएं हैं जो पृथ्वी के खजाने की रक्षा करती हैं।"
+        },
+        {
+            "id": 19,
+            "name": "Ayyapan Avatar of Sankar",
+            "books": "Ayyappan: The Lord of Shabarimala,Ayyappan: The Complete Story",
+            "festival": "",
+            "image": "Ayyapan.jpg",
+            "temples": "Sabarimala Temple",
+            "yug": "Treta Yuga",
+            "sloka": "स्वामीये शरणम अय्यप्पा",
+            "about": "अय्यप्पन एक हिंदू देवता हैं जो दक्षिणी भारत में लोकप्रिय हैं। उन्हें धर्म, सत्य और धार्मिकता का प्रतीक माना जाता है और अक्सर उन्हें बुराई को खत्म करने के लिए कहा जाता है। हालाँकि अय्यप्पन की भक्ति दक्षिण भारत में पहले से ही प्रचलित रही है, लेकिन उनकी लोकप्रियता 20वीं सदी के अंत में ही बढ़ी।"
+        }
+    ],
+    "dashmahavidhya": [
+        {
+            "id": 1,
+            "name": "Kali",
+            "books": "Kali Tantra,Mahakala Samhita ,Kali Khandam",
+            "festival": "Kali Puja , Navratri , Diwali",
+            "image": "mahakali.jpg",
+            "temples": "Kalighat Temple , Dakshineswar Kali Temple , Kamakhya Temple",
+            "yug": "Satya Yuga",
+            "sloka": "ॐ ह्रीं श्रीं क्लीं आद्या कालिका परमं ईश्वरी स्वाहा",
+            "about": "वह समय, मृत्यु, विनाश और मुक्ति की देवी हैं। वह दस महाविद्याओं में प्रथम और प्रमुख हैं। वह परिवर्तन और अतिक्रमण की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 2,
+            "name": "Tara",
+            "books": "Tara Tantra , Tara Rahasya ,Tara Upanishad",
+            "festival": "Navratri , Durga Puja ,Vasant Panchami",
+            "image": "Tara.webp",
+            "temples": "Tarapith Temple , Tara Devi Temple , Mahabhairav Temple",
+            "yug": "Treta Yuga",
+            "sloka": "ॐ ह्रीं स्त्रीं हम् फट्",
+            "about": "वह करुणा, सुरक्षा और मोक्ष की देवी हैं। वह दस महाविद्याओं में से दूसरी हैं। वह वाणी और ज्ञान की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 3,
+            "name": "Tripura Sundari",
+            "books": "Tripura Rahasya , Tripura Upanishad , Tripura Tapini Upanishad",
+            "festival":  "Navratri , Shivaratri , Guru Purnima",
+            "image": "Tripura sundari.jpg",
+            "temples": "Tripurantakam Temple , Tripura Sundari Temple , Meenakshi Temple",
+            "yug": "Dwapara Yuga",
+            "sloka": "ॐ ह्रीं क्लीं सोः त्रिपुर सुंदरी महाविद्या षोडसि श्री ललिता स्वाहा",
+            "about": "वह प्रेम, सौंदर्य, आनंद और सद्भाव की देवी हैं। वह दस महाविद्याओं में से तीसरी हैं। वह सृजन और अभिव्यक्ति की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 4,
+            "name": "Bhuvaneshvari",
+            "books": "Bhuvaneshvari Tantra , Bhuvaneshvari Samhita , Bhuvaneshvari Kalpa",
+            "festival": "Navratri , Durga Puja , Vijaya Dashami",
+            "image": "Bhuvneshwari.jpg",
+            "temples": "Bhuvaneshvari Temple , Bhuvaneswari Amman Temple , Bhubaneswari Temple",
+            "yug": "Kali Yuga",
+            "sloka": "ॐ ह्रीं भुवनेश्वर्यै नमः",
+            "about": "वह अंतरिक्ष, सृजन और अभिव्यक्ति की देवी हैं। वह दस महाविद्याओं में से चौथी हैं। वह संप्रभुता और विस्तार की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 5,
+            "name": "Bhairavi",
+            "books": "Bhairavi Tantra , Bhairavi Samhita , Bhairavi Upanishad",
+            "festival": "Navratri , Durga Puja , Chaitra Navratri",
+            "image": "Bhairavi.webp",
+            "temples": "Bhairavi Temple , Bhairavakona Temple , Bhairava Temple",
+            "yug": "Satya Yuga",
+            "sloka": "ॐ भैरव्यै नमः ह्रीं भैरवी रूद्राय नमः",
+            "about": "वह साहस, शक्ति और परिवर्तन की देवी हैं। वह दस महाविद्याओं में से पांचवीं हैं। वह अग्नि और ताप की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 6,
+            "name": "Chhinnamasta",
+            "books": "Chhinnamasta Tantra , Chhinnamasta Samhita , Chhinnamasta Upanishad",
+            "festival": "Navratri , Durga Puja , Chhinnamasta Jayanti",
+            "image": "Chinnamasta.webp",
+            "temples": "Chhinnamasta Temple , Chintpurni Temple , Rajrappa Temple",
+            "yug": "Treta Yuga",
+            "sloka": "ॐ ह्रीं चं छिन्नमस्तयै नमः फट् स्वाहा",
+            "about": "वह आत्म-बलिदान, उत्कृष्टता और जीवन शक्ति की देवी हैं। वह दस महाविद्याओं में से छठी हैं। वह अहंकार और आसक्ति को काटने की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 7,
+            "name": "Dhumavati",
+            "books": "Dhumavati Tantra , Dhumavati Samhita , Dhumavati Upanishad",
+            "festival": "Navratri , Durga Puja , Dhumavati Jayanti",
+            "image": "Dhumavati.jpg",
+            "temples": "Dhumavati Temple , Dhumavati Shakti Peetha , Dhumavati Devi Mandir",
+            "yug": "Dwapara Yuga",
+            "sloka": "ॐ धूम धूमावत्यै नमः धीम धीम धूमावत्यै नमः",
+            "about": "वह निराशा, वैराग्य और त्याग की देवी हैं। वह दस महाविद्याओं में से सातवीं हैं। वह विघटन और शून्यता की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 8,
+            "name": "Bagalamukhi",
+            "books": "Bagalamukhi Tantra , Bagalamukhi Samhita , Bagalamukhi Upanishad",
+            "festival": "Navratri , Durga Puja , Bagalamukhi Jayanti",
+            "image": "Baglamukhi.jpg",
+            "temples": "Bagalamukhi Temple , Pitambara Peetha , Bageshwari Temple",
+            "yug": "Kali Yuga",
+            "sloka": "ॐ ह्लीं बगलामुख्यै नमः ह्लीं बगलामुख्यै हुं फट् स्वाहा",
+            "about": "वह पक्षाघात, नियंत्रण और वर्चस्व की देवी हैं। वह दस महाविद्याओं में से आठवीं हैं। वह वाणी और मौन की शक्ति का प्रतिनिधित्व करती है"
+        },
+        {
+            "id": 9,
+            "name": "Matangi",
+            "books": "Matangi Tantra , Matangi Samhita , Matangi Upanishad",
+            "festival": "Navratri , Durga Puja , Saraswati Puja",
+            "image": "Matangi.jpg",
+            "temples": "Matangi Temple , Mata Matangeshwari Temple , Mata Matangi Devi Mandir",
+            "yug": "Treta Yuga",
+            "sloka": "ॐ ह्रीं ऐं श्रीं नमो भगवती उच्छिष्ट चांडालिनी श्री मतंगेश्वरी सर्वज्ञानवशंकारी स्वाहा",
+            "about": "वह ज्ञान, संगीत और कला की देवी हैं। वह दस महाविद्याओं में से नौवीं हैं। वह सीखने और अभिव्यक्ति की शक्ति का प्रतिनिधित्व करती है।"
+        },
+        {
+            "id": 10,
+            "name": "Kamala",
+            "books": "Kamala Tantra , Kamala Samhita , Kamala Upanishad",
+            "festival": "Navratri , Durga Puja , Lakshmi Puja",
+            "image": "Kamala.jpg",
+            "temples": "Kamala Temple , Mahalakshmi Temple , Kamalaja Temple",
+            "yug": "Dwapara Yuga",
+            "sloka": "ॐ ह्रीं श्रीं क्लीं महा लक्ष्म्यै नमः",
+            "about": "वह धन, समृद्धि और भाग्य की देवी हैं। वह दस महाविद्याओं में से दसवीं हैं। वह प्रचुरता और पूर्णता की शक्ति का प्रतिनिधित्व करती है।"
+        }
+    ],
+    "vishnu-bg-music": "./music/vishnu-bg.mp3",
+    "shiva-bg-music": "./music/shiva-bg.mp3",
+    "dashmahavidhya-bg-music": "./music/devi-bg.mp3"
+}

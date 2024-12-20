@@ -1,0 +1,84 @@
+#navigation {
+    z-index: 1;
+    background-color: rgba(255, 187, 0, 0.89);
+    width: 100%;
+}
+
+#background {
+    background-image: url('IMG/background.jpg');
+    background-size: cover;
+    /* z-index: -1; */
+}
+
+
+#card-button button:hover{
+    background-color: #6c757d ;
+}
+
+.itemlist{
+    margin-left: 1.5rem;
+}
+
+#slide_img {
+    height: 500px;
+    margin-top: -100px;
+}
+
+#card-body{
+    padding:0px 10%;
+}
+
+
+
+#moveToTop{
+    height:48px;
+    width:48px;
+    background-color: white;
+    position:fixed;
+    border: 1px solid black;
+    border-radius: 100%;
+    bottom:50px;
+    right:50px;
+    z-index: 1;
+    padding-left: 3px;
+}
+
+#up-img {
+    height: 40px;
+    position: relative;
+    animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+/* Media Qury Start's From Here */
+@keyframes example {
+  0%   {top:-2px;}
+  50%  {top:2px;}
+  100% {top:-2px;}
+}
+
+@media (max-width: 550px) {
+    #card-body {
+        padding-left: 7%;
+    }
+}
+
+#cards {
+    margin: 0px 15px;
+    padding: 20px 30px;
+}
+
+#card_img {
+    border: 2px solid black;
+    height: 400px;
+}
+  
+  #multicolor{
+    color: rgba(255, 255, 255, 0.589);
+    font-weight: 400;
+     display: flex;
+     margin-top: -10px;
+     margin-bottom: 30px;
+  }
