@@ -1,12 +1,13 @@
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* background-color: bisque; */
 }
-#root{
+/* #root {
   width: 100%;
+  height: auto;
   margin-top: -92vh;
   padding: 0;
   box-sizing: border-box;
-}
+} */

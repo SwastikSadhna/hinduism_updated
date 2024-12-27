@@ -1,14 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-// import { imageDetails } from "../resources";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import Navbar from "../Components/navbar";
-
+import Header from "../Components/Header";
+import Hero from "../Components/Hero";
+import Sanatan from "../Components/Sanatan";
 function App() {
-
   return (
-    <Navbar/>
+    <div>
+      <Header />
+      <Hero />
+      <Sanatan />
+    </div>
   );
 }
 
