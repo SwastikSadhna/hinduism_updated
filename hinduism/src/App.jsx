@@ -2,7 +2,7 @@ import "./index.css";
 import Header from "../Components/Header";
 import Hero from "../Components/Hero";
 import Sanatan from "../Components/Sanatan";
-import Benefits from "../Components/Benefits";
+import TriMurty from "../Components/TriMurty";
 import CharDhamSection from "../Components/CharDhamSection";
 import PrayingSection from "../Components/PrayingSection";
 import Footer from "../Components/Footer";
@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Hero />
       <Sanatan />
-      <Benefits />
+      <TriMurty />
       <CharDhamSection />
       <PrayingSection />
       <Footer />

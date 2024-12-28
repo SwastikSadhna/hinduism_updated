@@ -1,7 +1,7 @@
 const Sanatan = () => {
   return (
     <section className="sanatan w-full flex flex-col gap-6 justify-center items-center h-[40vh]">
-      <div className="bg-slate-100 w-2/3  h-auto rounded-2xl flex flex-col justify-center items-center">
+      <div className="bg-slate-100 w-[85%]  h-auto rounded-2xl flex flex-col justify-center items-center">
         <h2 className="font-bold text-6xl">सनातन क्या है?</h2>
         <p className="text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, omnis

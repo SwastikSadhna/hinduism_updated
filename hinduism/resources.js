@@ -1,30 +1,3 @@
-import logo from "./src/Resources/Logo.png";
-import loading from "./src/Resources/loading.gif";
-import carousel1 from "./src/Resources/carousel2.png";
-import carousel2 from "./src/Resources/carousel2.png";
-import Dhwarika from "./src/Resources/Dhwarika.jpg";
-import Badrinath from "./src/Resources/Badrinath.jpg";
-import Jagganathpuri from "./src/Resources/JagganathPuri.jpeg";
-import Rameshwaram from "./src/Resources/Rameshwaram.jpg";
-import Sanatan from "./src/Resources/sanatan.png";
-import Brahma from "./src/Resources/Brahma.png";
-import Vishnu from "./src/Resources/Vishnu.png";
-import Shiv from "./src/Resources/Mahadev.png";
-
-const images = [
-  logo,
-  loading,
-  carousel1,
-  carousel2,
-  Dhwarika,
-  Rameshwaram,
-  Jagganathpuri,
-  Badrinath,
-  Sanatan,
-  Brahma,
-  Vishnu,
-  Shiv,
-];
 import logo from "./src/Resources/home/Logo.png";
 import loading from "./src/Resources/home/loading.gif";
 import carousel1 from "./src/Resources/home/carousel2.png";

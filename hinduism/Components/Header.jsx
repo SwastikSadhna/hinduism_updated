@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
-import { imageDetails } from '../resources'; // Use imageDetails for structured access
-import '../src/App.css';
+import { imageDetails } from "../resources"; // Use imageDetails for structured access
+import "../src/App.css";
 
 const Header = () => {
   return (
@@ -26,10 +26,6 @@ const Header = () => {
           <a href="#about">Bhakti</a>
           <a href="#guests">Granth</a>
           <a href="#routine">Routine</a>
-          <Button
-            text="Book Yatra"
-            className="book-button bg-orange-600 border-0 py-2 px-3 rounded-sm text-white"
-          />
         </div>
       </nav>
     </header>
