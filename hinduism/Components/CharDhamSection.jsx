@@ -7,14 +7,14 @@ const CharDhamSection = () => {
       nameEn: "Dwarka Temple",
       location: "Dwarka, Gujarat",
       deity: "Deity : Lord Krishna",
-      image: "./src/Resources/home/Rameshwaram.jpg"
+      image: "./src/Resources/home/Dhwarika.jpg"
     },
     {
       name: "जगन्नाथ मंदिर",
       nameEn: "Jagannath Temple",
       location: "Puri, Odisha",
       deity: "Deity : Lord Jagannath",
-      image: "./src/Resources/home/Rameshwaram.jpg"
+      image: "./src/Resources/home/JagganathPuri.jpeg"
     },
     {
       name: "रामेश्वरम मंदिर",
@@ -28,7 +28,7 @@ const CharDhamSection = () => {
       nameEn: "Badrinath Temple",
       location: "Chamoli, Uttarakhand",
       deity: "Deity : Lord Vishnu",
-      image: "./src/Resources/home/Rameshwaram.jpg"
+      image: "./src/Resources/home/Badrinath.jpg"
     }
   ]
   return (
