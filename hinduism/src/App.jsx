@@ -5,6 +5,7 @@ import Sanatan from "../Components/Sanatan";
 import Benefits from "../Components/Benefits";
 import CharDhamSection from "../Components/CharDhamSection";
 import PrayingSection from "../Components/PrayingSection";
+import Footer from "../Components/Footer";
 function App() {
   return (
     <div>
@@ -14,6 +15,7 @@ function App() {
       <Benefits />
       <CharDhamSection />
       <PrayingSection />
+      <Footer />
     </div>
   );
 }
