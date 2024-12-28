@@ -16,14 +16,14 @@ const Hero = () => {
       }}
     >
       {/* Your hero content goes here */}
-      <div className="content-container">
+      {/* <div className="content-container"> */}
         {/* Your text and other elements */}
-        <h2>सनातन क्या है?</h2>
+        {/* <h2>सनातन क्या है?</h2>
         <p>
           Explore the essence of spirituality and devotion in the context of
           Sanatan Dharma.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
