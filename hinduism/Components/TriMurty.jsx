@@ -3,14 +3,12 @@ import { imageDetails } from "../resources";
 const TriMurty = () => {
   return (
     <section className="services justify-between p-10 items-center gap-10 flex flex-col h-auto w-full">
-      <div className="flex gap-9 w-[85%]">
-        <h2 className="w-4/5 tracking-tight text-3xl font-bold">
+      <div className="flex flex-column gap-9 w-[85%] items-center">
+        <h2 className="w-4/5 tracking-tight text-4xl font-bold text-center">
           Something about Sanatan dharm
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi itaque
-          sint error a saepe quas non temporibus blanditiis delectus. Ratione
-          eveniet vel doloribus illo totam, accusamus mollitia
+        Sanatan Dharma, known as the eternal way of life, represents the world's oldest living religion. It encompasses a rich tapestry of spiritual practices, philosophical teachings, and cultural traditions that have been preserved for thousands of years.
         </p>
       </div>
       <div className="flex gap-9">

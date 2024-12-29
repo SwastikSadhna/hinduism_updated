@@ -58,8 +58,8 @@ const PrayingSection = () => {
 
     //   </div>
     // </section>
-
-    <section className="bg-[#F9F5FF] px-4 py-16 md:py-24">
+    // 
+    <section className=" px-4 py-16 md:py-24">
       <div className="mx-auto max-w-6xl text-center">
         <h2 className="mb-4 text-4xl font-medium md:text-5xl">
           Daily Hindu <span className="text-[#6C5CE7]">Prayer Rituals</span>

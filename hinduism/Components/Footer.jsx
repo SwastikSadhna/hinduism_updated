@@ -2,13 +2,13 @@ const Footer = () => {
   return (
     <footer className="bg-black text-gray-400">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid gap-8 lg:grid-cols-5">
+        <div className="grid lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="/" className="text-white text-xl font-semibold">
-              123done
+              Sanatan
             </a>
-            <p className="mt-2 text-sm">Optimize your design process</p>
+            <p className="mt-2 text-sm">Vasudhaiva Kutumbakam</p>
             <div className="mt-6 flex gap-4">
               <a href="#" className="hover:text-white transition-colors">
                 <i className="fa-brands fa-facebook"></i>
@@ -27,31 +27,31 @@ const Footer = () => {
 
           {/* Product Column */}
           <div>
-            <h3 className="font-medium text-white mb-4">Product</h3>
+            <h3 className="font-medium text-white mb-4">Authors</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Overview
+                  Valmiki
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Pricing
+                  Dayanand saraswati
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Customer stories
+                  Tulsidas
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Integrations
+                  Chanakya
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Security
+                  Adi Shankaracharya
                 </a>
               </li>
             </ul>
@@ -59,26 +59,26 @@ const Footer = () => {
 
           {/* Resources Column */}
           <div>
-            <h3 className="font-medium text-white mb-4">Resources</h3>
+            <h3 className="font-medium text-white mb-4">Books</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Blog
+                  Ramayana
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Guides & tutorials
+                  Shrimad Bhagwad Gita
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Help center
+                   Ramcharit Manas
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Whats new
+                  Shrimad Bhaagwatam
                 </a>
               </li>
             </ul>
@@ -86,63 +86,44 @@ const Footer = () => {
 
           {/* Templates Column */}
           <div>
-            <h3 className="font-medium text-white mb-4">Templates</h3>
+            <h3 className="font-medium text-white mb-4">Top Contents</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Landing
+                  Shlokas
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Dashboard
+                  Mantras
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Log in and Sign Up
+                  Sukta
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Payment
+                  Stotram
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Dataviz Blocks
+                  Suktam
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Company Column */}
-          <div>
-            <h3 className="font-medium text-white mb-4">Company</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  About us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Media kit
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Contact support
-                </a>
-              </li>
-            </ul>
-          </div>
+          
+          
         </div>
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <p className="text-sm">
-            Copyright © 2022 123done. All rights reserved.
+            Copyright © 2025 All rights reserved.
           </p>
         </div>
       </div>
