@@ -1,13 +1,13 @@
 import React from "react";
 import "../src/App.css";
-import { imageDetails } from "../resources"; // Import imageDetails for structured access
+import { imageDetails } from "../resources"; 
 
 const Hero = () => {
   return (
     <div
       className="hero-section min-h-screen w-full bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url(${imageDetails.Temple.src})`, // Use imageDetails.Temple.src
+        backgroundImage: `url(${imageDetails.HeroImage3.src})`,
         height: "auto ",
         width: "100vw",
         backgroundSize: "cover",
