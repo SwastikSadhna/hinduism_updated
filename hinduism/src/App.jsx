@@ -1,22 +1,21 @@
-import "./index.css";
-import Header from "../Components/Header";
-import Hero from "../Components/Hero";
-import Sanatan from "../Components/Sanatan";
-import TriMurty from "../Components/TriMurty";
-import CharDhamSection from "../Components/CharDhamSection";
-import PrayingSection from "../Components/PrayingSection";
-import Footer from "../Components/Footer";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from '../Components/Header'
+import Home from "../Pages/home";
+import Book from '../Pages/Book'
+import Footer from '../Components/Footer'
 function App() {
   return (
-    <div>
-      <Header />
-      <Hero />
-      <Sanatan />
-      <TriMurty />
-      <CharDhamSection />
-      <PrayingSection />
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Header /> 
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Book"element={<Book />} />
+        </Routes>
+        <Footer /> 
+      </div>
+    </Router>
   );
 }
 
