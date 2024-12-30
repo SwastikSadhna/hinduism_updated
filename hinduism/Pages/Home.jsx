@@ -4,7 +4,7 @@ import Sanatan from "../Components/Sanatan";
 import TriMurty from "../Components/TriMurty";
 import CharDhamSection from "../Components/CharDhamSection";
 import PrayingSection from "../Components/PrayingSection";
-
+import Footer from "../Components/Footer";
 const Home = () => {
   return (
     <div>
@@ -13,6 +13,7 @@ const Home = () => {
       <TriMurty />
       <CharDhamSection />
       <PrayingSection />
+      <Footer />
     </div>
   );
 };

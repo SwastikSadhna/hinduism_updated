@@ -16,13 +16,23 @@ import HeroImage from './src/Resources/home/hero-image.jpg'
 import HeroImage3 from './src/Resources/home/Akshardham-Temple.jpg'
 import Sanatan3 from './src/Resources/home/bg2.png'
 import Sanatan4 from './src/Resources/home/Sanatan4.png'
+// import Granth from './src/Resources/Book/Background.jpg'
+import BhagvadGeeta from './src/Resources/others/bhagvadgita.jpg'
 
 const images = [Rammandir,logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    BhagvadGeeta:{
+        src: BhagvadGeeta,
+        alt: "Shreemad Bhagvad Geeta"
+    },
     Sanatan4: {
         src:Sanatan4,
         alt: 'Sanatan Kya Hai2',
     },
+    // Granth: {
+    //     src: Granth,
+    //     alt: 'Granthas of Spiritual santan',
+    // },
     Sanatan3: {
         src:Sanatan3,
         alt: 'Sanatan Kya Hai',

@@ -11,7 +11,6 @@ const Header = () => {
       style={{ backgroundColor: `rgba(255, 255, 255, 0.35)` }}
     >
       <nav className="w-full flex items-center justify-between">
-        {/* Logo and Title */}
         <div className="flex justify-center items-center text-2xl gap-3">
           <img
             src={imageDetails.logo.src} 
