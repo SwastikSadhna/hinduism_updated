@@ -15,7 +15,7 @@ import Rammandir from './src/Resources/home/rammandir-2.jpg'
 import HeroImage from './src/Resources/home/hero-image.jpg'
 import HeroImage3 from './src/Resources/home/Akshardham-Temple.jpg'
 
-const images = [HeroImage2,Rammandir,logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
+const images = [Rammandir,logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
     HeroImage3:{
         src: HeroImage3,
