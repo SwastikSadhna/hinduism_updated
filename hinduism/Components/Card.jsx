@@ -1,10 +1,10 @@
 const Card = ({ title, description, image }) => {
   return (
     <div className="flex items-center justify-center bg-gray-100">
-      <div className="group relative w-80 h-64 overflow-hidden rounded-xl shadow-lg">
+      <div className="group relative w-80 h-80 overflow-hidden rounded-xl shadow-lg">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110"
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-500 ease-in-out group-hover:scale-110"
           style={{
             aspectRatio: 3 / 3,
             backgroundImage: `url(${image})`,
