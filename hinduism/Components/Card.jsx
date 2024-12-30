@@ -14,12 +14,12 @@ const Card = ({ title, description, image }) => {
         />
 
         {/* Overlay that appears on hover */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute bg-gray-100 opacity-0 transition-opacity duration-300 hover:opacity-100" />
 
         {/* Text content that slides up on hover */}
-        <div className="absolute inset-x-0 bottom-0 p-6 translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0">
-          <h3 className="text-xl font-bold text-black mb-2">{title}</h3>
-          <p className="text-black text-sm">{description}</p>
+        <div className="absolute inset-x-0 bottom-0 bg-gray-900 p-6 translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+          <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+          <p className="text-gray-400 text-sm">{description}</p>
         </div>
       </div>
     </div>

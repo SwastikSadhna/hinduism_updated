@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header
       className="header w-full px-10 py-3 fixed z-10"
-      style={{ backgroundColor: `rgba(255, 255, 255, 0.35)` }}
+      style={{ backgroundColor: `rgba(255, 255, 255, 0.75)` }}
     >
       <nav className="w-full flex items-center justify-between">
         <div className="flex justify-center items-center text-2xl gap-3">

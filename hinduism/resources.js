@@ -15,9 +15,14 @@ import Rammandir from './src/Resources/home/rammandir-2.jpg'
 import HeroImage from './src/Resources/home/hero-image.jpg'
 import HeroImage3 from './src/Resources/home/Akshardham-Temple.jpg'
 import Sanatan3 from './src/Resources/home/bg2.png'
+import Sanatan4 from './src/Resources/home/Sanatan4.png'
 
 const images = [Rammandir,logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    Sanatan4: {
+        src:Sanatan4,
+        alt: 'Sanatan Kya Hai2',
+    },
     Sanatan3: {
         src:Sanatan3,
         alt: 'Sanatan Kya Hai',
