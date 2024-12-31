@@ -64,14 +64,14 @@ const PrayingSection = () => {
         <h2 className="mb-4 text-4xl font-medium md:text-5xl">
           Daily Hindu <span className="text-[#6C5CE7]">Prayer Rituals</span>
         </h2>
-        <p className="mx-auto mb-12 max-w-3xl text-gray-600">
+        <p className="mx-auto mb-12 max-w-3xl text-[#33281E]">
           Embrace the divine through these essential Hindu prayers for morning, evening, and night.
           Connect with the cosmic energy and find inner peace in your daily spiritual practice.
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
           {/* Card 1: Morning Prayers */}
-          <div className="rounded-xl bg-white p-6 shadow-sm">
+          <div className="rounded-xl p-6 hover:shadow-lg border-[#E6D9CC]">
             <div className="mb-6 flex gap-3">
               <div className="rounded-lg bg-gray-100 p-2">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,19 +86,19 @@ const PrayingSection = () => {
               </div>
             </div>
             <h3 className="mb-3 text-xl font-medium">Morning Prayers</h3>
-            <ul className="text-left text-gray-600 space-y-2 mb-4">
+            <ul className="text-left text-[#33281E] space-y-2 mb-4">
               <li>• Surya Namaskar (Sun Salutation)</li>
               <li>• Gayatri Mantra</li>
               <li>• Saraswati Vandana (for knowledge)</li>
               <li>• Shiva Panchakshara Stotram</li>
             </ul>
-            <button className="mt-4 rounded-md bg-[#6C5CE7] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5A4ED1] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
+            <button className="mt-4 rounded-md bg-[#FF7722] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#E65C00] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
               Explore Morning Rituals
             </button>
           </div>
 
           {/* Card 2: Evening Prayers */}
-          <div className="rounded-xl bg-white p-6 shadow-sm">
+          <div className="rounded-x p-6 hover:shadow-lg border-[#E6D9CC]">
             <div className="mb-6 flex gap-3">
               <div className="rounded-lg bg-gray-100 p-2">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,14 +118,14 @@ const PrayingSection = () => {
               <li>• Hanuman Chalisa</li>
               <li>• Durga Saptashati</li>
             </ul>
-            <button className="mt-4 rounded-md bg-[#6C5CE7] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5A4ED1] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
+            <button className="mt-4 rounded-md bg-[#FF7722] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#E65C00] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
               Explore Evening Rituals
             </button>
           </div>
 
           {/* Card 3: Night Prayers */}
-          <div className="rounded-xl bg-white p-6 shadow-sm">
-            <div className="mb-6 flex gap-3">
+          <div className="rounded-xl p-6 hover:shadow-lg">
+            <div className="mb-6 flex gap-3 ">
               <div className="rounded-lg bg-gray-100 p-2">
                 <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21.25 9.14969C18.94 5.51969 15.56 3.42969 12 3.42969C10.22 3.42969 8.49 3.94969 6.91 4.91969C5.33 5.89969 3.91 7.32969 2.75 9.14969C1.75 10.7197 1.75 13.2697 2.75 14.8397C5.06 18.4797 8.44 20.5597 12 20.5597C13.78 20.5597 15.51 20.0397 17.09 19.0697C18.67 18.0897 20.09 16.6597 21.25 14.8397C22.25 13.2797 22.25 10.7197 21.25 9.14969ZM12 16.0397C9.76 16.0397 7.96 14.2297 7.96 11.9997C7.96 9.76969 9.76 7.95969 12 7.95969C14.24 7.95969 16.04 9.76969 16.04 11.9997C16.04 14.2297 14.24 16.0397 12 16.0397Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -146,7 +146,7 @@ const PrayingSection = () => {
               <li>• Shiva Tandava Stotram</li>
               <li>• Brahma Muhurta Meditation</li>
             </ul>
-            <button className="mt-4 rounded-md bg-[#6C5CE7] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5A4ED1] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
+            <button className="mt-4 rounded-md bg-[#FF7722] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#E65C00] focus:outline-none focus:ring-2 focus:ring-[#6C5CE7] focus:ring-offset-2">
               Explore Night Rituals
             </button>
           </div>
