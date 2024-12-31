@@ -1,28 +1,37 @@
-import React from "react";
-import { imageDetails } from '../../resources'; 
+import { BookCover } from './BookCover'
+import { ActionButton } from './ActionButtons'
 
-const BookHeader = ({ image, title, author }) => {
+export function BookHeader({ title, author, coverImage, backgroundImage, alt }) {
   return (
-    <header
-      className="header w-full py-10 px-5 flex justify-center items-center h-[50vh] bg-cover bg-center bg-orange-600 "
-    //   style={{ backgroundImage: `url(${imageDetails.Granth.src})` }}
-    >
-      <div className="flex items-center gap-10 w-[80%] max-w-6xl bg-transparent bg-opacity-20 p-5 rounded-lg">
-        {/* Circular Book Cover Image */}
-        <div className="w-40 h-40 rounded-full bg-white flex-shrink-0 shadow-2xl flex justify-center items-center p-3">
-          <img
-            src={image} 
-            alt="Book Cover"
-            className="w-full h-full object-contain rounded-full"
-          />
-        </div>
-        <div>
-          <h1 className="text-6xl font-bold">{title}</h1>
-          <h2 className="text-3xl text-gray-700">{author}</h2>
+    <div className="relative min-h-[500px] flex items-center">
+      <div className="absolute inset-0 z-0 ">
+        <img
+          src={backgroundImage}
+          alt={alt}
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30" />
+      </div>
+      
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row items-center  gap-6">
+          <BookCover imageUrl={coverImage} alt={title} />
+          
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              {title}
+            </h1>
+            <p className="text-xl text-gray-200 mb-6">
+              Author : {author}
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <ActionButton variant="primary">View Book</ActionButton>
+              <ActionButton variant="secondary">Download</ActionButton>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
-  );
-};
+    </div>
+  )
+}
 
-export default BookHeader;

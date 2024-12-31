@@ -1,39 +1,28 @@
-import React from "react";
-import BookHeader from "../Components/Book/BookHeader";
-import BookDescription from "../Components/Book/BookDescription";
-import ActionButtons from "../Components/Book/ActionButtons";
-import Footer from "../Components/Book/Footer";
-import { imageDetails } from "../resources";
-const Book = () => {
-  const bookData = {
-    image: imageDetails.BhagvadGeeta.src,
-    title: "Book Name",
-    author: "Book Author",
-    description: `Book Description here. Book Description here. Book Description here.
-      Book Description here. Book Description here. Book Description here.`,
-  };
+import { BookHeader } from '../Components/Book/BookHeader'
+import { BookDescription } from '../Components/Book/BookDescription'
+import { Footer } from '../Components/Book/Footer'
+import { imageDetails } from '../resources'
 
-  const handleView = () => {
-    console.log("View Book Clicked");
-  };
-
-  const handleDownload = () => {
-    console.log("Download Clicked");
-  };
-
+export default function BookDetailsPage() {
   return (
-    <div className="book-page bg-gray-100 min-h-screen flex flex-col items-center m-auto">
-        <div className="h-[8vh]"></div>
+    <div className="min-h-screen flex flex-col">
+      <div className='mt-[9vh] '></div>
       <BookHeader
-        image={bookData.image}
-        title={bookData.title}
-        author={bookData.author}
+        title={imageDetails.Mahabharat.alt}
+        author="Maharshi Ved Vyas"
+        coverImage={imageDetails.Mahabharat.src}
+        alt={imageDetails.Sanatan3.alt}
+        backgroundImage={imageDetails.Sanatan3.src}
       />
-      <BookDescription description={bookData.description} />
-      <ActionButtons onView={handleView} onDownload={handleDownload} />
+      
+      <BookDescription
+        description="The Mahabharata is an ancient Indian epic where the main story revolves around two branches of a family - the Pandavas and Kauravas - who, in the Kurukshetra War, battle for the throne of Hastinapura. Interwoven into this narrative are several smaller stories about people dead or living, and philosophical discourses."
+      />
+      
+      <div className="flex-grow" />
+      
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Book;

@@ -1,22 +1,14 @@
-import React from "react";
-
-const ActionButtons = ({ onView, onDownload }) => {
+export function ActionButton({ variant = 'primary', children, onClick }) {
   return (
-    <div className="actions flex gap-5 mt-5 mb-5">
-      <button
-        className="bg-yellow-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-yellow-600"
-        onClick={onView}
-      >
-        View Book
-      </button>
-      <button
-        className="bg-blue-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-600"
-        onClick={onDownload}
-      >
-        Download
-      </button>
-    </div>
-  );
-};
-
-export default ActionButtons;
+    <button
+      onClick={onClick}
+      className={`px-6 py-2 rounded-md font-medium transition-colors ${
+        variant === 'primary'
+          ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+          : 'bg-yellow-500 text-black hover:bg-yellow-400'
+      }`}
+    >
+      {children}
+    </button>
+  )
+}

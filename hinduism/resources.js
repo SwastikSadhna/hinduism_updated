@@ -1,6 +1,5 @@
 import logo from './src/Resources/home/Logo.png';
 import loading from './src/Resources/home/loading.gif'
-import carousel1 from './src/Resources/home/carousel2.png'
 import carousel2 from './src/Resources/home/carousel2.png'
 import Dhwarika from './src/Resources/home/Dhwarika.jpg'
 import Badrinath from './src/Resources/home/Badrinath.jpg'
@@ -16,23 +15,28 @@ import HeroImage from './src/Resources/home/hero-image.jpg'
 import HeroImage3 from './src/Resources/home/Akshardham-Temple.jpg'
 import Sanatan3 from './src/Resources/home/bg2.png'
 import Sanatan4 from './src/Resources/home/Sanatan4.png'
-// import Granth from './src/Resources/Book/Background.jpg'
+import Mahabharat from './src/Resources/others/mahabharat.jpeg'
 import BhagvadGeeta from './src/Resources/others/bhagvadgita.jpg'
+import BG from './src/Resources/others/shlokas_img (1).jpg'
 
-const images = [Rammandir,logo,loading,carousel1,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
+const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
     BhagvadGeeta:{
         src: BhagvadGeeta,
         alt: "Shreemad Bhagvad Geeta"
     },
+    BG:{
+        src: BG,
+        alt: "Background og Book"
+    },
+    Mahabharat:{
+        src: Mahabharat,
+        alt: "Mahabharatam"
+    },
     Sanatan4: {
         src:Sanatan4,
         alt: 'Sanatan Kya Hai2',
     },
-    // Granth: {
-    //     src: Granth,
-    //     alt: 'Granthas of Spiritual santan',
-    // },
     Sanatan3: {
         src:Sanatan3,
         alt: 'Sanatan Kya Hai',
@@ -52,10 +56,6 @@ const imageDetails = {
     loading: {
         src: loading,
         alt: 'loading',
-    },
-    carousel1: {
-        src: carousel1,
-        alt: 'carousel-1',
     },
     carousel2: {
         src: carousel2,
