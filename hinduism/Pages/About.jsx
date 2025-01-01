@@ -2,7 +2,7 @@ import Hero from '../Components/About/Hero'
 import Features from '../Components/About/Feature'
 import Team from '../Components/About/Team'
 import Contact from '../Components/About/Contact'
-import Footer from '../Components/About/Footer'
+import Footer from '../Components/Footer'
 
 export default function AboutPage() {
   return (

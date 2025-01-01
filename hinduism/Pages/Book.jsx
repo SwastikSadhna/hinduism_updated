@@ -1,6 +1,6 @@
 import { BookHeader } from '../Components/Book/BookHeader'
 import { BookDescription } from '../Components/Book/BookDescription'
-import { Footer } from '../Components/Book/Footer'
+import Footer from '../Components/Footer'
 import { imageDetails } from '../resources'
 
 export default function BookDetailsPage() {

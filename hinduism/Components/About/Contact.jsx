@@ -1,5 +1,6 @@
 import Button from './Button';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { imageDetails } from '../../resources';
 
 export default function Contact() {
   return (

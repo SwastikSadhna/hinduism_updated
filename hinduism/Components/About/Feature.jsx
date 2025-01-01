@@ -23,8 +23,8 @@ export default function Features() {
               key={index}
               className={`p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:-translate-y-2 ${
                 index % 2 === 0 ? 'bg-blue-100' : 'bg-blue-200'
-              }`}
-              style={{
+              }` }
+              style={{ backgroundColor: `#FFF7ED` ,
                 boxShadow:
                   "0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1)",
               }}
