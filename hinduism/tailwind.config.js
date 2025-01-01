@@ -6,3 +6,14 @@ export default {
   },
   plugins: [],
 };
+
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        peacock: '#008080',
+      },
+    },
+  },
+  plugins: [],
+};
