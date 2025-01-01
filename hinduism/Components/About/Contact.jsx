@@ -9,31 +9,30 @@ export default function Contact() {
         <div className="bg-gray-50 p-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-800">Get in touch</h2>
           <p className="text-gray-600 mb-6">
-            Sociis vivamus viverra placerat sem efficitur molestie vehicula cubilia leo etiam nam.
+            Join Us for this amazing journey of exploring the Hindu culture and spirituality. We are here to help you with any queries you have.
           </p>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Head Office</p>
-                <p className="text-gray-600">Jalan Cempaka Wangi No 22</p>
-                <p className="text-gray-600">Jakarta - Indonesia</p>
+                <p className="text-gray-600">Hindavi Swarajya Sansthan</p>
+                <p className="text-gray-600">Karnavati, Gujarat, Bharat</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Mail className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Email Us</p>
-                <p className="text-gray-600">support@yourdomain.tld</p>
-                <p className="text-gray-600">hello@yourdomain.tld</p>
+                <p className="text-gray-600">sanatan@gmail.com</p>
+                <p className="text-gray-600">hindaviswaraj@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Phone className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Call Us</p>
-                <p className="text-gray-600">Phone: +6221.2002.2012</p>
-                <p className="text-gray-600">Fax: +6221.2002.2013</p>
+                <p className="text-gray-600">Phone: + 9316846548</p>
               </div>
             </div>
             <div className="pt-6">

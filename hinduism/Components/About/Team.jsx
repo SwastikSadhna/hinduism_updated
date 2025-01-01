@@ -1,4 +1,5 @@
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
+import { imageDetails } from '../../resources';
 
 export default function Team() {
   const teamMembers = [
@@ -6,26 +7,41 @@ export default function Team() {
       name: "Vinay Koshti",
       role: "Innovation and Development",
       image: "/placeholder.svg?height=200&width=200",
+      github: "https://github.com/Vinayrk2",
+      instagram: "https://instagram.com/vinaykoshti",
+      linkedin: "https://linkedin.com/in/vinaykoshti",
     },
     {
       name: "Dhruv Shere",
       role: "Innovation and Development",
-      image: "/placeholder.svg?height=200&width=200",
+      image: `${imageDetails.Dhruv.src}`,
+      github: "https://github.com/DHRUV-SHERE",
+      instagram: "https://instagram.com/dhruvshere",
+      linkedin: "https://linkedin.com/in/dhruvshere",
     },
     {
       name: "Nirmal Prajapati",
       role: "Innovation and Development",
       image: "/placeholder.svg?height=200&width=200",
+      github: "https://github.com/NIRMAL-PRAJAPATI",
+      instagram: "https://instagram.com/nirmalprajapati",
+      linkedin: "https://linkedin.com/in/nirmalprajapati",
     },
     {
       name: "Neesarg Soni",
       role: "Innovation and Development",
-      image: "/placeholder.svg?height=200&width=200",
+      image: `${imageDetails.Neesarg.src}`,
+      github: "https://github.com/Neesargsoni",
+      instagram: "https://instagram.com/neesargsoni",
+      linkedin: "https://linkedin.com/in/neesargsoni",
     },
     {
       name: "Dilip Suryal",
       role: "Innovation and Development",
-      image: "/placeholder.svg?height=200&width=200",
+      image: `${imageDetails.Dilip.src}`,
+      github: "https://github.com/DILIP-SURYAL",
+      instagram: "https://instagram.com/dilipsuryal",
+      linkedin: "https://linkedin.com/in/dilipsuryal",
     },
   ];
 
@@ -48,9 +64,15 @@ export default function Team() {
             <h3 className="font-semibold text-lg text-gray-700">{member.name}</h3>
             <p className="text-gray-500 mb-4">{member.role}</p>
             <div className="flex justify-center gap-4">
-              <Facebook className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
-              <Twitter className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
-              <Linkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+              <a href={member.github} target="_blank" rel="noopener noreferrer">
+                <Github className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+              </a>
+              <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                <Instagram className="w-6 h-6 text-gray-600 hover:text-pink-500 cursor-pointer" />
+              </a>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+              </a>
             </div>
           </div>
         ))}

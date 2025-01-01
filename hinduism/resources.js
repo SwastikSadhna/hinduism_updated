@@ -18,9 +18,25 @@ import Sanatan4 from './src/Resources/home/Sanatan4.png'
 import Mahabharat from './src/Resources/others/mahabharat.jpeg'
 import BhagvadGeeta from './src/Resources/others/bhagvadgita.jpg'
 import BG from './src/Resources/others/shlokas_img (1).jpg'
+import Dhruv from './src/Resources/About/Dhruv.jpg'
+import Neesarg from './src/Resources/About/Neesarg.jpg'
+import Dilip from './src/Resources/About/Dilip.jpg'
+
 
 const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    Dhruv: {
+        src: Dhruv,
+        alt: 'Dhruv Shere',
+    },
+    Neesarg: {
+        src: Neesarg,  
+        alt: 'Neesarg Soni',
+    },
+    Dilip: {
+        src: Dilip,
+        alt: 'Dilip Soni',
+    },
     BhagvadGeeta:{
         src: BhagvadGeeta,
         alt: "Shreemad Bhagvad Geeta"
