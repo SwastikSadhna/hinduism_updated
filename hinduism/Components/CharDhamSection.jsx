@@ -74,17 +74,17 @@ export default function CharDhamSection() {
 
           {/* Main Content */}
           <div className="flex-1">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text">
               Sacred Journey of
               <br />
               Char Dham Yatra
             </h1>
 
-            <p className="text-lg text-[#33281E] max-w-2xl mb-8">
+            <p className="text-lg text-[#f58032] max-w-2xl mb-8">
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 
-            <button className="px-8 py-3 border-2 border-white text-white rounded-full  transition-all duration-300 mb-16">
+            <button className="px-8 py-3 border-2 border-[#FF7722] text-white hover:bg-[#FF7722] rounded-full  transition-all duration-300 mb-16">
               Explore
             </button>
 

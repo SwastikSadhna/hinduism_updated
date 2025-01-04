@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram } from 'lucide-react';
+// import { Github, Linkedin, Instagram } from 'lucide-react';
 import { imageDetails } from '../../resources';
 
 export default function Team() {
