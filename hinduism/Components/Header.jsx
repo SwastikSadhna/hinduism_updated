@@ -7,7 +7,7 @@ import "../src/App.css";
 const Header = () => {
   return (
     <header
-      className="header w-full px-10 py-3 fixed z-10"
+      className="header w-full px-10 py-3  z-10"
       style={{ backgroundColor: `#FFF7ED` }}
     >
       <nav className="w-full flex items-center justify-between">
@@ -24,7 +24,7 @@ const Header = () => {
           <Link to="/" className="hover:text-[#FF7722]">Home</Link> 
           <Link to="/Book"  className="hover:text-[#FF7722]">Books</Link> 
           <Link to=""  className="hover:text-[#FF7722]">Avatar</Link> 
-          <Link to=""  className="hover:text-[#FF7722]">Bhakti</Link> 
+          <Link to="/Shlok"  className="hover:text-[#FF7722]">Bhakti</Link> 
           <Link to=""  className="hover:text-[#FF7722]">Granth</Link> 
           <Link to=""  className="hover:text-[#FF7722]">Routine</Link> 
           <Link to="/About"  className="hover:text-[#FF7722]">About</Link> 
