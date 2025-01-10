@@ -6,7 +6,6 @@ import { imageDetails } from '../resources'
 export default function BookDetailsPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className='mt-[9vh] '></div>
       <BookHeader
         title={imageDetails.Mahabharat.alt}
         author="Maharshi Ved Vyas"

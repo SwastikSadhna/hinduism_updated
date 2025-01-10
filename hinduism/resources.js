@@ -17,14 +17,47 @@ import Sanatan3 from './src/Resources/home/bg2.png'
 import Sanatan4 from './src/Resources/home/Sanatan4.png'
 import Mahabharat from './src/Resources/others/mahabharat.jpeg'
 import BhagvadGeeta from './src/Resources/others/bhagvadgita.jpg'
-import BG from './src/Resources/others/shlokas_img (1).jpg'
 import Dhruv from './src/Resources/About/Dhruv.jpg'
 import Neesarg from './src/Resources/About/Neesarg.jpg'
 import Dilip from './src/Resources/About/Dilip.jpg'
-
+import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
+import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
+import Ganesh from './src/Resources/Shlok/Shree Ganesh.png'
+import NightShlok1 from './src/Resources/Shlok/Night Shlok-1.png'
+import NightShlok2 from './src/Resources/Shlok/Night Shlok-2.jpg'
+import StudyShlok1 from './src/Resources/Shlok/Study Shlok-1.png' 
+import StudyShlok2 from './src/Resources/Shlok/Study Shlok-2.jpg'
 
 const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    StudyShlok2:{
+        src: StudyShlok2,
+        alt: 'Study Shlok',
+    },
+    StudyShlok1:{
+        src: StudyShlok1,
+        alt: 'Study Shlok',
+    },
+    NightShlok2: {
+        src: NightShlok2,
+        alt: 'Night Shlok',
+    },
+    NightShlok1: {
+        src: NightShlok1,
+        alt: 'Night Shlok',
+    },
+    MorningShlok2:{
+        src: MorningShlok2,
+        alt: 'Morning Shlok',
+    },
+    MorningShlok1: {
+        src: MorningShlok1,
+        alt: 'Morning Shlok',
+    },
+    Ganesh: {
+        src: Ganesh,
+        alt: 'Shree Ganesh',
+    },
     Dhruv: {
         src: Dhruv,
         alt: 'Dhruv Shere',
@@ -40,10 +73,6 @@ const imageDetails = {
     BhagvadGeeta:{
         src: BhagvadGeeta,
         alt: "Shreemad Bhagvad Geeta"
-    },
-    BG:{
-        src: BG,
-        alt: "Background og Book"
     },
     Mahabharat:{
         src: Mahabharat,
