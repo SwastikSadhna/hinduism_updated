@@ -1,5 +1,5 @@
 import Button from './Button';
-// import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import { imageDetails } from '../../resources';
 
 export default function Contact() {
@@ -10,11 +10,11 @@ export default function Contact() {
         <div className="bg-gray-50 p-8">
           <h2 className="text-2xl font-bold mb-6 text-gray-800">Get in touch</h2>
           <p className="text-gray-600 mb-6">
-            Join Us for this amazing journey of exploring the Hindu culture and spirituality. We are here to help you with any queries you have.
+            Join us for this amazing journey of exploring Hindu culture and spirituality. We are here to help you with any queries you have.
           </p>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-blue-600 mt-1" />
+              <FaMapMarkerAlt className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Head Office</p>
                 <p className="text-gray-600">Hindavi Swarajya Sansthan</p>
@@ -22,7 +22,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-blue-600 mt-1" />
+              <FaEnvelope className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Email Us</p>
                 <p className="text-gray-600">sanatan@gmail.com</p>
@@ -30,19 +30,19 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-blue-600 mt-1" />
+              <FaPhoneAlt className="w-6 h-6 text-blue-600 mt-1" />
               <div>
                 <p className="font-semibold">Call Us</p>
-                <p className="text-gray-600">Phone: + 9316846548</p>
+                <p className="text-gray-600">Phone: +91 9316846548</p>
               </div>
             </div>
             <div className="pt-6">
               <p className="font-semibold mb-4">Follow our social media</p>
               <div className="flex gap-4">
-                <Facebook className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
-                <Twitter className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
-                <Linkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
-                <Instagram className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaFacebookF className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaTwitter className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaLinkedinIn className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaInstagram className="w-6 h-6 text-gray-600 hover:text-pink-500 cursor-pointer" />
               </div>
             </div>
           </div>

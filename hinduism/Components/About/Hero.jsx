@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 import Button from "./Button";
 import { imageDetails } from "../../resources";
 

@@ -1,4 +1,4 @@
-// import { Github, Linkedin, Instagram } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { imageDetails } from '../../resources';
 
 export default function Team() {
@@ -65,13 +65,13 @@ export default function Team() {
             <p className="text-gray-500 mb-4">{member.role}</p>
             <div className="flex justify-center gap-4">
               <a href={member.github} target="_blank" rel="noopener noreferrer">
-                <Github className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaGithub className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
               </a>
               <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                <Instagram className="w-6 h-6 text-gray-600 hover:text-pink-500 cursor-pointer" />
+                <FaInstagram className="w-6 h-6 text-gray-600 hover:text-pink-500 cursor-pointer" />
               </a>
               <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaLinkedin className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
               </a>
             </div>
           </div>
