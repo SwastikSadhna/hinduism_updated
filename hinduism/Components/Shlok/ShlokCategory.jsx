@@ -4,7 +4,7 @@ import Shlok from './Shlok';
 const ShlokCategory = ({ title, icon, id }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Placeholder shloks (you'll replace these with actual content)
+  // Placeholder shloks (replace with actual content)
   const shloks = [
     { text: 'Shlok 1 text here', translation: 'Translation 1' },
     { text: 'Shlok 2 text here', translation: 'Translation 2' },
@@ -12,19 +12,27 @@ const ShlokCategory = ({ title, icon, id }) => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 w-full max-w-3xl mx-auto mb-5">
+      {/* Header Section */}
       <div
-        className="flex items-center justify-between p-4 cursor-pointer bg-orange-500 text-white"
+        className="flex items-center justify-between p-4 sm:p-5 cursor-pointer bg-orange-500 text-white"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <h2 className="text-xl font-semibold flex items-center">
-          {icon}
-          <span className="ml-2">{title}</span>
+        {/* Icon and Title */}
+        <h2 className="text-lg sm:text-xl font-semibold flex items-center">
+          <span className="text-2xl sm:text-3xl">{icon}</span>
+          <span className="ml-2 sm:ml-4">{title}</span>
         </h2>
-        <span>{isExpanded ? '▲' : '▼'}</span>
+
+        {/* Expand/Collapse Icon */}
+        <span className="text-xl sm:text-2xl">
+          {isExpanded ? '▲' : '▼'}
+        </span>
       </div>
+
+      {/* Expandable Content */}
       {isExpanded && (
-        <div className="p-4">
+        <div className="p-3 sm:p-5 space-y-4">
           {shloks.map((shlok, index) => (
             <Shlok key={index} {...shlok} />
           ))}
@@ -35,4 +43,3 @@ const ShlokCategory = ({ title, icon, id }) => {
 };
 
 export default ShlokCategory;
-

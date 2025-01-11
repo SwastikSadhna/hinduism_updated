@@ -59,15 +59,16 @@ const ShlokList = () => {
 
   return (
     <div>
-      <div className="flex justify-center space-x-4 mb-8">
+      <div className="flex justify-center space-x-2 flex-wrap mb-8">
         {categories.map((category) => (
           <button
             key={category.id}
-            className={`flex items-center px-4 py-2 rounded-full ${
+            className={`flex mt-1 items-center px-4 py-2 rounded-full ${
               activeCategory === category.id
                 ? 'bg-orange-500 text-white'
                 : 'bg-white text-orange-500 hover:bg-orange-100'
             }`}
+            style={{width:"12rem"}}
             onClick={() => setActiveCategory(category.id)}
           >
             {category.icon}
