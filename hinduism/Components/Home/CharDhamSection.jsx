@@ -74,17 +74,17 @@ export default function CharDhamSection() {
 
           {/* Main Content */}
           <div className="flex-1">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text animate-fade-in">
               Sacred Journey of
               <br />
               Char Dham Yatra
             </h1>
 
-            <p className="text-lg text-[#f58032] max-w-2xl mb-8">
+            <p className="text-lg text-orange-200 max-w-2xl mb-8 animate-fade-in-delay">
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 
-            <button className="px-8 py-3 border-2 border-[#FF7722] text-white hover:bg-[#FF7722] rounded-full  transition-all duration-300 mb-16">
+            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full  transition-all duration-300 mb-16 animate-fade-in-delay-2">
               Explore
             </button>
 
@@ -125,9 +125,33 @@ export default function CharDhamSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-fade-in-delay {
+          animation: fadeIn 1s ease-out 0.3s forwards;
+          opacity: 0;
+        }
+        
+        .animate-fade-in-delay-2 {
+          animation: fadeIn 1s ease-out 0.6s forwards;
+          opacity: 0;
+        }
+      `}</style>
+
     </div>
   )
 }
+
+
 
 
 
