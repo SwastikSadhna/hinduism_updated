@@ -11,7 +11,7 @@ const TriMurty = () => {
         Sanatan Dharma, known as the eternal way of life, represents the world's oldest living religion. It encompasses a rich tapestry of spiritual practices, philosophical teachings, and cultural traditions that have been preserved for thousands of years.
         </p>
       </div>
-      <div className="flex flex-wrap gap-9">
+      <div className="flex flex-wrap gap-9 justify-center">
         <Card
           title={"Brahma: The Creator of the Universe"}
           description={
