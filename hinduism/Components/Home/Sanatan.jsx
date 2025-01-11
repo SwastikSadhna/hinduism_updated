@@ -1,4 +1,4 @@
-import { imageDetails } from "../resources";
+import { imageDetails } from "../../resources";
 
 const Sanatan = () => {
   return (

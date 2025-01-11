@@ -1,9 +1,9 @@
 import React from "react";
-import Hero from "../Components/Hero";
-import Sanatan from "../Components/Sanatan";
-import TriMurty from "../Components/TriMurty";
-import CharDhamSection from "../Components/CharDhamSection";
-import PrayingSection from "../Components/PrayingSection";
+import Hero from "../Components/Home/Hero";
+import Sanatan from "../Components/Home/Sanatan";
+import TriMurty from "../Components/Home/TriMurty";
+import CharDhamSection from "../Components/Home/CharDhamSection";
+import PrayingSection from "../Components/Home/PrayingSection";
 const Home = () => {
   return (
     <div>

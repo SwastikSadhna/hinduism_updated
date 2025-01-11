@@ -32,11 +32,11 @@ const Shlok = ({ text, translation, image, audio, video }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden container max-w-screen-lg text-center ">
       <div className="p-6">
         <p className="text-xl font-semibold mb-4">{text}</p>
         {image && (
-          <img src={image} alt="Shlok illustration" className="object-contain mb-4 rounded m-auto"  style={{maxWidth:"350px"}}/>
+          <img src={image} alt="Shlok illustration" className="object-contain mb-4 rounded m-auto"  style={{width:"100%",maxWidth:"350px",height:'auto',objectPosition:'center'}}/>
         )}
         {/* {video && (
           <div className="relative mb-4">

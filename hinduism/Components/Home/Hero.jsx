@@ -1,6 +1,6 @@
 import React from "react";
-import "../src/App.css";
-import { imageDetails } from "../resources"; // Import imageDetails for structured access
+import "../../src/App.css";
+import { imageDetails } from "../../resources"; // Import imageDetails for structured access
 
 const Hero = () => {
   return (

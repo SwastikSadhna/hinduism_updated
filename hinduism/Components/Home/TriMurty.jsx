@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { imageDetails } from "../resources";
+import { imageDetails } from "../../resources";
 const TriMurty = () => {
   return (
     <section className="services justify-between p-10 items-center gap-10 flex flex-col h-auto w-full">
@@ -11,7 +11,7 @@ const TriMurty = () => {
         Sanatan Dharma, known as the eternal way of life, represents the world's oldest living religion. It encompasses a rich tapestry of spiritual practices, philosophical teachings, and cultural traditions that have been preserved for thousands of years.
         </p>
       </div>
-      <div className="flex gap-9">
+      <div className="flex flex-wrap gap-9">
         <Card
           title={"Brahma: The Creator of the Universe"}
           description={
