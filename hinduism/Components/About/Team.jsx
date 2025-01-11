@@ -8,8 +8,8 @@ export default function Team() {
       role: "Innovation and Development",
       image: "/placeholder.svg?height=200&width=200",
       github: "https://github.com/Vinayrk2",
-      instagram: "https://instagram.com/vinaykoshti",
-      linkedin: "https://linkedin.com/in/vinaykoshti",
+      instagram: "https://www.instagram.com/vinay_koshti1?igsh=MXY2enA5MHI4N3FkOQ==",
+      linkedin: "https://www.linkedin.com/in/vinay-koshti-6550ba265/",
     },
     {
       name: "Dhruv Shere",
@@ -22,10 +22,10 @@ export default function Team() {
     {
       name: "Nirmal Prajapati",
       role: "Innovation and Development",
-      image: "/placeholder.svg?height=200&width=200",
+      image: `${imageDetails.Nirmal.src}`,
       github: "https://github.com/NIRMAL-PRAJAPATI",
-      instagram: "https://instagram.com/nirmalprajapati",
-      linkedin: "https://linkedin.com/in/nirmalprajapati",
+      instagram: "https://www.instagram.com/nirmalll.js/",
+      linkedin: "https://www.linkedin.com/in/nirmal-prajapati-b206ba277/",
     },
     {
       name: "Neesarg Soni",

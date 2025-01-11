@@ -1,6 +1,5 @@
 import React from 'react';
 import ShlokList from '../Components/Shlok/ShlokList';
-import Footer from '../components/Footer';
 
 const SanatanShloksPage = () => {
   return (
@@ -9,7 +8,6 @@ const SanatanShloksPage = () => {
         <h1 className="text-4xl font-bold text-center text-orange-800 mb-8">Daily Sanatan Shloks</h1>
         <ShlokList />
       </main>
-      <Footer />
     </div>
   );
 };

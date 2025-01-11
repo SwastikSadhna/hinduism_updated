@@ -19,6 +19,7 @@ import Mahabharat from './src/Resources/others/mahabharat.jpeg'
 import BhagvadGeeta from './src/Resources/others/bhagvadgita.jpg'
 import Dhruv from './src/Resources/About/Dhruv.jpg'
 import Neesarg from './src/Resources/About/Neesarg.jpg'
+import Nirmal from './src/Resources/About/Nirmal.jpg'
 import Dilip from './src/Resources/About/Dilip.jpg'
 import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
 import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
@@ -30,6 +31,10 @@ import StudyShlok2 from './src/Resources/Shlok/Study Shlok-2.jpg'
 
 const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    Nirmal:{
+        src: Nirmal,
+        alt:'Nirmal',
+    },
     StudyShlok2:{
         src: StudyShlok2,
         alt: 'Study Shlok',

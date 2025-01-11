@@ -1,6 +1,5 @@
 import { BookHeader } from '../Components/Book/BookHeader'
 import { BookDescription } from '../Components/Book/BookDescription'
-import Footer from '../Components/Footer'
 import { imageDetails } from '../resources'
 
 export default function BookDetailsPage() {
@@ -20,7 +19,6 @@ export default function BookDetailsPage() {
       
       <div className="flex-grow" />
       
-      <Footer />
     </div>
   )
 }
