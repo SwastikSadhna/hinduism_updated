@@ -28,9 +28,14 @@ import NightShlok1 from './src/Resources/Shlok/Night Shlok-1.png'
 import NightShlok2 from './src/Resources/Shlok/Night Shlok-2.jpg'
 import StudyShlok1 from './src/Resources/Shlok/Study Shlok-1.png' 
 import StudyShlok2 from './src/Resources/Shlok/Study Shlok-2.jpg'
+import AboutBg from './src/Resources/About/AboutBg.jpg'
 
 const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    AboutBg:{
+        src: AboutBg,
+        alt: 'About Background',
+    },
     Nirmal:{
         src: Nirmal,
         alt:'Nirmal',
