@@ -1,13 +1,27 @@
 
 
 
-'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger);
+ 
+
 // import { ChevronRight } from 'lucide-react'
 
 export default function CharDhamSection() {
   const [activeSlide, setActiveSlide] = useState(0)
+  useEffect(()=>{
+     gsap.to('#chardham',{
+      scrollTrigger:{
+        trigger:'#chardham',
+        start:'top center',
+        end:'top top',
+      },
+     
+     })
+  },[])
   
   const temples = [
     {
@@ -41,7 +55,7 @@ export default function CharDhamSection() {
   ]
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative" id='chardham'>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
