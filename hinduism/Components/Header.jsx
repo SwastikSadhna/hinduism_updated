@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Icons for menu
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa"; // Added FaChevronDown icon
 import { imageDetails } from "../resources";
 import "../src/App.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State for menu toggle
+  const [isRoutineOpen, setIsRoutineOpen] = useState(false); // State for Routine dropdown
 
   // Toggle the menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  // Toggle the Routine dropdown
+  const toggleRoutine = () => {
+    setIsRoutineOpen(!isRoutineOpen);
   };
 
   return (
@@ -35,8 +41,18 @@ const Header = () => {
           <Link to="" className="hover:text-[#FF7722]">Avatar</Link>
           <Link to="/Bhakti" className="hover:text-[#FF7722]">Bhakti</Link>
           <Link to="" className="hover:text-[#FF7722]">Granth</Link>
-          <Link to="" className="hover:text-[#FF7722]">Routine</Link>
-          <Link to="/About" className="hover:text-[#FF7722]">About</Link>
+          <div className="relative group">
+            <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">
+              Routine <FaChevronDown />
+            </button>
+            {isRoutineOpen && (
+              <div className="absolute top-full left-0 bg-[#FFF7ED] shadow-md rounded-md mt-2">
+                <Link to="/Routine/Yoga" className="block px-4 py-2 hover:bg-gray-200">Yoga</Link>
+                <Link to="/Routine/Shlok" className="block px-4 py-2 hover:bg-gray-200">Shlok</Link>
+              </div>
+            )}
+          </div>
+          <Link to="/About" className="hover:text-[#FF7722]">About Us</Link>
         </div>
 
         {/* Hamburger Icon */}
@@ -55,39 +71,37 @@ const Header = () => {
         <div className="md:hidden bg-[#FFF7ED] w-full absolute top-16 left-0 shadow-lg rounded-b-xl">
           <ul className="flex flex-col items-center gap-5 py-5 text-lg text-[#33281E]">
             <li>
-              <Link to="/" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Home
-              </Link>
+              <Link to="/" onClick={toggleMenu} className="hover:text-[#FF7722]">Home</Link>
             </li>
             <li>
-              <Link to="/Book" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Books
-              </Link>
+              <Link to="/Book" onClick={toggleMenu} className="hover:text-[#FF7722]">Books</Link>
             </li>
             <li>
-              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Avatar
-              </Link>
+              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">Avatar</Link>
             </li>
             <li>
-              <Link to="/Shlok" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Bhakti
-              </Link>
+              <Link to="/Shlok" onClick={toggleMenu} className="hover:text-[#FF7722]">Bhakti</Link>
             </li>
             <li>
-              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Granth
-              </Link>
+              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">Granth</Link>
             </li>
             <li>
-              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                Routine
-              </Link>
+              <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">
+                Routine <FaChevronDown />
+              </button>
+              {isRoutineOpen && (
+                <ul className="mt-2 space-y-2">
+                  <li>
+                    <Link to="/Routine/Yoga" onClick={toggleMenu} className="block px-4 py-2 hover:bg-gray-200">Yoga</Link>
+                  </li>
+                  <li>
+                    <Link to="/Routine/Shlok" onClick={toggleMenu} className="block px-4 py-2 hover:bg-gray-200">Shlok</Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
-              <Link to="/About" onClick={toggleMenu} className="hover:text-[#FF7722]">
-                About
-              </Link>
+              <Link to="/About" onClick={toggleMenu} className="hover:text-[#FF7722]">About</Link>
             </li>
           </ul>
         </div>

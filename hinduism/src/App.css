@@ -33,6 +33,10 @@ body{
   margin-top: 64px; 
 }
 
+<<<<<<< HEAD
+
+
+=======
 @keyframes fadeIn {
   from { 
     opacity: 0; 
@@ -57,3 +61,4 @@ body{
   animation: fadeIn 1s ease-out 0.6s forwards;
   opacity: 0;
 }
+>>>>>>> 6b9653e36bd067462f4dd6154abbde2e90e4ed28

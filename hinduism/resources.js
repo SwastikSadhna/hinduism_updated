@@ -21,6 +21,7 @@ import Dhruv from './src/Resources/About/Dhruv.jpg'
 import Neesarg from './src/Resources/About/Neesarg.jpg'
 import Nirmal from './src/Resources/About/Nirmal.jpg'
 import Dilip from './src/Resources/About/Dilip.jpg'
+import Vinay from './src/Resources/About/Vinay.jpg'
 import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
 import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
 import Ganesh from './src/Resources/Shlok/Shree Ganesh.png'
@@ -28,9 +29,28 @@ import NightShlok1 from './src/Resources/Shlok/Night Shlok-1.png'
 import NightShlok2 from './src/Resources/Shlok/Night Shlok-2.jpg'
 import StudyShlok1 from './src/Resources/Shlok/Study Shlok-1.png' 
 import StudyShlok2 from './src/Resources/Shlok/Study Shlok-2.jpg'
+import AboutBg from './src/Resources/About/AboutBg.jpg'
+import Scrupture from './src/Resources/About/vedas in hindu dharma.png'
+import LifeStyle from './src/Resources/About/surya_namaskar.jpg'
 
 const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
 const imageDetails = {
+    LifeStyle:{
+        src:LifeStyle,
+        alt:"LifeStyle",
+    },
+    Scrupture:{
+        src:Scrupture,
+        alt:'Scrupture',
+    },
+    AboutBg:{
+        src: AboutBg,
+        alt: 'About Background',
+    },
+    Vinay:{
+        src:Vinay,
+        alt: 'Vinay',
+    },
     Nirmal:{
         src: Nirmal,
         alt:'Nirmal',

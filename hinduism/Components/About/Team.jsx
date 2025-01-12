@@ -6,7 +6,7 @@ export default function Team() {
     {
       name: "Vinay Koshti",
       role: "Innovation and Development",
-      image: "/placeholder.svg?height=200&width=200",
+      image: `${imageDetails.Vinay.src}`,
       github: "https://github.com/Vinayrk2",
       instagram: "https://www.instagram.com/vinay_koshti1?igsh=MXY2enA5MHI4N3FkOQ==",
       linkedin: "https://www.linkedin.com/in/vinay-koshti-6550ba265/",
@@ -16,8 +16,8 @@ export default function Team() {
       role: "Innovation and Development",
       image: `${imageDetails.Dhruv.src}`,
       github: "https://github.com/DHRUV-SHERE",
-      instagram: "https://instagram.com/dhruvshere",
-      linkedin: "https://linkedin.com/in/dhruvshere",
+      instagram: "https://instagram.com/sheredhruv",
+      linkedin: "https://linkedin.com/in/dhruv-shere",
     },
     {
       name: "Nirmal Prajapati",
