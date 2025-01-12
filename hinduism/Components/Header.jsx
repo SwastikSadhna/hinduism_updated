@@ -36,7 +36,7 @@ const Header = () => {
           <Link to="/Bhakti" className="hover:text-[#FF7722]">Bhakti</Link>
           <Link to="" className="hover:text-[#FF7722]">Granth</Link>
           <Link to="" className="hover:text-[#FF7722]">Routine</Link>
-          <Link to="/About" className="hover:text-[#FF7722]">About</Link>
+          <Link to="/About" className="hover:text-[#FF7722]">About Us</Link>
         </div>
 
         {/* Hamburger Icon */}

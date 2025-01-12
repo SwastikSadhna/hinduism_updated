@@ -39,25 +39,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div className="container mx-auto px-4 py-3 items-center justify-between gap-8">
+      <div className="w-[97vw] h-[35vh] -ml-12 -mt-4" style={{ backgroundImage: `url(${imageDetails.logo.src})`, backgroundBlendMode: "multiply", backgroundColor: "rgba(3, 0, 0, 0.54)",  }}>
+      </div>
       {/* Logo Section */}
-      <div className="w-full md:w-1/2 relative mt-14">
-        <div ref={logoRef} className="aspect-square max-w-[400px] mx-auto">
-          <div className="absolute inset-0 bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
+      <div className="w-full relative -mt-14">
+        <div className="aspect-square max-w-[100px] mx-auto">
+          <div className="absolute bg-blue-500 rounded-full opacity-10 blur-3xl"></div>
           <div
-            className="relative w-full h-full bg-contain bg-center bg-no-repeat rounded-full"
+            className="relative w-full h-full bg-contain bg-center bg-no-repeat rounded-full border"
             style={{ backgroundImage: `url(${imageDetails.logo.src})` }}
           ></div>
         </div>
       </div>
 
       {/* Text Section */}
-      <div className="w-full md:w-1/2 text-center md:text-left" ref={contentRef}>
+      <div className="w-full text-center md:text-left" ref={contentRef}>
         <h1
           ref={textRef}
           className="text-5xl md:text-6xl font-bold mb-4 text-red-600"
         >
-          About SANATAN
+          About Us
         </h1>
         <p className="text-gray-600 mb-6 p-3 text-md">
           Hindutva is a platform dedicated to celebrating and preserving the
