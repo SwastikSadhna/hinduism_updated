@@ -20,11 +20,13 @@ export default function Sidebar() {
 
   const categories = [
     { id: 'bhajans', name: 'Bhajans', icon: <FaMusic />, path: '/Bhakti/Bhajans' },
-    { id: 'shlok', name: 'Shlok', icon: <FaBook />, path: '/Bhakti/Shlok' },
+    { id: '18 Purans', name: 'Purans', icon: <FaBook />, path: '/Bhakti/Purans' },
     { id: 'duha', name: 'Duha', icon: <FaPrayingHands />, path: '/Bhakti/Duha' },
     { id: 'chhand', name: 'Chhand', icon: <FaHeart />, path: '/Bhakti/Chhand' },
-    { id: 'mantras', name: 'Mantras', icon: <FaOm />, path: '/Bhakti/Mantras' },
+    { id: '33 Koti Devtas', name: '33 Koti Devtas', icon: <FaOm />, path: '/Bhakti/Devtas' },
     { id: 'vedas', name: 'Vedas', icon: <FaScroll />, path: '/Bhakti/Vedas' },
+    { id: '108 Upnisads', name: 'Upnisads', icon: <FaBook />, path: '/Bhakti/Upnisads' },
+    { id: 'Smritis', name: 'Smritis', icon: <FaPrayingHands />, path: '/Bhakti/Smritis' },
   ]
 
   const handleCategoryClick = (category) => {
@@ -38,7 +40,7 @@ export default function Sidebar() {
       {/* Button to toggle sidebar in mobile view - Adjusted positioning */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-5 left-4 z-40 p-2 rounded-md bg-orange-600 text-white md:hidden"
+        className="top-5 left-4 z-40 p-2 rounded-md text-dark md:hidden"
         aria-label="Toggle sidebar"
       >
         {isOpen ? <FaTimes /> : <FaBars />}
@@ -52,7 +54,7 @@ export default function Sidebar() {
         md:translate-x-0 md:static md:h-[calc(100vh-4rem)] md:top-0
       `}>
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-4">Categories</h2>
+          <h2 className="text-lg font-semibold mb-4 mt-2">Categories</h2>
           <nav className="space-y-2">
             {categories.map((category) => (
               <NavLink
@@ -71,9 +73,9 @@ export default function Sidebar() {
         </div>
 
         {/* Go to Home button */}
-        <div className="absolute bottom-0 w-full p-4 border-t">
+        <div className=" bottom-0 w-full p-4 border-t">
           <NavLink
-            to="/"
+            to="/Bhakti"
             className={({ isActive }) => `
               w-full flex items-center gap-3 p-3 rounded-lg transition-colors
               ${isActive ? 'bg-orange-500 text-white' : 'hover:bg-gray-100'}
@@ -81,7 +83,7 @@ export default function Sidebar() {
             onClick={() => setIsOpen(false)}
           >
             <FaHome />
-            <span>Go to Home</span>
+            <span>Go Back</span>
           </NavLink>
         </div>
       </div>

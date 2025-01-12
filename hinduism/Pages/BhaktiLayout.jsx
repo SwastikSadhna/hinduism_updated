@@ -10,10 +10,10 @@ export default function BhaktiLayout() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="flex flex-col md:flex-row">
-        {/* Sidebar */}
         <Sidebar />
+        {/* Sidebar */}
         
-        <main className={`flex-1 p-6 mt-20 md:mt-0 ${isOpen ? 'ml-64' : ''}`}>
+        <main className={` flex-1 p-6 mt-20 md:mt-0 ${isOpen ? 'ml-64' : ''}`}>
           <h1 className="text-3xl font-bold text-orange-600">Welcome to Sanatan</h1>
           <p className="mt-4 text-gray-600">Select a category from the sidebar to explore content.</p>
           

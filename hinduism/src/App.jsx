@@ -11,6 +11,7 @@ import BhajanContent from '../Components/Bhakti/Content/BhajanContent';
 import DuhaContent from '../Components/Bhakti/Content/DuhaContent';
 import ChhandContent from '../Components/Bhakti/Content/ChhandContent';
 import VedaContent from '../Components/Bhakti/Content/VedaContent';
+import DevtasContent from '../Components/Bhakti/Content/DevtasContent' 
 import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="Duha" element={<DuhaContent />} />
               <Route path="Chhand" element={<ChhandContent />} />
               <Route path="Vedas" element={<VedaContent />} />
+              <Route path="Devtas" element={<DevtasContent />} />
             </Route>
           </Routes>
           <Footer />
