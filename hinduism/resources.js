@@ -21,6 +21,7 @@ import Dhruv from './src/Resources/About/Dhruv.jpg'
 import Neesarg from './src/Resources/About/Neesarg.jpg'
 import Nirmal from './src/Resources/About/Nirmal.jpg'
 import Dilip from './src/Resources/About/Dilip.jpg'
+import Vinay from './src/Resources/About/Vinay.jpg'
 import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
 import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
 import Ganesh from './src/Resources/Shlok/Shree Ganesh.png'
@@ -45,6 +46,10 @@ const imageDetails = {
     AboutBg:{
         src: AboutBg,
         alt: 'About Background',
+    },
+    Vinay:{
+        src:Vinay,
+        alt: 'Vinay',
     },
     Nirmal:{
         src: Nirmal,
