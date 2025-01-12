@@ -17,8 +17,7 @@ export default function CharDhamSection() {
       scrollTrigger: {
         trigger: '.animate',
         start: 'top 55%',    
-        end: 'top 25%',    
-        markers: true,       
+        end: 'top 25%',        
       },
       y: 0,
       x:0,
