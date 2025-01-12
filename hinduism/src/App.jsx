@@ -1,27 +1,44 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from '../Components/Header'
+import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Home from "../Pages/home";
-import Book from '../Pages/Book'
-import About from '../Pages/About'
-import Bhakti from '../Pages/Bhakti'
+import Book from "../Pages/Book";
+import About from "../Pages/About";
+import Bhakti from "../Pages/Bhakti";
+import BhaktiLayout from "../Pages/BhaktiLayout";
+import BhajanContent from '../Components/Bhakti/Content/BhajanContent';
+import DuhaContent from '../Components/Bhakti/Content/DuhaContent';
+import ChhandContent from '../Components/Bhakti/Content/ChhandContent';
+import VedaContent from '../Components/Bhakti/Content/VedaContent';
 import Shlok from "../Pages/Shlok";
+import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
+
 function App() {
   return (
-    <Router>
-      <div>
-        <Header /> 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Book"element={<Book />} />
-          <Route path="/About"element={<About />} />
-          <Route path="/Bhakti" element={<Bhakti />} />
-          <Route path="/Routine/Shlok" element={<Shlok />}/>
-        </Routes>
-        <Footer /> 
-      </div>
-    </Router>
+    <ContentProvider>
+      {" "}
+      {/* Wrap the app or part of it where you need the context */}
+      <Router>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Book" element={<Book />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Bhakti" element={<Bhakti />} />
+            <Route path="/Routine/Shlok" element={<Shlok />} />
+            <Route path="/Bhakti/*" element={<BhaktiLayout />}>
+              <Route path="Bhajans" element={<BhajanContent />} />
+              <Route path="Duha" element={<DuhaContent />} />
+              <Route path="Chhand" element={<ChhandContent />} />
+              <Route path="Vedas" element={<VedaContent />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ContentProvider>
   );
 }
 

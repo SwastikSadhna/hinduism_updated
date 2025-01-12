@@ -7,43 +7,43 @@ const bhaktiTypes = [
       type: 'Duha',
       description: 'Traditional couplets imparting moral and spiritual wisdom.',
       count: 85,
-      path: '/Duha'
+      path: '/Bhakti/Duha'
     },
     {
       type: 'Chhand',
       description: 'Rhythmic poetic verses used in devotional and classical literature.',
       count: 65,
-      path: '/Chhand'
+      path: '/Bhakti/Chhand'
     },
     {
       type: 'Bhajans',
       description: 'Soulful devotional songs praising deities and expressing devotion.',
       count: 220,
-      path: '/Bhajans'
+      path: '/Bhakti/Bhajans'
     },
     {
       type: 'Vedas',
       description: 'Ancient scriptures encompassing spiritual knowledge and cosmic truths.',
       count: 4,
-      path: '/Vedas'
+      path: '/Bhakti/Vedas'
     },
     {
       type: '18 Purans',
       description: 'Mythological texts narrating the history of the universe and divine legends.',
       count: 18,
-      path: '/Puran'
+      path: '/Bhakti/Puran'
     },
     {
       type: '33 Koti Devta',
       description: 'A divine collection exploring the 33 types of Hindu deities symbolizing cosmic forces.',
       count: 33,
-      path: '/Devta'
+      path: '/Bhakti/Devta'
     },
     {
       type: '108 Upnisads',
       description: 'Philosophical texts revealing the ultimate truth of existence and self-realization.',
       count: 108,
-      path: '/Upnisads'
+      path: '/Bhakti/Upnisads'
     },
     {
       type: 'Smritis',
