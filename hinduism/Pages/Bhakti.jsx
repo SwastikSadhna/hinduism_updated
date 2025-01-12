@@ -4,12 +4,6 @@ import Footer from '../Components/Footer';
 
 const bhaktiTypes = [
     {
-      type: 'Shlok',
-      description: 'Timeless Sanskrit verses from sacred texts like the Bhagavad Gita and Vedas.',
-      count: 108,
-      path: '/Shlok'
-    },
-    {
       type: 'Duha',
       description: 'Traditional couplets imparting moral and spiritual wisdom.',
       count: 85,

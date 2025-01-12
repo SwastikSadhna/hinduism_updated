@@ -17,7 +17,7 @@ function App() {
           <Route path="/Book"element={<Book />} />
           <Route path="/About"element={<About />} />
           <Route path="/Bhakti" element={<Bhakti />} />
-          <Route path="/Shlok" element={<Shlok />}/>
+          <Route path="/Routine/Shlok" element={<Shlok />}/>
         </Routes>
         <Footer /> 
       </div>

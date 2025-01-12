@@ -5,8 +5,6 @@ import { MdOutlineMenuBook } from 'react-icons/md';
 
 const getIcon = (type) => {
   switch (type) {
-    case 'Shlok': 
-      return <FaFeatherAlt className="text-3xl text-orange-500" />;  // Represents ancient script
     case 'Bhajans': 
       return <FaMusic className="text-3xl text-purple-500" />;       // Music notes for devotional songs
     case 'Duha': 
