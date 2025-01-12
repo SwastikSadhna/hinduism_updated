@@ -37,7 +37,7 @@ const bhaktiTypes = [
       type: '33 Koti Devta',
       description: 'A divine collection exploring the 33 types of Hindu deities symbolizing cosmic forces.',
       count: 33,
-      path: '/Bhakti/Devta'
+      path: '/Bhakti/Devtas'
     },
     {
       type: '108 Upnisads',
@@ -49,7 +49,7 @@ const bhaktiTypes = [
       type: 'Smritis',
       description: 'Sacred texts outlining ethical and moral laws for righteous living.',
       count: 12,
-      path: '/Smritis'
+      path: '/Bhakti/Smritis'
     },
 ];
   
