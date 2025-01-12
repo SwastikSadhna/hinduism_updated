@@ -1,6 +1,35 @@
+import { gsap } from 'gsap'
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
+gsap.registerPlugin(ScrollTrigger)
 export default function CharDhamSection() {
+
+    useEffect(() => {
+    
+    gsap.to('.card-animate', { opacity:0, y:-100})
+    
+    gsap.fromTo('.animate', {
+      opacity: 0,
+      x: -100,
+      y:100
+    }, {
+      scrollTrigger: {
+        trigger: '.animate',
+        start: 'top 55%',    
+        end: 'top 25%',    
+        markers: true,       
+      },
+      y: 0,
+      x:0,
+      opacity: 1,
+      onComplete: () => {
+        gsap.to('.card-btn-animate', { opacity: 1, duration: 0.2 })
+        gsap.to('.card-animate', { y:0, opacity:1, stagger:0.25, delay:0.2 })
+      }
+    });
+      
+  }, []);
 
   const temples = [
     {
@@ -52,17 +81,17 @@ export default function CharDhamSection() {
 
           {/* Main Content */}
           <div className="flex-1">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text ">
+            <h1 className=" text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r animate from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text ">
               Sacred Journey of
               <br />
               Char Dham Yatra
             </h1>
 
-            <p className="text-lg text-orange-200 max-w-2xl mb-8 ">
+            <p className="text-lg text-orange-200 max-w-2xl mb-8 animate">
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 
-            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full  transition-all duration-300 mb-16 ">
+            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full card-btn-animate transition-all duration-300 mb-16 " style={{"opacity":0}}>
               Explore
             </button>
 
@@ -71,7 +100,7 @@ export default function CharDhamSection() {
               {temples.map((temple, index) => (
                 <div
                   key={index}
-                  className="relative rounded-xl overflow-hidden group cursor-pointer"
+                  className="relative rounded-xl overflow-hidden group cursor-pointer card-animate"
                   
                 >
                   <img
