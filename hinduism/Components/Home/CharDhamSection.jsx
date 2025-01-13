@@ -1,28 +1,35 @@
+import { gsap } from 'gsap'
+import { useEffect } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
-
-
-import { useEffect, useState } from 'react'
-import {gsap} from 'gsap'
-import {ScrollTrigger} from 'gsap/all'
-gsap.registerPlugin(ScrollTrigger);
- 
-
-// import { ChevronRight } from 'lucide-react'
-
+gsap.registerPlugin(ScrollTrigger)
 export default function CharDhamSection() {
-  const [activeSlide, setActiveSlide] = useState(0)
-  useEffect(()=>{
-     gsap.to('#chardham',{
-      scrollTrigger:{
-        trigger:'#chardham',
-        start:'top center',
-        end:'top top',
+
+    useEffect(() => {
+    
+    gsap.to('.card-animate', { opacity:0, y:-100})
+    
+    gsap.fromTo('.animate', {
+      opacity: 0,
+      x: -100,
+      y:100
+    }, {
+      scrollTrigger: {
+        trigger: '.animate',
+        start: 'top 55%',    
+        end: 'top 25%',        
       },
-     
-     })
-  },[])
-  
+      y: 0,
+      x:0,
+      opacity: 1,
+      onComplete: () => {
+        gsap.to('.card-btn-animate', { opacity: 1, duration: 0.2 })
+        gsap.to('.card-animate', { y:0, opacity:1, stagger:0.25, delay:0.2 })
+      }
+    });
+      
+  }, []);
+
   const temples = [
     {
       image: "./src/Resources/home/Dhwarika.jpg",
@@ -55,7 +62,7 @@ export default function CharDhamSection() {
   ]
 
   return (
-    <div className="min-h-screen relative" id='chardham'>
+    <div className="min-h-screen relative">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -69,36 +76,21 @@ export default function CharDhamSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="flex gap-12">
-          {/* Timeline }
-          <div className="hidden md:flex flex-col items-center">
-            <div className="w-1 bg-white/20 h-full relative">
-              {[0, 1, 2, 3].map((step) => (
-                <div
-                  key={step}
-                  className={`absolute w-4 h-4 rounded-full -left-1.5 transition-all duration-300 ${
-                    step * 25 <= (activeSlide / temples.length) * 100
-                      ? 'bg-white'
-                      : 'bg-white/30'
-                  }`}
-                  style={{ top: `${step * 25}%` }}
-                />
-              ))}
-            </div>
-          </div>
+
 
           {/* Main Content */}
           <div className="flex-1">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text animate-fade-in">
+            <h1 className=" text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r animate from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text ">
               Sacred Journey of
               <br />
               Char Dham Yatra
             </h1>
 
-            <p className="text-lg text-orange-200 max-w-2xl mb-8 animate-fade-in-delay">
+            <p className="text-lg text-orange-200 max-w-2xl mb-8 animate">
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 
-            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full  transition-all duration-300 mb-16 animate-fade-in-delay-2">
+            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full card-btn-animate transition-all duration-300 mb-16 " style={{"opacity":0}}>
               Explore
             </button>
 
@@ -107,7 +99,7 @@ export default function CharDhamSection() {
               {temples.map((temple, index) => (
                 <div
                   key={index}
-                  className="relative rounded-xl overflow-hidden group cursor-pointer"
+                  className="relative rounded-xl overflow-hidden group cursor-pointer card-animate"
                   
                 >
                   <img
@@ -123,44 +115,9 @@ export default function CharDhamSection() {
                 </div>
               ))}
             </div>
-
-             {/* Carousel Controls */}
-            {/* <div className="flex justify-center gap-2">
-              {temples.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === activeSlide ? 'bg-white w-8' : 'bg-white/30'
-                  }`}
-                />
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-          animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .animate-fade-in-delay {
-          animation: fadeIn 1s ease-out 0.3s forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in-delay-2 {
-          animation: fadeIn 1s ease-out 0.6s forwards;
-          opacity: 0;
-        }
-      `}</style>
-
     </div>
   )
 }
