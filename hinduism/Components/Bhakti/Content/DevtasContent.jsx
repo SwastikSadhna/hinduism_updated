@@ -109,7 +109,7 @@ export default function DeviDevtasContent() {
               <img
                 src={deva.image}
                 alt={deva.category}
-                className="w-auto h-40 object-contain rounded-lg"
+                className="w-auto h-50 object-cover rounded-lg"
               />
             </div>
           </div>
