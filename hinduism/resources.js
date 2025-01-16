@@ -27,39 +27,84 @@ import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
 import Ganesh from './src/Resources/Shlok/Shree Ganesh.png'
 import NightShlok1 from './src/Resources/Shlok/Night Shlok-1.png'
 import NightShlok2 from './src/Resources/Shlok/Night Shlok-2.jpg'
-import StudyShlok1 from './src/Resources/Shlok/Study Shlok-1.png' 
+import StudyShlok1 from './src/Resources/Shlok/Study Shlok-1.png'
 import StudyShlok2 from './src/Resources/Shlok/Study Shlok-2.jpg'
 import AboutBg from './src/Resources/About/AboutBg.jpg'
 import Scrupture from './src/Resources/About/vedas in hindu dharma.png'
 import LifeStyle from './src/Resources/About/surya_namaskar.jpg'
+import Rigved from './src/Resources/Bhakti/Rigved.jpg'
+import Yajurved from './src/Resources/Bhakti/Yajurved.jpg'
+import Samved from './src/Resources/Bhakti/Samved.jpg'
+import Atharvved from './src/Resources/Bhakti/Atharvaved.jpg'
+import Vasu from './src/Resources/Bhakti/8 vasu.png';
+import Aditya from './src/Resources/Bhakti/12 aditya.jpg';
+import Rudra from './src/Resources/Bhakti/11-rudra.jpeg';
+import AshwiniKumar from './src/Resources/Bhakti/ashwini kumar.jpeg';
+import Devtas from './src/Resources/Bhakti/33 koti devta.webp';
 
-const images = [Rammandir,logo,loading,carousel2,Dhwarika,Rameshwaram,Jagganathpuri,Badrinath,Sanatan,Brahma,Vishnu,Shiv,Temple,HeroImage];
+const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagganathpuri, Badrinath, Sanatan, Brahma, Vishnu, Shiv, Temple, HeroImage];
 const imageDetails = {
-    LifeStyle:{
-        src:LifeStyle,
-        alt:"LifeStyle",
+    Vasu: {
+        src: Vasu,
+        alt: '8 Vasu',
     },
-    Scrupture:{
-        src:Scrupture,
-        alt:'Scrupture',
+    Aditya: {
+        src: Aditya,
+        alt: '12 Aditya',
     },
-    AboutBg:{
+    Rudra: {
+        src: Rudra,
+        alt: '11 Rudra',
+    },
+    AshwiniKumar: {
+        src: AshwiniKumar,
+        alt: '2 Ashwini Kumar',
+    },
+    Devtas: {
+        src: Devtas,
+        alt: '33 Koti Devtas',
+    },
+    Rigved: {
+        src: Rigved,
+        alt: 'Rigved',
+    },
+    Yajurved: {
+        src: Yajurved,
+        alt: 'Yajurved',
+    },
+    Samved: {
+        src: Samved,
+        alt: 'Samved',
+    },
+    Atharvved: {
+        src: Atharvved,
+        alt: 'Atharvved',
+    },
+    LifeStyle: {
+        src: LifeStyle,
+        alt: "LifeStyle",
+    },
+    Scrupture: {
+        src: Scrupture,
+        alt: 'Scrupture',
+    },
+    AboutBg: {
         src: AboutBg,
         alt: 'About Background',
     },
-    Vinay:{
-        src:Vinay,
+    Vinay: {
+        src: Vinay,
         alt: 'Vinay',
     },
-    Nirmal:{
+    Nirmal: {
         src: Nirmal,
-        alt:'Nirmal',
+        alt: 'Nirmal',
     },
-    StudyShlok2:{
+    StudyShlok2: {
         src: StudyShlok2,
         alt: 'Study Shlok',
     },
-    StudyShlok1:{
+    StudyShlok1: {
         src: StudyShlok1,
         alt: 'Study Shlok',
     },
@@ -71,7 +116,7 @@ const imageDetails = {
         src: NightShlok1,
         alt: 'Night Shlok',
     },
-    MorningShlok2:{
+    MorningShlok2: {
         src: MorningShlok2,
         alt: 'Morning Shlok',
     },
@@ -88,34 +133,34 @@ const imageDetails = {
         alt: 'Dhruv Shere',
     },
     Neesarg: {
-        src: Neesarg,  
+        src: Neesarg,
         alt: 'Neesarg Soni',
     },
     Dilip: {
         src: Dilip,
         alt: 'Dilip Soni',
     },
-    BhagvadGeeta:{
+    BhagvadGeeta: {
         src: BhagvadGeeta,
         alt: "Shreemad Bhagvad Geeta"
     },
-    Mahabharat:{
+    Mahabharat: {
         src: Mahabharat,
         alt: "Mahabharatam"
     },
     Sanatan4: {
-        src:Sanatan4,
+        src: Sanatan4,
         alt: 'Sanatan Kya Hai2',
     },
     Sanatan3: {
-        src:Sanatan3,
+        src: Sanatan3,
         alt: 'Sanatan Kya Hai',
     },
-    HeroImage3:{
+    HeroImage3: {
         src: HeroImage3,
         alt: 'Hindu Mandir',
     },
-    Rammandir:{
+    Rammandir: {
         src: Rammandir,
         alt: 'Rammandir',
     },
@@ -133,35 +178,35 @@ const imageDetails = {
     },
     Dhwarika: {
         src: Dhwarika,
-        alt: 'Dhwarika', 
+        alt: 'Dhwarika',
     },
     Rameshwaram: {
         src: Rameshwaram,
-        alt: 'Rameshwaram', 
+        alt: 'Rameshwaram',
     },
     Jagganathpuri: {
         src: Jagganathpuri,
-        alt: 'Jagganath Puri', 
+        alt: 'Jagganath Puri',
     },
     Badrinath: {
         src: Badrinath,
-        alt: 'Badrinath', 
+        alt: 'Badrinath',
     },
     Sanatan: {
         src: Sanatan,
-        alt: 'Sanatan', 
+        alt: 'Sanatan',
     },
     Brahma: {
         src: Brahma,
-        alt: 'Brahma dev', 
+        alt: 'Brahma dev',
     },
     Vishnu: {
         src: Vishnu,
-        alt: 'Shree Hari Vishnu', 
+        alt: 'Shree Hari Vishnu',
     },
     Shiv: {
         src: Shiv,
-        alt: 'Mahadev', 
+        alt: 'Mahadev',
     },
     Temple: {
         src: Temple,
