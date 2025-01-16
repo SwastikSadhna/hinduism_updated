@@ -14,6 +14,7 @@ import VedaContent from '../Components/Bhakti/Content/VedaContent';
 import DevtasContent from '../Components/Bhakti/Content/DevtasContent' 
 import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
+import Templepage from "../Components/Home/Templepage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="Vedas" element={<VedaContent />} />
               <Route path="Devtas" element={<DevtasContent />} />
             </Route>
+            <Route path="/Templepage" element={<Templepage />} />
           </Routes>
           <Footer />
         </div>

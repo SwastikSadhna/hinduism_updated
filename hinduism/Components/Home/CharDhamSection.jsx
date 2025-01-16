@@ -1,33 +1,35 @@
 import { gsap } from 'gsap'
 import { useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Templepage from './Templepage';
 
 gsap.registerPlugin(ScrollTrigger)
 export default function CharDhamSection() {
 
-    useEffect(() => {
-    
-    gsap.to('.card-animate', { opacity:0, y:-100})
-    
+  useEffect(() => {
+
+    gsap.to('.card-animate', { opacity: 0, y: -100 })
+
     gsap.fromTo('.animate', {
       opacity: 0,
       x: -100,
-      y:100
+      y: 100
     }, {
       scrollTrigger: {
         trigger: '.animate',
-        start: 'top 55%',    
-        end: 'top 25%',        
+        start: 'top 55%',
+        end: 'top 25%',
       },
       y: 0,
-      x:0,
+      x: 0,
       opacity: 1,
       onComplete: () => {
         gsap.to('.card-btn-animate', { opacity: 1, duration: 0.2 })
-        gsap.to('.card-animate', { y:0, opacity:1, stagger:0.25, delay:0.2 })
+        gsap.to('.card-animate', { y: 0, opacity: 1, stagger: 0.25, delay: 0.2 })
       }
     });
-      
+
   }, []);
 
   const temples = [
@@ -39,7 +41,7 @@ export default function CharDhamSection() {
       deity: "Deity - Lord Krishna"
     },
     {
-      image: "./src/Resources/home/JagganathPuri.jpeg", 
+      image: "./src/Resources/home/JagganathPuri.jpeg",
       title: "जगन्नाथ मंदिर",
       name: "Jagannath Temple",
       location: "Puri, Odisha",
@@ -90,9 +92,11 @@ export default function CharDhamSection() {
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 
-            <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full card-btn-animate transition-all duration-300 mb-16 " style={{"opacity":0}}>
-              Explore
-            </button>
+            <Link to="/Templepage">
+              <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full card-btn-animate transition-all duration-300 mb-16" style={{ opacity: 0 }}>
+                Explore
+              </button>
+            </Link>
 
             {/* Image Carousel */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-10xl">
@@ -100,7 +104,7 @@ export default function CharDhamSection() {
                 <div
                   key={index}
                   className="relative rounded-xl overflow-hidden group cursor-pointer card-animate"
-                  
+
                 >
                   <img
                     src={temple.image}

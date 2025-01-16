@@ -1,0 +1,212 @@
+'use client'
+
+import { useState } from 'react'
+import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
+import { imageDetails } from "../../resources";
+
+
+const slides = [
+  {
+    id: 1,
+    title: 'Dwarka',
+    subtitle: 'Where Shri Krishna lived',
+    image: './src/Resources/home/Dhwarika.jpg',
+    thumbnail: './src/Resources/home/Dhwarika.jpg',
+    description: 'The Dwarkadhish temple, also known as the Jagat Mandir and occasionally spelled Dwarakadheesh, is a Hindu temple dedicated to Krishna, who is worshiped here by the name Dwarkadhish (Dvārakādhīśa), or King of Dwarka'
+  },
+  {
+    id: 2,
+    title: 'JagganathPuri',
+    subtitle: 'House of relative',
+    image: './src/Resources/home/JagganathPuri.jpeg',
+    thumbnail: './src/Resources/home/JagganathPuri.jpeg',
+    description: 'The Jagannath Temple is a Hindu temple dedicated to the god Jagannath, a form of Vishnu in Hinduism and two of his siblings, Balaram and Subhadra, alongside Sudarshan (the deified form of Vishnus primary weapon)'
+  },
+  {
+    id: 3,
+    title: 'Rameshwaram',
+    subtitle: 'Birth Place',
+    image: './src/Resources/home/Rameshwaram.jpg',
+    thumbnail: './src/Resources/home/Rameshwaram.jpg',
+    description: 'The Ramanathaswamy Temple (Rāmanātasvāmi Kōyil) is a Hindu temple dedicated to the Hindu god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is one of the twelve Jyotirlinga temples'
+  },
+  {
+    id: 4,
+    title: 'Badrinath',
+    subtitle: 'Vishnu Avatar',
+    image: './src/Resources/home/Badrinath.jpg',
+    thumbnail: './src/Resources/home/Badrinath.jpg',
+    description: 'Badarinath or Badarinarayana Temple is a Hindu temple dedicated to Vishnu. It is situated in the town of Badrinath in Uttarakhand, India. The temple is also one of the 108 Divya Desams dedicated to Vishnu for Vaishnavas, who is worshipped as Badrinath'
+  },
+]
+const features = [
+  {
+    number: "Garbhagriha",
+    text: "The sanctum sanctorum, or inner sanctum, that houses the main deity's idol or image",
+    image: 'https://www.terragalleria.com/images/india/indi39650.jpeg'
+  },
+  {
+    number: "Mandapa",
+    text: "The entrance to the temple, which can be a portico or colonnaded hall ",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg/1200px-Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg'
+  },
+  {
+    number: "Shikhara",
+    text: "The tower, spire, or superstructure that sits above the sanctuary and pillared mandapas ",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Khajuraho3.jpg'
+  },
+];
+
+export default function Templepage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index)
+  }
+
+  return (
+    <>
+    
+    <div className="relative min-h-screen bg-gray-900">
+      {/* Navigation */}
+
+      {/* Main Slider */}
+      <div className="relative h-screen overflow-hidden">
+        <div
+          className="absolute inset-0 transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ left: `${index * 100}%` }}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute top-1/3 left-24 max-w-xl text-white">
+                <h1 className="text-6xl font-bold mb-2">{slide.title}</h1>
+                <h2 className="text-6xl font-bold text-orange-500 mb-6">{slide.subtitle}</h2>
+                <p className="text-lg text-white/80 mb-8 font-bold">
+                  {slide.description}
+                </p>
+                <div className="flex gap-4">
+                  <button className="px-8 py-3 bg-white text-gray-900 rounded hover:bg-gray-100 transition-colors">
+                    SEE MORE
+                  </button>
+                  {/* <button className="px-8 py-3 border border-white text-white rounded hover:bg-white/10 transition-colors">
+                    SUBSCRIBE
+                  </button> 
+                  
+                  Garbhagriha 
+The sanctum sanctorum, or inner sanctum, that houses the main deity's idol or image
+The center of ceremonial attention
+Mandapa
+The entrance to the temple, which can be a portico or colonnaded hall 
+The pathway to the garbhagriha, where worshippers gather for darśana 
+Shikhara
+The tower, spire, or superstructure that sits above the sanctuary and pillared mandapas 
+A characteristic feature of North Indian Hindu temples 
+In Nagara style architecture, the shikhara is tall and pyramidal, and topped by a bulbous finial called a kalasha 
+Kalasha 
+The bulbous finial that tops the shikhara in Nagara style architecture*/}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+        >
+          <IoChevronBackOutline className="w-6 h-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+        >
+          <IoChevronForwardOutline className="w-6 h-6" />
+        </button>
+
+        {/* Thumbnails */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              onClick={() => goToSlide(index)}
+              className={`relative w-32 h-32 rounded-lg overflow-hidden transition-transform ${currentSlide === index ? 'scale-110 ring-2 ring-white' : 'hover:scale-105'
+                }`}
+            >
+              <img
+                src={slide.thumbnail}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div
+                className={`absolute inset-0 bg-black/30 ${currentSlide === index ? 'bg-opacity-0' : ''}`}
+              />
+              <div className="absolute bottom-2 left-2 text-white text-sm">
+                <p className="font-medium">{slide.title}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-gray-50 py-16">
+      <div className="container mx-auto px-4">
+        <div className="space-y-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:-translate-y-2 ${
+                index % 2 === 0 ? 'bg-blue-100' : 'bg-blue-200'
+              }`}
+              style={{
+                backgroundColor: `#FFF7ED`,
+                boxShadow:
+                  "0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <div className="w-full lg:w-2/3">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 mb-4">
+                  {feature.number}
+                </p>
+                <p className="text-gray-600 text-sm sm:text-md md:text-lg">
+                  {feature.text}
+                </p>
+              </div>
+              <div className="w-full lg:w-1/3 flex items-center justify-center">
+                <img
+                  src={feature.image}
+                  alt={feature.number}
+                  className="w-full h-56 sm:h-64 md:h-72 object-contain rounded"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    </>
+  )
+}
+
+
