@@ -4,32 +4,16 @@ import { imageDetails } from '../../resources';
 export default function Team() {
   const teamMembers = [
     {
-      name: "Vinay Koshti",
-      role: "Innovation and Development",
-      image: `${imageDetails.Vinay.src}`,
-      github: "https://github.com/Vinayrk2",
-      instagram: "https://www.instagram.com/vinay_koshti1?igsh=MXY2enA5MHI4N3FkOQ==",
-      linkedin: "https://www.linkedin.com/in/vinay-koshti-6550ba265/",
-    },
-    {
       name: "Dhruv Shere",
-      role: "Innovation and Development",
+      role: "Frontend Developer",
       image: `${imageDetails.Dhruv.src}`,
       github: "https://github.com/DHRUV-SHERE",
       instagram: "https://instagram.com/sheredhruv",
       linkedin: "https://linkedin.com/in/dhruv-shere",
     },
     {
-      name: "Nirmal Prajapati",
-      role: "Innovation and Development",
-      image: `${imageDetails.Nirmal.src}`,
-      github: "https://github.com/NIRMAL-PRAJAPATI",
-      instagram: "https://www.instagram.com/nirmalll.js/",
-      linkedin: "https://www.linkedin.com/in/nirmal-prajapati-b206ba277/",
-    },
-    {
       name: "Neesarg Soni",
-      role: "Innovation and Development",
+      role: "Frontend Developer",
       image: `${imageDetails.Neesarg.src}`,
       github: "https://github.com/Neesargsoni",
       instagram: "https://instagram.com/neesargsoni",
@@ -37,11 +21,27 @@ export default function Team() {
     },
     {
       name: "Dilip Suryal",
-      role: "Innovation and Development",
+      role: "Frontend Developer",
       image: `${imageDetails.Dilip.src}`,
       github: "https://github.com/DILIP-SURYAL",
       instagram: "https://instagram.com/dilipsuryal",
       linkedin: "https://linkedin.com/in/dilipsuryal",
+    },
+    {
+      name: "Vinay Koshti",
+      role: "Backend Developer",
+      image: `${imageDetails.Vinay.src}`,
+      github: "https://github.com/Vinayrk2",
+      instagram: "https://www.instagram.com/vinay_koshti1?igsh=MXY2enA5MHI4N3FkOQ==",
+      linkedin: "https://www.linkedin.com/in/vinay-koshti-6550ba265/",
+    },
+    {
+      name: "Nirmal Prajapati",
+      role: "Backend Developer",
+      image: `${imageDetails.Nirmal.src}`,
+      github: "https://github.com/NIRMAL-PRAJAPATI",
+      instagram: "https://www.instagram.com/nirmalll.js/",
+      linkedin: "https://www.linkedin.com/in/nirmal-prajapati-b206ba277/",
     },
   ];
 
@@ -58,7 +58,7 @@ export default function Team() {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-blue-600"
+                className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-blue-600 transition-transform hover:-translate-y-2"
               />
             </div>
             <h3 className="font-semibold text-lg text-gray-700">{member.name}</h3>

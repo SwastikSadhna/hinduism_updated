@@ -88,7 +88,7 @@ export default function CharDhamSection() {
               Char Dham Yatra
             </h1>
 
-            <p className="text-lg text-orange-200 max-w-2xl mb-8 animate">
+            <p className="text-lg text-gray-300 max-w-2xl mb-8 animate">
               Need spiritual guidance on your sacred journey? Look no further – The Char Dham Yatra encompasses four major temples in the cardinal directions of India, offering a path to spiritual elevation and ultimate salvation.
             </p>
 

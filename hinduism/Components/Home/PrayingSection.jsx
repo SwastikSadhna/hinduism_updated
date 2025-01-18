@@ -86,7 +86,7 @@ const PrayingSection = () => {
               </div> */}
             </div>
             <h3 className="mb-3 text-xl font-bold">Morning Prayers</h3>
-            <ul className="text-left text-[#33281E] space-y-2 mb-4">
+            <ul className="text-left text-gray-700 space-y-2 mb-4">
               <li>• Surya Namaskar (Sun Salutation)</li>
               <li>• Gayatri Mantra</li>
               <li>• Saraswati Vandana (for knowledge)</li>
@@ -112,7 +112,7 @@ const PrayingSection = () => {
               </div> */}
             </div>
             <h3 className="mb-3 text-xl font-bold">Evening Prayers</h3>
-            <ul className="text-left text-[#33281E] space-y-2 mb-4">
+            <ul className="text-left text-gray-700 space-y-2 mb-4">
               <li>• Sandhya Vandanam</li>
               <li>• Vishnu Sahasranama</li>
               <li>• Hanuman Chalisa</li>
@@ -140,7 +140,7 @@ const PrayingSection = () => {
               </div> */}
             </div>
             <h3 className="mb-3 text-xl font-bold">Night Prayers</h3>
-            <ul className="text-left text-[#33281E] space-y-2 mb-4">
+            <ul className="text-left text-gray-700 space-y-2 mb-4">
               <li>• Shri Krishna Sharanam Mamah</li>
               <li>• Om Shanti Mantra</li>
               <li>• Shiva Tandava Stotram</li>

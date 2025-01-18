@@ -26,7 +26,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:-translate-y-2 ${
+              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:-translate-y-2 ${
                 index % 2 === 0 ? 'bg-blue-100' : 'bg-blue-200'
               }`}
               style={{

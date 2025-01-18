@@ -18,7 +18,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-black/30 animate-fade-in" />
 
-      <div className="content-container left-5 top-20 relative z-10 p-8 md:p-16 animate-slide-up">
+      <div className="content-container relative z-10 p-8 md:p-10 animate-slide-up">
         {/* <h2 className="font-bold text-6xl text-white mb-3 w-[60%] animate-title">
           LORD KRISHNA SAY SOMETHING
         </h2>
@@ -26,8 +26,8 @@ const Hero = () => {
           Explore the essence of spirituality and devotion in the context of
           Sanatan Dharma.
         </p> */}
-        <div className="w-[70%] animate-quote">
-          <p className="text-xl text-yellow-300 font-semibold mb-2">Shri Krishna says:</p>
+        <div className="w-[60%] animate-quote">
+          <p className="text-xl text-yellow-300 font-bold mb-2 tracking-wider">Shri Krishna says:</p>
           <blockquote className="text-2xl text-white italic">
             "It is better to live your own destiny imperfectly than to live an imitation of somebody else's life with perfection."
           </blockquote>

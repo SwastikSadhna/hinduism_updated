@@ -21,17 +21,16 @@ const Header = () => {
   return (
     <header
       className="header w-full px-6 py-3 shadow-md z-20"
-      style={{ backgroundColor: `#FFF7ED` }}
+      style={{ backgroundColor: `#FFFFFF91` }}
     >
       <nav className="flex items-center justify-between">
         {/* Logo */}
-        <div className="flex justify-center items-center text-2xl gap-3">
+        <div className="flex justify-center items-center text-2xl gap-3 tracking-wide italic">
           <img
             src={imageDetails.logo.src}
-            className="w-10 h-10 rounded-full"
+            className="w-9 h-9 rounded-full"
             alt={imageDetails.logo.alt}
-          />
-          SANATAN
+          />SANATAN
         </div>
 
         {/* Desktop Navigation */}

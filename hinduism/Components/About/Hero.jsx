@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import Button from "./Button"
 import { imageDetails } from "../../resources"
+import { FaAdversal, FaArrowDown, FaMusic } from "react-icons/fa"
 
 export default function Hero() {
   const logoRef = useRef(null)
@@ -65,10 +66,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full pb-5">
       {/* Background Image */}
       <div 
-        className="w-full h-[40vh] bg-cover bg-center relative"
+        className="w-full h-[25vh] bg-cover bg-center relative"
         style={{ 
           backgroundImage: `url(${imageDetails.AboutBg.src})`,
           backgroundBlendMode: "multiply",
@@ -79,9 +80,9 @@ export default function Hero() {
       {/* Logo Section */}
       <div 
         ref={logoRef}
-        className="relative -mt-20 mb-8"
+        className="relative -mt-10"
       >
-        <div className="w-40 h-40 relative">
+        <div className="w-[80px] h-[80px] relative">
           <div className="absolute inset-0 bg-red-500 rounded-full opacity-10 blur-3xl" />
           <img
             src={imageDetails.logo.src}
@@ -92,7 +93,7 @@ export default function Hero() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-6xl mx-auto px-4 text-center">
+      <div className="mx-auto px-4 text-center">
         <h1
           ref={textRef}
           className="text-5xl md:text-6xl font-bold mb-8 text-red-600"
@@ -113,7 +114,7 @@ export default function Hero() {
             Sanatan Dharma while embracing modern technology to inspire and
             educate.
           </p>
-          <Button className="mt-6">LEARN MORE</Button>
+          <p className="w-full flex justify-center pt-3"><FaArrowDown className="text-6xl text-blue-500 bg-gray-200 rounded-full p-3 text-center" /></p>
         </div>
       </div>
     </div>
