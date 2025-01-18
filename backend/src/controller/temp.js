@@ -5,7 +5,7 @@ const Controller1 = async (req, res) => {
     try {
         res.status(200).json(data);
     } catch(error) {
-        res.status(500).res.send('something gone wrong');
+        res.status(500).send('something gone wrong');
     }
 };
 

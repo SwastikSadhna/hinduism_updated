@@ -1,16 +1,12 @@
 const express = require("express")
-const app = new express()
-const ejs = require("ejs")
+const app = new express();
 
 // routes
 const TempRoute = require('./src/route/temp');
-
-app.use(express.static((__dirname, 'public')))
-app.set('view engine', 'ejs')
-app.set('views','./src/views')
-
+const BookRoute = require('./src/route/book');
 
 app.use('/temp', TempRoute);
+app.use('/book', BookRoute);
 
 app.listen(3000,()=>{
     console.log("server is running : http://localhost:3000/")
