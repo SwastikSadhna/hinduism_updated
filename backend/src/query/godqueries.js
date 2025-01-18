@@ -5,7 +5,7 @@ const godquery = {
     UpdateGod: `UPDATE public."god" SET "name" = $2, "image" = $3, "description" = $4, "keyword" = $5 WHERE _id = $1`,
     DeleteGod: `DELETE FROM public."god" WHERE _id = $1`,
     SearchGod: `SELECT "name" FROM public."god" WHERE "name" LIKE '$1*'`,
-    GetTrimurty: `SELECT * FROM public."god" WHERE $1 = ANY(keyword)`
+    GetTrimurty: `SELECT * FROM public."god" WHERE 'trimurty' = ANY(keyword)`
     //7. get avatar datails based on god
 }
 
