@@ -1,11 +1,11 @@
 const avatarquery = {
-    //1. get all avatar
-    //2. get avatar by id
-    //3. create
-    //4. update
-    //5. delete
-    //7. get god datails based on avatar
-    //8. search avatar
+    GetAllAvatar: `SELECT * FROM public."avatar"`,
+    GetAvatarById: `SELECT * FROM public."avatar" WHERE id = $1`,
+    AddAvatar: `INSERT INTO public."avatar" ("name", "iamge", "yuga", "books", "description", "temples", "god_ref", "sloka", "festivals", "referance_link") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+    UpdateAvatar: `UPDATE public."avatar" SET "name" = $2, "iamge" = $3, "yuga" = $4, "books" = $5, "description" = $6, "temples" = $7, "god_ref" = $8, "sloka" = $9, "festivals" = $10, "referance_link" = $11, WHERE "_id" = $1`,
+    DeleteAvatar: `DELETE FROM public."avatar" WHERE "_id" = $1`,
+    GetGodByRef: `SELECT god.* FROM avatar JOIN god ON avatar.god_ref = god._id`,
+    SearchAvatar: `SELECT "name" FROM public."avatar" WHERE "name" LIKE '$1*'`
 }
 
 module.exports = {avatarquery}
