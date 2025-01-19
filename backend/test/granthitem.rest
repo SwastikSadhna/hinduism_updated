@@ -1,0 +1,7 @@
+// Get Granth items by granth id
+GET http://localhost:3000/granthitem/items/2
+
+
+###
+// search for granth items
+GET http://localhost:3000/granthitem/search?q=R
