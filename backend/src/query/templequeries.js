@@ -1,4 +1,4 @@
-const templequery = {
+const templeQueries = {
     GetAllTemples: `SELECT "_id", "cover_image", "name", "location" FROM public."temple";`,
     GetTempleById: `SELECT * FROM public."temple" WHERE "_id" = $1;`,
     AddTemple: `INSERT INTO public."temple" ("name", "description", "cover_image", "map_url", "reference_link", "god", "location", "importance", "images", "keywords") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *;`,
@@ -9,4 +9,4 @@ const templequery = {
     GetChardham: `SELECT "_id", "cover_image", "name", "location" FROM public."temple" WHERE 'chardham' = ANY("keyword")`
 }
 
-module.exports = {templequery}
+module.exports = {templeQueries}
