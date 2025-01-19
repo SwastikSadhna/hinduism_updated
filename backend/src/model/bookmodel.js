@@ -32,8 +32,8 @@ const DeleteBook = async (id) => {
 }
 
 const SearchBook = async (q) => {
-    const result = pool.query(bookquery.SearchBook, [q]);
-    return await result.rows;
+    const result = await pool.query(bookquery.SearchBook, [q + "%"]);
+    return result.rows;
 }
 
 module.exports = {GetAllBooks, GetBookById, GetBookTitles, AddBook, UpdateBook, DeleteBook, SearchBook};

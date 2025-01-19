@@ -1,8 +1,13 @@
 // Get All Books
 GET http://localhost:3000/book/all
+###
 
 //Get Book By Id
-GET http://localhost:3000/book/1
+GET http://localhost:3000/book/id/1
+###
 
 //Delete book by id
 DELETE http://localhost:3000/book/delete/10
+###
+
+GET http://localhost:3000/book/search?q=Tanatras
