@@ -10,7 +10,7 @@ const getFilterQuery = (query) => {
         }
     }
     if (keyword.length > 0) {
-        q += `"keyword" && ARRAY['${keyword.join("','")}']`;
+        q += `"keyword" && ARRAY['`+ keyword[0].join(`','`) +`']`;
     } else {
         q = q.slice(0, -4)
     }

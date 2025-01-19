@@ -2,7 +2,8 @@ const GranthModel = require("../model/granthitemmodel")
 
 const getGranthItems = async (req, res) => {
     try { 
-        const items = await GranthModel.getGranthItems()
+        const id = req.params.id
+        const items = await GranthModel.getGranthItems(id)
         if (items.length > 0)
             res.status(200).json({ message: "Granthitems retrieved successfully", count: items.length, data: items })
         else
