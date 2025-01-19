@@ -1,7 +1,7 @@
 const granthQuery = require("../query/granthquries");
 const pool = require("../db")
 
-const getAllGRanth = async () => {
+const getAllGranth = async () => {
     const result = await pool.query(granthQuery.GetAllGranth)
     return result.rows;
 }
@@ -11,4 +11,4 @@ const getGranthDetails = async (id) => {
     return result.rows;
 }
 
-module.exports = {getAllGRanth, getGranthDetails}
+module.exports = {getAllGranth, getGranthDetails}
