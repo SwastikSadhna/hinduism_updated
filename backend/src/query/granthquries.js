@@ -6,4 +6,4 @@ const granthquery = {
     DeleteGranth: `DELETE FROM public."granth" WHERE "id" = $1;`,
 }
 
-module.exports = {granthquery}
+module.exports = granthquery
