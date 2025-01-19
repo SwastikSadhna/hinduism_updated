@@ -1,0 +1,2 @@
+// get all temples
+GET http://localhost:3000/temple/all

@@ -2,11 +2,11 @@ const express = require("express")
 const app = new express();
 
 // routes
-const TempRoute = require('./src/route/temp');
 const BookRoute = require('./src/route/book');
+const TempleRoute = require("./src/route/temple")
 
-app.use('/temp', TempRoute);
 app.use('/book', BookRoute);
+app.use('/temple', TempleRoute);
 
 app.listen(3000,()=>{
     console.log("server is running : http://localhost:3000/")
