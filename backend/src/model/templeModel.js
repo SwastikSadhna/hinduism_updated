@@ -29,13 +29,13 @@ const deleteTemple = async (id) => {
 }
 
 const searchTemple = async (q) => {
-    const result = await pool.query(templeQueries.SearchTemple, [q])
+    const result = await pool.query(templeQueries.SearchTemple, [q+"%"])
     return result.rows;
 }
 
 const filterTemple = async (query) => {
-    let q = getFilterQuery(query)
-    const result = await pool.query(templeQueries.FilterTemple + q)
+    console.log(query)
+    const result = await pool.query(templeQueries.FilterTemple + query)
     return result.rows;
 }
 
