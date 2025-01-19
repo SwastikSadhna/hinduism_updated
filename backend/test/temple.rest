@@ -1,2 +1,19 @@
 // get all temples
 GET http://localhost:3000/temple/all
+
+###
+// get temple by id
+GET http://localhost:3000/temple/get/2
+
+###
+// get temple names by search query
+GET http://localhost:3000/temple/search?q=som
+
+###
+// get temples by filter
+GET http://localhost:3000/temple/filter?name=Kailasa&location=India
+
+
+###
+// get chardham
+GET http://localhost:3000/temple/chardham
