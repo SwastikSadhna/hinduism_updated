@@ -29,12 +29,13 @@ const searchSloka = async (req, res) => {
     try {
         const search = req.query.q;
         const data = await Sloka.searchSloka(search);
+        console.log(data)
         if (data.length > 0)
             res.status(200).json(data);
         else
             res.status(404).json({ message: "No sloka found" });
     } catch (err) {
-        res.status(500).json({ message: "Error searching sloka" });
+        res.status(500).json({ message: "Error searching sloka", error: err});
     }
 }
 

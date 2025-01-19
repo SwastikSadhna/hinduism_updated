@@ -5,7 +5,7 @@ const slokaquery = {
     UpdateSloka: `UPDATE public."slokas" SET "title" = $1, "description" = $2, "keyword" = $3 WHERE "id" = $4;`,
     DeleteSloka: `DELETE FROM public."slokas" WHERE "id" = $1`,
     FilterSloka: `SELECT * FROM public."slokas" WHERE `,
-    SearchSloka: `SELECT ""title","_id" FROM public."slokas" WHERE "title" ILIKE $1`,
+    SearchSloka: `SELECT "title","_id" FROM public."slokas" WHERE "title" ILIKE $1`,
 }
 
 module.exports = slokaquery

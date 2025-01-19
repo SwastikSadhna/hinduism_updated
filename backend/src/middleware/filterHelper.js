@@ -1,10 +1,19 @@
 
 const getFilterQuery = (query) => {
     let q = "";
+    let keyword = [];
     for (const key in query) {
-        q += `"${key}"= '${query[key]}' AND `
+        if (key == "keyword") {
+            keyword.push(query[key])
+        } else {
+            q += `"${key}"= '${query[key]}' AND `
         }
-    q = q.slice(0, -4)
+    }
+    if (keyword.length > 0) {
+        q += `"keyword" && ARRAY['${keyword.join("','")}']`;
+    } else {
+        q = q.slice(0, -4)
+    }
     return q
 }
 

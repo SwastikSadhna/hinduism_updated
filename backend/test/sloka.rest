@@ -1,2 +1,16 @@
 // get all sloka
 GET http://localhost:3000/sloka/all
+
+###
+// get sloka details by id
+GET http://localhost:3000/sloka/details/1
+
+
+###
+// get search items
+GET http://localhost:3000/sloka/search?q=gayatri
+
+
+###
+// get filtered items
+GET http://localhost:3000/sloka/filter?keyword=mantra

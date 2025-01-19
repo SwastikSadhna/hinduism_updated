@@ -4,23 +4,24 @@ const pool = require("../db")
 
 const getAllSloka = async () => {
     const sloka = await pool.query(slokaquery.GetAllSloka);
-    return sloka;
+    return sloka.rows;
 }
 
 const GetSlokaDetails = async (id) => {
     const sloka = await pool.query(slokaquery.GetSlokaDetails, [id]);
-    return sloka;
+    return sloka.rows;
 }
 
 const searchSloka = async (q) => {
     const sloka = await pool.query(slokaquery.SearchSloka,[q + "%"]);
-    return sloka;
+    return sloka.rows;
 }
 
 const filterSloka = async (filter) => {
     const query = getFilterQuery(filter)
+    console.log(query)
     const sloka = await pool.query(slokaquery.FilterSloka + query)
-    return sloka;
+    return sloka.rows;
 }
 
 module.exports = {getAllSloka, GetSlokaDetails, searchSloka, filterSloka}
