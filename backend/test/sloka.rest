@@ -1,0 +1,2 @@
+// get all sloka
+GET http://localhost:3000/sloka/all
