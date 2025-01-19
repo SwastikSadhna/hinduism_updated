@@ -1,0 +1,6 @@
+// get all granth
+GET http://localhost:3000/granth/all
+
+###
+// get granthitems by granth id
+GET http://localhost:3000/granth/items/2
