@@ -1,12 +1,15 @@
 import { gsap } from 'gsap'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Templepage from './Templepage';
+
+import API_CONFIG from '../../src/config/api';
+import axios from 'axios';
 
 gsap.registerPlugin(ScrollTrigger)
 export default function CharDhamSection() {
 
+  const [temples, setTemples] = new useState([])
   useEffect(() => {
 
     gsap.to('.card-animate', { opacity: 0, y: -100 })
@@ -32,36 +35,12 @@ export default function CharDhamSection() {
 
   }, []);
 
-  const temples = [
-    {
-      image: "./src/Resources/home/Dhwarika.jpg",
-      title: "द्वारकाधीश मंदिर",
-      name: "Dwarka Temple",
-      location: "Dwarka, Gujarat",
-      deity: "Deity - Lord Krishna"
-    },
-    {
-      image: "./src/Resources/home/JagganathPuri.jpeg",
-      title: "जगन्नाथ मंदिर",
-      name: "Jagannath Temple",
-      location: "Puri, Odisha",
-      deity: "Deity - Lord Jagannath"
-    },
-    {
-      image: "./src/Resources/home/Rameshwaram.jpg",
-      title: "रामेश्वरम् मंदिर",
-      name: "Rameshwaram Temple",
-      location: "Rameshwaram, Tamil Nadu",
-      deity: "Deity - Lord Shiv"
-    },
-    {
-      image: "./src/Resources/home/Badrinath.jpg",
-      title: "बद्रीनाथ मंदिर",
-      name: "Badrinath Temple",
-      location: "Chamoli, Uttarakhand",
-      deity: "Deity - Lord Vishnu"
-    }
-  ]
+  useEffect(() => {
+    axios.get(`${API_CONFIG.baseUrl}/temple/chardham`).then((result) => {
+      console.log("Data Fetched");
+      setTemples(result.data)
+    })
+  },[])
 
   return (
     <div className="min-h-screen relative">
@@ -107,7 +86,7 @@ export default function CharDhamSection() {
 
                 >
                   <img
-                    src={temple.image}
+                    src={API_CONFIG.baseUrl+temple.cover_image}
                     alt={temple.name}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
