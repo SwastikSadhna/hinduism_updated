@@ -1,5 +1,5 @@
-const granthModel = require("../model/granthmodel")
-
+const granthModel = require("../model/granthModel")
+const {getGranthItems} = require("../model/granthitemmodel")
 
 const getAllGranth = async (req, res) => {
     try {
@@ -18,8 +18,10 @@ const getGranthDetails = async (req, res) => {
     try {
         const id = req.params.id
         const result = await granthModel.getGranthDetails(id);
-        if (result.length > 0)
-            res.status(200).json(result)
+        if (result.length > 0) {
+            const items = await getGranthItems(id);
+            res.status(200).json({granth:result[0], items: items})
+        }
         else
             res.status(404).json({ message: "No granth found" })
     } catch (err) {

@@ -1,5 +1,6 @@
 const express = require("express")
 const app = new express();
+const cors = require("cors")
 
 // routes
 const BookRoute = require('./src/route/book');
@@ -7,6 +8,13 @@ const TempleRoute = require("./src/route/temple");
 const GranthItemRoute = require("./src/route/granthitem")
 const GranthRoute = require("./src/route/granth")
 const SlokaRoute = require("./src/route/sloka")
+const path = require("path")
+
+app.use(cors({
+    origin: "*",
+}))
+
+app.use("/images", express.static(path.join(__dirname , "public/images")))
 
 app.use('/book', BookRoute);
 app.use('/temple', TempleRoute);

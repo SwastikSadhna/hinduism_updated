@@ -13,4 +13,4 @@ GET http://localhost:3000/sloka/search?q=gayatri
 
 ###
 // get filtered items
-GET http://localhost:3000/sloka/filter?keyword=mantra
+GET http://localhost:3000/sloka/filter?keyword=mantra&keyword=hanuman
