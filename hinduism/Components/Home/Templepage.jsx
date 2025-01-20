@@ -1,44 +1,44 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
-import { imageDetails } from "../../resources";
+import API_CONFIG from '../../src/config/api';
+import axios from 'axios';
 
-
-const slides = [
-  {
-    id: 1,
-    title: 'Dwarka',
-    subtitle: 'Where Shri Krishna lived',
-    image: './src/Resources/home/Dhwarika.jpg',
-    thumbnail: './src/Resources/home/Dhwarika.jpg',
-    description: 'The Dwarkadhish temple, also known as the Jagat Mandir and occasionally spelled Dwarakadheesh, is a Hindu temple dedicated to Krishna, who is worshiped here by the name Dwarkadhish (Dvārakādhīśa), or King of Dwarka'
-  },
-  {
-    id: 2,
-    title: 'JagganathPuri',
-    subtitle: 'House of relative',
-    image: './src/Resources/home/JagganathPuri.jpeg',
-    thumbnail: './src/Resources/home/JagganathPuri.jpeg',
-    description: 'The Jagannath Temple is a Hindu temple dedicated to the god Jagannath, a form of Vishnu in Hinduism and two of his siblings, Balaram and Subhadra, alongside Sudarshan (the deified form of Vishnus primary weapon)'
-  },
-  {
-    id: 3,
-    title: 'Rameshwaram',
-    subtitle: 'Birth Place',
-    image: './src/Resources/home/Rameshwaram.jpg',
-    thumbnail: './src/Resources/home/Rameshwaram.jpg',
-    description: 'The Ramanathaswamy Temple (Rāmanātasvāmi Kōyil) is a Hindu temple dedicated to the Hindu god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is one of the twelve Jyotirlinga temples'
-  },
-  {
-    id: 4,
-    title: 'Badrinath',
-    subtitle: 'Vishnu Avatar',
-    image: './src/Resources/home/Badrinath.jpg',
-    thumbnail: './src/Resources/home/Badrinath.jpg',
-    description: 'Badarinath or Badarinarayana Temple is a Hindu temple dedicated to Vishnu. It is situated in the town of Badrinath in Uttarakhand, India. The temple is also one of the 108 Divya Desams dedicated to Vishnu for Vaishnavas, who is worshipped as Badrinath'
-  },
-]
+// const slides = [
+//   {
+//     id: 1,
+//     title: 'Dwarka',
+//     subtitle: 'Where Shri Krishna lived',
+//     image: './src/Resources/home/Dhwarika.jpg',
+//     thumbnail: './src/Resources/home/Dhwarika.jpg',
+//     description: 'The Dwarkadhish temple, also known as the Jagat Mandir and occasionally spelled Dwarakadheesh, is a Hindu temple dedicated to Krishna, who is worshiped here by the name Dwarkadhish (Dvārakādhīśa), or King of Dwarka'
+//   },
+//   {
+//     id: 2,
+//     title: 'JagganathPuri',
+//     subtitle: 'House of relative',
+//     image: './src/Resources/home/JagganathPuri.jpeg',
+//     thumbnail: './src/Resources/home/JagganathPuri.jpeg',
+//     description: 'The Jagannath Temple is a Hindu temple dedicated to the god Jagannath, a form of Vishnu in Hinduism and two of his siblings, Balaram and Subhadra, alongside Sudarshan (the deified form of Vishnus primary weapon)'
+//   },
+//   {
+//     id: 3,
+//     title: 'Rameshwaram',
+//     subtitle: 'Birth Place',
+//     image: './src/Resources/home/Rameshwaram.jpg',
+//     thumbnail: './src/Resources/home/Rameshwaram.jpg',
+//     description: 'The Ramanathaswamy Temple (Rāmanātasvāmi Kōyil) is a Hindu temple dedicated to the Hindu god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is one of the twelve Jyotirlinga temples'
+//   },
+//   {
+//     id: 4,
+//     title: 'Badrinath',
+//     subtitle: 'Vishnu Avatar',
+//     image: './src/Resources/home/Badrinath.jpg',
+//     thumbnail: './src/Resources/home/Badrinath.jpg',
+//     description: 'Badarinath or Badarinarayana Temple is a Hindu temple dedicated to Vishnu. It is situated in the town of Badrinath in Uttarakhand, India. The temple is also one of the 108 Divya Desams dedicated to Vishnu for Vaishnavas, who is worshipped as Badrinath'
+//   },
+// ]
 const features = [
   {
     number: "Garbhagriha",
@@ -59,7 +59,17 @@ const features = [
 
 export default function Templepage() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [slides, setSlides] = new useState([])
 
+  useEffect(() => {
+    axios.get(`${API_CONFIG.baseUrl}/temple/all`).then((data) => {
+      console.log("temples fetched")
+      setSlides(data.data.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
+  
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
   }
@@ -93,16 +103,16 @@ export default function Templepage() {
               style={{ left: `${index * 100}%` }}
             >
               <img
-                src={slide.image}
+                src={API_CONFIG.baseUrl+slide.cover_image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/30" />
               <div className="absolute top-1/3 left-24 max-w-xl text-white">
-                <h1 className="text-6xl font-bold mb-2">{slide.title}</h1>
+                <h1 className="text-6xl font-bold mb-2">{slide.name}</h1>
                 <h2 className="text-6xl font-bold text-orange-500 mb-6">{slide.subtitle}</h2>
                 <p className="text-lg text-white/80 mb-8 font-bold">
-                  {slide.description}
+                  {slide.location}
                 </p>
                 <div className="flex gap-4">
                   <button className="px-8 py-3 bg-white text-gray-900 rounded hover:bg-gray-100 transition-colors">
@@ -154,15 +164,15 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
                 }`}
             >
               <img
-                src={slide.thumbnail}
-                alt={slide.title}
+                src={API_CONFIG.baseUrl+slide.cover_image}
+                alt={slide.name}
                 className="w-full h-full object-cover"
               />
               <div
                 className={`absolute inset-0 bg-black/30 ${currentSlide === index ? 'bg-opacity-0' : ''}`}
               />
               <div className="absolute bottom-2 left-2 text-white text-sm">
-                <p className="font-medium">{slide.title}</p>
+                <p className="font-medium">{slide.name}</p>
               </div>
             </button>
           ))}
