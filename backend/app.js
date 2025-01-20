@@ -3,6 +3,7 @@ const app = new express();
 const cors = require("cors")
 
 // routes
+const AvatarRoute = require('./src/route/avatar');
 const BookRoute = require('./src/route/book');
 const TempleRoute = require("./src/route/temple");
 const GranthItemRoute = require("./src/route/granthitem")
@@ -17,6 +18,7 @@ app.use(cors({
 app.use("/images", express.static(path.join(__dirname , "public/images")))
 
 app.use('/book', BookRoute);
+app.use('/avatar', AvatarRoute);
 app.use('/temple', TempleRoute);
 app.use('/granthitem', GranthItemRoute);
 app.use('/granth', GranthRoute);
