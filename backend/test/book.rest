@@ -10,4 +10,9 @@ GET http://localhost:3000/book/id/11
 DELETE http://localhost:3000/book/delete/10
 ###
 
+// Get Book By Search
 GET http://localhost:3000/book/search?q=B
+###
+
+// Get All Book Titles
+Get http://localhost:3000/book/booklist
