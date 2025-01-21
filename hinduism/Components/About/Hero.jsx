@@ -102,17 +102,7 @@ export default function Hero() {
         </h1>
         <div ref={contentRef} className="space-y-6">
           <p className="text-gray-600 text-lg leading-relaxed">
-            Hindutva is a platform dedicated to celebrating and preserving the
-            rich spiritual and cultural heritage of Sanatan Hindu Dharma. Our
-            mission is to make ancient knowledge accessible and engaging by
-            offering insights into Hindu gods, temples, sacred scriptures like
-            the Bhagavad Gita, meaningful shlokas, and mantras. We also explore
-            Vedic teachings, daily routines rooted in Hindu philosophy, and
-            devotional practices such as bhajans and aartis. With features like
-            3D avatars of Hindu deities and in-depth knowledge of the Vedas,
-            Hindutva aims to connect individuals with the timeless wisdom of
-            Sanatan Dharma while embracing modern technology to inspire and
-            educate.
+          VedicPulse is your gateway to exploring the profound and timeless heritage of Hinduism. This platform serves as a treasure trove of knowledge about the spiritual, cultural, and historical essence of Sanatan Dharma. Delve into the rich mythology of Hindu gods and goddesses, uncover the wisdom of ancient scriptures like the Vedas, Upanishads, and Puranas, and connect with the inspiring tales and teachings they hold. Immerse yourself in the melodious bhajans and sacred shlokas that have been passed down through generations, and rediscover the spiritual practices that form the foundation of Hinduism. At VedicPulse, we strive to provide an authentic and enriching experience that connects you to the core values, beliefs, and traditions of Hindu Dharma.
           </p>
           <p className="w-full flex justify-center pt-3"><FaArrowDown className="text-6xl text-blue-500 bg-gray-200 rounded-full p-3 text-center" /></p>
         </div>

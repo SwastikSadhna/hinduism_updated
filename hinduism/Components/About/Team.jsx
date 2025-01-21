@@ -19,14 +19,14 @@ export default function Team() {
       instagram: "https://instagram.com/neesargsoni",
       linkedin: "https://linkedin.com/in/neesargsoni",
     },
-    {
-      name: "Dilip Suryal",
-      role: "Frontend Developer",
-      image: `${imageDetails.Dilip.src}`,
-      github: "https://github.com/DILIP-SURYAL",
-      instagram: "https://instagram.com/dilipsuryal",
-      linkedin: "https://linkedin.com/in/dilipsuryal",
-    },
+    // {
+    //   name: "Dilip Suryal",
+    //   role: "Frontend Developer",
+    //   image: `${imageDetails.Dilip.src}`,
+    //   github: "https://github.com/DILIP-SURYAL",
+    //   instagram: "https://instagram.com/dilipsuryal",
+    //   linkedin: "https://linkedin.com/in/dilipsuryal",
+    // },
     {
       name: "Vinay Koshti",
       role: "Backend Developer",
