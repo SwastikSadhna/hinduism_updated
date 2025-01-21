@@ -83,22 +83,21 @@ export default function Hero() {
         className="relative -mt-10"
       >
         <div className="w-[80px] h-[80px] relative">
-          <div className="absolute inset-0 bg-red-500 rounded-full opacity-10 blur-3xl" />
+          <div className="absolute inset-0 rounded-full opacity-10 blur-3xl" />
           <img
-            src={imageDetails.logo.src}
+            src={imageDetails.logo3.src}
             alt="Om Symbol"
-            className="w-full h-full rounded-circle object-contain relative z-10"
+            className="w-full h-full rounded-circle object-contain p-2 bg-white relative z-10"
           />
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="mx-auto px-4 text-center">
+      <div className="mx-auto px-4 text-center -mt-3">
         <h1
           ref={textRef}
-          className="text-5xl md:text-6xl font-bold mb-8 text-red-600"
-        >
-          About Us
+          className="text-5xl md:text-6xl font-bold mb-8 text-blue-600"
+        >About Us
         </h1>
         <div ref={contentRef} className="space-y-6">
           <p className="text-gray-600 text-lg leading-relaxed">

@@ -1,5 +1,6 @@
 import logo from './src/Resources/home/Logo.png';
 import logo2 from './src/Resources/home/Logo_name.png';
+import logo3 from './src/Resources/home/logo3.png';
 import loading from './src/Resources/home/loading.gif'
 import carousel2 from './src/Resources/home/carousel2.png'
 import Dhwarika from './src/Resources/home/Dhwarika.jpg'
@@ -171,6 +172,10 @@ const imageDetails = {
     },
     logo2: {
         src: logo2,
+        alt: 'Company Logo',
+    },
+    logo3: {
+        src: logo3,
         alt: 'Company Logo',
     },
     loading: {
