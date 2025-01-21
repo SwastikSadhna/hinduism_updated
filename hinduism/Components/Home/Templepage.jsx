@@ -5,40 +5,7 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
 import API_CONFIG from '../../src/config/api';
 import axios from 'axios';
 
-// const slides = [
-//   {
-//     id: 1,
-//     title: 'Dwarka',
-//     subtitle: 'Where Shri Krishna lived',
-//     image: './src/Resources/home/Dhwarika.jpg',
-//     thumbnail: './src/Resources/home/Dhwarika.jpg',
-//     description: 'The Dwarkadhish temple, also known as the Jagat Mandir and occasionally spelled Dwarakadheesh, is a Hindu temple dedicated to Krishna, who is worshiped here by the name Dwarkadhish (Dvārakādhīśa), or King of Dwarka'
-//   },
-//   {
-//     id: 2,
-//     title: 'JagganathPuri',
-//     subtitle: 'House of relative',
-//     image: './src/Resources/home/JagganathPuri.jpeg',
-//     thumbnail: './src/Resources/home/JagganathPuri.jpeg',
-//     description: 'The Jagannath Temple is a Hindu temple dedicated to the god Jagannath, a form of Vishnu in Hinduism and two of his siblings, Balaram and Subhadra, alongside Sudarshan (the deified form of Vishnus primary weapon)'
-//   },
-//   {
-//     id: 3,
-//     title: 'Rameshwaram',
-//     subtitle: 'Birth Place',
-//     image: './src/Resources/home/Rameshwaram.jpg',
-//     thumbnail: './src/Resources/home/Rameshwaram.jpg',
-//     description: 'The Ramanathaswamy Temple (Rāmanātasvāmi Kōyil) is a Hindu temple dedicated to the Hindu god Shiva located on Rameswaram island in the state of Tamil Nadu, India. It is one of the twelve Jyotirlinga temples'
-//   },
-//   {
-//     id: 4,
-//     title: 'Badrinath',
-//     subtitle: 'Vishnu Avatar',
-//     image: './src/Resources/home/Badrinath.jpg',
-//     thumbnail: './src/Resources/home/Badrinath.jpg',
-//     description: 'Badarinath or Badarinarayana Temple is a Hindu temple dedicated to Vishnu. It is situated in the town of Badrinath in Uttarakhand, India. The temple is also one of the 108 Divya Desams dedicated to Vishnu for Vaishnavas, who is worshipped as Badrinath'
-//   },
-// ]
+
 const features = [
   {
     number: "Garbhagriha",

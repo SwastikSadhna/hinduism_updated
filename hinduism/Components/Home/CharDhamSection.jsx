@@ -33,7 +33,7 @@ export default function CharDhamSection() {
       }
     });
 
-  }, []);
+  }, [temples]);
 
   useEffect(() => {
     axios.get(`${API_CONFIG.baseUrl}/temple/chardham`).then((result) => {
