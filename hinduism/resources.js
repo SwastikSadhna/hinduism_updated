@@ -24,6 +24,7 @@ import Neesarg from './src/Resources/About/Neesarg.jpg'
 import Nirmal from './src/Resources/About/Nirmal.jpg'
 import Dilip from './src/Resources/About/Dilip.jpg'
 import Vinay from './src/Resources/About/Vinay.jpg'
+import Bookback2 from './src/Resources/others/bookback2.jpg';
 import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
 import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
 import Ganesh from './src/Resources/Shlok/Shree Ganesh.png'
@@ -46,6 +47,10 @@ import Devtas from './src/Resources/Bhakti/33 koti devta.webp';
 
 const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagganathpuri, Badrinath, Sanatan, Brahma, Vishnu, Shiv, Temple, HeroImage];
 const imageDetails = {
+    Bookback2: {
+        src: Bookback2,
+        alt: 'Bookback2',
+    },
     Vasu: {
         src: Vasu,
         alt: '8 Vasu',

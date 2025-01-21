@@ -47,7 +47,7 @@ export default function Team() {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Meet Our Legal Team</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Meet Our Developers</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {teamMembers.map((member, index) => (
           <div
@@ -65,7 +65,7 @@ export default function Team() {
             <p className="text-gray-500 mb-4">{member.role}</p>
             <div className="flex justify-center gap-4">
               <a href={member.github} target="_blank" rel="noopener noreferrer">
-                <FaGithub className="w-6 h-6 text-gray-600 hover:text-blue-600 cursor-pointer" />
+                <FaGithub className="w-6 h-6 text-gray-600 hover:text-black cursor-pointer" />
               </a>
               <a href={member.instagram} target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="w-6 h-6 text-gray-600 hover:text-pink-500 cursor-pointer" />

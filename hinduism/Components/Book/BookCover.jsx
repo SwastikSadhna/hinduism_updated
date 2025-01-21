@@ -5,7 +5,7 @@ export function BookCover({ imageUrl, alt }) {
       <img
         src={imageUrl}
         alt={alt}
-        className="w-auto h-50 object-contain p-2 bg-orange-500"
+        className="h-[250px] object-contain p-1 box-shadow bg-orange-500"
       />
       {/* </div> */}
     </div>
