@@ -75,7 +75,7 @@ export default function Sidebar() {
         {/* Go to Home button */}
         <div className=" bottom-0 w-full p-4 border-t">
           <NavLink
-            to="/Bhakti"
+            to="/"
             className={({ isActive }) => `
               w-full flex items-center gap-3 p-3 rounded-lg transition-colors
               ${isActive ? 'bg-orange-500 text-white' : 'hover:bg-gray-100'}

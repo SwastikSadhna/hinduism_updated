@@ -36,9 +36,9 @@ const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex rounded-2xl items-center text-lg text-[#33281E] tracking-wide gap-10">
           <Link to="/" className="hover:text-[#FF7722]">Home</Link>
-          <Link to="/Book" className="hover:text-[#FF7722]">Books</Link>
+          <Link to="/Books" className="hover:text-[#FF7722]">Books</Link>
           <Link to="" className="hover:text-[#FF7722]">Avatar</Link>
-          <Link to="/Bhakti" className="hover:text-[#FF7722]">Bhakti</Link>
+          <Link to="/Bhakti/bhajans" className="hover:text-[#FF7722]">Bhakti</Link>
           <Link to="" className="hover:text-[#FF7722]">Granth</Link>
           <div className="relative group">
             <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">

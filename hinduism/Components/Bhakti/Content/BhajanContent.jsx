@@ -1,13 +1,24 @@
+import { useEffect, useState } from 'react'
 import { FaPlay, FaHeart, FaShare } from 'react-icons/fa'
+import axios from "axios"
+import API_CONFIG from "../../../src/config/api"
 
 export default function BhajanContent() {
-  const bhajans = [
-    { title: 'Mere Shyam', type: 'Traditional' },
-    { title: 'Achyutam Keshavam', type: 'Traditional' },
-    { title: 'Krishna Govinda', type: 'Traditional' },
-    { title: 'Om Jai Jagdish Hare', type: 'Traditional' },
-    { title: 'Shiv Tandav Stotram', type: 'Ravanasura' },
-  ]
+  // const bhajans = [
+  //   { title: 'Mere Shyam', type: 'Traditional' },
+  //   { title: 'Achyutam Keshavam', type: 'Traditional' },
+  //   { title: 'Krishna Govinda', type: 'Traditional' },
+  //   { title: 'Om Jai Jagdish Hare', type: 'Traditional' },
+  //   { title: 'Shiv Tandav Stotram', type: 'Ravanasura' },
+  // ]
+
+  const [bhajans, setBhajans] = new useState([])
+
+  useEffect(() => {
+    axios.get(API_CONFIG.baseUrl + "/bhakti/type/3").then((res) => {
+      setBhajans(res.data.data)
+    })
+  },[])
 
   return (
     <div className="space-y-4">
@@ -22,7 +33,7 @@ export default function BhajanContent() {
             </button>
             <div>
               <h3 className="font-semibold">{bhajan.title}</h3>
-              <p className="text-sm text-gray-600">{bhajan.type}</p>
+              <p className="text-sm text-gray-600">{bhajan.description}</p>
             </div>
           </div>
           <div className="flex gap-4">
