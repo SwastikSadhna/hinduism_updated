@@ -48,24 +48,49 @@ import Jagganath from './src/Resources/Temple/JagganathSwami.jpg'
 import TempleJagganath from './src/Resources/Temple/JagganathPuri.png'
 import Rathyatra from './src/Resources/Temple/Rathyatra.jpg'
 import TempleStructure from './src/Resources/Temple/Temple Strucutre.jpg'
+import AshtangYoga from './src/Resources/Daily-Routine/Ashtanga Yoga.jpg'
+import YinYoga from './src/Resources/Daily-Routine/Yin Yoga.jpg'
+import HathaYoga from './src/Resources/Daily-Routine/Hatha Yoga.jpg'
+import Yoga from './src/Resources/Daily-Routine/Yoga.jpg'
+import VinyasaYoga from './src/Resources/Daily-Routine/Vinyasa Yoga.jpg'
 
 const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagganathpuri, Badrinath, Sanatan, Brahma, Vishnu, Shiv, Temple, HeroImage];
 const imageDetails = {
-    Jagganath:{
-        src:Jagganath,
-        alt:"Jagganath Swami"
+    Yoga:{
+        src : Yoga,
+        alt : "Yoga Image",
     },
-    TempleJagganath:{
-        src:TempleJagganath,
-        alt:"Jagganath Swami"
+    AshtangYoga: {
+        src: AshtangYoga,
+        alt: "Ashtang Yoga",
     },
-    Rathyatra:{
-        src:Rathyatra,
-        alt:"Rathyatra"
+    YinYoga: {
+        src: YinYoga,
+        alt: "Yin Yoga",
     },
-    TempleStructure:{
-        src:TempleStructure,
-        alt:"TempleStructure"
+    HathaYoga: {
+        src: HathaYoga,
+        alt: "Hatha Yoga",
+    },
+    VinyasaYoga: {
+        src: VinyasaYoga,
+        alt: "Vinyasa Yoga",
+    },
+    Jagganath: {
+        src: Jagganath,
+        alt: "Jagganath Swami"
+    },
+    TempleJagganath: {
+        src: TempleJagganath,
+        alt: "Jagganath Swami"
+    },
+    Rathyatra: {
+        src: Rathyatra,
+        alt: "Rathyatra"
+    },
+    TempleStructure: {
+        src: TempleStructure,
+        alt: "TempleStructure"
     },
     Bookback2: {
         src: Bookback2,

@@ -48,7 +48,7 @@ const Temple = () => {
     <div className="min-h-screen">
       {/* Full-screen background with blue strip */}
       <div
-        className="container w-auto relative h-[650px] bg-cover bg-top flex items-end"
+        className="container w-full bg-white relative h-[600px] bg-cover bg-top flex items-end"
         style={{ backgroundImage: `url(${templeDetails.image})` }}
       >
         <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-md shadow-lg">
@@ -77,11 +77,11 @@ const Temple = () => {
               </button>
 
               {/* Image */}
-              <div className="w-full max-h-[400px] bg-contain max-w-4xl overflow-hidden">
+              <div className="w-full h-[400px] bg-contain max-w-2xl overflow-hidden">
                 <img
                   src={images[currentIndex]}
                   alt={`Temple Image ${currentIndex + 1}`}
-                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                  className="w-full h-auto object-contain rounded-lg shadow-lg"
                 />
               </div>
 
