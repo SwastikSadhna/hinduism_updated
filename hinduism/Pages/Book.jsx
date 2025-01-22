@@ -7,18 +7,6 @@ import axios from 'axios';
 import API_CONFIG from '../src/config/api';
 
 export default function BookDetailsPage() {
-
-  const [book, setBook] = new useState({})
-  const { id } = useParams();
-
-  useEffect(() => {
-    axios.get(API_CONFIG.baseUrl + `/book/id/${id}`).then((res) => {
-      setBook(res.data.data[0])
-    }).catch((err) => {
-      console.log(err);
-    })
-  }, [])
-  
   return (
     <div className="min-h-screen flex flex-col">
       <BookHeader
