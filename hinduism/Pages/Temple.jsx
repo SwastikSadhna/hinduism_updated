@@ -4,11 +4,10 @@ import TempleStory from "../Components/Temple/TempleStory";
 import TempleUniqueness from "../Components/Temple/TempleUniqueness";
 import TempleStructure from "../Components/Temple/TempleStructure";
 import TempleSpecial from "../Components/Temple/TempleSpecial";
-import TempleImage from "../Components/Temple/TempleFeatureImage";
 
 const Temple = () => {
   const templeDetails = {
-    image: `${imageDetails.Jagganathpuri.src}`, // Replace with actual image path
+    image: `${imageDetails.TempleJagganath.src}`, // Replace with actual image path
     story:
       "The Jagannath Temple, located in Puri, Odisha, India, is one of the most revered pilgrimage sites in India and a key component of the Char Dham Yatra. The temple is dedicated to Lord Jagannath, a form of Lord Vishnu, and has a rich history dating back to the 12th century. It has been a focal point for religious and cultural activities for centuries, with millions of devotees visiting it annually for darshan and during festivals such as the Rath Yatra.",
     uniqueness:
@@ -23,18 +22,23 @@ const Temple = () => {
   };
 
   return (
-    <div className=" min-h-screen">
-      {/* <TempleImage src={templeDetails.image} alt="Jagannath Temple" /> */}
-      {/* Full-width temple image */}
+    <div className="min-h-screen">
+      {/* Full-screen background with blue strip */}
       <div
-        className="w-full h-[400px] bg-cover bg-center"
+        className="container w-auto relative h-[650px] bg-cover bg-top flex items-end "
         style={{ backgroundImage: `url(${templeDetails.image})` }}
       >
-        <div className="flex items-center justify-center h-full bg-black bg-opacity-50 text-white text-3xl font-bold">
-          Jagannath Temple
+        {/* Blue strip at the bottom */}
+        {/* Temple details on top-left */}
+        <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-md shadow-lg">
+          <h1 className="text-2xl font-bold">Jagannath Temple</h1>
+          <p className="text-sm">Puri, Odisha, India</p>
         </div>
       </div>
-      <div className="container">
+
+      <div className="bottom-0 w-full h-[50px]  bg-blue-950 "></div>
+      {/* Temple content sections */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <TempleStory story={templeDetails.story} />
         <TempleUniqueness
           uniqueness={templeDetails.uniqueness}
@@ -48,6 +52,47 @@ const Temple = () => {
           special={templeDetails.special}
           image={templeDetails.specialImage}
         />
+      </div>
+
+      {/* Reference Link */}
+      <div className="bg-gray-100 py-6">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-lg font-medium">
+            For more details, visit the official website of the temple:{" "}
+            <a
+              href="https://www.jagannath.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              Jagannath Temple Official Website
+            </a>
+          </p>
+        </div>
+      </div>
+
+      {/* Carousel Section */}
+      <div className="bg-gray-50 py-8">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-4">Gallery</h2>
+          <div className="relative">
+            <div className="flex overflow-x-scroll no-scrollbar space-x-4">
+              {/* Carousel Items */}
+              {[...Array(5)].map((_, index) => (
+                <div
+                  key={index}
+                  className="min-w-[800px] h-auto bg-gray-300 rounded-lg shadow-lg flex items-center justify-center"
+                >
+                  <img
+                    src={imageDetails.Jagganathpuri.src} // Replace with dynamic image paths
+                    alt={`Temple Image ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
