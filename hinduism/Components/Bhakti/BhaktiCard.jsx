@@ -7,8 +7,7 @@ export default function BhaktiCard({ type, description, count, path, image }) {
       <div className="flex flex-col items-center space-y-4">
         <img src={image} />
         <h3 className="text-xl font-semibold text-gray-800">{type}</h3>
-        <p className="text-gray-600 text-center text-sm">{description}</p>
-        <span className="text-sm text-gray-500">{count} items</span>
+        {/* <p className="text-gray-600 text-center text-sm">{title}</p> */}
       </div>
     </div>
   );
