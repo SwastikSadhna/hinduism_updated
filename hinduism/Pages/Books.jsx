@@ -25,13 +25,13 @@ export default function Books() {
           <p className="text-lg text-gray-600">Explore different forms of devotional content</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {bhaktiTypes.length > 0 ? 
             bhaktiTypes.map((item) => (
               <Link to={`/Book/${item._id}`} key={item._id}>  {/* Wrap each card with Link */}
                 <BhaktiCard
                   type={item.title}
-                  description={item.description}
+                  description={item.description.slice(0,50)+"..."}
                   count={item.count}
                   image={item.image ? item.image : "../public/vite.svg"}
                 />

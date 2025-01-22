@@ -1,15 +1,30 @@
+import { FaPlay, FaHeart, FaShare } from 'react-icons/fa'
+
 export default function BhaktiCard({ type, description, count, path, image }) {
 
   return (
-    <div 
-      className="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
-    >
-      <div className="flex flex-col items-center space-y-4">
-        <img src={image} />
-        <h3 className="text-xl font-semibold text-gray-800">{type}</h3>
-        {/* <p className="text-gray-600 text-center text-sm">{title}</p> */}
-      </div>
-    </div>
+    <div
+              key={type}
+              className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4">
+                <button className="p-3 rounded-full bg-orange-500 text-white hover:bg-orange-600 transition-colors">
+                  <FaPlay />
+                </button>
+                <div>
+                  <h3 className="font-semibold">{type}</h3>
+                  <p className="text-sm text-gray-600">{description}</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <button className="p-2 hover:text-orange-500 transition-colors">
+                  <FaHeart />
+                </button>
+                <button className="p-2 hover:text-orange-500 transition-colors">
+                  <FaShare />
+                </button>
+              </div>
+            </div>
   );
 }
 
