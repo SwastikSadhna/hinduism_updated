@@ -13,6 +13,7 @@ import DuhaContent from '../Components/Bhakti/Content/DuhaContent';
 import ChhandContent from '../Components/Bhakti/Content/ChhandContent';
 import VedaContent from '../Components/Bhakti/Content/VedaContent';
 import DevtasContent from '../Components/Bhakti/Content/DevtasContent' 
+import Temple from "../Pages/Temple"
 import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
 import Templepage from "../Components/Home/Templepage";
@@ -27,6 +28,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/TemplePage/Temple" element={<Temple />} />
             <Route path="/Books" element={<Books />} />
             <Route path="/Books" element={<Books />} />
             <Route path="/Book/:id" element={<Book />} />

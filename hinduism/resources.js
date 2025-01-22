@@ -44,9 +44,24 @@ import Aditya from './src/Resources/Bhakti/12 aditya.jpg';
 import Rudra from './src/Resources/Bhakti/11-rudra.jpeg';
 import AshwiniKumar from './src/Resources/Bhakti/ashwini kumar.jpeg';
 import Devtas from './src/Resources/Bhakti/33 koti devta.webp';
+import Jagganath from './src/Resources/Temple/JagganathSwami.jpg'
+import Rathyatra from './src/Resources/Temple/Rathyatra.jpg'
+import TempleStructure from './src/Resources/Temple/Temple Strucutre.jpg'
 
 const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagganathpuri, Badrinath, Sanatan, Brahma, Vishnu, Shiv, Temple, HeroImage];
 const imageDetails = {
+    Jagganath:{
+        src:Jagganath,
+        alt:"Jagganath Swami"
+    },
+    Rathyatra:{
+        src:Rathyatra,
+        alt:"Rathyatra"
+    },
+    TempleStructure:{
+        src:TempleStructure,
+        alt:"TempleStructure"
+    },
     Bookback2: {
         src: Bookback2,
         alt: 'Bookback2',

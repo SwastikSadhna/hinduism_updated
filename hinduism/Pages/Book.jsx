@@ -3,6 +3,7 @@ import { BookDescription } from '../Components/Book/BookDescription'
 import { imageDetails } from '../resources'
 
 export default function BookDetailsPage() {
+
   return (
     <div className="min-h-screen flex flex-col">
       <BookHeader
