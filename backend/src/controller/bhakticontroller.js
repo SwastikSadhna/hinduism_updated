@@ -30,12 +30,12 @@ const GetBhaktiById = async (req, res) => {
 
 const BhaktiByType = async (req, res) => {
     try {
-        const bhakti = await BhaktiModel.BhaktiByType(req.params.bhaktitype);
+        const bhakti = await BhaktiModel.BhaktiByType(req.params.id);
 
         if (bhakti.length > 0) {
-            res.status(200).json({ message: 'bhakti fatched by keyword', data: bhakti });
+            res.status(200).json({ message: 'bhakti fatched by category', data: bhakti });
         } else {
-            res.status(404).json({ message: 'bhakti not found by keyword' });
+            res.status(404).json({ message: 'bhakti not found by category' });
         }
     } catch (error) {
         res.status(500).json({ message: 'something gone wrong', error: error });
