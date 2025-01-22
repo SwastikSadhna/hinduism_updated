@@ -42,6 +42,20 @@ const BhaktiByType = async (req, res) => {
     }
 }
 
+const BhaktiByKeyword = async (req, res) => {
+    try {
+        const bhakti = await BhaktiModel.BhaktiByKeyword();
+
+        if(bhakti.length > 0) {
+            res.status(200).json({ message: 'bhakti keywords found', data: bhakti })
+        } else {
+            res.status(404).json({ message: 'no keyword available' })
+        }
+    } catch(error) {
+        res.status(500).json({ message: 'something gone wrong', error: error })
+    }
+}
+
 const getAllCategories = async (req, res) => {
     try {
         const categories = await BhaktiModel.getAllCategories();
@@ -54,4 +68,4 @@ const getAllCategories = async (req, res) => {
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType , getAllCategories};
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, getAllCategories};

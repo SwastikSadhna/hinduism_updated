@@ -4,6 +4,7 @@ const bhakti = require('../controller/bhakticontroller');
 router.get('/all', bhakti.GetAllBhakti);
 router.get('/id/:bhaktiid', bhakti.GetBhaktiById);
 router.get('/type/:id', bhakti.BhaktiByType);
-router.get('/categories', bhakti.getAllCategories)
+router.get('/categories', bhakti.getAllCategories);
+router.get('/filter', bhakti.BhaktiByKeyword);
 
 module.exports = router;

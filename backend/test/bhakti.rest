@@ -8,8 +8,11 @@ GET http://localhost:3000/bhakti/id/2
 
 // Get Bhakti By Type
 GET http://localhost:3000/bhakti/type/4
+###
 
+// Get Bhakti Filter Keywords
+GET http://localhost:3000/bhakti/filter
 
 ###
 // get all the categories
-GET http://localhost:3000/bhakti/categories 
+GET http://localhost:3000/bhakti/categories

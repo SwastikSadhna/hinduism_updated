@@ -5,7 +5,7 @@ const bhaktiquery = {
     UpdateBhakti: `UPDATE public."bhakti" SET "title" = $2, "description" = $3, "keyword" = $4, "iamge" = $5, "type" = $6, "content" = $7, "author" = $8, "reference_links" = $9 WHERE _id = $1 RETURNING *;`,
     DeleteBhakti: `DELETE FROM public."bhakti" WHERE _id = $1;`,
     BhaktiByType: `SELECT * FROM public."bhakti" WHERE "category" = $1;`,
-    BhaktiByKeyword: `SELECT "_id", "title", "author" FROM public."bhakti" WHERE "keyword" && $1;`,
+    BhaktiByKeyword: `SELECT ARRAY_AGG(DISTINCT word) AS keyword FROM bhakti, UNNEST(keyword) AS word;`,
 }
 
 const bhakticategory = {
