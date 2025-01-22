@@ -6,27 +6,51 @@ import API_CONFIG from '../../src/config/api';
 import axios from 'axios';
 
 
-const features = [
+// const features = [
+//   {
+//     number: "Garbhagriha",
+//     text: "The sanctum sanctorum, or inner sanctum, that houses the main deity's idol or image",
+//     image: 'https://www.terragalleria.com/images/india/indi39650.jpeg'
+//   },
+//   {
+//     number: "Mandapa",
+//     text: "The entrance to the temple, which can be a portico or colonnaded hall ",
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg/1200px-Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg'
+//   },
+//   {
+//     number: "Shikhara",
+//     text: "The tower, spire, or superstructure that sits above the sanctuary and pillared mandapas ",
+//     image: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Khajuraho3.jpg'
+//   },
+// ];
+
+const templeComponents = [
   {
-    number: "Garbhagriha",
-    text: "The sanctum sanctorum, or inner sanctum, that houses the main deity's idol or image",
-    image: 'https://www.terragalleria.com/images/india/indi39650.jpeg'
+    title: "Garbhagriha",
+    imageSrc: "https://www.terragalleria.com/images/india/indi39650.jpeg",
+    imageAlt: "Interior of a temple showing ornate stone pillars leading to the sanctum sanctorum",
+    description: "The sanctum sanctorum, or inner sanctum, that houses the main deity's idol or image",
   },
   {
-    number: "Mandapa",
-    text: "The entrance to the temple, which can be a portico or colonnaded hall ",
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg/1200px-Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg'
+    title: "Mandapa",
+    imageSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg/1200px-Jain_Temple%2C_Ranakpur_-_panoramio_%282%29.jpg",
+    imageAlt: "Temple hall with ornate pillars and gathering space",
+    description:
+      "The pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performances The pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performancesThe pillared hall or pavilion in front of the garbhagriha, used for gatherings, rituals, and dance performances",
   },
   {
-    number: "Shikhara",
-    text: "The tower, spire, or superstructure that sits above the sanctuary and pillared mandapas ",
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Khajuraho3.jpg'
+    title: "Shikhara",
+    imageSrc: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Khajuraho3.jpg",
+    imageAlt: "Rising tower above the temple sanctuary",
+    description:
+      "The rising tower above the sanctum sanctorum, symbolizing the sacred mountain peak and marking the most sacred space",
   },
-];
+]
 
 export default function Templepage() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [slides, setSlides] = new useState([])
+  const [slides, setSlides] = useState([])
+  const [openModal, setOpenModal] = useState(null)
 
   useEffect(() => {
     axios.get(`${API_CONFIG.baseUrl}/temple/all`).then((data) => {
@@ -147,7 +171,7 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
       </div>
     </div>
 
-    <div className="bg-gray-50 py-16">
+    {/* <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="space-y-8">
           {features.map((feature, index) => (
@@ -184,6 +208,78 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
           ))}
         </div>
       </div>
+    </div> */}
+<div className="max-w-7xl mx-auto p-6">
+      <h1 className="text-4xl font-bold text-center text-blue-800 mb-12">Exploring Hindu Temple Architecture</h1>
+      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {templeComponents.map((component, index) => (
+          <div
+            key={index}
+            className="relative h-[300px] rounded-2xl overflow-hidden cursor-pointer group"
+            onClick={() => setOpenModal(index)}
+          >
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src={component.imageSrc || "/placeholder.svg"}
+                alt={component.imageAlt}
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
+            {/* Content */}
+            <div className="relative h-full flex items-center justify-center p-6">
+              <h2 className="text-4xl font-bold text-white text-center tracking-wider">{component.title}</h2>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Full Screen Modal */}
+      {openModal !== null && (
+        <div
+          className="fixed inset-0 bg-black/90 z-50 overflow-y-auto"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setOpenModal(null)
+          }}
+        >
+          {/* Modal Container */}
+          <div className="min-h-screen w-full flex flex-col items-center justify-center p-4">
+            {/* Close Button */}
+            <button
+              onClick={() => setOpenModal(null)}
+              className="fixed top-4 right-4 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 p-2 rounded-full"
+              aria-label="Close modal"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Image Container */}
+            <div className="relative w-full h-[calc(100vh-12rem)] max-w-7xl mx-auto">
+              <img
+                src={templeComponents[openModal].imageSrc || "/placeholder.svg"}
+                alt={templeComponents[openModal].imageAlt}
+                className="object-contain w-full h-full"
+              />
+            </div>
+
+            {/* Description Panel */}
+            <div className="bg-white/90 backdrop-blur-sm w-full max-w-3xl mx-auto mt-4 p-6 rounded-xl">
+              <h2 className="text-3xl font-bold text-blue-800 mb-2">{templeComponents[openModal].title}</h2>
+              <p className="text-gray-800 text-lg leading-relaxed">{templeComponents[openModal].description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
     </>
   )
