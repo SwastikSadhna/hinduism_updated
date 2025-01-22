@@ -1,0 +1,10 @@
+// Get All Bhakti
+GET http://localhost:3000/bhakti/all
+###
+
+// Get Bhakti by Id
+GET http://localhost:3000/bhakti/id/2
+###
+
+// Get Bhakti By Type
+GET http://localhost:3000/bhakti/type/Stotra

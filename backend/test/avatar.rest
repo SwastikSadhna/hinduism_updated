@@ -1,0 +1,14 @@
+// Get All Avatar
+GET http://localhost:3000/avatar/all
+###
+
+// Get Avatar By Id
+GET http://localhost:3000/avatar/id/2
+###
+
+// Get Avatar By Search
+GET http://localhost:3000/avatar/search?q=k
+###
+
+// Get God By Avatar
+GET http://localhost:3000/avatar/god

@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="/" className="text-white text-xl font-semibold">
-              Sanatan
+              VedicPulse.com
             </a>
             <p className="mt-2 text-sm">Vasudhaiva Kutumbakam</p>
             <div className="mt-6 flex gap-4">

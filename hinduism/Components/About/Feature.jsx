@@ -3,18 +3,18 @@ import { imageDetails } from "../../resources";
 export default function Features() {
   const features = [
     {
-      number: "Explore Hindu Gods and Temples ",
-      text: "Dive into the rich mythology of Hinduism and discover the significance of various Hindu gods and their roles in the universe. Learn about iconic temples across India, their history, and their spiritual importance.",
+      number: "Why is VedicPulse needed today?",
+      text: "In today’s fast-paced world, VedicPulse helps preserve and promote Hindu traditions and spirituality. It offers a space to reconnect with ancient wisdom, explore sacred texts, and incorporate timeless values into daily life, bridging tradition and modernity.",
       image: `${imageDetails.Rammandir.src}`
     },
     {
-      number: "Sacred Scriptures and Mantras",
-      text: "Access the timeless wisdom of sacred texts like the Bhagavad Gita and Vedas. Explore the meanings of powerful shlokas and mantras, along with their relevance to modern life and spiritual practices.",
+      number: "What can I find on VedicPulse?",
+      text: "VedicPulse offers a wealth of knowledge about Hindu gods, sacred scriptures like the Vedas and Puranas, melodious bhajans, and powerful shlokas. It is a platform to explore Hinduism’s spiritual teachings, cultural heritage, and timeless traditions, helping users connect deeply with Sanatan Dharma.",
       image: `${imageDetails.Scrupture.src}`
     },
     {
-      number: "Vedic Lifestyle and Devotional Practices",
-      text: "Embrace the Vedic way of living with guidance on yoga, meditation, and the ideal daily routine. Listen to soulful bhajans and aartis to enhance your spiritual journey and connection with the divine.",
+      number: "What makes VedicPulse unique compared to other platforms?",
+      text: "VedicPulse stands out by offering a comprehensive blend of knowledge about Hindu gods, scriptures, bhajans, shlokas, and cultural practices in one place. It provides an authentic and accessible way for users to explore and connect with the rich traditions of Hindu Dharma.",
       image: `${imageDetails.LifeStyle.src}`
     },
   ];

@@ -10,7 +10,7 @@ export default function BookDetailsPage() {
         author="Maharshi Ved Vyas"
         coverImage={imageDetails.Mahabharat.src}
         alt={imageDetails.Sanatan3.alt}
-        backgroundImage={imageDetails.Sanatan3.src}
+        backgroundImage={imageDetails.Bookback2.src}
       />
       
       <BookDescription

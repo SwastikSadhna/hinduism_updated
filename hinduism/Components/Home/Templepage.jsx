@@ -153,7 +153,7 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:-translate-y-2 ${
+              className={`flex flex-col lg:flex-col items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:-translate-y-2 ${
                 index % 2 === 0 ? 'bg-blue-100' : 'bg-blue-200'
               }`}
               style={{
@@ -163,12 +163,10 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
               }}
             >
               <div className="w-full lg:w-2/3">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 mb-4">
+                <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 mb-4 text-center">
                   {feature.number}
                 </p>
-                <p className="text-gray-600 text-sm sm:text-md md:text-lg">
-                  {feature.text}
-                </p>
+                
               </div>
               <div className="w-full lg:w-1/3 flex items-center justify-center">
                 <img
@@ -176,6 +174,11 @@ The bulbous finial that tops the shikhara in Nagara style architecture*/}
                   alt={feature.number}
                   className="w-full h-56 sm:h-64 md:h-72 object-contain rounded"
                 />
+              </div>
+              <div className='w-full'>
+              <p className="text-gray-600 text-sm sm:text-md md:text-lg text-center">
+                  {feature.text}
+                </p>
               </div>
             </div>
           ))}

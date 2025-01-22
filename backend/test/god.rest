@@ -1,0 +1,14 @@
+// Get All God
+GET http://localhost:3000/god/all
+###
+
+// Get God by ID
+GET http://localhost:3000/god/id/2
+###
+
+// Get God by search
+GET http://localhost:3000/god/search?q=s
+###
+
+// Get Trimurti god
+GET http://localhost:3000/god/trimurti

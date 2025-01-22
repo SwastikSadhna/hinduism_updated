@@ -25,12 +25,12 @@ const Header = () => {
     >
       <nav className="flex items-center justify-between">
         {/* Logo */}
-        <div className="flex justify-center items-center text-2xl gap-3 tracking-wide italic">
+        <div className="flex justify-center items-center text-2xl gap-3 tracking-wide ">
           <img
-            src={imageDetails.logo.src}
-            className="w-9 h-9 rounded-full"
+            src={imageDetails.logo2.src}
+            className="h-7 -ml-3"
             alt={imageDetails.logo.alt}
-          />SANATAN
+          />
         </div>
 
         {/* Desktop Navigation */}
