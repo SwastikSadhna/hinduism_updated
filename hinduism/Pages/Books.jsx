@@ -30,7 +30,7 @@ export default function Books() {
             bhaktiTypes.map((item) => (
               <Link to={`/Book/${item._id}`} key={item._id}>  {/* Wrap each card with Link */}
                 <BhaktiCard
-                  type={item.name}
+                  type={item.title}
                   description={item.description}
                   count={item.count}
                   image={item.image ? item.image : "../public/vite.svg"}
