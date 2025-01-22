@@ -45,6 +45,7 @@ import Rudra from './src/Resources/Bhakti/11-rudra.jpeg';
 import AshwiniKumar from './src/Resources/Bhakti/ashwini kumar.jpeg';
 import Devtas from './src/Resources/Bhakti/33 koti devta.webp';
 import Jagganath from './src/Resources/Temple/JagganathSwami.jpg'
+import TempleJagganath from './src/Resources/Temple/JagganathPuri.png'
 import Rathyatra from './src/Resources/Temple/Rathyatra.jpg'
 import TempleStructure from './src/Resources/Temple/Temple Strucutre.jpg'
 
@@ -52,6 +53,10 @@ const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagg
 const imageDetails = {
     Jagganath:{
         src:Jagganath,
+        alt:"Jagganath Swami"
+    },
+    TempleJagganath:{
+        src:TempleJagganath,
         alt:"Jagganath Swami"
     },
     Rathyatra:{
