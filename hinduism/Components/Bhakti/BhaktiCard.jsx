@@ -7,7 +7,7 @@ export default function BhaktiCard({ type, description, count, path, image }) {
 
 
   const handleClick = () => {
-    navigate("/bhakti"+path);
+    navigate("/Books"+path);
   };
 
   return (
