@@ -38,7 +38,7 @@ const Header = () => {
           <Link to="/" className="hover:text-[#FF7722]">Home</Link>
           <Link to="/Book" className="hover:text-[#FF7722]">Books</Link>
           <Link to="" className="hover:text-[#FF7722]">Avatar</Link>
-          <Link to="/Bhakti" className="hover:text-[#FF7722]">Bhakti</Link>
+          <Link to="/Bhakti/bhajans" className="hover:text-[#FF7722]">Bhakti</Link>
           <Link to="" className="hover:text-[#FF7722]">Granth</Link>
           <div className="relative group">
             <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">
