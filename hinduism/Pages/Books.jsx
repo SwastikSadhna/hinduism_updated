@@ -31,7 +31,8 @@ export default function Books() {
               <Link to={`/Book/${item._id}`} key={item._id}>  {/* Wrap each card with Link */}
                 <BhaktiCard
                   type={item.title}
-                  description={item.description.slice(0,50)+"..."}
+                  author={item.author}
+                  description={item.description}
                   count={item.count}
                   image={item.image ? item.image : "../public/vite.svg"}
                 />

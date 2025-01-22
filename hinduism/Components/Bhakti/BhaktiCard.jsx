@@ -8,12 +8,11 @@ export default function BhaktiCard({ type, description, count, path, image }) {
               className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex items-center gap-4">
-                <button className="p-3 rounded-full bg-orange-500 text-white hover:bg-orange-600 transition-colors">
-                  <FaPlay />
-                </button>
+                <img src={image} className='w-[15%] md:w-[15%] lg:w-[10%]'></img>
                 <div>
                   <h3 className="font-semibold">{type}</h3>
-                  <p className="text-sm text-gray-600">{description}</p>
+                  <p className='text-sm text-gray-600 mb-2'>Author name</p>
+                  <p className="text-[12px] text-gray-500">{description.slice(0, 100) + "..."}</p>
                 </div>
               </div>
               <div className="flex gap-4">
