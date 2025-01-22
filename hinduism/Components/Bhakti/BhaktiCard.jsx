@@ -1,18 +1,7 @@
-import { useNavigate } from 'react-router-dom'; // Using useNavigate instead of Link
-
-
 export default function BhaktiCard({ type, description, count, path, image }) {
-  const navigate = useNavigate();
-
-
-
-  const handleClick = () => {
-    navigate("/Books"+path);
-  };
 
   return (
     <div 
-      onClick={handleClick}
       className="bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer"
     >
       <div className="flex flex-col items-center space-y-4">

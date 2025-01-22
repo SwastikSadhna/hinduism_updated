@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header
-      className="header w-full px-6 py-3 shadow-md z-20"
+      className="header w-full px-6 py-3 shadow-md z-20 static"
       style={{ backgroundColor: `#FFFFFF91` }}
     >
       <nav className="flex items-center justify-between">
@@ -45,7 +45,7 @@ const Header = () => {
               Routine <FaChevronDown />
             </button>
             {isRoutineOpen && (
-              <div className="absolute top-full left-0 bg-[#FFF7ED] shadow-md rounded-md mt-2">
+              <div className="absolute top-full left-0 bg-[#FFF7ED] shadow-md rounded-md mt-2 z-20">
                 <Link to="/Routine/Yoga" className="block px-4 py-2 hover:bg-gray-200">Yoga</Link>
                 <Link to="/Routine/Shlok" className="block px-4 py-2 hover:bg-gray-200">Shlok</Link>
               </div>

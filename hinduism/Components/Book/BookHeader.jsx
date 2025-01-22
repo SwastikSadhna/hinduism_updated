@@ -1,5 +1,5 @@
 import { BookCover } from './BookCover'
-import { ActionButton } from './ActionButtons'
+
 
 export function BookHeader({ title, author, coverImage, backgroundImage, alt }) {
   return (
@@ -23,10 +23,7 @@ export function BookHeader({ title, author, coverImage, backgroundImage, alt }) 
             <p className="text-right tracking-wide text-gray-400 text-xl text-gray-200 mb-6">
               <span className='text-sm'>Author :</span> {author}
             </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <ActionButton variant="primary">View Book</ActionButton>
-              <ActionButton variant="secondary">Download</ActionButton>
-            </div>
+            
           </div>
         </div>
       </div>

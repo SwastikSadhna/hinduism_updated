@@ -1,20 +1,38 @@
 import { BookHeader } from '../Components/Book/BookHeader'
 import { BookDescription } from '../Components/Book/BookDescription'
 import { imageDetails } from '../resources'
+import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
+import axios from 'axios';
+import API_CONFIG from '../src/config/api';
 
 export default function BookDetailsPage() {
+
+  const [book, setBook] = new useState({})
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios.get(API_CONFIG.baseUrl + `/book/id/${id}`).then((res) => {
+      setBook(res.data.data[0])
+    }).catch((err) => {
+      console.log(err);
+    })
+  }, [])
+  
   return (
     <div className="min-h-screen flex flex-col">
       <BookHeader
-        title={imageDetails.Mahabharat.alt}
-        author="Maharshi Ved Vyas"
-        coverImage={imageDetails.Mahabharat.src}
-        alt={imageDetails.Sanatan3.alt}
-        backgroundImage={imageDetails.Bookback2.src}
+        title={book.title}
+        author={book.author}
+        coverImage={book.image}
+        alt={book.title}
+        backgroundImage={book.cover_image}
+        
       />
       
       <BookDescription
-        description="The Mahabharata is an ancient Indian epic where the main story revolves around two branches of a family - the Pandavas and Kauravas - who, in the Kurukshetra War, battle for the throne of Hastinapura. Interwoven into this narrative are several smaller stories about people dead or living, and philosophical discourses."
+        description={book.description}
+        refLink={book.link}
       />
       
       <div className="flex-grow" />
