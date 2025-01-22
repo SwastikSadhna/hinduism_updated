@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import { imageDetails } from "../resources";
 import TempleStory from "../Components/Temple/TempleStory";
 import TempleUniqueness from "../Components/Temple/TempleUniqueness";
@@ -21,25 +22,80 @@ const Temple = () => {
     specialImage: `${imageDetails.Rathyatra.src}`, // Replace with actual image
   };
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    imageDetails.Jagganathpuri.src, // Replace with actual image paths
+    imageDetails.TempleJagganath.src,
+    imageDetails.Jagganath.src,
+    imageDetails.Rathyatra.src,
+    imageDetails.TempleStructure.src,
+  ];
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className="min-h-screen">
       {/* Full-screen background with blue strip */}
       <div
-        className="container w-auto relative h-[650px] bg-cover bg-top flex items-end "
+        className="container w-auto relative h-[650px] bg-cover bg-top flex items-end"
         style={{ backgroundImage: `url(${templeDetails.image})` }}
       >
-        {/* Blue strip at the bottom */}
-        {/* Temple details on top-left */}
         <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-md shadow-lg">
           <h1 className="text-2xl font-bold">Jagannath Temple</h1>
           <p className="text-sm">Puri, Odisha, India</p>
         </div>
       </div>
 
-      <div className="bottom-0 w-full h-[50px]  bg-blue-950 "></div>
+      <div className="bottom-0 w-full h-[50px] bg-blue-950 "></div>
+
       {/* Temple content sections */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <TempleStory story={templeDetails.story} />
+
+        {/* Carousel Section */}
+        <div className="py-8">
+          <h2 className="text-2xl font-bold text-center mb-4">Gallery</h2>
+          <div className="relative">
+            <div className="flex items-center justify-center">
+              {/* Previous Button */}
+              <button
+                className="absolute left-4 z-10 bg-white bg-opacity-70 p-2 rounded-full hover:bg-opacity-100 transition"
+                onClick={handlePrev}
+              >
+                <IoChevronBackOutline size={24} />
+              </button>
+
+              {/* Image */}
+              <div className="w-full max-h-[400px] bg-contain max-w-4xl overflow-hidden">
+                <img
+                  src={images[currentIndex]}
+                  alt={`Temple Image ${currentIndex + 1}`}
+                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
+              </div>
+
+              {/* Next Button */}
+              <button
+                className="absolute right-4 z-10 bg-white bg-opacity-70 p-2 rounded-full hover:bg-opacity-100 transition"
+                onClick={handleNext}
+              >
+                <IoChevronForwardOutline size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+
         <TempleUniqueness
           uniqueness={templeDetails.uniqueness}
           image={templeDetails.uniquenessImage}
@@ -68,30 +124,6 @@ const Temple = () => {
               Jagannath Temple Official Website
             </a>
           </p>
-        </div>
-      </div>
-
-      {/* Carousel Section */}
-      <div className="bg-gray-50 py-8">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-4">Gallery</h2>
-          <div className="relative">
-            <div className="flex overflow-x-scroll no-scrollbar space-x-4">
-              {/* Carousel Items */}
-              {[...Array(5)].map((_, index) => (
-                <div
-                  key={index}
-                  className="min-w-[800px] h-auto bg-gray-300 rounded-lg shadow-lg flex items-center justify-center"
-                >
-                  <img
-                    src={imageDetails.Jagganathpuri.src} // Replace with dynamic image paths
-                    alt={`Temple Image ${index + 1}`}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
