@@ -42,4 +42,16 @@ const BhaktiByType = async (req, res) => {
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType };
+const getAllCategories = async (req, res) => {
+    try {
+        const categories = await BhaktiModel.getAllCategories();
+        if (categories.length > 0)
+            res.status(200).json(categories)
+        else
+            res.status(404).json({ message: 'categories not found' });
+    } catch (err) {
+        res.status(500).json({ message: 'something gone wrong', error: err });
+    }
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType , getAllCategories};

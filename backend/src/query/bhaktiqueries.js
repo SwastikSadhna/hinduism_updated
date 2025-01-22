@@ -8,4 +8,8 @@ const bhaktiquery = {
     BhaktiByKeyword: `SELECT "_id", "title", "author" FROM public."bhakti" WHERE "keyword" && $1;`,
 }
 
-module.exports = {bhaktiquery}
+const bhakticategory = {
+    getAllCategories: `SELECT * FROM public."bhakti_category";`,
+}
+
+module.exports = {bhaktiquery, bhakticategory}

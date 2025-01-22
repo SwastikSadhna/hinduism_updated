@@ -1,18 +1,31 @@
+import { useEffect, useState } from 'react'
 import { FaMusic, FaHeart, FaShare } from 'react-icons/fa'
+import axios from "axios"
+import API_CONFIG from "../../../src/config/api"
 
 export default function ChhandContent() {
-  const chhands = [
-    {
-      name: "दोहा",
-      example: "चिंता ऐसी दाखिनी, उपजै घट माहिं। बालक वृद्ध न चोर कोइ, सबको डरपावै जाहिं।",
-      description: "दो पंक्तियों का छंद, प्रत्येक पंक्ति में 24 मात्राएँ"
-    },
-    {
-      name: "चौपाई",
-      example: "जय हनुमान ज्ञान गुन सागर। जय कपीस तिहुँ लोक उजागर।",
-      description: "चार पंक्तियों का छंद, प्रत्येक पंक्ति में 16 मात्राएँ"
-    },
-  ]
+  // const chhands = [
+  //   {
+  //     name: "दोहा",
+  //     example: "चिंता ऐसी दाखिनी, उपजै घट माहिं। बालक वृद्ध न चोर कोइ, सबको डरपावै जाहिं।",
+  //     description: "दो पंक्तियों का छंद, प्रत्येक पंक्ति में 24 मात्राएँ"
+  //   },
+  //   {
+  //     name: "चौपाई",
+  //     example: "जय हनुमान ज्ञान गुन सागर। जय कपीस तिहुँ लोक उजागर।",
+  //     description: "चार पंक्तियों का छंद, प्रत्येक पंक्ति में 16 मात्राएँ"
+  //   },
+  // ]
+
+  const [chhands, setChhand] = new useState([])
+
+  useEffect(() => {
+    axios.get(API_CONFIG.baseUrl + "/bhakti/type/1").then((res) => {
+      setChhand(res.data.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  },[])
 
   return (
     <div className="space-y-4">
@@ -25,7 +38,7 @@ export default function ChhandContent() {
             <div>
               <h3 className="font-semibold text-lg flex items-center">
                 <FaMusic className="text-orange-500 mr-2" />
-                {chhand.name}
+                {chhand.title}
               </h3>
               <p className="text-sm text-gray-600 mt-1">{chhand.description}</p>
             </div>
@@ -38,7 +51,7 @@ export default function ChhandContent() {
               </button>
             </div>
           </div>
-          <p className="text-gray-800 font-medium mt-2">{chhand.example}</p>
+          <p className="text-gray-800 font-medium mt-2">{chhand?.keyword?.join(" , ")}</p>
         </div>
       ))}
     </div>

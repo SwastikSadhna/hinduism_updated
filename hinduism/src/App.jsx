@@ -31,11 +31,11 @@ function App() {
             <Route path="/Bhakti" element={<Bhakti />} />
             <Route path="/Routine/Shlok" element={<Shlok />} />
             <Route path="/Bhakti/*" element={<BhaktiLayout />}>
-              <Route path="Bhajans" element={<BhajanContent />} />
-              <Route path="Duha" element={<DuhaContent />} />
-              <Route path="Chhand" element={<ChhandContent />} />
-              <Route path="Vedas" element={<VedaContent />} />
-              <Route path="Devtas" element={<DevtasContent />} />
+              <Route path="bhajans" element={<BhajanContent />} />
+              <Route path="duha" element={<DuhaContent />} />
+              <Route path="chhand" element={<ChhandContent />} />
+              <Route path="vedas" element={<VedaContent />} />
+              <Route path="devtas" element={<DevtasContent />} />
             </Route>
             <Route path="/Templepage" element={<Templepage />} />
           </Routes>

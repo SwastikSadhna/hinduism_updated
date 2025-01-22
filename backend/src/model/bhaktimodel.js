@@ -1,5 +1,5 @@
 const pool = require("../db");
-const {bhaktiquery} = require("../query/bhaktiqueries");
+const { bhaktiquery, bhakticategory } = require("../query/bhaktiqueries");
 
 const GetAllBhakti = async () => {
     const result = await pool.query(bhaktiquery.GetAllBhakti);
@@ -16,4 +16,9 @@ const BhaktiByType = async (type) => {
     return result.rows;
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType };
+const getAllCategories = async () => {
+    const result = await pool.query(bhakticategory.getAllCategories);
+    return result.rows;
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, getAllCategories };
