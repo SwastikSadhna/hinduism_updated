@@ -14,7 +14,7 @@ import ChhandContent from '../Components/Bhakti/Content/ChhandContent';
 import VedaContent from '../Components/Bhakti/Content/VedaContent';
 import DevtasContent from '../Components/Bhakti/Content/DevtasContent' 
 import Yoga from "../Pages/Yoga";
-import Temple from "../Pages/Temple"
+import Temple from "../Pages/Temple2"
 import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
 import Templepage from "../Components/Home/Templepage";
