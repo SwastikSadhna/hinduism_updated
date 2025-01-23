@@ -8,23 +8,37 @@ import TempleSpecial from "../Components/Temple/TempleSpecial";
 import axios from "axios";
 import API_CONFIG from "../src/config/api";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Temple = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const navigate = useNavigate();
   const [templeDetails, settempleDetails] = useState([])
   const { id } = useParams();
   const [images, setImages] = useState([])
+  const [hasFetched, setHasFetched] = useState(false);
 
-  useEffect(() => { 
-    axios.get(`${API_CONFIG.baseUrl}/temple/get/${id}`).then((res) => {
-      settempleDetails(res.data[0]);
-      setImages(res.data[0].images)
-    }).catch((err) => {
-      console.log(err)
-    })
-  },[])
+  useEffect(() => {
+    if (!hasFetched) {
+      axios
+        .get(`${API_CONFIG.baseUrl}/temple/get/${id}`)
+        .then((res) => {
+          settempleDetails(res.data[0]);
+          setImages(res.data[0]?.images || []);
+        })
+        .catch((err) => {
+          if (!hasFetched) { 
+            alert(err.response?.data?.message || "An error occurred");
+            navigate("/");
+          }
+        })
+        .finally(() => {
+          setHasFetched(true); 
+        });
+    }
+  }, [id, hasFetched, navigate]);
+
   // const images = [
   //   imageDetails.Jagganathpuri.src, // Replace with actual image paths
   //   imageDetails.TempleJagganath.src,
@@ -99,10 +113,7 @@ const Temple = () => {
           </div>
         </div>
 
-        <TempleUniqueness
-          uniqueness={templeDetails.importance}
-          image={templeDetails.uniquenessImage}
-        />
+        {templeDetails?.importance?.map((val, i) => <TempleUniqueness {...val} key={i} />)}
       </div>
 
       {/* Reference Link */}
