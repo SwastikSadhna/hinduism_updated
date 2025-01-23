@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import API_CONFIG from '../../src/config/api';
 import axios from 'axios';
+import CharDhamCard from './CharDhamCard';
 
 gsap.registerPlugin(ScrollTrigger)
 export default function CharDhamSection() {
@@ -77,7 +78,28 @@ export default function CharDhamSection() {
               </button>
             </Link>
 
-            z
+            {/* Image Carousel */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-10xl">
+              {temples.map((temple, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-xl overflow-hidden group cursor-pointer card-animate"
+
+                >
+                  <img
+                    src={API_CONFIG.baseUrl+temple.cover_image}
+                    alt={temple.name}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-4 text-white">
+                    <h3 className="text-lg font-semibold">{temple.name}</h3>
+                    <p className="text-sm text-white/80">{temple.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
