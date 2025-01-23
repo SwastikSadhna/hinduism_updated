@@ -26,4 +26,9 @@ const BhaktiByKeyword = async () => {
     return result.rows;
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword ,getAllCategories };
+const FilterBhakti = async (query) => {
+    const result = await pool.query(bhaktiquery.FilterBhakti + query);
+    return result.rows;
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, FilterBhakti, getAllCategories };

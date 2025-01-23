@@ -1,3 +1,4 @@
+const { getFilterQuery } = require("../middleware/filterHelper")
 const BhaktiModel = require('../model/bhaktimodel');
 
 const GetAllBhakti = async (req, res) => {
@@ -56,6 +57,23 @@ const BhaktiByKeyword = async (req, res) => {
     }
 }
 
+const FilterBhakti = async (req, res) => {
+    try {
+        const filter = req.query;
+        const query = getFilterQuery(filter);
+        const bhakti = await BhaktiModel.FilterBhakti(query);
+
+        if(bhakti.length > 0) {
+            res.status(200).json({ message: 'bhakti filtered', data: bhakti});
+        } else {
+            res.status(404).json({message: 'no data available for this filter'});
+        }
+    } catch(error) {
+        console.log(error);
+        res.status(500).json({message: 'something gone wrong', error: error});
+    }
+}
+
 const getAllCategories = async (req, res) => {
     try {
         const categories = await BhaktiModel.getAllCategories();
@@ -68,4 +86,4 @@ const getAllCategories = async (req, res) => {
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, getAllCategories};
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, FilterBhakti, getAllCategories};

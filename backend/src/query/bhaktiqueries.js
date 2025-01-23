@@ -6,6 +6,7 @@ const bhaktiquery = {
     DeleteBhakti: `DELETE FROM public."bhakti" WHERE _id = $1;`,
     BhaktiByType: `SELECT * FROM public."bhakti" WHERE "category" = $1;`,
     BhaktiByKeyword: `SELECT ARRAY_AGG(DISTINCT word) AS keyword FROM bhakti, UNNEST(keyword) AS word;`,
+    FilterBhakti: `SELECT * FROM public."bhakti" WHERE `,
 }
 
 const bhakticategory = {
