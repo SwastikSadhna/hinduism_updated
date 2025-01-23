@@ -39,7 +39,19 @@ export default function CharDhamSection() {
   useEffect(() => {
     axios.get(`${API_CONFIG.baseUrl}/temple/chardham`).then((result) => {
       console.log("Data Fetched");
-      setTemples(result.data)
+      const temp = result.data;
+      
+      temp.forEach((temple, index) => {
+        if(temple.cover_image){
+          if(temple.cover_image.startsWith("http")){
+            temp[index].cover_image = temple.cover_image
+          }else{
+              temp[index].cover_image = API_CONFIG.baseUrl + temp[index].cover_image
+          }
+        }
+      })
+      console.log(temp)
+      setTemples(temp)
     })
   },[])
 
@@ -87,7 +99,7 @@ export default function CharDhamSection() {
 
                 >
                   <img
-                    src={API_CONFIG.baseUrl+temple.cover_image}
+                    src={temple.cover_image}
                     alt={temple.name}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
