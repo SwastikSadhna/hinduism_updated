@@ -123,7 +123,7 @@ const Temple = () => {
             For more details, visit the relevant sites :
             {
               templeDetails?.reference_link?.length > 0 ?templeDetails.reference_link.map((val, i) => {
-                return (<a key={i} href={val} className="text-blue-400" target="_blank"> {val} </a>);
+                return (<p key={i}><a  href={val} className="text-blue-400" target="_blank"> {val} </a></p>);
               }): "No References available."
             }
             {/* <a

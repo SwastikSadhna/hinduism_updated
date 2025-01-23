@@ -77,7 +77,7 @@ export default function Templepage() {
               style={{ left: `${index * 100}%` }}
             >
               <img
-                src={API_CONFIG.baseUrl + slide.cover_image}
+                src={slide?.cover_image?.startsWith("http")? slide.cover_image: API_CONFIG.baseUrl +slide.cover_image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
@@ -129,7 +129,7 @@ export default function Templepage() {
               }`}
             >
               <img
-                src={API_CONFIG.baseUrl + slide.cover_image}
+                src={slide?.cover_image?.startsWith("http")? slide.cover_image: API_CONFIG.baseUrl +slide.cover_image}
                 alt={slide.name}
                 className="w-full h-full object-cover"
               />
