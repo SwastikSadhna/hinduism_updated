@@ -11,6 +11,11 @@ const GetGodById = async (id) => {
     return result.rows;
 }
 
+const GodKeywords = async () => {
+    const result = await pool.query(godquery.GodKeywords);
+    return result.rows;
+}
+
 const SearchGod = async (q) => {
     const result = await pool.query(godquery.SearchGod, [q + "%"]);
     return result.rows;
@@ -21,4 +26,4 @@ const GetTrimurty = async () => {
     return result.rows;
 }
 
-module.exports = { GetAllGod, GetGodById, SearchGod, GetTrimurty };
+module.exports = { GetAllGod, GetGodById, GodKeywords, SearchGod, GetTrimurty };

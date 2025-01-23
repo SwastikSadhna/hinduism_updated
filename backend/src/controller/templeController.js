@@ -54,6 +54,21 @@ const filterTemple = async (req, res) => {
     }
 }
 
+const templeKeywords = async (req, res) => {
+    try {
+        const temple = await Temple.templeKeywords();
+
+        if(temple.length > 0) {
+            res.status(200).json({ message: 'temple keywords found', data: temple })
+        } else {
+            res.status(404).json({ message: 'no keyword available' })
+        }
+    } catch(error) {
+        console.log(error);
+        res.status(500).json({ message: 'something gone wrong', error: error })
+    }
+}
+
 const getChardhamTemples = async (req, res) => {
     try {
         const temples = await Temple.GetChardham();
@@ -66,4 +81,4 @@ const getChardhamTemples = async (req, res) => {
     }
 }
 
-module.exports = {getAllTemples, getTempleById, searchTemple, filterTemple, getChardhamTemples};
+module.exports = {getAllTemples, getTempleById, searchTemple, filterTemple, templeKeywords, getChardhamTemples};

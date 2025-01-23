@@ -6,6 +6,10 @@ GET http://localhost:3000/god/all
 GET http://localhost:3000/god/id/2
 ###
 
+// Get All Keywords of god
+GET http://localhost:3000/god/keywords
+###
+
 // Get God by search
 GET http://localhost:3000/god/search?q=s
 ###

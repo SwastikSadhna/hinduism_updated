@@ -33,6 +33,11 @@ const searchTemple = async (q) => {
     return result.rows;
 }
 
+const templeKeywords = async() => {
+    const result = await pool.query(templeQueries.TempleKeywords);
+    return result.rows;
+}
+
 const filterTemple = async (query) => {
     console.log(query)
     const result = await pool.query(templeQueries.FilterTemple + query)
@@ -44,4 +49,4 @@ const GetChardham = async () => {
     return result.rows;
 }
 
-module.exports = { GetChardham, filterTemple, searchTemple, deleteTemple, updateTemple, addTemple, getAllTemples, getTempleById };
+module.exports = { GetChardham, filterTemple, searchTemple, deleteTemple, updateTemple, addTemple, getAllTemples, templeKeywords, getTempleById };

@@ -28,6 +28,20 @@ const GetGodById = async (req, res) => {
     }
 }
 
+const GodKeywords = async (req, res) => {
+    try {
+        const god = await godmodel.GodKeywords();
+
+        if(god.length > 0) {
+            res.status(200).json({ message: 'god keywords found', data: god })
+        } else {
+            res.status(404).json({ message: 'no keyword available' })
+        }
+    } catch(error) {
+        res.status(500).json({ message: 'something gone wrong', error: error })
+    }
+}
+
 const SearchGod = async (req, res) => {
     try {
         const query = req.query.q;
@@ -58,4 +72,4 @@ const GetTrimurty = async (req, res) => {
     }
 }
 
-module.exports = { GetAllGod, GetGodById, SearchGod, GetTrimurty };
+module.exports = { GetAllGod, GetGodById, GodKeywords, SearchGod, GetTrimurty };

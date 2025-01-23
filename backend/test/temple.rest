@@ -12,7 +12,9 @@ GET http://localhost:3000/temple/search?q=som
 ###
 // get temples by filter
 GET http://localhost:3000/temple/filter?name=Kailasa&location=India
+###
 
+GET http://localhost:3000/temple/keywords
 
 ###
 // get chardham

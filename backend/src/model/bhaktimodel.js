@@ -21,8 +21,8 @@ const getAllCategories = async () => {
     return result.rows;
 }
 
-const BhaktiByKeyword = async () => {
-    const result = await pool.query(bhaktiquery.BhaktiByKeyword);
+const BhaktiKeywords = async () => {
+    const result = await pool.query(bhaktiquery.BhaktiKeywords);
     return result.rows;
 }
 
@@ -31,4 +31,4 @@ const FilterBhakti = async (query) => {
     return result.rows;
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, FilterBhakti, getAllCategories };
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories };

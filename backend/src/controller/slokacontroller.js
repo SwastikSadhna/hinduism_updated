@@ -25,6 +25,21 @@ const getSlokadetails = async (req, res) => {
     }
 }
 
+const slokaKeywords = async (req, res) => {
+    try {
+        const sloka = await Sloka.slokaKeywords();
+
+        if(sloka.length > 0) {
+            res.status(200).json({ message: 'sloka keywords found', data: sloka })
+        } else {
+            res.status(404).json({ message: 'no keyword available' })
+        }
+    } catch(error) {
+        console.log(error);
+        res.status(500).json({ message: 'something gone wrong', error: error })
+    }
+}
+
 const searchSloka = async (req, res) => {
     try {
         const search = req.query.q;
@@ -52,4 +67,4 @@ const filterSloka = async (req, res) => {
     }
 }
 
-module.exports = {searchSloka, filterSloka, getAllSloka, getSlokadetails}
+module.exports = {searchSloka, filterSloka, slokaKeywords, getAllSloka, getSlokadetails}

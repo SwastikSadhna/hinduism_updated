@@ -43,9 +43,9 @@ const BhaktiByType = async (req, res) => {
     }
 }
 
-const BhaktiByKeyword = async (req, res) => {
+const BhaktiKeywords = async (req, res) => {
     try {
-        const bhakti = await BhaktiModel.BhaktiByKeyword();
+        const bhakti = await BhaktiModel.BhaktiKeywords();
 
         if(bhakti.length > 0) {
             res.status(200).json({ message: 'bhakti keywords found', data: bhakti })
@@ -86,4 +86,4 @@ const getAllCategories = async (req, res) => {
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiByKeyword, FilterBhakti, getAllCategories};
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories};

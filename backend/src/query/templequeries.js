@@ -6,6 +6,7 @@ const templeQueries = {
     DeleteTemple: `DELETE FROM public."temple" WHERE "_id" = $1 RETURNING *;`,
     SearchTemple: `SELECT "name", "_id" FROM public."temple" WHERE "name" ILIKE $1`,
     FilterTemple: `SELECT "_id", "cover_image", "name", "location" FROM public."temple" WHERE `,
+    TempleKeywords:`SELECT ARRAY_AGG(DISTINCT word) AS keyword FROM public."temple", UNNEST(keyword) AS word;`,
     FilterByKeyword: `SELECT "_id", "cover_image", "name", "location" FROM public."temple" WHERE "keyword" && $1;`,
     GetChardham: `SELECT "_id", "cover_image", "name", "location" FROM public."temple" WHERE "keyword" && ARRAY['chardham'];`,
 }

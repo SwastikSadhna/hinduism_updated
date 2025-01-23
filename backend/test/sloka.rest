@@ -10,6 +10,8 @@ GET http://localhost:3000/sloka/details/1
 // get search items
 GET http://localhost:3000/sloka/search?q=gayatri
 
+###
+GET http://localhost:3000/sloka/keywords
 
 ###
 // get filtered items

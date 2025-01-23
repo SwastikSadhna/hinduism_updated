@@ -12,6 +12,11 @@ const GetSlokaDetails = async (id) => {
     return sloka.rows;
 }
 
+const slokaKeywords = async() => {
+    const result = await pool.query(slokaquery.SlokaKeywords);
+    return result.rows;
+}
+
 const searchSloka = async (q) => {
     const sloka = await pool.query(slokaquery.SearchSloka,[q + "%"]);
     return sloka.rows;
@@ -24,4 +29,4 @@ const filterSloka = async (filter) => {
     return sloka.rows;
 }
 
-module.exports = {getAllSloka, GetSlokaDetails, searchSloka, filterSloka}
+module.exports = {getAllSloka, GetSlokaDetails, slokaKeywords, searchSloka, filterSloka}

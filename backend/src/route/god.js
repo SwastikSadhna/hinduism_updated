@@ -4,6 +4,7 @@ const god = require('../controller/godcontroller');
 
 router.get('/all', god.GetAllGod);
 router.get('/id/:godid', god.GetGodById);
+router.get('/keywords', god.GodKeywords);
 router.get('/search', god.SearchGod);
 router.get('/trimurti', god.GetTrimurty);
 
