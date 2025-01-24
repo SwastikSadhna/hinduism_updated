@@ -5,17 +5,17 @@ export default function Features() {
     {
       number: "Why is VedicPulse needed today?",
       text: "In today’s fast-paced world, VedicPulse helps preserve and promote Hindu traditions and spirituality. It offers a space to reconnect with ancient wisdom, explore sacred texts, and incorporate timeless values into daily life, bridging tradition and modernity.",
-      image: `${imageDetails.Rammandir.src}`
+      image: `${imageDetails.about1.src}`
     },
     {
       number: "What can I find on VedicPulse?",
       text: "VedicPulse offers a wealth of knowledge about Hindu gods, sacred scriptures like the Vedas and Puranas, melodious bhajans, and powerful shlokas. It is a platform to explore Hinduism’s spiritual teachings, cultural heritage, and timeless traditions, helping users connect deeply with Sanatan Dharma.",
-      image: `${imageDetails.Scrupture.src}`
+      image: `${imageDetails.about2.src}`
     },
     {
       number: "What makes VedicPulse unique compared to other platforms?",
       text: "VedicPulse stands out by offering a comprehensive blend of knowledge about Hindu gods, scriptures, bhajans, shlokas, and cultural practices in one place. It provides an authentic and accessible way for users to explore and connect with the rich traditions of Hindu Dharma.",
-      image: `${imageDetails.LifeStyle.src}`
+      image: `${imageDetails.about3.src}`
     },
   ];
 
