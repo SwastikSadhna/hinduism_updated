@@ -20,16 +20,16 @@ export default function Features() {
   ];
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-100 py-16">
       <div className="container mx-auto px-4">
         <div className="space-y-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:-translate-y-2`}
+              className={`flex flex-col lg:flex-row items-center gap-8 my-4 p-8 rounded-lg shadow-lg transform transition-transform hover:-translate-y-2 bg-white`}
               style={{
                 boxShadow:
-                  "0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1)",
+                  "0 10px 20px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.16)",
               }}
             >
               <div className="w-full lg:w-2/3">
