@@ -7,15 +7,15 @@ GET http://localhost:3000/bhakti/id/2
 ###
 
 // Get Bhakti By Type
-GET http://localhost:3000/bhakti/type/4
+GET http://localhost:3000/bhakti/type/3
 ###
 
 // Get All Bhakti Filter Keywords
-GET http://localhost:3000/bhakti/keywords
+GET http://localhost:3000/bhakti/filter/options
 ###
 
 // Get Bhakti By filter
-GET http://localhost:3000/bhakti/filter?q=
+GET http://localhost:3000/bhakti/filter?keyword=Guru&_category=2
 
 ###
 // get all the categories

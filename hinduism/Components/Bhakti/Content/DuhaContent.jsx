@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { FaQuoteLeft, FaHeart, FaShare } from 'react-icons/fa'
 import axios from 'axios'
 import API_CONFIG from "../../../src/config/api"
+import { useContent } from '../ContentContext'
+import { useRef } from 'react'
 
 export default function DuhaContent() {
   // const duhas = [
@@ -16,12 +18,22 @@ export default function DuhaContent() {
   // ]
 
   const [duhas, setDuhas] = new useState([])
+  const { activeCategory,  handleFilter } = useContent()
+  const isMounted = useRef(false);
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/2").then((res) => {
       setDuhas(res.data.data)
     })
-  },[])
+  }, [])
+  
+      
+  useEffect(() => {
+    if(isMounted.current)
+      handleFilter("/bhakti/filter", setDuhas, 2)
+    else
+      isMounted.current = true
+  }, [activeCategory])
 
   return (
     <div className="space-y-4">

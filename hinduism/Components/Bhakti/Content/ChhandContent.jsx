@@ -2,23 +2,15 @@ import { useEffect, useState } from 'react'
 import { FaMusic, FaHeart, FaShare } from 'react-icons/fa'
 import axios from "axios"
 import API_CONFIG from "../../../src/config/api"
+import { useContent } from '../ContentContext'
+import { useRef } from 'react'
 
 export default function ChhandContent() {
-  // const chhands = [
-  //   {
-  //     name: "दोहा",
-  //     example: "चिंता ऐसी दाखिनी, उपजै घट माहिं। बालक वृद्ध न चोर कोइ, सबको डरपावै जाहिं।",
-  //     description: "दो पंक्तियों का छंद, प्रत्येक पंक्ति में 24 मात्राएँ"
-  //   },
-  //   {
-  //     name: "चौपाई",
-  //     example: "जय हनुमान ज्ञान गुन सागर। जय कपीस तिहुँ लोक उजागर।",
-  //     description: "चार पंक्तियों का छंद, प्रत्येक पंक्ति में 16 मात्राएँ"
-  //   },
-  // ]
 
   const [chhands, setChhand] = new useState([])
-
+  const { activeCategory,  handleFilter } = useContent()
+  const isMounted = useRef(false);
+  
   useEffect(() => {
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/1").then((res) => {
       setChhand(res.data.data)
@@ -26,6 +18,13 @@ export default function ChhandContent() {
       console.log(err)
     })
   },[])
+  
+  useEffect(() => {
+    if(isMounted.current)
+      handleFilter("/bhakti/filter", setChhand, 1)
+    else
+      isMounted.current = true
+  }, [activeCategory])
 
   return (
     <div className="space-y-4">

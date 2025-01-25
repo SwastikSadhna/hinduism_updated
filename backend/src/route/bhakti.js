@@ -5,7 +5,7 @@ router.get('/all', bhakti.GetAllBhakti);
 router.get('/id/:bhaktiid', bhakti.GetBhaktiById);
 router.get('/type/:id', bhakti.BhaktiByType);
 router.get('/categories', bhakti.getAllCategories);
-router.get('/keywords', bhakti.BhaktiKeywords);
+router.get('/filter/options', bhakti.BhaktiKeywords);
 router.get('/filter', bhakti.FilterBhakti);
 
 module.exports = router;

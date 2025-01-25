@@ -1,19 +1,17 @@
 
 const getFilterQuery = (query) => {
     let q = "";
-    let keyword = [];
     for (const key in query) {
-        if (key == "keyword") {
-            keyword.push(query[key])
+        if (typeof (query[key]) == "object") {
+            q += `"${key}" && ARRAY['`+ query[key].join(`','`) +`'] AND `;
+        }
+        else if (typeof (query[key]) == "string" && key.startsWith('_')) {
+            q += `"${key.slice(1)}" = '${query[key]}' AND `;
         } else {
-            q += `"${key}"= '${query[key]}' AND `
+            q += `"${key}" && ARRAY['${query[key]}'] AND `;
         }
     }
-    if (keyword.length > 0) {
-        q += `"keyword" && ARRAY['`+ keyword[0].join(`','`) +`']`;
-    } else {
-        q = q.slice(0, -4)
-    }
+    q = q.slice(0, -4)
     return q
 }
 

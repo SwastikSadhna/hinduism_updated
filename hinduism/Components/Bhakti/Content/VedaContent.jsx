@@ -3,6 +3,8 @@ import { imageDetails } from '../../../resources'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import API_CONFIG from "../../../src/config/api"
+import { useContent } from '../ContentContext'
+import { useRef } from 'react'
 
 export default function VedaContent() {
   // const vedas = [
@@ -37,6 +39,8 @@ export default function VedaContent() {
   // ];
 
   const [vedas, setVedas] = new useState([])
+  const { activeCategory,  handleFilter } = useContent()
+  const isMounted = useRef(false);
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/4").then((res) => {
@@ -45,7 +49,15 @@ export default function VedaContent() {
     }).catch((err) => {
       console.log(err);
     })
-  },[])
+  }, [])
+  
+    
+  useEffect(() => {
+    if(isMounted.current)
+      handleFilter("/bhakti/filter", setVedas, 4)
+    else
+      isMounted.current = true
+  }, [activeCategory])
 
   return (
     <div className="space-y-4">

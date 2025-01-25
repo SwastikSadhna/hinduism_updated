@@ -7,7 +7,7 @@ import API_CONFIG from '../src/config/api'
 
 export default function BhaktiLayout() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [filters, setFilters] = useState([]);
   const { activeCategory, setActiveCategory } = useContent();
   const [tempFilters, setTempFilters] = useState({});
@@ -18,7 +18,7 @@ export default function BhaktiLayout() {
 
   const fetchCategories = async () => {
   try {
-    const response = await axios.get(API_CONFIG.baseUrl + "/bhakti/filter");
+    const response = await axios.get(API_CONFIG.baseUrl + "/bhakti/filter/options");
     const data = response.data.data[0];
     const categories = Object.keys(data).map((key) => ({
       name: key,
@@ -29,9 +29,7 @@ export default function BhaktiLayout() {
       [key]: [],
     }));
 
-    setActiveCategory(defaultCategories[0])
     setFilters(categories);
-    console.log(categories);
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
@@ -40,7 +38,6 @@ export default function BhaktiLayout() {
   useEffect(() => {
     fetchCategories();
   }, []);
-
 
   const handleCategoryChange = (option, categoryName) => {
     setTempFilters((prevFilters) => {
@@ -58,6 +55,7 @@ export default function BhaktiLayout() {
 
   const applyFilter = () => {
     setActiveCategory(tempFilters);
+    setTempFilters({})
     toggleModal()
   };
 
@@ -136,3 +134,4 @@ export default function BhaktiLayout() {
     </div>
   );
 }
+

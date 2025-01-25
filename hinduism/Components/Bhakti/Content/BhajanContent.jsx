@@ -4,18 +4,9 @@ import axios from "axios"
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 
-
 export default function BhajanContent() {
-  // const bhajans = [
-  //   { title: 'Mere Shyam', type: 'Traditional' },
-  //   { title: 'Achyutam Keshavam', type: 'Traditional' },
-  //   { title: 'Krishna Govinda', type: 'Traditional' },
-  //   { title: 'Om Jai Jagdish Hare', type: 'Traditional' },
-  //   { title: 'Shiv Tandav Stotram', type: 'Ravanasura' },
-  // ]
 
-  const { activeCategory, setActiveCategory } = useContent()
-
+  const { activeCategory, handleFilter } = useContent()
   const [bhajans, setBhajans] = new useState([])
 
   useEffect(() => {
@@ -24,23 +15,8 @@ export default function BhajanContent() {
     })
   },[])
 
-
   useEffect(() => {
-    if (activeCategory) {
-      let query = ""
-      for (const key in activeCategory) {
-        if (activeCategory[key].length > 0) {
-          query += `&${key}=${activeCategory[key].join(',')}`
-        }
-      }
-      const url = `${API_CONFIG.baseUrl}/bhakti/type/3?${query.slice(1)}`
-      console.log(url)
-      axios.get(url).then((res) => {
-        setBhajans(res.data.data)
-        console.log("got filtered bhajans")
-        console.log(res.data.data)
-      })
-    }
+      handleFilter("/bhakti/filter", setBhajans, 3)
   }, [activeCategory])
 
   return (
