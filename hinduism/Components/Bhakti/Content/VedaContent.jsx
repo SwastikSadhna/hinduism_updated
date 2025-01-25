@@ -6,6 +6,7 @@ import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import { useRef } from 'react'
 import Loading from '../../../Pages/Loading'
+import ErrorPage from '../../../Pages/ErrorPage';
 
 export default function VedaContent() {
   // const vedas = [
@@ -50,6 +51,7 @@ export default function VedaContent() {
       setIsLoading(false)
       setVedas(res.data.data)
     }).catch((err) => {
+      setIsLoading(false)
       console.log(err);
     })
   }, [])
@@ -64,7 +66,7 @@ export default function VedaContent() {
 
   return (
     <div className="space-y-4">
-      {isLoading == true? <Loading /> :vedas.map((veda, index) => (
+      {isLoading == true? <Loading /> : vedas.length > 0? vedas.map((veda, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -98,7 +100,7 @@ export default function VedaContent() {
             </div>
           </div>
         </div>
-      ))}
+      )): <ErrorPage />}
     </div>
   );
 }
