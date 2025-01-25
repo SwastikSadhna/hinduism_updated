@@ -5,6 +5,7 @@ import axios from 'axios';
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import { useRef } from 'react'
+import Loading from '../../../Pages/Loading'
 
 export default function VedaContent() {
   // const vedas = [
@@ -41,10 +42,12 @@ export default function VedaContent() {
   const [vedas, setVedas] = new useState([])
   const { activeCategory,  handleFilter } = useContent()
   const isMounted = useRef(false);
+  const [isLoading, setIsLoading] = new useState(true)
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/4").then((res) => {
       console.log(res.data)
+      setIsLoading(false)
       setVedas(res.data.data)
     }).catch((err) => {
       console.log(err);
@@ -61,7 +64,7 @@ export default function VedaContent() {
 
   return (
     <div className="space-y-4">
-      {vedas.map((veda, index) => (
+      {isLoading == true? <Loading /> :vedas.map((veda, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"

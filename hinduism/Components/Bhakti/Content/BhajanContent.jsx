@@ -3,16 +3,20 @@ import { FaPlay, FaHeart, FaShare } from 'react-icons/fa'
 import axios from "axios"
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
+import Loading from '../../../Pages/Loading'
 
 export default function BhajanContent() {
 
   const { activeCategory, handleFilter } = useContent()
   const [bhajans, setBhajans] = new useState([])
+  const [isLoading, setIsLoading] = new useState(true)
 
   useEffect(() => {
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/3").then((res) => {
-      setBhajans(res.data.data)
-    })
+        console.log(res.data.data)
+        setBhajans(res.data.data)
+        setIsLoading(false)
+      })
   },[])
 
   useEffect(() => {
@@ -21,7 +25,7 @@ export default function BhajanContent() {
 
   return (
     <div className="space-y-4">
-      {bhajans.map((bhajan) => (
+      {isLoading == true? <Loading /> : bhajans.map((bhajan) => (
         <div
           key={bhajan.title}
           className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"

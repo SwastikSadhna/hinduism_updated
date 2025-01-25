@@ -4,6 +4,7 @@ import axios from 'axios'
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import { useRef } from 'react'
+import Loading from '../../../Pages/Loading'
 
 export default function DuhaContent() {
   // const duhas = [
@@ -20,9 +21,11 @@ export default function DuhaContent() {
   const [duhas, setDuhas] = new useState([])
   const { activeCategory,  handleFilter } = useContent()
   const isMounted = useRef(false);
+  const [isLoading, setIsLoading] = new useState(true)
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/2").then((res) => {
+      setIsLoading(false)
       setDuhas(res.data.data)
     })
   }, [])
@@ -37,7 +40,7 @@ export default function DuhaContent() {
 
   return (
     <div className="space-y-4">
-      {duhas.map((duha, index) => (
+      {isLoading == true? <Loading /> :duhas.map((duha, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"

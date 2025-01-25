@@ -4,15 +4,18 @@ import axios from "axios"
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import { useRef } from 'react'
+import Loading from '../../../Pages/Loading'
 
 export default function ChhandContent() {
 
   const [chhands, setChhand] = new useState([])
   const { activeCategory,  handleFilter } = useContent()
   const isMounted = useRef(false);
+  const [isLoading, setIsLoading] = new useState(true)
   
   useEffect(() => {
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/1").then((res) => {
+      setIsLoading(false)
       setChhand(res.data.data)
     }).catch((err) => {
       console.log(err)
@@ -28,7 +31,7 @@ export default function ChhandContent() {
 
   return (
     <div className="space-y-4">
-      {chhands.map((chhand, index) => (
+      {isLoading == true? <Loading /> :chhands.map((chhand, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
