@@ -27,7 +27,7 @@ import Vinay from './src/Resources/About/Vinay.jpg'
 import about1 from './src/Resources/About/about1.svg';
 import about2 from './src/Resources/About/about2.svg';
 import about3 from './src/Resources/About/about3.svg';
-import error404 from './src/Resources/others/error404.svg';
+import error from './src/Resources/others/error.svg';
 import Bookback2 from './src/Resources/others/bookback2.jpg';
 import MorningShlok1 from './src/Resources/Shlok/Morning Shlok-1.jpg'
 import MorningShlok2 from './src/Resources/Shlok/Morning Shlok-2.jpg'
@@ -293,9 +293,9 @@ const imageDetails = {
         src: about3,
         alt: 'about'
     },
-    error404: {
-        src: error404,
-        alt: 'Error 404'
+    error: {
+        src: error,
+        alt: 'Error'
     },
 };
 export { images, imageDetails };
