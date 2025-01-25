@@ -4,6 +4,7 @@ import axios from "axios"
 import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import Loading from '../../../Pages/Loading'
+import ErrorPage from '../../../Pages/ErrorPage'
 
 export default function BhajanContent() {
 
@@ -16,6 +17,9 @@ export default function BhajanContent() {
         console.log(res.data.data)
         setBhajans(res.data.data)
         setIsLoading(false)
+    }).catch((err) => {
+      console.log(err)
+      setIsLoading(false)
       })
   },[])
 
@@ -25,7 +29,8 @@ export default function BhajanContent() {
 
   return (
     <div className="space-y-4">
-      {isLoading == true? <Loading /> : bhajans.map((bhajan) => (
+      {isLoading == true ? <Loading /> :
+        bhajans.length > 0? bhajans.map((bhajan) => (
         <div
           key={bhajan.title}
           className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -48,7 +53,8 @@ export default function BhajanContent() {
             </button>
           </div>
         </div>
-      ))}
+      )) : <ErrorPage />
+      }
     </div>
   )
 }

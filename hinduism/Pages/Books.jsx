@@ -10,7 +10,8 @@ import ErrorPage from './ErrorPage'
 
 export default function Books() {
   const [bhaktiTypes, setBhaktiTypes] = useState([]);
-    const [isLoading, setIsLoading] = new useState(true)
+  const [isLoading, setIsLoading] = new useState(true)
+  const [isError, setIsError] = new useState(false)
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/book/all").then((res) => {
@@ -18,6 +19,7 @@ export default function Books() {
       setBhaktiTypes(res.data.data);
     }).catch((err) => {
       setIsLoading(false)
+      setIsError(true)
       console.log(err);
     });
   }, []);
@@ -25,15 +27,18 @@ export default function Books() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-100 to-yellow-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Books</h1>
-          <p className="text-lg text-gray-600">Explore different forms of devotional content</p>
+        {
+        
+          isError ? <ErrorPage /> : <>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Books</h1>
+            <p className="text-lg text-gray-600">Explore different forms of devotional content</p>
         </div>
 
         {
           isLoading ==true? <Loading /> :
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          { bhaktiTypes.length > 0 ? 
+          <div className={isError?"": "grid grid-cols-1 md:grid-cols-2 gap-6"}>
+          { 
             bhaktiTypes.map((item) => (
               <Link to={`/Book/${item._id}`} key={item._id}>  {/* Wrap each card with Link */}
                 <BhaktiCard
@@ -44,11 +49,13 @@ export default function Books() {
                   image={item.image ? item.image : "../public/vite.svg"}
                 />
               </Link>
-            )) : <ErrorPage />
+            )) 
           }
-        </div>
+          </div>
         }
+      </>
+      }
       </div>
-    </div>
+      </div>
   );
 }

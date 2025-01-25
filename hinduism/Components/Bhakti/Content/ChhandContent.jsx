@@ -5,6 +5,7 @@ import API_CONFIG from "../../../src/config/api"
 import { useContent } from '../ContentContext'
 import { useRef } from 'react'
 import Loading from '../../../Pages/Loading'
+import ErrorPage from '../../../Pages/ErrorPage'
 
 export default function ChhandContent() {
 
@@ -19,6 +20,7 @@ export default function ChhandContent() {
       setChhand(res.data.data)
     }).catch((err) => {
       console.log(err)
+      setIsLoading(false)
     })
   },[])
   
@@ -31,7 +33,7 @@ export default function ChhandContent() {
 
   return (
     <div className="space-y-4">
-      {isLoading == true? <Loading /> :chhands.map((chhand, index) => (
+      {isLoading == true? <Loading /> :chhands.length > 0? chhands.map((chhand, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -55,7 +57,7 @@ export default function ChhandContent() {
           </div>
           <p className="text-gray-800 font-medium mt-2">{chhand?.keyword?.join(" , ")}</p>
         </div>
-      ))}
+      )): <ErrorPage />}
     </div>
   )
 }
