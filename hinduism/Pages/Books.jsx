@@ -5,14 +5,19 @@ import axios from "axios";
 import API_CONFIG from "../src/config/api";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
+import Loading from './Loading'
+import ErrorPage from './ErrorPage' 
 
 export default function Books() {
   const [bhaktiTypes, setBhaktiTypes] = useState([]);
+    const [isLoading, setIsLoading] = new useState(true)
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/book/all").then((res) => {
+      setIsLoading(false)
       setBhaktiTypes(res.data.data);
     }).catch((err) => {
+      setIsLoading(false)
       console.log(err);
     });
   }, []);
@@ -25,8 +30,10 @@ export default function Books() {
           <p className="text-lg text-gray-600">Explore different forms of devotional content</p>
         </div>
 
+        {
+          isLoading ==true? <Loading /> :
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {bhaktiTypes.length > 0 ? 
+          { bhaktiTypes.length > 0 ? 
             bhaktiTypes.map((item) => (
               <Link to={`/Book/${item._id}`} key={item._id}>  {/* Wrap each card with Link */}
                 <BhaktiCard
@@ -37,9 +44,10 @@ export default function Books() {
                   image={item.image ? item.image : "../public/vite.svg"}
                 />
               </Link>
-            )) : <p>No items available.</p>
+            )) : <ErrorPage />
           }
         </div>
+        }
       </div>
     </div>
   );
