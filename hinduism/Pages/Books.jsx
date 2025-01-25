@@ -29,7 +29,7 @@ export default function Books() {
       <div className="max-w-7xl mx-auto">
         {
         
-          isError ? <ErrorPage /> : <>
+          isError ? <ErrorPage code={404} message={"Page Not Found"}/> : <>
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Books</h1>
             <p className="text-lg text-gray-600">Explore different forms of devotional content</p>
