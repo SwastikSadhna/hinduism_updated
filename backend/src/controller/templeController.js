@@ -43,6 +43,10 @@ const searchTemple = async (req, res) => {
 const filterTemple = async (req, res) => {
     const filter = req.query;
     try {
+        if(Object.keys(req.query).length == 0) {
+            return res.status(400).json({message: "no filter applied, bad request"});
+        }
+        
         const query = getFilterQuery(filter);
         const result = await Temple.filterTemple(query)
         if (result.length > 0)

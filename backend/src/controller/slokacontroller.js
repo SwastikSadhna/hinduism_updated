@@ -56,6 +56,10 @@ const searchSloka = async (req, res) => {
 
 const filterSloka = async (req, res) => {
     try {
+        if(Object.keys(req.query).length == 0) {
+            return res.status(400).json({message: "no filter applied, bad request"});
+        }
+        
         const data = await Sloka.filterSloka(req.query);
         if (data.length > 0)
             res.status(200).json(data);
