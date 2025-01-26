@@ -92,6 +92,10 @@ const BookKeywords = async (req, res) => {
 
 const FilterBook = async (req, res) => {
     try {
+        if(Object.keys(req.query).length == 0) {
+            return res.status(400).json({message: "no filter applied, bad request"});
+        }
+
         const query = getFilterQuery(req.query);
         const book = await bookmodel.FilterBook(query);
 
