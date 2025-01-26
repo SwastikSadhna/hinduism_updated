@@ -18,6 +18,7 @@ import Temple from "../Pages/Temple2"
 import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext"; // Import ContentProvider
 import Templepage from "../Components/Home/Templepage";
+import VishnuAvatarsApp from '../Pages/Avatar'
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="devtas" element={<DevtasContent />} />
             </Route>
             <Route path="/Templepage" element={<Templepage />} />
+            <Route path="/Avatar" element={<VishnuAvatarsApp />} />
           </Routes>
           <Footer />
         </div>
