@@ -96,18 +96,21 @@ export default function BhaktiLayout() {
            {/* Filter options */}
 <div className="mb-4">
   {filters.map(category => (
-    <div key={category.name}>
+    <div key={category.name} >
       <h3>{category.name}</h3>
+      <div className='grid grid-cols-4'> 
       {category.options.map(option => (
         <div key={option}>
           <input
             type="checkbox"
             id={option}
+            className='me-1'
             onChange={() => handleCategoryChange(option, category.name)}
           />
           <label htmlFor={option}>{option}</label>
         </div>
       ))}
+        </div>
     </div>
   ))}
 </div>
