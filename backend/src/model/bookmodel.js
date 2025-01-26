@@ -36,4 +36,14 @@ const SearchBook = async (q) => {
     return result.rows;
 }
 
-module.exports = {GetAllBooks, GetBookById, GetBookTitles, AddBook, UpdateBook, DeleteBook, SearchBook};
+const BookKeywords = async () => {
+    const result = await pool.query(bookquery.BookKeywords);
+    return result.rows;
+}
+
+const FilterBook = async (query) => {
+    const result = await pool.query(bookquery.FilterBook + query);
+    return result.rows;
+}
+
+module.exports = {GetAllBooks, GetBookById, GetBookTitles, AddBook, UpdateBook, DeleteBook, SearchBook, BookKeywords, FilterBook};

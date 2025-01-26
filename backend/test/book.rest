@@ -15,4 +15,12 @@ GET http://localhost:3000/book/search?q=B
 ###
 
 // Get All Book Titles
-Get http://localhost:3000/book/booklist
+GET http://localhost:3000/book/booklist
+###
+
+// Get All Book Keywords
+GET http://localhost:3000/book/keywords
+###
+
+// Get Books By Filter of Keywords
+GET http://localhost:3000/book/filter?keyword=Rama

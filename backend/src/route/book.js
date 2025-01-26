@@ -7,5 +7,7 @@ router.get('/booklist', book.GetBookTitles);
 router.get('/id/:bookid', book.GetBookById);
 router.get('/search', book.SearchBook);
 router.delete('/delete/:bookid', book.DeleteBook);
+router.get('/keywords', book.BookKeywords);
+router.get('/filter', book.FilterBook);
 
 module.exports = router;
