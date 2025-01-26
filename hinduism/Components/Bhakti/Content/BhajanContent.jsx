@@ -53,7 +53,7 @@ export default function BhajanContent() {
             </button>
           </div>
         </div>
-      )) : <ErrorPage />
+        )) : <ErrorPage code={ 404} message={"No Items Found"}/>
       }
     </div>
   )
