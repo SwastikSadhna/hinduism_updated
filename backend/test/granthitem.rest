@@ -1,5 +1,5 @@
 // Get Granth items by granth id
-GET http://localhost:3000/granthitem/items/2
+GET http://localhost:3000/granthitem/2
 
 
 ###

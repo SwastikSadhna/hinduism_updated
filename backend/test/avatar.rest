@@ -1,9 +1,9 @@
 // Get All Avatar
-GET http://localhost:3000/avatar/all
+GET http://localhost:3000/avatar/
 ###
 
 // Get Avatar By Id
-GET http://localhost:3000/avatar/id/2
+GET http://localhost:3000/avatar/2
 ###
 
 // Get Avatar By Search

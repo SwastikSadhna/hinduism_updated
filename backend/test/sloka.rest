@@ -1,9 +1,9 @@
 // get all sloka
-GET http://localhost:3000/sloka/all
+GET http://localhost:3000/sloka
 
 ###
 // get sloka details by id
-GET http://localhost:3000/sloka/details/1
+GET http://localhost:3000/sloka/1
 
 
 ###

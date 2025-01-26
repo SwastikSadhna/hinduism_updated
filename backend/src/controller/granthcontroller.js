@@ -16,7 +16,7 @@ const getAllGranth = async (req, res) => {
 
 const getGranthDetails = async (req, res) => {
     try {
-        const id = req.params.id
+        const id = req.params.id;
         const result = await granthModel.getGranthDetails(id);
         if (result.length > 0) {
             const items = await getGranthItems(id);

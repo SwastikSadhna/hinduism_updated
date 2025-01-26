@@ -1,6 +1,6 @@
 // get all granth
-GET http://localhost:3000/granth/all
+GET http://localhost:3000/granth/
 
 ###
 // get granthitems by granth id
-GET http://localhost:3000/granth/items/2
+GET http://localhost:3000/granth/2
