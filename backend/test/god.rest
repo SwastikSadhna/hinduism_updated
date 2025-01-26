@@ -1,9 +1,9 @@
 // Get All God
-GET http://localhost:3000/god/all
+GET http://localhost:3000/god
 ###
 
 // Get God by ID
-GET http://localhost:3000/god/id/2
+GET http://localhost:3000/god/2
 ###
 
 // Get All Keywords of god

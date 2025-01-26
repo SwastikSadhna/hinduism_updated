@@ -18,7 +18,7 @@ const GetAllBooks = async (req, res) => {
 
 const GetBookById = async (req, res) => {
     try {
-        const book = await bookmodel.GetBookById(req.params.bookid);
+        const book = await bookmodel.GetBookById(req.params.id);
 
         if(book.length > 0) {
             res.status(200).json({message: "book fetched by id", data: book});
@@ -63,7 +63,7 @@ const SearchBook = async (req, res) => {
 
 const DeleteBook = async (req, res) => {
     try {
-        const book = await bookmodel.DeleteBook(req.params.bookid);
+        const book = await bookmodel.DeleteBook(req.params.id);
 
         if(book) {
             res.status(200).json({message: "book deleted", data: book});

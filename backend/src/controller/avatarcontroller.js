@@ -17,7 +17,7 @@ const GetAllAvatars = async (req, res) => {
 
 const GetAvatarById = async (req, res) => {
     try {
-        const avatar = await AvatarModel.GetAvatarById(req.params.avatarid);
+        const avatar = await AvatarModel.GetAvatarById(req.params.id);
 
         if(avatar.length > 0) {
             res.status(200).json({message: "avatar get successfully", data: avatar});

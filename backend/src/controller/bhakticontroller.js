@@ -17,7 +17,7 @@ const GetAllBhakti = async (req, res) => {
 
 const GetBhaktiById = async (req, res) => {
     try {
-        const bhakti = await BhaktiModel.GetBhaktiById(req.params.bhaktiid);
+        const bhakti = await BhaktiModel.GetBhaktiById(req.params.id);
 
         if (bhakti.length > 0) {
             res.status(200).json({ message: 'bhakti fetched', data: bhakti });

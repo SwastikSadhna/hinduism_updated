@@ -16,7 +16,7 @@ const GetAllGod = async (req, res) => {
 
 const GetGodById = async (req, res) => {
     try {
-        const god = await godmodel.GetGodById(req.params.godid);
+        const god = await godmodel.GetGodById(req.params.id);
 
         if(god.length > 0) {
             res.status(200).json({message: 'God retrieved successfully', data: god});

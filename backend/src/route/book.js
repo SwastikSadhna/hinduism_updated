@@ -2,12 +2,12 @@ const router = require('express').Router();
 
 const book = require("../controller/bookcontroller");
 
-router.get('/all', book.GetAllBooks);
+router.get('/', book.GetAllBooks);
 router.get('/booklist', book.GetBookTitles);
-router.get('/id/:bookid', book.GetBookById);
-router.get('/search', book.SearchBook);
-router.delete('/delete/:bookid', book.DeleteBook);
 router.get('/keywords', book.BookKeywords);
+router.get('/:id', book.GetBookById);
+router.get('/search', book.SearchBook);
+router.delete('/:id', book.DeleteBook);
 router.get('/filter', book.FilterBook);
 
 module.exports = router;
