@@ -23,4 +23,4 @@ GET http://localhost:3000/book/keywords
 ###
 
 // Get Books By Filter of Keywords
-GET http://localhost:3000/book/filter?keyword=Rama
+GET http://localhost:3000/book/filter
