@@ -6,7 +6,7 @@ const GetAllBhakti = async (req, res) => {
         const bhakti = await BhaktiModel.GetAllBhakti();
 
         if (bhakti.length > 0) {
-            res.status(200).json({ message: 'All Bhakti Found', data: bhakti });
+            res.status(200).json({data: bhakti });
         } else {
             res.status(404).json({ message: 'bhakti not found' });
         }
