@@ -39,7 +39,7 @@ export default function Templepage() {
 
   useEffect(() => {
     axios
-      .get(`${API_CONFIG.baseUrl}/temple/all`)
+      .get(`${API_CONFIG.baseUrl}/temple/`)
       .then((data) => {
         setSlides(data.data.data);
       })
@@ -92,7 +92,7 @@ export default function Templepage() {
                 </p>
                 <div className="flex gap-4">
                   <button className="px-8 py-3 bg-white text-gray-900 rounded hover:bg-gray-100 transition-colors">
-                    <Link to={`/Temple/${slide._id}`} className="text-gray-900">
+                    <Link to={`/Temple/${slide.id}`} className="text-gray-900">
                       SEE MORE
                     </Link>
                   </button>

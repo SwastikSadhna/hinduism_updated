@@ -95,10 +95,9 @@ const FilterBook = async (req, res) => {
         if(Object.keys(req.query).length == 0) {
             return res.status(400).json({message: "no filter applied, bad request"});
         }
-
         const query = getFilterQuery(req.query);
         const book = await bookmodel.FilterBook(query);
-
+        
         if(book.length > 0) {
             res.status(200).json({message: "Filterd Keyword's Found", data: book});
         } else {

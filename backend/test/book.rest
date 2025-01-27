@@ -1,5 +1,5 @@
 // Get All Books
-GET http://localhost:3000/book/all
+GET http://localhost:3000/book/
 ###
 
 //Get Book By Id
@@ -23,4 +23,4 @@ GET http://localhost:3000/book/keywords
 ###
 
 // Get Books By Filter of Keywords
-GET http://localhost:3000/book/filter
+GET http://localhost:3000/book/filter?keyword[]=krishna

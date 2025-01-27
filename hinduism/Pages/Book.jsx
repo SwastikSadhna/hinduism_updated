@@ -12,7 +12,7 @@ export default function BookDetailsPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(API_CONFIG.baseUrl + `/book/id/${id}`).then((res) => {
+    axios.get(API_CONFIG.baseUrl + `/book/${id}`).then((res) => {
       setBook(res.data.data[0])
     }).catch((err) => {
       console.log(err);
