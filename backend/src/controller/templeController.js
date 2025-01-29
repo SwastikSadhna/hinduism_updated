@@ -5,7 +5,7 @@ const getAllTemples = async (req, res) => {
     try { 
         const temples = await Temple.getAllTemples()
         if (temples)
-            res.status(200).json({ message: "Temples retrieved successfully", count: temples.length, data: temples })
+            res.status(200).json(temples)
         else
             res.status(404).json({ message: "No temples found" })
     }

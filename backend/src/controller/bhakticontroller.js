@@ -6,7 +6,7 @@ const GetAllBhakti = async (req, res) => {
         const bhakti = await BhaktiModel.GetAllBhakti();
 
         if (bhakti.length > 0) {
-            res.status(200).json({data: bhakti });
+            res.status(200).json(bhakti);
         } else {
             res.status(404).json({ message: 'bhakti not found' });
         }
@@ -20,7 +20,7 @@ const GetBhaktiById = async (req, res) => {
         const bhakti = await BhaktiModel.GetBhaktiById(req.params.id);
 
         if (bhakti.length > 0) {
-            res.status(200).json({ message: 'bhakti fetched', data: bhakti });
+            res.status(200).json(bhakti);
         } else {
             res.status(404).json({ message: 'bhakti not found' });
         }
@@ -34,7 +34,7 @@ const BhaktiByType = async (req, res) => {
         const bhakti = await BhaktiModel.BhaktiByType(req.params.id);
 
         if (bhakti.length > 0) {
-            res.status(200).json({ message: 'bhakti fatched by category', data: bhakti });
+            res.status(200).json(bhakti);
         } else {
             res.status(404).json({ message: 'bhakti not found by category' });
         }
@@ -48,7 +48,7 @@ const BhaktiKeywords = async (req, res) => {
         const bhakti = await BhaktiModel.BhaktiKeywords();
 
         if(bhakti.length > 0) {
-            res.status(200).json({ message: 'bhakti keywords found', data: bhakti })
+            res.status(200).json(bhakti)
         } else {
             res.status(404).json({ message: 'no keyword available' })
         }
@@ -68,7 +68,7 @@ const FilterBhakti = async (req, res) => {
         const bhakti = await BhaktiModel.FilterBhakti(query);
 
         if(bhakti.length > 0) {
-            res.status(200).json({ message: 'bhakti filtered', data: bhakti});
+            res.status(200).json(bhakti);
         } else {
             res.status(404).json({message: 'no data available for this filter'});
         }

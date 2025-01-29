@@ -5,7 +5,7 @@ const GetAllAvatars = async (req, res) => {
         const avatar = await AvatarModel.GetAllAvatars();
 
         if(avatar.length > 0) {
-            res.status(200).json({message: "Avatars retrieved successfully", data: avatar});
+            res.status(200).json(avatar);
         } else {
             res.status(404).json({message: "avatar data not availabe"});
         }
@@ -20,7 +20,7 @@ const GetAvatarById = async (req, res) => {
         const avatar = await AvatarModel.GetAvatarById(req.params.id);
 
         if(avatar.length > 0) {
-            res.status(200).json({message: "avatar get successfully", data: avatar});
+            res.status(200).json(avatar);
         } else {
             res.status(404).json({message: "avatar data not availabe"});
     }
@@ -34,7 +34,7 @@ const GetGodByRef = async (req, res) => {
         const avatar = await AvatarModel.GetGodByRef();
 
         if(avatar.length > 0) {
-            res.status(200).json({message: "god get successfully from avatar", data: avatar});
+            res.status(200).json(avatar);
         } else {
             res.status(404).json({message: "god data not availabe"});
         }
@@ -50,7 +50,7 @@ const SearchAvatar = async (req, res) => {
         console.log(avatar);
 
         if(avatar.length > 0) {
-            res.status(200).json({message: "avatar search successfully", data: avatar});
+            res.status(200).json(avatar);
         } else {
             res.status(404).json({message: "avatar data not availabe for these search : " + query});
         }

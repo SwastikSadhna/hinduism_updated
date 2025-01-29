@@ -20,7 +20,8 @@ const getGranthDetails = async (req, res) => {
         const result = await granthModel.getGranthDetails(id);
         if (result.length > 0) {
             const items = await getGranthItems(id);
-            res.status(200).json({granth:result[0], items: items})
+            console.log(result[0])
+            res.status(200).json({granth: result[0], items: items})
         }
         else
             res.status(404).json({ message: "No granth found" })

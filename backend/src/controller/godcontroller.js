@@ -5,7 +5,7 @@ const GetAllGod = async (req, res) => {
         const god  = await godmodel.GetAllGod();
 
         if(god.length > 0) {
-            res.status(200).json({message: 'Gods retrieved successfully', data: god});
+            res.status(200).json(god);
         } else {
             res.status(404).json({message: 'No Gods found'});
         }
@@ -19,7 +19,7 @@ const GetGodById = async (req, res) => {
         const god = await godmodel.GetGodById(req.params.id);
 
         if(god.length > 0) {
-            res.status(200).json({message: 'God retrieved successfully', data: god});
+            res.status(200).json(god);
         } else {
             res.status(404).json({message: 'God not found'});
         }
@@ -33,7 +33,7 @@ const GodKeywords = async (req, res) => {
         const god = await godmodel.GodKeywords();
 
         if(god.length > 0) {
-            res.status(200).json({ message: 'god keywords found', data: god })
+            res.status(200).json(god)
         } else {
             res.status(404).json({ message: 'no keyword available' })
         }
@@ -48,7 +48,7 @@ const SearchGod = async (req, res) => {
         const god = await godmodel.SearchGod(query);
 
         if(god.length > 0) {
-            res.status(200).json({message: 'searched God successfully', data: god});
+            res.status(200).json(god);
         } else {
             res.status(404).json({message: 'No Search God found'});
         }
@@ -63,7 +63,7 @@ const GetTrimurty = async (req, res) => {
         const god = await godmodel.GetTrimurty();
 
         if(god.length > 0) {
-            res.status(200).json({message: 'Trimurty retrieved successfully', god});
+            res.status(200).json(god);
         } else {
             res.status(404).json({message: 'Trimurty not found'});
         }

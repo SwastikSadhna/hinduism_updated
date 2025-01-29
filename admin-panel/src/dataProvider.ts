@@ -6,16 +6,16 @@ const api = axios.create({
 
 const dataProvider = {
     getList: async (resource: string, params: any) => {
-      console.log(resource + " and " + params);
         const { data } = await api.get(`/${resource}`);
         return {
-            data: data.data, // List of records
-            total: data.data.length, // Total count
+            data: data, // List of records
+            total: data.length, // Total count
         };
     },
     getOne: async (resource: string, params: { id: number }) => {
         const { data } = await api.get(`/${resource}/${params.id}`);
-        return { data };
+        console.log(data[0])
+        return { data: data[0]};
     },
     create: async (resource: string, params: { data: any }) => {
         const { data } = await api.post(`/${resource}`, params.data);

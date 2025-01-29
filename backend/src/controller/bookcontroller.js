@@ -6,7 +6,7 @@ const GetAllBooks = async (req, res) => {
         const book = await bookmodel.GetAllBooks();
 
         if(book) {
-        res.status(200).json({message: "success", data: book});
+        res.status(200).json(book);
         } else {
             res.status(404).json({message: "books not found"})
         }
@@ -21,7 +21,7 @@ const GetBookById = async (req, res) => {
         const book = await bookmodel.GetBookById(req.params.id);
 
         if(book.length > 0) {
-            res.status(200).json({message: "book fetched by id", data: book});
+            res.status(200).json(book);
         } else {
             res.status(404).json({message: "book not found"});
         }
@@ -36,7 +36,7 @@ const GetBookTitles = async (req, res) => {
         const book = await bookmodel.GetBookTitles();
 
         if(book.length > 0) {
-            res.status(200).json({message: "book title founded", data: book})
+            res.status(200).json(book)
         } else {
             res.status(404).json({message: "book title not found"});
         }
@@ -51,7 +51,7 @@ const SearchBook = async (req, res) => {
         const book = await bookmodel.SearchBook(query);
 
         if(book.length > 0) {
-            res.status(200).json({message: "search item access", data: book});
+            res.status(200).json(book);
         } else {
             res.status(404).json({message: "search book not found"})
         }
@@ -66,7 +66,7 @@ const DeleteBook = async (req, res) => {
         const book = await bookmodel.DeleteBook(req.params.id);
 
         if(book) {
-            res.status(200).json({message: "book deleted", data: book});
+            res.status(200).json(book);
         } else {
             res.status(404).json({message: "book not found"});
         }
@@ -80,7 +80,7 @@ const BookKeywords = async (req, res) => {
         const book = await bookmodel.BookKeywords();
 
         if(book.length > 0) {
-            res.status(200).json({message: 'All book keywords accessed', data: book});
+            res.status(200).json(book);
         } else {
             res.status(404).json({message: "book keywords not found"});
         }
