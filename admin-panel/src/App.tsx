@@ -2,6 +2,8 @@ import { Admin, ListGuesser, Resource, ShowGuesser } from "react-admin";
 import { Layout } from './Layout';
 import dataProvider from "./dataProvider";
 
+import Dashboard from "./pages/dashboard";
+
 // show all
 import bhaktiList from './pages/bhakti/bhaktiList';
 import bookList from './pages/book/bookList';
@@ -21,7 +23,7 @@ import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
 
 const App = () => {
     return (
-        <Admin layout={Layout} dataProvider={dataProvider}>
+        <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard}>
             <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} />
             <Resource name="categories" list={ListGuesser} show={ShowGuesser} />
             <Resource name="book" list={bookList} show={BookShow} />
