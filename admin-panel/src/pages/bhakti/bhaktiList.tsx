@@ -1,7 +1,10 @@
-import { Datagrid, List, NumberField, TextField } from 'react-admin';
+import { Datagrid, List, NumberField, TextField, EditButton, TextInput } from 'react-admin';
 
-const BhaktiList = () => (
-    <List>
+const BhaktiList = () => {
+    const bhaktiFilter = [<TextInput source='q' label="search" alwaysOn />];
+
+    return (
+    <List filters={bhaktiFilter}>
         <Datagrid>
             <TextField source="id" />
             <TextField source="title" />
@@ -12,8 +15,10 @@ const BhaktiList = () => (
             <TextField source="reference_links" />
             <TextField source="content" />
             <NumberField source="category" />
+            <EditButton />
         </Datagrid>
     </List>
 );
+}
 
 export default BhaktiList;

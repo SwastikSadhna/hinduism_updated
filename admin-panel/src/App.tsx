@@ -16,10 +16,13 @@ import TempleShow from "./pages/temple/templeShow";
 import AvatarShow from "./pages/avatar/avatarShow";
 import GodShow from "./pages/god/godShow";
 
+// Create
+import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
+
 const App = () => {
     return (
         <Admin layout={Layout} dataProvider={dataProvider}>
-            <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} />
+            <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} />
             <Resource name="categories" list={ListGuesser} show={ShowGuesser} />
             <Resource name="book" list={bookList} show={BookShow} />
             <Resource name="temple" list={templeList} show={TempleShow} />
