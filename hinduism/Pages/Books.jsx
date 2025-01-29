@@ -58,7 +58,7 @@ export default function Books() {
 
   useEffect(() => {
     axios
-      .get(API_CONFIG.baseUrl + "/book/all")
+      .get(API_CONFIG.baseUrl + "/book/")
       .then((res) => {
         setIsLoading(false);
         setBhaktiTypes(res.data.data);
@@ -171,7 +171,7 @@ export default function Books() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bhaktiTypes.length > 0 ? (
               bhaktiTypes.map((item) => (
-                <Link to={`/Book/${item._id}`} key={item._id}>
+                <Link to={`/Book/${item.id}`} key={item.id}>
                   <BhaktiCard
                     type={item.title}
                     author={item.author}
