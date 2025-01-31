@@ -85,7 +85,7 @@ const imageDetails = {
         alt: "Jagganath Swami"
     },
     TempleJagganath: {
-        src: TempleJagganath,
+        src: "https://th.bing.com/th/id/R.d96fd82e9ac59805835b3cf26da61d48?rik=LXA23iZ0ps97SA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-temple-temple-png-pic-753.png&ehk=bBUtLVBPZ%2f6ZH1aHTEe3CECaWhnLDEHOgJrmIJXPLjs%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
         alt: "Jagganath Swami"
     },
     Rathyatra: {
