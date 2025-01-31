@@ -39,7 +39,7 @@ const Header = () => {
           <Link to="/Books" className="hover:text-[#FF7722]">Books</Link>
           <Link to="/Avatar" className="hover:text-[#FF7722]">Avatar</Link>
           <Link to="/Bhakti/bhajans" className="hover:text-[#FF7722]">Bhakti</Link>
-          <Link to="" className="hover:text-[#FF7722]">Granth</Link>
+          <Link to="/Granth/Granth" className="hover:text-[#FF7722]">Granth</Link>
           <div className="relative group">
             <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">
               Routine <FaChevronDown />
@@ -82,7 +82,7 @@ const Header = () => {
               <Link to="/Shlok" onClick={toggleMenu} className="hover:text-[#FF7722]">Bhakti</Link>
             </li>
             <li>
-              <Link to="" onClick={toggleMenu} className="hover:text-[#FF7722]">Granth</Link>
+              <Link to="/Granth/Granth" onClick={toggleMenu} className="hover:text-[#FF7722]">Granth</Link>
             </li>
             <li>
               <button onClick={toggleRoutine} className="hover:text-[#FF7722] flex items-center gap-1">
