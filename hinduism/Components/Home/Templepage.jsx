@@ -39,9 +39,9 @@ export default function Templepage() {
 
   useEffect(() => {
     axios
-      .get(`${API_CONFIG.baseUrl}/temple/`)
+      .get(`${API_CONFIG.baseUrl}/temple`)
       .then((data) => {
-        setSlides(data.data.data);
+        setSlides(data.data);
       })
       .catch((err) => {
         console.error(err);

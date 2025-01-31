@@ -11,4 +11,9 @@ const SearchGranthItem = async (q) => {
     return items.rows;
 }
 
-module.exports = {SearchGranthItem, getGranthItems}
+const geTAllGranthItems = async () => {
+    const items = await pool.query(queries.GetGranthItems)
+    return items.rows;
+}
+
+module.exports = {SearchGranthItem, getGranthItems, geTAllGranthItems}

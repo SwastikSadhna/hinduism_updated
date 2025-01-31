@@ -22,7 +22,7 @@ const Temple = () => {
   useEffect(() => {
     if (!hasFetched) {
       axios
-        .get(`${API_CONFIG.baseUrl}/temple/get/${id}`)
+        .get(`${API_CONFIG.baseUrl}/temple/${id}`)
         .then((res) => {
           settempleDetails(res.data[0]);
           setImages(res.data[0]?.images || []);
