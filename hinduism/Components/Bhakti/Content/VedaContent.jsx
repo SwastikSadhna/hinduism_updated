@@ -47,9 +47,8 @@ export default function VedaContent() {
 
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/4").then((res) => {
-      console.log(res.data)
       setIsLoading(false)
-      setVedas(res.data.data)
+      setVedas(res.data)
     }).catch((err) => {
       setIsLoading(false)
       console.log(err);

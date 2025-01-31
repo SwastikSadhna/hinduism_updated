@@ -22,7 +22,7 @@ export default function Books() {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(API_CONFIG.baseUrl + "/book/keywords");
-      const data = response.data.data[0];
+      const data = response.data[0];
       const categories = Object.keys(data).map((key) => ({
         name: key,
         options: data[key],
@@ -61,7 +61,7 @@ export default function Books() {
       .get(API_CONFIG.baseUrl + "/book/")
       .then((res) => {
         setIsLoading(false);
-        setBhaktiTypes(res.data.data);
+        setBhaktiTypes(res.data);
       })
       .catch((err) => {
         setIsLoading(false);

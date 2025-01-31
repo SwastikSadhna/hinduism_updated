@@ -14,8 +14,8 @@ export default function BhajanContent() {
 
   useEffect(() => {
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/3").then((res) => {
-        console.log(res.data.data)
-        setBhajans(res.data.data)
+        console.log(res.data)
+        setBhajans(res.data)
         setIsLoading(false)
     }).catch((err) => {
       console.log(err)

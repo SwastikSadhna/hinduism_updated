@@ -27,7 +27,7 @@ export default function DuhaContent() {
   useEffect(() => { 
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/2").then((res) => {
       setIsLoading(false)
-      setDuhas(res.data.data)
+      setDuhas(res.data)
     }).catch((err) => {
       setIsLoading(false)
     })

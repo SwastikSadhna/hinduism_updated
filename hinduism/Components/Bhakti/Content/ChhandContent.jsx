@@ -17,7 +17,7 @@ export default function ChhandContent() {
   useEffect(() => {
     axios.get(API_CONFIG.baseUrl + "/bhakti/type/1").then((res) => {
       setIsLoading(false)
-      setChhand(res.data.data)
+      setChhand(res.data)
     }).catch((err) => {
       console.log(err)
       setIsLoading(false)

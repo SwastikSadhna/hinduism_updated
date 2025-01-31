@@ -7,7 +7,7 @@ GET http://localhost:3000/bhakti/2
 ###
 
 // Get Bhakti By Type
-GET http://localhost:3000/bhakti/type/3
+GET http://localhost:3000/bhakti/type/2
 ###
 
 // Get All Bhakti Filter Keywords
