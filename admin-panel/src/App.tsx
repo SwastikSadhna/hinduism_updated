@@ -40,7 +40,7 @@ const App = () => {
             <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} edit={bhaktiEdit} icon={AutoStoriesIcon} />
             <Resource name="categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
             <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />
-            <Resource name="temple" list={templeList} show={TempleShow} icon={TempleHinduIcon} />
+            <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />
             <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />
             <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />
             <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />

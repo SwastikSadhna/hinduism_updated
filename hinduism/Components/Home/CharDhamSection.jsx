@@ -37,7 +37,7 @@ export default function CharDhamSection() {
   }, [temples]);
 
   useEffect(() => {
-    axios.get(`${API_CONFIG.baseUrl}/temple/chardham`).then((result) => {
+    axios.get(`${API_CONFIG.baseUrl}/temples/chardham`).then((result) => {
       console.log("Data Fetched");
       const temp = result.data;
       

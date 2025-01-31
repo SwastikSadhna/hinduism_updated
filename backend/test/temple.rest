@@ -1,21 +1,21 @@
 // get all temples
-GET http://localhost:3000/temple
+GET http://localhost:3000/temples
 
 ###
-// get temple by id
-GET http://localhost:3000/temple/1
+// get temples by id
+GET http://localhost:3000/temples/1
 
 ###
-// get temple names by search query
-GET http://localhost:3000/temple/search?q=som
+// get temples names by search query
+GET http://localhost:3000/temples/search?q=som
 
 ###
-// get temples by filter
-GET http://localhost:3000/temple/filter
+// get templess by filter
+GET http://localhost:3000/temples/filter
 ###
 
-GET http://localhost:3000/temple/keywords
+GET http://localhost:3000/temples/keywords
 
 ###
 // get chardham
-GET http://localhost:3000/temple/chardham
+GET http://localhost:3000/temples/chardham
