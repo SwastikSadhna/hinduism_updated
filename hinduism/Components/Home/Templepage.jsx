@@ -39,7 +39,7 @@ export default function Templepage() {
 
   useEffect(() => {
     axios
-      .get(`${API_CONFIG.baseUrl}/temple`)
+      .get(`${API_CONFIG.baseUrl}/temples`)
       .then((data) => {
         setSlides(data.data);
       })

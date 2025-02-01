@@ -23,7 +23,7 @@ app.use("/images", express.static(path.join(__dirname , "public/images")))
 app.use('/book', BookRoute);
 app.use('/avatar', AvatarRoute);
 app.use('/god', GodRoute);
-app.use('/temple', TempleRoute);
+app.use('/temples', TempleRoute);
 app.use('/bhakti', BhaktiRoute);
 app.use('/granthitem', GranthItemRoute);
 app.use('/granth', GranthRoute);

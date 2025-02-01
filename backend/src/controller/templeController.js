@@ -19,7 +19,7 @@ const getTempleById = async (req, res) => {
         const id = req.params.id;
         const temple = await Temple.getTempleById(id);
         if (temple.length>0)
-            res.status(200).json(temple)
+            res.status(200).json(temple[0])
         else
             res.status(404).json({ message: "Temple not found" })
     } catch (err) {
