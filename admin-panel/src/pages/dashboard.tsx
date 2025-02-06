@@ -7,7 +7,7 @@ const Dashboard = () => {
     const [stats, setStats] = useState([
         { title: "Bhakti", value: 0 },
         { title: "Book", value: 0 },
-        { title: "Temple", value: 0 },
+        { title: "Temples", value: 0 },
         { title: "Avatar", value: 0 },
         { title: "God", value: 0 },
         { title: "Sloka", value: 0 },

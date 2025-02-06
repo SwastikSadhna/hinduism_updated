@@ -1,17 +1,24 @@
-import { Create, NumberInput, ReferenceInput, SimpleForm, TextInput } from "react-admin";
+import { ArrayInput, Create, SimpleFormIterator, ReferenceInput, SimpleForm, TextInput } from "react-admin";
 
 const bhaktiCreate = () => {
     return (<Create>
         <SimpleForm>
-            <ReferenceInput source="id" reference="bhakti" />
             <TextInput source="title" />
             <TextInput source="description" />
-            <TextInput source="keyword" />
+            <ArrayInput source="keywords">
+                <SimpleFormIterator>
+                    <TextInput source="keywords" />
+                </SimpleFormIterator>
+            </ArrayInput>
             <TextInput source="image" />
             <TextInput source="author" />
-            <TextInput source="reference_links" />
+            <ArrayInput source="reference_links">
+                <SimpleFormIterator>
+                    <TextInput source="reference_links" />
+                </SimpleFormIterator>
+            </ArrayInput>
             <TextInput source="content" />
-            <NumberInput source="category" />
+            <ReferenceInput source="category" reference="bhakti/categories"/>
         </SimpleForm>
     </Create>)
 }
