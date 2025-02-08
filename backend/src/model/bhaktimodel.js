@@ -41,4 +41,8 @@ const DeleteBhakti = async (id) =>{
     return result.rows;
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti };
+const UpdateBhakti = async (data)=>{
+    const result = await pool.query(bhaktiquery.UpdateBhakti, [data.id, data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links])
+    return result.rows;
+}
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti, UpdateBhakti };

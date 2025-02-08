@@ -9,5 +9,6 @@ router.get('/filter', bhakti.FilterBhakti);
 router.get('/:id', bhakti.GetBhaktiById);
 router.post('/', bhakti.AddBhakti);
 router.delete("/:id", bhakti.DeleteBhakti)
+router.put("/:id", bhakti.UpdateBhakti)
 
 module.exports = router;
