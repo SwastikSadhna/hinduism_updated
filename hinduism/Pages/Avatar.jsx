@@ -184,7 +184,7 @@ const VishnuAvatarsApp = () => {
                           
             <h3 className="text-xl font-bold text-orange800 mb-4">External Links</h3>
                {/* External Links */}
-              <div className="space-y-2 mt-4">
+              <div className="space-y-2 mt-4 mx-2">
                 {selectedAvatar.reference_links.map((link, index) => (
                   <a
                     key={index}
@@ -193,7 +193,7 @@ const VishnuAvatarsApp = () => {
                     rel="noopener noreferrer"
                     className="text-orange-600 hover:text-orange-800 underline"
                   >
-                    {link.name}
+                    {link.name}, 
                   </a>
                 ))}
               </div>

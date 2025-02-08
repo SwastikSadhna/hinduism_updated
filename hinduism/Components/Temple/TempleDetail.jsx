@@ -40,7 +40,7 @@ const templeSpecialities = [
 const isImage = (url) => /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url)
 const isVideo = (url) => /\.(mp4|webm|ogg)$/.test(url)
 
-export function TempleSpecialityGrid() {
+export function TempleSpecialityGrid({importance}) {
   const sortedSpecialities = useMemo(() => {
     return [...templeSpecialities].sort((a, b) => {
       if (a.resource && !b.resource) return -1
@@ -65,7 +65,7 @@ export function TempleSpecialityGrid() {
 
         
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {sortedSpecialities.map((speciality, index) => (
+          {importance.map((speciality, index) => (
             <div
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"

@@ -5,13 +5,13 @@ import { useState } from "react";
 import { imageDetails } from "../../resources";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = [
-  `${imageDetails.Rathyatra.src}`,
-  `${imageDetails.Jagganath.src}`,
-  `${imageDetails.TempleJagganath.src}`,
-];
+// const images = [
+//   `${imageDetails.Rathyatra.src}`,
+//   `${imageDetails.Jagganath.src}`,
+//   `${imageDetails.TempleJagganath.src}`,
+// ];
 
-export function ImageSlider() {
+export function ImageSlider({images}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {

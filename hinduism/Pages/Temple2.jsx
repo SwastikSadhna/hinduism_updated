@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import API_CONFIG from "../src/config/api"
+import { imageDetails } from "../resources"
 
 export default function Home() {
   const navigate = useNavigate();
@@ -30,9 +31,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header name={templeData?.name} location={templeData?.location} image={ templeData?.cover_image} />
-      <About />
-      <ImageSlider />
-      <TempleSpecialityGrid />
+      <About name={templeData?.name} description={templeData?.description} image={templeData?.images == null? imageDetails.Temple.src: templeData?.images?.at(0) } />
+      <ImageSlider images={templeData?.images == null || templeData?.images?.length == 0? [imageDetails.Temple.src]: templeData?.images} />
+      <TempleSpecialityGrid importance={templeData?.importance == null ? []: templeData?.importance} />
       {/* <Footer /> */}
     </div>
   )
