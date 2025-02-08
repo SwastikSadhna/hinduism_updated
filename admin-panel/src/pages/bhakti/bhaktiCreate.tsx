@@ -1,4 +1,4 @@
-import { ArrayInput, Create, SimpleFormIterator, ReferenceInput, SimpleForm, TextInput } from "react-admin";
+import { ArrayInput, Create, SimpleFormIterator, ReferenceInput, SimpleForm, TextInput, SelectInput } from "react-admin";
 
 const bhaktiCreate = () => {
     return (<Create>
@@ -18,7 +18,9 @@ const bhaktiCreate = () => {
                 </SimpleFormIterator>
             </ArrayInput>
             <TextInput source="content" />
-            <ReferenceInput source="category" reference="bhakti/categories"/>
+            <ReferenceInput source="category" reference="bhakti/categories" >
+                <SelectInput optionText="name" />
+            </ReferenceInput>
         </SimpleForm>
     </Create>)
 }

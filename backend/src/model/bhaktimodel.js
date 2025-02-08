@@ -31,4 +31,14 @@ const FilterBhakti = async (query) => {
     return result.rows;
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories };
+const AddBhakti = async (data) =>{
+    const result = await pool.query(bhaktiquery.AddBhakti, [data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links])
+    return result.rows;
+}
+
+const DeleteBhakti = async (id) =>{
+    const result  = await pool.query(bhaktiquery.DeleteBhakti, [id])
+    return result.rows;
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti };

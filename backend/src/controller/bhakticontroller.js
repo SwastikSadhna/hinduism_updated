@@ -90,4 +90,40 @@ const getAllCategories = async (req, res) => {
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories};
+const AddBhakti = async (req, res) => {
+
+    const data = {
+        title: req.body.title,
+        description: req.body?.description || '',
+        keyword: req.body?.keyword || [],
+        image: req.body?.image || "",
+        category: req.body?.category || "",
+        content: req.body?.content || "",
+        author: req.body?.author || "",
+        reference_links: req.body?.reference_links || [],
+    }
+    console.log(data)
+    try{
+        if(data.title != "" && data.content != "" && data.category != "")
+        {    
+            const bhakti = await BhaktiModel.AddBhakti({...data})
+            res.status(200).json(bhakti[0]);}
+        else
+            return res.status(400).json({error: "all fields are required"});
+    }catch(e){
+        res.status(500).json({error: e, message: "Some internal problems occured"})
+    }
+}
+
+const DeleteBhakti = async (req,res)=>{
+    try{
+        const id = req.params.id;
+        const bhakti = await BhaktiModel.DeleteBhakti(id);
+        res.status(200).json({message: "Bhakti deleted successfully"});
+    }catch(e){
+        console.log(e);
+        res.status(500).json({error: e, message: "Some internal problems occured"})
+    }
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti };
