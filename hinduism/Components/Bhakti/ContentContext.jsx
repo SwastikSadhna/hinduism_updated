@@ -8,11 +8,12 @@ const ContentContext = createContext();
 // Create a Provider component
 export function ContentProvider({ children }) {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [appliedFilters, setAppliedFilters] = useState(false);
 
   const handleFilter = (path, setState, category) => { 
 
     if(!path & !setState & !category) return;
-    
+
     if (activeCategory) {
       let query = {}
 
@@ -29,12 +30,14 @@ export function ContentProvider({ children }) {
       axios.get(url, {
         params: query
       }).then((res) => {
-        setState(res.data.data)
+        setState(res.data)
+        console.log(res.data)
       }).catch((err) => {
         setState([])
         console.log(err)
       })
     }
+
   }
 
   return (

@@ -12,6 +12,7 @@ const getFilterQuery = (query) => {
         }
     }
     q = q.slice(0, -4)
+    console.log(q)
     return q
 }
 

@@ -65,7 +65,7 @@ export default function VedaContent() {
 
   return (
     <div className="space-y-4">
-      {isLoading == true? <Loading /> : vedas.length > 0? vedas.map((veda, index) => (
+      {isLoading == true? <Loading /> : vedas?.length > 0? vedas?.map((veda, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -99,7 +99,7 @@ export default function VedaContent() {
             </div>
           </div>
         </div>
-      )): <ErrorPage />}
+      )): <ErrorPage code={404} message={"No Items Found"}/>}
     </div>
   );
 }

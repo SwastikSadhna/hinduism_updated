@@ -20,7 +20,7 @@ export default function DuhaContent() {
   // ]
 
   const [duhas, setDuhas] = new useState([])
-  const { activeCategory,  handleFilter } = useContent()
+  const {activeCategory,  handleFilter } = useContent()
   const isMounted = useRef(false);
   const [isLoading, setIsLoading] = new useState(true)
 
@@ -37,13 +37,15 @@ export default function DuhaContent() {
   useEffect(() => {
     if(isMounted.current)
       handleFilter("/bhakti/filter", setDuhas, 2)
-    else
+    else{
       isMounted.current = true
+      
+    }
   }, [activeCategory])
 
   return (
     <div className="space-y-4">
-      {isLoading == true? <Loading /> :duhas.length > 0 ? duhas.map((duha, index) => (
+      {isLoading == true? <Loading /> :duhas?.length > 0 ? duhas?.map((duha, index) => (
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -64,7 +66,7 @@ export default function DuhaContent() {
             </button>
           </div>
         </div>
-      )) : <ErrorPage /> }
+      )) : <ErrorPage code={404} message={"No Items Found"}/> }
     </div>
   )
 }

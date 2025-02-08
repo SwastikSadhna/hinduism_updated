@@ -30,7 +30,7 @@ export default function BhajanContent() {
   return (
     <div className="space-y-4">
       {isLoading == true ? <Loading /> :
-        bhajans.length > 0? bhajans.map((bhajan) => (
+        bhajans?.length > 0? bhajans?.map((bhajan) => (
         <div
           key={bhajan.title}
           className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -53,7 +53,7 @@ export default function BhajanContent() {
             </button>
           </div>
         </div>
-        )) : <ErrorPage code={ 404} message={"No Items Found"}/>
+        )) : <ErrorPage code={404} message={"No Items Found"}/>
       }
     </div>
   )

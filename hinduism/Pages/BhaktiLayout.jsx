@@ -19,7 +19,7 @@ export default function BhaktiLayout() {
   const fetchCategories = async () => {
   try {
     const response = await axios.get(API_CONFIG.baseUrl + "/bhakti/filter/options");
-    const data = response.data.data[0];
+    const data = response.data[0];
     const categories = Object.keys(data).map((key) => ({
       name: key,
       options: data[key],
