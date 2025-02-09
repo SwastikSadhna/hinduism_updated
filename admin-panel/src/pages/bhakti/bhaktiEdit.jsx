@@ -1,6 +1,6 @@
 import {Edit, SimpleForm, TextInput, ReferenceInput,ArrayInput, SimpleFormIterator, NumberInput} from "react-admin"
 
-const bhaktiEdit = () => (
+const BhaktiEdit = () => (
   <Edit>
     <SimpleForm>
     <TextInput source="title" />
@@ -23,4 +23,4 @@ const bhaktiEdit = () => (
   </Edit>
 );
 
-export default bhaktiEdit;
+export default BhaktiEdit;

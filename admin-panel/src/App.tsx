@@ -39,10 +39,14 @@ import GodShow from "./pages/god/godShow";
 import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
 
 // Edit Components
-import bhaktiEdit from "./pages/bhakti/bhaktiEdit";
+import BhaktiEdit from "./pages/bhakti/BhaktiEdit";
 const queryClient = new QueryClient();
 
 const App = () => {
+
+    const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
+    const hasPermission = (action : string, resource: string) => permissions.includes(`${action}:${resource}`);
+
     return (
         <QueryClientProvider client={queryClient}> 
             <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard} authProvider={authProvider} loginPage={Login}>
@@ -51,31 +55,21 @@ const App = () => {
                     <Route path="/signup" element={<Signup />} />
                 </CustomRoutes>
 
-                <PermissionsBasedResources />
+                <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('edit','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />
+                <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
+                <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />
+                <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />
+                <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />
+                <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />
+                <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />
+                <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
+                <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
                 
             </Admin>
         </QueryClientProvider>
+
     );
 };
 
-// ✅ Component to Conditionally Render Resources Based on Permissions
-const PermissionsBasedResources = () => {
-    const { permissions } = usePermissions();
-    console.log(permissions);
-    if (!permissions) return null; 
-    return (
-        <>
-            {(permissions.includes("read:bhakti") || permissions.includes("all:bhakti")) && (<Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} edit={bhaktiEdit} icon={AutoStoriesIcon} />)}
-            {permissions.includes("read:categories") && <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />}
-            {permissions.includes("read:book") && <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />}
-            {permissions.includes("read:temples") && <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
-            {permissions.includes("read:avatar") && <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
-            {permissions.includes("read:god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}
-            {permissions.includes("read:sloka") && <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />}
-            {permissions.includes("read:granth") && <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
-            {permissions.includes("read:granthitem") && <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
-        </>
-    );
-};
 
 export default App;

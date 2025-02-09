@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
     const [credentials, setCredentials] = useState({
-        username: "",
+        email: "",
         password: ""
     });
     const login = useLogin();
@@ -21,7 +21,7 @@ const Login = () => {
                 placeholder="Email"
                 value={credentials.email}
                 onChange={(e) => setCredentials({
-                    ...credentials, username:
+                    ...credentials, email:
                         e.target.value
                 })}
             />

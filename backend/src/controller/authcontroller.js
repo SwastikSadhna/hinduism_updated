@@ -13,14 +13,14 @@ const generateToken = (user) => {
 
 const login = async (req, res)=>{
     try{
-        const {username, password} = req.body;
-        const user = await authModel.getUserByEmail(username);
+        const {email, password} = req.body;
+        const user = await authModel.getUserByEmail(email);
         if(!user){
-            return res.status(401).json({message: "Invalid Username or Password"});
+            return res.status(401).json({message: "Invalid email or Password"});
         }
         const validPassword = await bcrypt.compare(password, user.password);
         if(!validPassword){
-            return res.status(401).json({message: "Invalid Username or Password"});
+            return res.status(401).json({message: "Invalid email or Password"});
         }
         const permissions = await authModel.getPermissions(user.role);
         const stringPermissions = permissions.map(p=>`${p.action}:${p.resource}`);
