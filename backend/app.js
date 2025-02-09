@@ -11,6 +11,7 @@ const TempleRoute = require("./src/route/temple");
 const GranthItemRoute = require("./src/route/granthitem");
 const GranthRoute = require("./src/route/granth");
 const SlokaRoute = require("./src/route/sloka");
+const UserRoute = require("./src/route/auth")
 
 const path = require("path");
 
@@ -30,6 +31,7 @@ app.use('/bhakti', BhaktiRoute);
 app.use('/granthitem', GranthItemRoute);
 app.use('/granth', GranthRoute);
 app.use('/sloka', SlokaRoute);
+app.use('/auth', UserRoute);
 
 app.listen(3000,()=>{
     console.log("server is running : http://localhost:3000/")
