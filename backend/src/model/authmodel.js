@@ -33,7 +33,7 @@ const searchUser = async (name)=>{
 
 const getPermissions = async (role)=>{
     const response = await pool.query(authQuery.GetPermissions, [role])
-    return response.rows[0]
+    return response.rows
 }
 
 module.exports = {getAllUsers, getUserByEmail, createUser, updateUser, deleteUser, searchUser, getPermissions}

@@ -13,9 +13,10 @@ const generateToken = (user) => {
 
 const login = async (req, res)=>{
     try{
-        const {email, password} = req.body;
-        const user = await authModel.getUserByEmail(email);
-        
+        const {username, password} = req.body;
+        console.log(req.body)
+        const user = await authModel.getUserByEmail(username);
+        console.log(user.role)
         if(!user){
             return res.status(401).json({message: "Invalid Username or Password"});
         }
@@ -29,6 +30,7 @@ const login = async (req, res)=>{
 
         res.status(200).json({token, role: user.role, permissions: stringPermissions});
     }catch(err){
+        console.log(err)
         res.status(500).json({message: err.message});
     }
 }
@@ -36,17 +38,21 @@ const login = async (req, res)=>{
 const register = async (req, res)=>{
     try{
         const {name, email, password} = req.body;
+        
+        if(name != "" && email != "" && password != ""){
         const user = await authModel.getUserByEmail(email);
         if(user){
             return res.status(400).json({message: "Email already exists"});
         }
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = await authModel.createUser(name, email, hashedPassword);
-        const permissions = await authModel.getPermissions(newUser.role);
-        const stringPermissions = permissions.map(p=>`${p.action}:${p.resource}`);
-        const token = generateToken(newUser)
-        res.status(201).json({token, role: newUser.role, permissions: stringPermissions});
+        res.status(200).json({message:"Account created successfully"});
+        }
+        else{
+            return res.status(400).json({message: "Please fill all fields"});
+        }
     }catch(err){
+        console.log(err)
         res.status(500).json({message: err.message});
     }
 }

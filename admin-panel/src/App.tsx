@@ -34,9 +34,21 @@ import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
 // Edit
 import bhaktiEdit from "./pages/bhakti/bhaktiEdit";
 
+
+// Auth
+import authProvider from "./authProvider";
+import Login from "./pages/auth/Login"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signup from "./pages/auth/Signup"
+
 const App = () => {
     return (
-        <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard} >
+        <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route
+                path="/*"
+                element={
+        <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard} authProvider={authProvider} loginPage={Login} >
             <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} edit={bhaktiEdit} icon={AutoStoriesIcon} />
             <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
             <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />
@@ -46,8 +58,12 @@ const App = () => {
             <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />
             <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
             <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
-        </Admin>
+        </Admin> }
+                />
+            </Routes>
+        
     );
 };
+
 
 export default App;
