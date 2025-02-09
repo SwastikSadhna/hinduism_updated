@@ -38,7 +38,7 @@ const App = () => {
     return (
         <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard} >
             <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={bhaktiCreate} edit={bhaktiEdit} icon={AutoStoriesIcon} />
-            <Resource name="categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
+            <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
             <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />
             <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />
             <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />

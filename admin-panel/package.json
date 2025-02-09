@@ -18,6 +18,7 @@
     "axios": "^1.7.9",
     "card": "^2.5.4",
     "components": "^0.1.0",
+    "dotenv": "^16.4.7",
     "lucide-react": "^0.474.0",
     "ra-core": "^5.5.2",
     "ra-data-json-server": "^5.5.0",

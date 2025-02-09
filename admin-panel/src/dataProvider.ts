@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const api_url = import.meta.env.VITE_JSON_SERVER_URL;
+console.log(api_url)
+
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: api_url,
 });
 
 const dataProvider = {
