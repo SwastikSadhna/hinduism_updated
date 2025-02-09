@@ -14,9 +14,7 @@ const generateToken = (user) => {
 const login = async (req, res)=>{
     try{
         const {username, password} = req.body;
-        console.log(req.body)
         const user = await authModel.getUserByEmail(username);
-        console.log(user.role)
         if(!user){
             return res.status(401).json({message: "Invalid Username or Password"});
         }
