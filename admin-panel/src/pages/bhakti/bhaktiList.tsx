@@ -1,13 +1,19 @@
-import { Datagrid, List, NumberField, TextField, EditButton, TextInput } from 'react-admin';
+import { Datagrid, BulkDeleteButton, List, NumberField, TextField, EditButton, TextInput } from 'react-admin';
 
-const BhaktiList = () => {
+const CustomBulkActions = () => {
+    const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
+    return permissions.includes(`delete:bhakti`) ? <BulkDeleteButton /> : null;
+};
+
+
+const BhaktiList = (props:object) => {
     const bhaktiFilter = [<TextInput source='q' label="search" alwaysOn />];
     const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
     const hasPermission = (action : string, resource: string) => permissions.includes(`${action}:${resource}`);
 
     return (
     <List filters={bhaktiFilter} >
-        <Datagrid>
+        <Datagrid bulkActionButtons={<CustomBulkActions />}>
             <TextField source="id" />
             <TextField source="title" />
             <TextField source="description" />
@@ -18,6 +24,7 @@ const BhaktiList = () => {
             <TextField source="content" />
             <NumberField source="category" />
             {hasPermission('edit','bhakti') && <EditButton />}
+            
         </Datagrid>
     </List>
 );

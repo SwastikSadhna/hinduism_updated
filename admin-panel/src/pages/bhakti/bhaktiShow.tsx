@@ -1,6 +1,10 @@
-import { NumberField, Show, SimpleShowLayout, TextField } from 'react-admin';
+import { DeleteButton, NumberField, Show, SimpleShowLayout, TextField } from 'react-admin';
 
-const BhaktiShow = () => (
+const BhaktiShow = () => {
+    const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
+    const hasPermission = (action : string, resource: string) => permissions.includes(`${action}:${resource}`);
+
+    return (
     <Show>
         <SimpleShowLayout>
             <TextField source="id" />
@@ -12,8 +16,9 @@ const BhaktiShow = () => (
             <TextField source="reference_links" />
             <TextField source="content" />
             <NumberField source="category" />
+            {hasPermission('delete','bhakti') && <DeleteButton />}
         </SimpleShowLayout>
     </Show>
-);
+)};
 
 export default BhaktiShow
