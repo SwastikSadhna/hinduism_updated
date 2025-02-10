@@ -30,6 +30,7 @@ export const AuthProvider = ({children})=>{
     }, []);
 
     const hasPermission = (action, resource) => {
+        console.log(`${action}:${resource}`)
         return permissions.includes(`${action}:${resource}`);
     };
     return (

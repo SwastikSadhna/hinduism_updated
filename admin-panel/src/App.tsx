@@ -59,11 +59,11 @@ const App = () => {
                     <Route path="/signup" element={<Signup />} />
                 </CustomRoutes>
 
-                {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('edit','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
+                {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('update','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
                 {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />}
                 {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />}
-                {hasPermission("read", "temple") && <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
-                {hasPermission("read","avatar") && <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
+                {hasPermission("read","temple") &&<Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
+                {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
                 {hasPermission("read","god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}
                 {hasPermission("read","sloka") && <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />}
                 {hasPermission("read","granth") && <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}

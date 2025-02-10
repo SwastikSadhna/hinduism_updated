@@ -17,7 +17,7 @@ const BhaktiList = (props:object) => {
             <TextField source="reference_links" />
             <TextField source="content" />
             <NumberField source="category" />
-            {hasPermission('edit','bhakti') && <EditButton />}
+            {hasPermission('update','bhakti') && <EditButton />}
             
         </Datagrid>
     </List>
