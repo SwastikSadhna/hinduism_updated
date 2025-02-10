@@ -1,4 +1,6 @@
 const api_url = import.meta.env.VITE_JSON_SERVER_URL;
+
+
 const authProvider = {
     login: async ({email, password})=>{
         const response = await fetch(`${api_url}/auth/login`, {
@@ -9,7 +11,7 @@ const authProvider = {
             if(res.status == 200){
                 const {token, role, permissions} = await res.json()
                 localStorage.setItem("auth", JSON.stringify({token, role, permissions}))
-                return Promise.resolve()
+                return {user:role, permissions:permissions}
             }else{
                 throw new Error("Invalid email or password")
             }

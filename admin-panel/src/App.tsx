@@ -42,6 +42,9 @@ import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
 import BhaktiEdit from "./pages/bhakti/BhaktiEdit";
 const queryClient = new QueryClient();
 
+// Auth Context
+import { AuthProvider } from "./pages/auth/AuthProvider";
+
 const App = () => {
 
     const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
@@ -49,6 +52,7 @@ const App = () => {
 
     return (
         <QueryClientProvider client={queryClient}> 
+        <AuthProvider>
             <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard} authProvider={authProvider} loginPage={Login}>
                 
                 <CustomRoutes>
@@ -66,6 +70,7 @@ const App = () => {
                 <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
                 
             </Admin>
+        </AuthProvider>
         </QueryClientProvider>
 
     );

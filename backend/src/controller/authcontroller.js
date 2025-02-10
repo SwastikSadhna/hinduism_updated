@@ -16,10 +16,12 @@ const login = async (req, res)=>{
         const {email, password} = req.body;
         const user = await authModel.getUserByEmail(email);
         if(!user){
+            console.log("user not found")
             return res.status(401).json({message: "Invalid email or Password"});
         }
         const validPassword = await bcrypt.compare(password, user.password);
         if(!validPassword){
+            console.log("invalid password")
             return res.status(401).json({message: "Invalid email or Password"});
         }
         const permissions = await authModel.getPermissions(user.role);

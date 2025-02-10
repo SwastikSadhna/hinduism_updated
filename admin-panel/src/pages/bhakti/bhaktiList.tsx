@@ -1,4 +1,5 @@
 import { Datagrid, BulkDeleteButton, List, NumberField, TextField, EditButton, TextInput } from 'react-admin';
+import {useAuth} from "../auth/AuthProvider"
 
 const CustomBulkActions = () => {
     const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
@@ -8,9 +9,8 @@ const CustomBulkActions = () => {
 
 const BhaktiList = (props:object) => {
     const bhaktiFilter = [<TextInput source='q' label="search" alwaysOn />];
-    const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
-    const hasPermission = (action : string, resource: string) => permissions.includes(`${action}:${resource}`);
-
+    const {hasPermission} = useAuth()
+    
     return (
     <List filters={bhaktiFilter} >
         <Datagrid bulkActionButtons={<CustomBulkActions />}>
