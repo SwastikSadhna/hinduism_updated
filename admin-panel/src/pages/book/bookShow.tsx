@@ -1,6 +1,10 @@
 import { Show, SimpleShowLayout, TextField } from 'react-admin';
+import {useAuth} from '../auth/AuthProvider';
 
-const BookShow = () => (
+const BookShow = () => {
+    const {hasPermission} = useAuth();
+
+    return (
     <Show>
         <SimpleShowLayout>
             <TextField source="id" />
@@ -14,6 +18,6 @@ const BookShow = () => (
             <TextField source="year" />
         </SimpleShowLayout>
     </Show>
-);
+);}
 
 export default BookShow;

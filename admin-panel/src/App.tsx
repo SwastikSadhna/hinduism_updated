@@ -59,15 +59,15 @@ const App = () => {
                     <Route path="/signup" element={<Signup />} />
                 </CustomRoutes>
 
-                <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('edit','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />
-                <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />
-                <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />
-                <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />
-                <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />
-                <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />
-                <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />
-                <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
-                <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />
+                {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('edit','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
+                {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />}
+                {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />}
+                {hasPermission("read", "temple") && <Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
+                {hasPermission("read","avatar") && <Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
+                {hasPermission("read","god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}
+                {hasPermission("read","sloka") && <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />}
+                {hasPermission("read","granth") && <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
+                {hasPermission("read","granthitem") && <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
                 
             </Admin>
         </AuthProvider>

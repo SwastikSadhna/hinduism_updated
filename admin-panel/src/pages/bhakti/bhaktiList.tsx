@@ -3,7 +3,7 @@ import {useAuth, AuthBulkActions} from "../auth/AuthProvider"
 
 const BhaktiList = (props:object) => {
     const bhaktiFilter = [<TextInput source='q' label="search" alwaysOn />];
-    const {hasPermission, permissions} = useAuth()
+    const {hasPermission} = useAuth()
     
     return (
     <List filters={bhaktiFilter} >
