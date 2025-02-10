@@ -46,3 +46,8 @@ export const useAuth = ()=> {
         throw new Error("useAuth must be used within an AuthProvider")
     return context
 };
+
+export const AuthBulkActions = ({action, resource}) => {
+    const {hasPermission} = useAuth();
+    return hasPermission(action,resource) ? <BulkDeleteButton /> : null;
+};

@@ -1,8 +1,8 @@
 import { DeleteButton, NumberField, Show, SimpleShowLayout, TextField } from 'react-admin';
+import {useAuth} from "../auth/AuthProvider"
 
 const BhaktiShow = () => {
-    const permissions = JSON.parse(localStorage.getItem("auth") || '{"permissions": []}').permissions;
-    const hasPermission = (action : string, resource: string) => permissions.includes(`${action}:${resource}`);
+    const {hasPermission} = useAuth()
 
     return (
     <Show>
