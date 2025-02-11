@@ -37,9 +37,11 @@ import GodShow from "./pages/god/godShow";
 
 // Create Components
 import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
+import BookCreate from "./pages/book/bookCreate";
 
 // Edit Components
 import BhaktiEdit from "./pages/bhakti/BhaktiEdit";
+import BookEdit from "./pages/book/bookEdit";
 const queryClient = new QueryClient();
 
 // Auth Context
@@ -61,7 +63,7 @@ const App = () => {
 
                 {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('update','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
                 {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />}
-                {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} icon={BookIcon} />}
+                {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} create={<BookCreate />} edit={hasPermission("update","book") && <BookEdit />} icon={BookIcon} />}
                 {hasPermission("read","temple") &&<Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
                 {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
                 {hasPermission("read","god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}

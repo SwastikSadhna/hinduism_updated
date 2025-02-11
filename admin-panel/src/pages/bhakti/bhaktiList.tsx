@@ -1,4 +1,4 @@
-import { Datagrid, BulkDeleteButton, List, NumberField, TextField, EditButton, TextInput } from 'react-admin';
+import { Datagrid, BulkDeleteButton, List, NumberField, TextField, EditButton, TextInput, ImageField, ReferenceField } from 'react-admin';
 import {useAuth, AuthBulkActions} from "../auth/AuthProvider"
 
 const BhaktiList = (props:object) => {
@@ -12,11 +12,7 @@ const BhaktiList = (props:object) => {
             <TextField source="title" />
             <TextField source="description" />
             <TextField source="keyword" />
-            <TextField source="image" />
-            <TextField source="author" />
-            <TextField source="reference_links" />
-            <TextField source="content" />
-            <NumberField source="category" />
+            <ImageField source="image" />
             {hasPermission('update','bhakti') && <EditButton />}
             
         </Datagrid>

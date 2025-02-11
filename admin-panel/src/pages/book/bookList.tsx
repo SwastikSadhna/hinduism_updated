@@ -1,4 +1,4 @@
-import { Datagrid, BulkDeleteButton, List, TextField, FunctionField, EditButton } from 'react-admin';
+import { Datagrid, BulkDeleteButton, List, TextField, FunctionField, EditButton, ImageField } from 'react-admin';
 import {useAuth} from '../auth/AuthProvider';
 
 const BookList = () =>{
@@ -12,11 +12,10 @@ const BookList = () =>{
             <FunctionField label="description" render={(record) => `${record.description.substring(0, 50)}...`} />
             <TextField source="link" />
             <TextField source="author" />
-            <TextField source="image" />
-            <TextField source="cover_image" />
+            <ImageField source="image" />
             <TextField source="keyword" />
             <TextField source="year" />
-            {hasPermission('edit','book') && <EditButton />}
+            {hasPermission('update','book') && <EditButton />}
         </Datagrid>
     </List>
 );}

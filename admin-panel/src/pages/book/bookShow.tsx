@@ -1,4 +1,4 @@
-import { Show, SimpleShowLayout, TextField } from 'react-admin';
+import { DeleteButton, Show, SimpleShowLayout, TextField, ImageField } from 'react-admin';
 import {useAuth} from '../auth/AuthProvider';
 
 const BookShow = () => {
@@ -13,9 +13,10 @@ const BookShow = () => {
             <TextField source="link" />
             <TextField source="author" />
             <TextField source="image" />
-            <TextField source="cover_image" />
+            <ImageField source="cover_image" />
             <TextField source="keyword" />
             <TextField source="year" />
+            {hasPermission('delete','bhakti') && <DeleteButton />}
         </SimpleShowLayout>
     </Show>
 );}
