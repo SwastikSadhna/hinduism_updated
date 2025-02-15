@@ -1,7 +1,7 @@
 import { Datagrid, List, TextField, EditButton } from 'react-admin';
 import {useAuth, AuthBulkActions} from "../auth/AuthProvider"
 
-const GodList = () => {
+const CategoryList = () => {
     const {hasPermission} = useAuth()
     return (
     <List>
@@ -10,10 +10,9 @@ const GodList = () => {
             <TextField source="name" />
             <TextField source="image" />
             <TextField source="description" />
-            <TextField source="keyword" />
-            {hasPermission('update','god') && <EditButton />}
+            {hasPermission('update','bhakticategory') && <EditButton />}
         </Datagrid>
     </List>
 )};
 
-export default GodList;
+export default CategoryList;

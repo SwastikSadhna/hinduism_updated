@@ -24,12 +24,13 @@ import LibraryBooksIcon from "@mui/icons-material/List";
 // List Components
 import bhaktiList from './pages/bhakti/bhaktiList';
 import bookList from './pages/book/bookList';
-import godList from './pages/god/godList';
-import templeList from './pages/temple/templeList';
+import GodList from './pages/god/godList';
+import TempleList from './pages/temple/templeList';
 import avatarList from './pages/avatar/avatarList';
 import SlokaList from './pages/sloka/SlokaList'
 import GranthList from "./pages/granth/GranthList"
 import GranthItemList from "./pages/granthitem/GranthItemList"
+import CategoryList from "./pages/bhakticategory/CategoryList"
 
 // Show Components
 import bhaktiShow from './pages/bhakti/bhaktiShow';
@@ -40,6 +41,7 @@ import GodShow from "./pages/god/godShow";
 import SlokaShow from "./pages/sloka/SlokaShow";
 import GranthShow from "./pages/granth/GranthShow";
 import GranthItemShow from "./pages/granthitem/GranthItemShow";
+import CategoryShow from "./pages/bhakticategory/CategoryShow";
 
 // Create Components
 import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
@@ -47,6 +49,10 @@ import BookCreate from "./pages/book/bookCreate";
 import SlokaCreate from "./pages/sloka/SlokaCreate"
 import GranthCreate from "./pages/granth/GranthCreate"
 import GranthItemCreate from "./pages/granthitem/GranthItemCreate"
+import GodCreate from "./pages/god/godCreate";
+import AvatarCreate from "./pages/avatar/avatarCreate";
+import TempleCreate from "./pages/temple/templeCreate";
+import CategoryCreate from "./pages/bhakticategory/CategoryCreate";
 
 // Edit Components
 import BhaktiEdit from "./pages/bhakti/BhaktiEdit";
@@ -54,6 +60,10 @@ import BookEdit from "./pages/book/bookEdit";
 import SlokaEdit from "./pages/sloka/SlokaEdit";
 import GranthEdit from "./pages/granth/GranthEdit"
 import GranthItemEdit from "./pages/granthitem/GranthItemEdit"
+import GodEdit from "./pages/god/godEdit";
+import AvatarEdit from "./pages/avatar/avatarEdit";
+import TempleEdit from "./pages/temple/templeEdit";
+import CategoryEdit from "./pages/bhakticategory/CategoryEdit";
 
 const queryClient = new QueryClient();
 
@@ -75,11 +85,11 @@ const App = () => {
                 </CustomRoutes>
 
                 {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('update','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
-                {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={ListGuesser} show={ShowGuesser} icon={CategoryIcon} />}
+                {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={CategoryList} show={CategoryShow} create={hasPermission("create","bhakticategory") && CategoryCreate} edit={hasPermission("update","bhakticategory") && CategoryEdit} icon={CategoryIcon} />}
                 {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} create={<BookCreate />} edit={hasPermission("update","book") && <BookEdit />} icon={BookIcon} />}
-                {hasPermission("read","temple") &&<Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
-                {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
-                {hasPermission("read","god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}
+                {hasPermission("read","temple") &&<Resource name="temples" list={TempleList} show={TempleShow} edit={hasPermission('update','temple') && TempleEdit} create={hasPermission('create','temple') && TempleCreate} icon={TempleHinduIcon} />}
+                {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} create={hasPermission("create","avatar") && AvatarCreate} edit={hasPermission("update","avatar") && AvatarEdit} icon={PersonIcon} />}
+                {hasPermission("read","god") && <Resource name="god" list={GodList} show={GodShow} create={hasPermission('create', 'god') && GodCreate} edit={hasPermission('update','god') && GodEdit} icon={CollectionsBookmarkIcon} />}
                 {hasPermission("read","sloka") && <Resource name="sloka" list={SlokaList} show={SlokaShow} create={hasPermission('create','sloka') && SlokaCreate} edit={hasPermission("update",'sloka') && SlokaEdit}  icon={MenuBookIcon} />}
                 {hasPermission("read","granth") && <Resource name="granth" list={GranthList} show={GranthShow} create={hasPermission('create','granth') && GranthCreate} edit={hasPermission('update','granth') && GranthEdit} icon={LibraryBooksIcon} />}
                 {hasPermission("read","granthitem") && <Resource name="granthitem" list={GranthItemList} show={GranthItemShow} create={hasPermission('create','granthitem') && GranthItemCreate} edit={hasPermission('update','granthitem') && GranthItemEdit} icon={LibraryBooksIcon} />}
