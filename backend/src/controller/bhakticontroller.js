@@ -1,8 +1,10 @@
 const { getFilterQuery } = require("../middleware/filterHelper")
 const BhaktiModel = require('../model/bhaktimodel');
 
+
 const GetAllBhakti = async (req, res) => {
     try {
+
         const bhakti = await BhaktiModel.GetAllBhakti();
 
         if (bhakti.length > 0) {
