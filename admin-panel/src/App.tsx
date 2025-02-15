@@ -27,6 +27,9 @@ import bookList from './pages/book/bookList';
 import godList from './pages/god/godList';
 import templeList from './pages/temple/templeList';
 import avatarList from './pages/avatar/avatarList';
+import SlokaList from './pages/sloka/SlokaList'
+import GranthList from "./pages/granth/GranthList"
+import GranthItemList from "./pages/granthitem/GranthItemList"
 
 // Show Components
 import bhaktiShow from './pages/bhakti/bhaktiShow';
@@ -34,14 +37,24 @@ import BookShow from "./pages/book/bookShow";
 import TempleShow from "./pages/temple/templeShow";
 import AvatarShow from "./pages/avatar/avatarShow";
 import GodShow from "./pages/god/godShow";
+import SlokaShow from "./pages/sloka/SlokaShow";
+import GranthShow from "./pages/granth/GranthShow";
+import GranthItemShow from "./pages/granthitem/GranthItemShow";
 
 // Create Components
 import bhaktiCreate from "./pages/bhakti/bhaktiCreate";
 import BookCreate from "./pages/book/bookCreate";
+import SlokaCreate from "./pages/sloka/SlokaCreate"
+import GranthCreate from "./pages/granth/GranthCreate"
+import GranthItemCreate from "./pages/granthitem/GranthItemCreate"
 
 // Edit Components
 import BhaktiEdit from "./pages/bhakti/BhaktiEdit";
 import BookEdit from "./pages/book/bookEdit";
+import SlokaEdit from "./pages/sloka/SlokaEdit";
+import GranthEdit from "./pages/granth/GranthEdit"
+import GranthItemEdit from "./pages/granthitem/GranthItemEdit"
+
 const queryClient = new QueryClient();
 
 // Auth Context
@@ -67,9 +80,9 @@ const App = () => {
                 {hasPermission("read","temple") &&<Resource name="temples" list={templeList} show={TempleShow} icon={TempleHinduIcon} />}
                 {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} icon={PersonIcon} />}
                 {hasPermission("read","god") && <Resource name="god" list={godList} show={GodShow} icon={CollectionsBookmarkIcon} />}
-                {hasPermission("read","sloka") && <Resource name="sloka" list={ListGuesser} show={ShowGuesser} icon={MenuBookIcon} />}
-                {hasPermission("read","granth") && <Resource name="granth" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
-                {hasPermission("read","granthitem") && <Resource name="granthitem" list={ListGuesser} show={ShowGuesser} icon={LibraryBooksIcon} />}
+                {hasPermission("read","sloka") && <Resource name="sloka" list={SlokaList} show={SlokaShow} create={hasPermission('create','sloka') && SlokaCreate} edit={hasPermission("update",'sloka') && SlokaEdit}  icon={MenuBookIcon} />}
+                {hasPermission("read","granth") && <Resource name="granth" list={GranthList} show={GranthShow} create={hasPermission('create','granth') && GranthCreate} edit={hasPermission('update','granth') && GranthEdit} icon={LibraryBooksIcon} />}
+                {hasPermission("read","granthitem") && <Resource name="granthitem" list={GranthItemList} show={GranthItemShow} create={hasPermission('create','granthitem') && GranthItemCreate} edit={hasPermission('update','granthitem') && GranthItemEdit} icon={LibraryBooksIcon} />}
                 
             </Admin>
         </AuthProvider>
