@@ -20,7 +20,6 @@ const dataProvider = {
         const { data } = await api.get(`/${resource}/${params.id}`,{
             headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
         });
-        console.log(data[0])
         return { data: data[0]};
     },
     create: async (resource: string, params: { data: any }) => {
@@ -30,9 +29,9 @@ const dataProvider = {
         return { data };
     },
     update: async (resource: string, params: { id: number; data: any }) => {
-        const { data } = await api.put(`/${resource}/${params.id}`,{
+        const { data } = await api.put(`/${resource}/${params.id}`, params.data,{
             headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
-        }, params.data);
+        });
         return { data };
     },
     delete: async (resource: string, params: { id: number }) => {
