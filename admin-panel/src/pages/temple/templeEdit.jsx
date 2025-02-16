@@ -1,9 +1,8 @@
-import { Edit, ImageInput, SimpleForm, TextInput, ArrayInput, SimpleFormIterator } from 'react-admin';
+import { Edit, ImageInput, SimpleForm, TextInput, ArrayInput, SimpleFormIterator } from 'react-admin';  
 
 const TempleEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="name" />
             <TextInput source="description" />
             <ImageInput source="cover_image" />
@@ -11,19 +10,17 @@ const TempleEdit = () => (
             <TextInput source="reference_link" />
             <TextInput source="god" />
             <TextInput source="location" />
-            <ArrayInput source="importance">
-                <SimpleFormIterator>
-                    <TextInput source="importance" />
-                </SimpleFormIterator>
-            </ArrayInput>
+            <TextInput source="importance" />
+
             <ArrayInput source="images">
                 <SimpleFormIterator>
-                    <ImageInput source="images" />
+                    <ImageInput/>
                 </SimpleFormIterator>
             </ArrayInput>
+
             <ArrayInput source="keyword">
                 <SimpleFormIterator>
-                    <TextInput source="keyword" />
+                    <TextInput/>
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>
