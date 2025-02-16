@@ -100,13 +100,12 @@ const addTemple = async (req, res)=>{
             images: req.body?.images || []
         }
 
-        console.log(data)
         if(data.name == "" || data.description == ""){
             res.status(400).json({message: "Temple name and description are required fields."})
         }
         else{
             const temple = await Temple.addTemple({...data});
-            res.status(201).json(temple)
+            res.status(200).json(temple)
         }
     }catch(e){
         console.log(e)
@@ -129,13 +128,12 @@ const updateTemple = async (req, res)=>{
             images: req.body.images
         }
         data.id = req.params.id;
-        console.log(data)
         if(data.name == "" || data.description == ""){
             res.status(400).json({message: "Temple name and description are required fields."})
         }
         else{
             const temple = await Temple.updateTemple({...data});
-            res.status(201).json(temple)
+            res.status(200).json(temple)
         }
     }catch(e){
         console.log(e)

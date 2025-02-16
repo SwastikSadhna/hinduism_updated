@@ -19,8 +19,8 @@ const addTemple = async (data) => {
 
 
 const updateTemple = async (data) => {
-    const result = await pool.query(templeQueries.UpdateTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keyword, data._id])
-    return result.rows;
+    const result = await pool.query(templeQueries.UpdateTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keyword, data.id])
+    return result.rows[0];
 }
 
 const deleteTemple = async (id) => {
