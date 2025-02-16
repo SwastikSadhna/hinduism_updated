@@ -12,12 +12,12 @@ const GetAvatarById = async (id) => {
 }
 
 const AddAvatar = async (data) => {
-    const result = await pool.query(avatarquery.AddAvatar, [data.title, data.description, data.link, data.author, data.image]);
+    const result = await pool.query(avatarquery.AddAvatar, [data.name, data.image, data.yuga, data.books, data.description, data.festivals, data.tamples, data.god_ref, data.sloka, data.reference_links]);
     return result.rows;
 }
 
 const UpdateAvatar = async (data) => {
-    const result = await pool.query(avatarquery.UpdateAvatar, [data._id, data.title, data.description, data.link, data.author, data.image]);
+    const result = await pool.query(avatarquery.UpdateAvatar, [data.id, data.name, data.image, data.yuga,, data.books, data.description, data.festivals, data.tamples, data.god_ref, data.sloka, data.reference_links]);
     return result.rows;
 }
 
