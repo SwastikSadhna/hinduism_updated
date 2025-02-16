@@ -1,10 +1,10 @@
 import React from "react"
 
-const ItemCard = ({ item, onClick }) => {
+const ItemCard = ({ item, setSelectedItem }) => {
   return (
     <div
       className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
-      onClick={onClick}
+      onClick={()=>setSelectedItem(item)}
     >
       <div className="aspect-w-16 aspect-h-9">
         <img
