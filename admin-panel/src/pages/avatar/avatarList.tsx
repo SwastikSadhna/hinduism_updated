@@ -1,16 +1,19 @@
-import { Datagrid, List, NumberField, TextField } from 'react-admin';
+import { Datagrid, List, NumberField, TextField, ImageField, EditButton } from 'react-admin';
+import {useAuth, AuthBulkActions} from "../auth/AuthProvider"
 
-const AvatarList = () => (
+const AvatarList = () => {
+    const {hasPermission} = useAuth()
+    return (
     <List>
         <Datagrid>
             <TextField source="id" />
+            <ImageField source="image" />
             <TextField source="name" />
-            <TextField source="image" />
             <TextField source="yuga" />
             <TextField source="tamples" />
-            <NumberField source="god_ref" />
+            {hasPermission('update','avatar') && <EditButton />}
         </Datagrid>
     </List>
-);
+)};
 
 export default AvatarList;

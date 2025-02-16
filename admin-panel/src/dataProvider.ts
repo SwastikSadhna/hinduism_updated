@@ -8,31 +8,42 @@ const api = axios.create({
 
 const dataProvider = {
     getList: async (resource: string, params: any) => {
-        const { data } = await api.get(`/${resource}`);
+        const { data } = await api.get(`/${resource}`, {
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        });
         return {
             data: data, // List of records
             total: data.length, // Total count
         };
     },
     getOne: async (resource: string, params: { id: number }) => {
-        const { data } = await api.get(`/${resource}/${params.id}`);
-        console.log(data[0])
+        const { data } = await api.get(`/${resource}/${params.id}`,{
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        });
         return { data: data[0]};
     },
     create: async (resource: string, params: { data: any }) => {
-        const { data } = await api.post(`/${resource}`, params.data);
+        const { data } = await api.post(`/${resource}`, params.data,{
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+    });
         return { data };
     },
     update: async (resource: string, params: { id: number; data: any }) => {
-        const { data } = await api.put(`/${resource}/${params.id}`, params.data);
+        const { data } = await api.put(`/${resource}/${params.id}`, params.data,{
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        });
         return { data };
     },
     delete: async (resource: string, params: { id: number }) => {
-        await api.delete(`/${resource}/${params.id}`);
+        await api.delete(`/${resource}/${params.id}`,{
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        });
         return { data: params.id };
     },
     deleteMany: async (resource: string, params: { ids: number[] }) => {
-        await Promise.all(params.ids.map((id) => api.delete(`/${resource}/${id}`)));
+        await Promise.all(params.ids.map((id) => api.delete(`/${resource}/${id}`,{
+            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        })));
         return { data: params.ids };
     },
 };

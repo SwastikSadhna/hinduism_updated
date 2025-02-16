@@ -2,7 +2,7 @@ const queries = require("../query/granthitemqueries")
 const pool = require("../db")
 
 const getGranthItems = async (id) => {
-    const items = await pool.query(queries.GetGranthItems, [id])
+    const items = await pool.query(queries.GetGranthItemsById, [id])
     return items.rows
 }
 
