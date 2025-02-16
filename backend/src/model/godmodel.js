@@ -26,4 +26,19 @@ const GetTrimurty = async () => {
     return result.rows;
 }
 
-module.exports = { GetAllGod, GetGodById, GodKeywords, SearchGod, GetTrimurty };
+const addGod = async (data) => {
+    const result = await pool.query(godquery.AddGod, [data.name, data.image, data.description, data.keyword]);
+    return result.rows;
+}
+
+const updateGod = async (data) => {
+    const result = await pool.query(godquery.UpdateGod, [data.id, data.name, data.image, data.description, data.keyword])
+    return result.rows;
+}
+
+const deleteGod = async (id) => {
+    const result = await pool.query(godquery.DeleteGod, [id]);
+    return result.rows;
+}
+
+module.exports = { GetAllGod, GetGodById, GodKeywords, SearchGod, GetTrimurty, addGod, updateGod, deleteGod };

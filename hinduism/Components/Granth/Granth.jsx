@@ -3,34 +3,39 @@
 import { useState } from "react"
 import { MdClose, MdZoomIn, MdZoomOut } from "react-icons/md"
 
+
 const vedas = [
   {
-    name: "Rigveda",
-    description: "The oldest of the Vedas, consisting of hymns dedicated to various deities.",
+    title: "Rigveda",
+    description: "The Rigveda is the oldest known Vedic Sanskrit text. Its early layers are one of the oldest extant texts in any Indo-European language. It is a collection of 1,028 Vedic Sanskrit hymns and 10,600 verses in all, organized into ten books. The hymns are dedicated to Rigvedic deities.",
     image: "https://m.media-amazon.com/images/I/81AbS6P63mL._UF1000,1000_QL80_.jpg",
-    introduction:
-      "The Rigveda is the oldest known Vedic Sanskrit text. Its early layers are one of the oldest extant texts in any Indo-European language. It is a collection of 1,028 Vedic Sanskrit hymns and 10,600 verses in all, organized into ten books. The hymns are dedicated to Rigvedic deities.",
+    link: true,
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Yajurveda",
-    description: "Primarily a collection of mantras and rituals for sacrificial ceremonies.",
+    title: "Yajurveda",
+    description: "The Yajurveda is the Veda of prose mantras. It is a compilation of ritual offering formulas that were said by a priest while an individual performed ritual actions such as those before the yajna fire. It has two primary versions: the White Yajurveda and the Black Yajurveda.",
     image: "https://nepalyogahome.com/wp-content/uploads/2021/05/Yajurveda.jpg",
-    introduction:
-      "The Yajurveda is the Veda of prose mantras. It is a compilation of ritual offering formulas that were said by a priest while an individual performed ritual actions such as those before the yajna fire. It has two primary versions: the White Yajurveda and the Black Yajurveda.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Samaveda",
-    description: "Contains melodies and chants, often referred to as the Veda of melodies.",
+    title: "Samaveda",
+    description: "The Samaveda is the Veda of melodies and chants. It is an ancient Vedic Sanskrit text, and part of the scriptures of Hinduism. One of the four Vedas, it is a liturgical text which consists of 1,549 verses. All but 75 verses have been taken from the Rigveda.",
     image: "https://m.media-amazon.com/images/I/81eEIJGLNFL._UF894,1000_QL80_.jpg",
-    introduction:
-      "The Samaveda is the Veda of melodies and chants. It is an ancient Vedic Sanskrit text, and part of the scriptures of Hinduism. One of the four Vedas, it is a liturgical text which consists of 1,549 verses. All but 75 verses have been taken from the Rigveda.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Atharvaveda",
-    description: "Consists of spells and incantations for various aspects of daily life.",
+    title: "Atharvaveda",
+    description: "The Atharvaveda is the 'knowledge storehouse of atharvāṇas, the procedures for everyday life'. The text is the fourth Veda, but has been a late addition to the Vedic scriptures of Hinduism. It is a collection of 730 hymns with about 6,000 mantras..",
     image: "https://m.media-amazon.com/images/I/81sIL+TK-2L._UF894,1000_QL80_.jpg",
-    introduction:
-      "The Atharvaveda is the 'knowledge storehouse of atharvāṇas, the procedures for everyday life'. The text is the fourth Veda, but has been a late addition to the Vedic scriptures of Hinduism. It is a collection of 730 hymns with about 6,000 mantras.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
 ]
 
@@ -149,114 +154,129 @@ const puranas = [
   },
   {
     name: "Brahma Vaivarta Purana",
-    description: "Focuses on Krishna and Radha, and the creation of the universe.",
+    description:"The Brahma Vaivarta Purana focuses on Krishna and Radha, and describes the creation of the universe. It contains details about various Vaishnava sects and practices.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "The Brahma Vaivarta Purana focuses on Krishna and Radha, and describes the creation of the universe. It contains details about various Vaishnava sects and practices.",
     download: "#",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
     name: "Vamana Purana",
-    description: "Named after Vishnu's Vamana (dwarf) avatar.",
+    description: "The Vamana Purana is named after the Vamana (dwarf) avatar of Vishnu. It includes stories of this incarnation and other myths related to Vishnu and Shiva.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "The Vamana Purana is named after the Vamana (dwarf) avatar of Vishnu. It includes stories of this incarnation and other myths related to Vishnu and Shiva.",
     download: "#",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
     name: "Varaha Purana",
-    description: "Named after Vishnu's Varaha (boar) avatar.",
+    description: "The Varaha Purana is named after the Varaha (boar) avatar of Vishnu. It contains details about the creation and destruction of the universe, and various religious rites.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "The Varaha Purana is named after the Varaha (boar) avatar of Vishnu. It contains details about the creation and destruction of the universe, and various religious rites.",
     download: "#",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Vishnu Purana",
-    description: "One of the most important Puranas, focusing on Lord Vishnu.",
+    title: "Vishnu Purana",
+    description: "The Vishnu Purana is one of the most important of the eighteen Mahapuranas. It primarily centers around Lord Vishnu and his various avatars, particularly Krishna. The text presents an ancient worldview and various aspects of Hindu philosophy.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "The Vishnu Purana is one of the most important of the eighteen Mahapuranas. It primarily centers around Lord Vishnu and his various avatars, particularly Krishna. The text presents an ancient worldview and various aspects of Hindu philosophy.",
-    download: "#",
+    link: true,
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
 ]
 
 const upanishads = [
   {
-    name: "Chandogya Upanishad",
-    description: "One of the oldest Upanishads, part of the Sama Veda.",
+    title: "Chandogya Upanishad",
+    description: "The Chandogya Upanishad is one of the oldest Upanishads of Hinduism. It is associated with the Samaveda and is part of the Chandogya Brahmana. The Upanishad belongs to the Tandya school of the Samaveda and is an important text in the Vedanta philosophy.",
     image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1283248490i/9180861.jpg",
-    introduction:
-      "The Chandogya Upanishad is one of the oldest Upanishads of Hinduism. It is associated with the Samaveda and is part of the Chandogya Brahmana. The Upanishad belongs to the Tandya school of the Samaveda and is an important text in the Vedanta philosophy.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Brihadaranyaka Upanishad",
-    description: "One of the principal Upanishads, attached to the Yajur Veda.",
+    title: "Brihadaranyaka Upanishad",
+    description: "The Brihadaranyaka Upanishad is one of the principal Upanishads and one of the oldest Upanishadic scriptures of Hinduism. It is associated with the Shukla Yajurveda. The Brihadaranyaka Upanishad is estimated to have been composed about 700 BCE, excluding some parts estimated to have been composed after the Chandogya Upanishad.",
     image: "https://m.media-amazon.com/images/I/811ZoiaUK-L._UF894,1000_QL80_.jpg",
-    introduction:
-      "The Brihadaranyaka Upanishad is one of the principal Upanishads and one of the oldest Upanishadic scriptures of Hinduism. It is associated with the Shukla Yajurveda. The Brihadaranyaka Upanishad is estimated to have been composed about 700 BCE, excluding some parts estimated to have been composed after the Chandogya Upanishad.",
+    link: true,
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
 ]
 
 const ramayana = [
   {
-    name: "Bala Kanda",
-    description: "The book of youth, origin of Rama and his brothers.",
+    title: "Bala Kanda",
+    description: "Bala Kanda, or the Book of Youth, is the first book of the Ramayana. It narrates the birth of Rama and his brothers, their education and marriages.",
     image: "https://images-eu.ssl-images-amazon.com/images/I/816gCNo6i1L._AC_UL210_SR210,210_.jpg",
-    introduction:
-      "Bala Kanda, or the Book of Youth, is the first book of the Ramayana. It narrates the birth of Rama and his brothers, their education and marriages.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Ayodhya Kanda",
-    description: "The book of Ayodhya, Rama's preparation for coronation and exile.",
+    title: "Ayodhya Kanda",
+    description: "Ayodhya Kanda describes the preparations for Rama's coronation in Ayodhya and his subsequent exile to the forest.",
     image: "https://images-eu.ssl-images-amazon.com/images/I/A1axmu0VHtL._AC_UL210_SR210,210_.jpg",
-    introduction:
-      "Ayodhya Kanda describes the preparations for Rama's coronation in Ayodhya and his subsequent exile to the forest.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Aranya Kanda",
-    description: "The book of the forest, life in exile and Sita's abduction.",
+    title: "Aranya Kanda",
+    description: "Aranya Kanda narrates Rama's life in the forest, his encounters with various sages, and the abduction of Sita by Ravana.",
     image: "https://m.media-amazon.com/images/I/81gEz9QUTSL._UF894,1000_QL80_.jpg",
-    introduction:
-      "Aranya Kanda narrates Rama's life in the forest, his encounters with various sages, and the abduction of Sita by Ravana.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Kishkindha Kanda",
-    description: "The book of the monkey kingdom, alliance with Sugriva.",
+    title: "Kishkindha Kanda",
+    description: "Kishkindha Kanda tells the story of Rama's alliance with Sugriva and the search for Sita with the help of Hanuman and other vanaras.",
     image: "https://m.media-amazon.com/images/I/810-WWwoyyL._AC_UF1000,1000_QL80_.jpg",
-    introduction:
-      "Kishkindha Kanda tells the story of Rama's alliance with Sugriva and the search for Sita with the help of Hanuman and other vanaras.",
+    link: true,
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
 ]
 
 const mahabharata = [
   {
-    name: "Adi Parva",
-    description: "The book of the beginning, origins of the Kuru dynasty.",
+    title: "Adi Parva",
+    description: "Adi Parva is the first of eighteen books of the Mahabharata. It describes the origins of the Kuru dynasty and sets the stage for the great epic.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "Adi Parva is the first of eighteen books of the Mahabharata. It describes the origins of the Kuru dynasty and sets the stage for the great epic.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Sabha Parva",
-    description: "The book of the assembly hall, including the game of dice.",
+    title: "Sabha Parva",
+    description: "Sabha Parva narrates the construction of the royal court (Sabha) at Indraprastha and the infamous game of dice that leads to the exile of the Pandavas.",
     image: "/placeholder.svg?height=300&width=400",
     introduction:
-      "Sabha Parva narrates the construction of the royal court (Sabha) at Indraprastha and the infamous game of dice that leads to the exile of the Pandavas.",
+      "",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Vana Parva",
-    description: "The book of the forest, detailing the Pandavas' exile.",
+    title: "Vana Parva",
+    description: "Vana Parva describes the twelve years of exile of the Pandavas in the forest, filled with numerous sub-stories and philosophical discussions.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "Vana Parva describes the twelve years of exile of the Pandavas in the forest, filled with numerous sub-stories and philosophical discussions.",
+    link: '',
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
   {
-    name: "Virata Parva",
-    description: "The book of Virata, the year of hiding for the Pandavas.",
+    title: "Virata Parva",
+    description: "Virata Parva narrates the thirteenth year of exile, where the Pandavas live in disguise in the kingdom of Virata.",
     image: "/placeholder.svg?height=300&width=400",
-    introduction:
-      "Virata Parva narrates the thirteenth year of exile, where the Pandavas live in disguise in the kingdom of Virata.",
+    link: true,
+    author: 'Vyasa',
+    year: '1000 B.C'
   },
 ]
 
@@ -299,7 +319,7 @@ function Modal({ item, onClose }) {
             />
           </div>
           <div className={`${isFullScreen ? "hidden" : "block"}`}>
-            <p className="text-gray-700">{item.introduction}</p>
+            <p className="text-gray-700">{item.description}</p>
           </div>
         </div>
       </div>
@@ -323,21 +343,36 @@ export default function GranthPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {vedas.map((veda) => (
               <div
-                key={veda.name}
+                key={veda.title}
                 className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
                 onClick={() => setSelectedItem(veda)}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={veda.image || "/placeholder.svg"}
-                    alt={veda.name}
+                    alt={veda.title}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
-                <div className="p-4 flex-grow">
-                  <h3 className="text-lg font-semibold mb-2">{veda.name}</h3>
-                  <p className="text-sm text-gray-600">{veda.description}</p>
+                <div className="p-4 flex-grow flex gap-2 flex-col">
+                  <h3 className="text-lg font-semibold mb-2">{veda.title}</h3>
+                  <p className="text-sm text-gray-600">{veda.description.length ? `${veda.description.slice(0, 35)}` : veda.description}</p>
+                  <p className="text-sm text-gray-600">{veda.author}</p>
+                  <p className="text-sm text-gray-600">{veda.year}</p>
+
+                  
+                {
+                    veda.link ?  <a
+                    href={veda.link}
+                    className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a> : null
+                  }
                 </div>
+
               </div>
             ))}
           </div>
@@ -355,29 +390,34 @@ export default function GranthPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {puranas.map((purana) => (
               <div
-                key={purana.name}
+                key={purana.title}
                 className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col"
               >
                 <div className="aspect-w-16 aspect-h-9 cursor-pointer" onClick={() => setSelectedItem(purana)}>
                   <img
                     src={purana.image || "/placeholder.svg"}
-                    alt={purana.name}
+                    alt={purana.title}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
                 <div className="p-4 flex-grow flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">{purana.name}</h3>
+                    <h3 className="text-lg font-semibold mb-2">{purana.title}</h3>
                     <p className="text-sm text-gray-600 mb-4">{purana.description}</p>
+                    <p className="text-sm text-gray-600 mb-4">{purana.author}</p>
+                    <p className="text-sm text-gray-600 mb-4">{purana.year}</p>
                   </div>
-                  <a
-                    href={purana.download}
+                  {
+                    purana.link ?  <a
+                    href={purana.link}
                     className="text-orange-500 hover:text-orange-600 text-sm font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Download
-                  </a>
+                  </a> : null
+                  }
+                 
                 </div>
               </div>
             ))}
@@ -405,9 +445,25 @@ export default function GranthPage() {
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
-                <div className="p-4 flex-grow">
-                  <h3 className="text-lg font-semibold mb-2">{upanishad.name}</h3>
-                  <p className="text-sm text-gray-600">{upanishad.description}</p>
+                <div className="p-4 flex-grow flex flex-col gap-2">
+                  <h3 className="text-lg font-semibold mb-2">{upanishad.title}</h3>
+                  <p className="text-sm text-gray-600 description">
+                    {upanishad.description.length > 45
+                      ? `${upanishad.description.slice(0, 45)}...`
+                      : upanishad.description}
+                  </p>
+                  <p className="text-sm text-gray-600 description">{upanishad.author}</p>
+                  <p className="text-sm text-gray-600 description">{upanishad.year}</p>
+                  {
+                    upanishad.link ?  <a
+                    href={upanishad.link}
+                    className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a> : null
+                  }
                 </div>
               </div>
             ))}
@@ -426,20 +482,33 @@ export default function GranthPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ramayana.map((kanda) => (
               <div
-                key={kanda.name}
+                key={kanda.title}
                 className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
                 onClick={() => setSelectedItem(kanda)}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={kanda.image || "/placeholder.svg"}
-                    alt={kanda.name}
+                    alt={kanda.title}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
                 <div className="p-4 flex-grow">
-                  <h3 className="text-lg font-semibold mb-2">{kanda.name}</h3>
-                  <p className="text-sm text-gray-600">{kanda.description}</p>
+                  <h3 className="text-lg font-semibold mb-2">{kanda.title}</h3>
+                  <p className="text-sm text-gray-600">{
+                    kanda.description.length > 35 ? `${kanda.description.slice(0, 35)}` : kanda.description}</p>
+                     <p className="text-sm text-gray-600 description">{kanda.author}</p>
+                     <p className="text-sm text-gray-600 description">{kanda.year}</p>
+                    {
+                    kanda.link ?  <a
+                    href={kanda.link}
+                    className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a> : null
+                  }
                 </div>
               </div>
             ))}
@@ -458,20 +527,32 @@ export default function GranthPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {mahabharata.map((parva) => (
               <div
-                key={parva.name}
+                key={parva.title}
                 className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
                 onClick={() => setSelectedItem(parva)}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={parva.image || "/placeholder.svg"}
-                    alt={parva.name}
+                    alt={parva.title}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
                 <div className="p-4 flex-grow">
-                  <h3 className="text-lg font-semibold mb-2">{parva.name}</h3>
-                  <p className="text-sm text-gray-600">{parva.description}</p>
+                  <h3 className="text-lg font-semibold mb-2">{parva.title}</h3>
+                  <p className="text-sm text-gray-600">{parva.description.length > 25 ? `${parva.description.slice(0, 25)}` : parva.description}</p>
+                  <p className="text-sm text-gray-600 description">{parva.author}</p>
+                  <p className="text-sm text-gray-600 description">{parva.year}</p>
+                  {
+                    parva.link ?  <a
+                    href={parva.link}
+                    className="text-orange-500 hover:text-orange-600 text-sm font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download
+                  </a> : null
+                  }
                 </div>
               </div>
             ))}
@@ -490,7 +571,7 @@ export default function GranthPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Navigation */}
-     
+
 
       <div className="flex">
         {/* Sidebar */}
@@ -499,24 +580,23 @@ export default function GranthPage() {
             <h2 className="text-lg font-semibold mb-4">Categories</h2>
             <nav className="space-y-2">
               {[
-                { icon: "📚", text: "Four Vedas", desc: "Rigveda, Yajurveda, Samaveda, Atharvaveda" },
-                { icon: "📖", text: "18 Puranas", desc: "Vishnu Purana, Shiva Purana, Bhagavata Purana" },
-                { icon: "🕉️", text: "Upanishads", desc: "Isha, Kena, Katha, Prashna, Mundaka" },
-                { icon: "🎯", text: "Ramayana", desc: "Valmiki Ramayana, Ramcharitmanas" },
-                { icon: "📑", text: "Mahabharata", desc: "From Adi Parva to Swargarohana Parva" },
+                { image: "📚", title: "Four Vedas", description: "Rigveda, Yajurveda, Samaveda, Atharvaveda" },
+                { image: "📖", title: "18 Puranas", description: "Vishnu Purana, Shiva Purana, Bhagavata Purana" },
+                { image: "🕉️", title: "Upanishads", description: "Isha, Kena, Katha, Prashna, Mundaka" },
+                { image: "🎯", title: "Ramayana", description: "Valmiki Ramayana, Ramcharitmanas" },
+                { image: "📑", title: "Mahabharata", description: "From Adi Parva to Swargarohana Parva" },
               ].map((item) => (
                 <div key={item.text} className="group">
                   <a
                     href="#"
-                    className={`flex items-center px-4 py-2 rounded-lg ${
-                      selectedCategory === item.text ? "bg-orange-500 text-white" : "text-gray-700 hover:bg-orange-50"
-                    }`}
-                    onClick={() => setSelectedCategory(item.text)}
+                    className={`flex items-center px-4 py-2 rounded-lg ${selectedCategory === item.text ? "bg-orange-500 text-white" : "text-gray-700 hover:bg-orange-50"
+                      }`}
+                    onClick={() => setSelectedCategory(item.title)}
                   >
-                    <span className="mr-2">{item.icon}</span>
+                    <span className="mr-2">{item.image}</span>
                     <div>
-                      <div>{item.text}</div>
-                      <div className="text-xs text-gray-500">{item.desc}</div>
+                      <div>{item.title}</div>
+                      <div className="text-xs text-gray-500">{item.description}</div>
                     </div>
                   </a>
                 </div>

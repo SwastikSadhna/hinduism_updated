@@ -145,7 +145,7 @@ const UpdateBhakti = async (req, res) => {
     console.log(data)
     try{
         if(data.title != "" && data.content != "" && data.category != "")
-        {    
+        {
             const bhakti = await BhaktiModel.UpdateBhakti({...data})
             res.status(200).json(bhakti[0]);}
         else

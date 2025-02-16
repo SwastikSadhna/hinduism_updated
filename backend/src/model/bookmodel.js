@@ -17,12 +17,12 @@ const GetBookTitles = async () => {
 }
 
 const AddBook = async (data) => {
-    const result = await pool.query(bookquery.AddBook, [data.title, data.description, data.link, data.author, data.image]);
+    const result = await pool.query(bookquery.AddBook, [data.title, data.description, data.link, data.author, data.image, data.cover_image, data.keyword, data.year]);
     return result.rows;
 }
 
 const UpdateBook = async (data) => {
-    const result = await pool.query(bookquery.UpdateBook, [data._id, data.title, data.description, data.link, data.author, data.image]);
+    const result = await pool.query(bookquery.UpdateBook, [data._id, data.title, data.description, data.link, data.author, data.image, data.cover_image, data.keyword, data.year]);
     return result.rows;
 }
 
