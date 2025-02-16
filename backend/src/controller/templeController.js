@@ -18,8 +18,8 @@ const getTempleById = async (req, res) => {
     try {
         const id = req.params.id;
         const temple = await Temple.getTempleById(id);
-        if (temple.length>0)
-            res.status(200).json(temple[0])
+        if (temple.length>0){
+            res.status(200).json(temple)}
         else
             res.status(404).json({ message: "Temple not found" })
     } catch (err) {
@@ -85,4 +85,74 @@ const getChardhamTemples = async (req, res) => {
     }
 }
 
-module.exports = {getAllTemples, getTempleById, searchTemple, filterTemple, templeKeywords, getChardhamTemples};
+const addTemple = async (req, res)=>{
+    try{
+        const data = {
+            name: req.body?.name,
+            description: req.body?.description,
+            cover_image: req.body?.cover_image,
+            map_url: req.body?.map_url,
+            reference_link: req.body?.reference_link || [],
+            god: req.body?.god,
+            location: req.body?.location || '',
+            importance: req.body?.importance || [],
+            keyword: req.body?.keyword || [],
+            images: req.body?.images || []
+        }
+
+        console.log(data)
+        if(data.name == "" || data.description == ""){
+            res.status(400).json({message: "Temple name and description are required fields."})
+        }
+        else{
+            const temple = await Temple.addTemple({...data});
+            res.status(201).json(temple)
+        }
+    }catch(e){
+        console.log(e)
+        res.status(500).json({message: "Error occurred while adding temple", error: e})
+    }
+}
+
+const updateTemple = async (req, res)=>{
+    try{
+        const data = {
+            name: req.body.name,
+            description: req.body.description,
+            cover_image: req.body.cover_image,
+            map_url: req.body.map_url,
+            reference_link: req.body.reference_link,
+            god: req.body.god,
+            location: req.body.location,
+            importance: req.body.importance,
+            keywords: req.body.keywords,
+            images: req.body.images
+        }
+        data.id = req.params.id;
+        console.log(data)
+        if(data.name == "" || data.description == ""){
+            res.status(400).json({message: "Temple name and description are required fields."})
+        }
+        else{
+            const temple = await Temple.updateTemple({...data});
+            res.status(201).json(temple)
+        }
+    }catch(e){
+        console.log(e)
+        res.status(500).json({message: "Error occurred while updating temple", error: e})
+    }
+}
+
+const deleteTemple = async (req, res)=>{
+    try{
+        const id = req.params.id;
+        const temple = await Temple.deleteTemple(id);
+        res.status(200).json({message: "Temple deleted successfully."})
+    }
+    catch(e){
+            console.log(e)
+            res.status(500).json({message: "Error occurred while deleting temple", error: e})
+    }
+}
+
+module.exports = {getAllTemples, getTempleById, searchTemple, filterTemple, templeKeywords, getChardhamTemples, deleteTemple, addTemple, updateTemple};

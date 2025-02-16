@@ -8,5 +8,9 @@ router.get("/filter", temple.filterTemple)
 router.get("/chardham", temple.getChardhamTemples)
 router.get('/keywords', temple.templeKeywords)
 router.get("/:id", temple.getTempleById)
+router.put("/:id", temple.updateTemple)
+router.delete("/:id", temple.deleteTemple)
+router.post("/", temple.addTemple)
+
 
 module.exports = router;

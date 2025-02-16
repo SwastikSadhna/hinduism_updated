@@ -3,7 +3,6 @@ import { Create, ImageInput, SimpleForm, TextInput, ArrayInput, SimpleFormIterat
 const TempleCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="name" />
             <TextInput source="description" />
             <ImageInput source="cover_image" />

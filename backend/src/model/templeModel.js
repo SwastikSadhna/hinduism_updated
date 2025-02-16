@@ -13,13 +13,13 @@ const getTempleById = async (id) => {
 };
 
 const addTemple = async (data) => {
-    const result = await pool.query(templeQueries.AddTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keywords])
-    return result.rows;
+    const result = await pool.query(templeQueries.AddTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keyword])
+    return result.rows[0];
 }
 
 
 const updateTemple = async (data) => {
-    const result = await pool.query(templeQueries.UpdateTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keywords, data._id])
+    const result = await pool.query(templeQueries.UpdateTemple, [data.name, data.description, data.cover_image, data.map_url, data.reference_link, data.god, data.location, data.importance, data.images, data.keyword, data._id])
     return result.rows;
 }
 
