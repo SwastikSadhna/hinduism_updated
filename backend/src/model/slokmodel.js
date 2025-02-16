@@ -29,4 +29,19 @@ const filterSloka = async (filter) => {
     return sloka.rows;
 }
 
-module.exports = {getAllSloka, GetSlokaDetails, slokaKeywords, searchSloka, filterSloka}
+const addSloka = async (data)=>{
+    const result = await pool.query(slokaquery.AddSloka, [data.title, data.sloka, data.explaination, data.image, data.description, data.keyword])
+    return result.rows[0];
+}
+
+const deleteSloka = async (id)=>{
+    const result = await pool.query(slokaquery.DeleteSloka, [id])
+    return result.rows;
+}
+
+const updateSloka = async (data)=>{
+    const result = await pool.query(slokaquery.UpdateSloka, [data.title, data.description, data.keyword, data.sloka, data.explaination, data.image, data.id])
+    return result.rows[0];
+}
+
+module.exports = {getAllSloka, GetSlokaDetails, slokaKeywords, searchSloka, filterSloka, addSloka, updateSloka, deleteSloka}

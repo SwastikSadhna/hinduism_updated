@@ -94,18 +94,18 @@ const getAllCategories = async (req, res) => {
 
 const AddBhakti = async (req, res) => {
 
-    const data = {
-        title: req.body.title,
-        description: req.body?.description || '',
-        keyword: req.body?.keyword || [],
-        image: req.body?.image || "",
-        category: req.body?.category || "",
-        content: req.body?.content || "",
-        author: req.body?.author || "",
-        reference_links: req.body?.reference_links || [],
-    }
-    console.log(data)
     try{
+        const data = {
+            title: req.body.title,
+            description: req.body?.description || '',
+            keyword: req.body?.keyword || [],
+            image: req.body?.image || "",
+            category: req.body?.category || "",
+            content: req.body?.content || "",
+            author: req.body?.author || "",
+            reference_links: req.body?.reference_links || [],
+        }
+        console.log(data)
         if(data.title != "" && data.content != "" && data.category != "")
         {    
             const bhakti = await BhaktiModel.AddBhakti({...data})
