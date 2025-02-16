@@ -1,7 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { MdClose, MdZoomIn, MdZoomOut } from "react-icons/md"
+import axios from "axios"
+import API_CONFIG from "../../src/config/api"
+
+
 
 
 const vedas = [
@@ -330,18 +334,29 @@ function Modal({ item, onClose }) {
 export default function GranthPage() {
   const [selectedCategory, setSelectedCategory] = useState("")
   const [selectedItem, setSelectedItem] = useState(null)
+  const [granth,setGranth] = useState({})
+  const[granthitem,setGranthItem] =useState([])
+
+  useEffect(()=>{
+    axios.get(API_CONFIG.baseUrl + "/granth/1").then((res)=>{
+      console.log(res.data)
+      setSelectedCategory(res.data.granth.title)
+      setGranth(res.data.granth)
+      setGranthItem(res.data.items)
+      console.log(res.data.granth.title)
+    })
+    },[])
 
   const renderContent = () => {
-    if (selectedCategory === "Four Vedas") {
+    if (selectedCategory === "Vedas") {
       return (
         <div>
-          <h2 className="text-2xl font-semibold mb-4">The Four Vedas</h2>
+          <h2 className="text-2xl font-semibold mb-4">{granth.title}</h2>
           <p className="text-gray-600 mb-6">
-            The Vedas are the oldest sacred texts of Hinduism, composed in Vedic Sanskrit. They are the oldest known
-            Sanskrit texts and are considered the foundation of Hindu philosophy.
+           {granth.description}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {vedas.map((veda) => (
+            {granthitem.map((veda) => (
               <div
                 key={veda.title}
                 className="bg-white rounded-lg border hover:shadow-lg transition-shadow flex flex-col cursor-pointer"
@@ -580,7 +595,7 @@ export default function GranthPage() {
             <h2 className="text-lg font-semibold mb-4">Categories</h2>
             <nav className="space-y-2">
               {[
-                { image: "📚", title: "Four Vedas", description: "Rigveda, Yajurveda, Samaveda, Atharvaveda" },
+                { image: "📚", title: "Vedas", description: "Rigveda, Yajurveda, Samaveda, Atharvaveda" },
                 { image: "📖", title: "18 Puranas", description: "Vishnu Purana, Shiva Purana, Bhagavata Purana" },
                 { image: "🕉️", title: "Upanishads", description: "Isha, Kena, Katha, Prashna, Mundaka" },
                 { image: "🎯", title: "Ramayana", description: "Valmiki Ramayana, Ramcharitmanas" },
