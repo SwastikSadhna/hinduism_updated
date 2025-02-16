@@ -61,12 +61,61 @@ const SearchBook = async (req, res) => {
     }
 }
 
+const addBook = async (req, res) => {
+    const data = {
+        title: req.body.title,
+        description: req.body?.description || "",
+        link: req.body?.link || "",
+        author: req.body?.author || "",
+        image: req.body?.image || "",
+        cover_image: req.body?.cover_image || "",
+        keyword: req.body?.keyword || [],
+        year: req.body?.year || "",
+    }
+
+    try {
+        if(data.title != "", data.description != "", data.author != "", data.cover_image != "") {
+            const book = await bookmodel.AddBook({...data});
+            res.status(200).json(book[0]);
+        } else {
+            res.status(400).json({message: "book not added!"});
+        }
+    } catch(e) {
+        res.status(500).json({error: e, message: "something gone wrong"});
+    }
+}
+
+const updateBook = async (req, res) => {
+    const data = {
+        id: req.body.id,
+        title: req.body.title,
+        description: req.body.description,
+        link: req.body.link,
+        author: req.body.author,
+        image: req.body.image,
+        cover_image: req.body.cover_image,
+        keyword: req.body.keyword,
+        year: req.body.year,
+    }
+
+    try {
+        if(data.title != "", data.description != "", data.author != "", data.cover_image != "") {
+            const book = await bookmodel.AddBook({...data});
+            res.status(200).json(book[0]);
+        } else {
+            res.status(400).json({message: "book not updated!"});
+        }
+    } catch(e) {
+        res.status(500).json({error: e, message: "something gone wrong"});
+    }
+}
+
 const DeleteBook = async (req, res) => {
     try {
         const book = await bookmodel.DeleteBook(req.params.id);
 
         if(book) {
-            res.status(200).json(book);
+            res.status(200).json({message: "book deleted successfully"});
         } else {
             res.status(404).json({message: "book not found"});
         }
@@ -108,4 +157,4 @@ const FilterBook = async (req, res) => {
     }
 }
 
-module.exports = {GetAllBooks, GetBookById, GetBookTitles, SearchBook, DeleteBook, BookKeywords, FilterBook};
+module.exports = {GetAllBooks, GetBookById, GetBookTitles, SearchBook, addBook, updateBook, DeleteBook, BookKeywords, FilterBook};
