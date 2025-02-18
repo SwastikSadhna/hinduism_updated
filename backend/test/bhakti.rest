@@ -14,7 +14,7 @@ GET http://localhost:3000/bhakti/type/2
 GET http://localhost:3000/bhakti/filter/options
 ###
 
-// Get Bhakti By filter
+// Get Bhakti By filter1
 GET http://localhost:3000/bhakti/filter?keyword[]=Devotion&_category=1
 
 ###
@@ -22,14 +22,17 @@ GET http://localhost:3000/bhakti/filter?keyword[]=Devotion&_category=1
 GET http://localhost:3000/bhakti/categories
 
 ###
+// get category by id
 GET http://localhost:3000/bhakti/categories/2
 
 ###
+// add category
 POST http://localhost:3000/bhakti/categories
 
 ###
+// update category by id
 PUT http://localhost:3000/bhakti/categories/2
 
 ###
-
+// delete category by id
 DELETE http://localhost:3000/bhakti/categories/8
