@@ -11,6 +11,10 @@ const bhaktiquery = {
 
 const bhakticategory = {
     getAllCategories: `SELECT * FROM public."bhakti_category";`,
+    getCategoryById: `SELECT * FROM public."bhakti_category" WHERE id = $1;`,
+    addCategory: `INSERT INTO public."bhakti_category" ("name", "image", "description") VALUES($1, $2, $3) RETURNING *;`,
+    updateCategory: `UPDATE public."bhakti_category" SET "name" = $2, "image" = $2, "description" = $3 WHERE id = $1 RETURNING *;`,
+    deleteCategory: `DELETE FROM public."bhakti_category" WHERE id = $1;`,
 }
 
 module.exports = {bhaktiquery, bhakticategory}

@@ -16,11 +16,6 @@ const BhaktiByType = async (type) => {
     return result.rows;
 }
 
-const getAllCategories = async () => {
-    const result = await pool.query(bhakticategory.getAllCategories);
-    return result.rows;
-}
-
 const BhaktiKeywords = async () => {
     const result = await pool.query(bhaktiquery.BhaktiKeywords);
     return result.rows;
@@ -45,4 +40,31 @@ const UpdateBhakti = async (data)=>{
     const result = await pool.query(bhaktiquery.UpdateBhakti, [data.id, data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links])
     return result.rows;
 }
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti, UpdateBhakti };
+
+const getAllCategories = async () => {
+    const result = await pool.query(bhakticategory.getAllCategories);
+    return result.rows;
+}
+
+const getCategoryById = async (id) => {
+    const result = await pool.query(bhakticategory.getCategoryById, [id]);
+    return result.rows;
+}
+
+const addCategory = async (data) => {
+    const result = await pool.query(bhakticategory.addCategory, [data.name, data.image, data.description]);
+    return result.rows;
+}
+
+const updateCategory = async (data) => {
+    const result = await pool.query(bhakticategory.updateCategory, [data.name, data.image, data.description]);
+    return result.rows;
+}
+
+const deleteCategory = async (id) => {
+    const result = await pool.query(bhakticategory.deleteCategory, [id]);
+    console.log(result);
+    return result.rows;
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti, UpdateBhakti, getCategoryById, addCategory, updateCategory, deleteCategory };

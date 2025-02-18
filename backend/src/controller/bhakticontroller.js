@@ -49,34 +49,97 @@ const BhaktiKeywords = async (req, res) => {
     try {
         const bhakti = await BhaktiModel.BhaktiKeywords();
 
-        if(bhakti.length > 0) {
+        if (bhakti.length > 0) {
             res.status(200).json(bhakti)
         } else {
             res.status(404).json({ message: 'no keyword available' })
         }
-    } catch(error) {
+    } catch (error) {
         res.status(500).json({ message: 'something gone wrong', error: error })
     }
 }
 
 const FilterBhakti = async (req, res) => {
     try {
-        if(Object.keys(req.query).length == 0) {
-            return res.status(400).json({message: "no filter applied, bad request"});
+        if (Object.keys(req.query).length == 0) {
+            return res.status(400).json({ message: "no filter applied, bad request" });
         }
-        
+
         const filter = req.query;
         const query = getFilterQuery(filter);
         const bhakti = await BhaktiModel.FilterBhakti(query);
 
-        if(bhakti.length > 0) {
+        if (bhakti.length > 0) {
             res.status(200).json(bhakti);
         } else {
-            res.status(404).json({message: 'no data available for this filter'});
+            res.status(404).json({ message: 'no data available for this filter' });
         }
-    } catch(error) {
+    } catch (error) {
         console.log(error);
-        res.status(500).json({message: 'something gone wrong', error: error});
+        res.status(500).json({ message: 'something gone wrong', error: error });
+    }
+}
+
+const AddBhakti = async (req, res) => {
+
+    try {
+        const data = {
+            title: req.body.title,
+            description: req.body?.description || '',
+            keyword: req.body?.keyword || [],
+            image: req.body?.image || "",
+            category: req.body?.category || "",
+            content: req.body?.content || "",
+            author: req.body?.author || "",
+            reference_links: req.body?.reference_links || [],
+        }
+        console.log(data)
+        if (data.title != "" && data.content != "" && data.category != "") {
+            const bhakti = await BhaktiModel.AddBhakti({ ...data })
+            res.status(200).json(bhakti[0]);
+        }
+        else
+            return res.status(400).json({ error: "all fields are required" });
+    } catch (e) {
+        res.status(500).json({ error: e, message: "Some internal problems occured" })
+    }
+}
+
+const DeleteBhakti = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const bhakti = await BhaktiModel.DeleteBhakti(id);
+        res.status(200).json({ message: "Bhakti deleted successfully" });
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({ error: e, message: "Some internal problems occured" })
+    }
+}
+
+
+const UpdateBhakti = async (req, res) => {
+
+    const data = {
+        id: req.body.id,
+        title: req.body.title,
+        description: req.body.description,
+        keyword: req.body.keyword,
+        image: req.body.image,
+        category: req.body.category,
+        content: req.body.content,
+        author: req.body.author,
+        reference_links: req.body?.reference_links,
+    }
+    console.log(data)
+    try {
+        if (data.title != "" && data.content != "" && data.category != "") {
+            const bhakti = await BhaktiModel.UpdateBhakti({ ...data })
+            res.status(200).json(bhakti[0]);
+        }
+        else
+            return res.status(400).json({ error: "all fields are required" });
+    } catch (e) {
+        res.status(500).json({ error: e, message: "Some internal problems occured" })
     }
 }
 
@@ -92,67 +155,65 @@ const getAllCategories = async (req, res) => {
     }
 }
 
-const AddBhakti = async (req, res) => {
-
-    try{
-        const data = {
-            title: req.body.title,
-            description: req.body?.description || '',
-            keyword: req.body?.keyword || [],
-            image: req.body?.image || "",
-            category: req.body?.category || "",
-            content: req.body?.content || "",
-            author: req.body?.author || "",
-            reference_links: req.body?.reference_links || [],
+const getCategoryById = async (req, res) => {
+    try {
+        const category = await BhaktiModel.getCategoryById(req.params.id);
+        if (category.length > 0) {
+            res.status(200).json(category);
+        } else {
+            res.status(404).json({ message: 'no category found!' });
         }
-        console.log(data)
-        if(data.title != "" && data.content != "" && data.category != "")
-        {    
-            const bhakti = await BhaktiModel.AddBhakti({...data})
-            res.status(200).json(bhakti[0]);}
-        else
-            return res.status(400).json({error: "all fields are required"});
-    }catch(e){
-        res.status(500).json({error: e, message: "Some internal problems occured"})
+    } catch (error) {
+        res.status(500).json({ message: 'something gone wrong', error: error })
     }
 }
 
-const DeleteBhakti = async (req,res)=>{
-    try{
-        const id = req.params.id;
-        const bhakti = await BhaktiModel.DeleteBhakti(id);
-        res.status(200).json({message: "Bhakti deleted successfully"});
-    }catch(e){
-        console.log(e);
-        res.status(500).json({error: e, message: "Some internal problems occured"})
+const addCategory = async (req, res) => {
+    const data = {
+        name: req.body.name,
+        description: req.body?.description || '',
+        image: req.body?.image || '',
+    }
+
+    try {
+        if (data.name != "") {
+            const category = await BhaktiModel.addCategory({ ...data });
+            res.status(200).json(category[0]);
+        } else {
+            res.status(400).json({ error: "bhakti category name is required" });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'something gone wrong', error: error })
     }
 }
 
-
-const UpdateBhakti = async (req, res) => {
-
+const updateCategory = async (req, res) => {
     const data = {
         id: req.body.id,
-        title: req.body.title,
-        description: req.body.description,
-        keyword: req.body.keyword ,
-        image: req.body.image,
-        category: req.body.category,
-        content: req.body.content,
-        author: req.body.author,
-        reference_links: req.body?.reference_links,
+        name: req.body.name,
+        description: req.body?.description || '',
+        image: req.body?.image || '',
     }
-    console.log(data)
-    try{
-        if(data.title != "" && data.content != "" && data.category != "")
-        {
-            const bhakti = await BhaktiModel.UpdateBhakti({...data})
-            res.status(200).json(bhakti[0]);}
-        else
-            return res.status(400).json({error: "all fields are required"});
-    }catch(e){
-        res.status(500).json({error: e, message: "Some internal problems occured"})
+    try {
+        if (data.name != "") {
+            const category = await BhaktiModel.updateCategory({ ...data });
+            res.status(200).json(category);
+        } else {
+            res.status(404).json({ message: 'bhakticategory not updated !' })
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'something gone wrong!', error: error })
     }
 }
 
-module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti, UpdateBhakti };
+const deleteCategory = async (req, res) => {
+    try {
+        const category = await BhaktiModel.deleteCategory(req.params.id);
+
+        res.status(200).json(category);
+    } catch (error) {
+        res.status(500).json({ message: 'something gone wrong', error: error });
+    }
+}
+
+module.exports = { GetAllBhakti, GetBhaktiById, BhaktiByType, BhaktiKeywords, FilterBhakti, getAllCategories, AddBhakti, DeleteBhakti, UpdateBhakti, getCategoryById, addCategory, updateCategory, deleteCategory };
