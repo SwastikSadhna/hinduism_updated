@@ -85,7 +85,7 @@ const App = () => {
                 </CustomRoutes>
 
                 {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('update','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
-                {hasPermission("read","bhakticategory") && <Resource name="bhakti/categories" list={CategoryList} show={CategoryShow} create={hasPermission("create","bhakticategory") && CategoryCreate} edit={hasPermission("update","bhakticategory") && CategoryEdit} icon={CategoryIcon} />}
+                {hasPermission("read","bhakticategory") && <Resource name="bhakti-categories" list={CategoryList} show={CategoryShow} create={hasPermission("create","bhakticategory") && CategoryCreate} edit={hasPermission("update","bhakticategory") && CategoryEdit} icon={CategoryIcon} />}
                 {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} create={<BookCreate />} edit={hasPermission("update","book") && <BookEdit />} icon={BookIcon} />}
                 {hasPermission("read","temple") &&<Resource name="temples" list={TempleList} show={TempleShow} edit={hasPermission('update','temple') && <TempleEdit />} create={hasPermission('create','temple') && TempleCreate} icon={TempleHinduIcon} />}
                 {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} create={hasPermission("create","avatar") && AvatarCreate} edit={hasPermission("update","avatar") && AvatarEdit} icon={PersonIcon} />}

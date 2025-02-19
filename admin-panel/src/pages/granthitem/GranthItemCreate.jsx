@@ -3,7 +3,6 @@ import { ReferenceInput, Create, SimpleForm, TextInput } from 'react-admin';
 const GranthitemCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="title" />
             <TextInput source="description" />
             <TextInput source="image" />

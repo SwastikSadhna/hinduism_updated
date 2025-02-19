@@ -3,7 +3,6 @@ import { ArrayInput, SimpleFormIterator, SimpleForm, TextInput,  Edit } from "re
 const bookCreate = () => {
     return (<Edit>
         <SimpleForm>
-        <TextField source="id" />
             <TextField source="title" />
             <TextField source="description" />
             <TextField source="link" />

@@ -3,7 +3,6 @@ import { NumberInput, Create, TextInput, SimpleForm, ImageInput } from 'react-ad
 const AvatarCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="name" />
             <ImageInput source="image" />
             <TextInput source="yuga" />

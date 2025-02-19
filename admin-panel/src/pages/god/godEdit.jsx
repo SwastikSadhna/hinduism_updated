@@ -3,7 +3,6 @@ import { Edit, SimpleForm, TextInput, ImageInput, ArrayInput, SimpleFormIterator
 const GodEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id" />
             <TextInput source="name" />
             <ImageInput source="image" />
             <TextInput source="description" />
