@@ -12,7 +12,6 @@ const BookList = () =>{
             <FunctionField label="description" render={(record) => `${record.description.substring(0, 50)}...`} />
             <TextField source="link" />
             <TextField source="author" />
-            <ImageField source="image" />
             <TextField source="keyword" />
             <TextField source="year" />
             {hasPermission('update','book') && <EditButton />}

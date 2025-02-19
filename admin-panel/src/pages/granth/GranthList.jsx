@@ -9,7 +9,6 @@ const GranthList = () => {
             <TextField source="id" />
             <TextField source="title" />
             <TextField source="description" />
-            <ImageField source="images" />
             {hasPermission('update','granth') && <EditButton />}
         </Datagrid>
     </List>

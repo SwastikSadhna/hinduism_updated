@@ -7,7 +7,6 @@ const TempleList = () => {
     <List>
         <Datagrid>
             <TextField source="id" />
-            <ImageField source="cover_image" />
             <TextField source="name" />
             <TextField source="god" />
             <TextField source="location" />

@@ -7,7 +7,6 @@ const AvatarList = () => {
     <List>
         <Datagrid>
             <TextField source="id" />
-            <ImageField source="image" />
             <TextField source="name" />
             <TextField source="yuga" />
             <TextField source="tamples" />

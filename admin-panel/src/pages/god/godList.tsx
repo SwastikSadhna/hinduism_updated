@@ -8,7 +8,6 @@ const GodList = () => {
         <Datagrid>
             <TextField source="id" />
             <TextField source="name" />
-            <TextField source="image" />
             <TextField source="description" />
             <TextField source="keyword" />
             {hasPermission('update','god') && <EditButton />}

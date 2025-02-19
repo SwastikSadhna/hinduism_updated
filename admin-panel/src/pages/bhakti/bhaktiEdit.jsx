@@ -1,16 +1,16 @@
-import {Edit, SimpleForm, TextInput, ReferenceInput,ArrayInput, SimpleFormIterator, NumberInput} from "react-admin"
+import {Edit, SimpleForm, TextInput, ReferenceInput,ArrayInput, SimpleFormIterator, NumberInput, ImageInput} from "react-admin"
 
 const BhaktiEdit = () => (
   <Edit>
     <SimpleForm>
     <TextInput source="title" />
             <TextInput source="description" />
-            <ArrayInput source="keywords">
+            <ArrayInput source="keyword">
                 <SimpleFormIterator>
-                    <TextInput source="keywords" />
+                    <TextInput />
                 </SimpleFormIterator>
             </ArrayInput>
-            <TextInput source="image" />
+            <ImageInput source="image" />
             <TextInput source="author" />
             <ArrayInput source="reference_links">
                 <SimpleFormIterator>
@@ -18,7 +18,7 @@ const BhaktiEdit = () => (
                 </SimpleFormIterator>
             </ArrayInput>
             <TextInput source="content" />
-            <ReferenceInput source="category" reference="bhakti/categories"/>
+            <ReferenceInput source="category" reference="bhakti-categories"/>
     </SimpleForm>
   </Edit>
 );

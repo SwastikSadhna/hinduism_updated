@@ -1,4 +1,4 @@
-import { Show, ImageField, SimpleShowLayout, TextField } from 'react-admin';
+import { Show, ImageField, SimpleFormIterator, SimpleShowLayout, TextField, ArrayField } from 'react-admin';
 
 const TempleShow = () => (
     <Show>
@@ -12,7 +12,9 @@ const TempleShow = () => (
             <TextField source="god" />
             <TextField source="location" />
             <TextField source="importance" />
-            <TextField source="images" />
+            <ArrayField source="images">
+                <ImageField source="images" title="Image"/>
+            </ArrayField>
             <TextField source="keyword" />
         </SimpleShowLayout>
     </Show>

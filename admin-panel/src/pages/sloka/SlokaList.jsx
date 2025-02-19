@@ -6,7 +6,6 @@ const SlokaList = () => {
     <List>
         <Datagrid>
             <TextField source="id" />
-            <ImageField source="image" />
             <TextField source="title" />
             <TextField source="sloka" />
             <TextField source="explaination" />

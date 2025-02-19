@@ -12,7 +12,6 @@ const BhaktiList = (props:object) => {
             <TextField source="title" />
             <TextField source="description" />
             <TextField source="keyword" />
-            <ImageField source="image" />
             {hasPermission('update','bhakti') && <EditButton />}
             
         </Datagrid>

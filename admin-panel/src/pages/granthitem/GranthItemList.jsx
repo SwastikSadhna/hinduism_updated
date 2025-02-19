@@ -8,7 +8,6 @@ const GranthitemList = () => {
     <List>
         <Datagrid>
             <TextField source="id" />
-            <ImageField source="image" />
             <TextField source="title" />
             <TextField source="description" />
             <TextField source="granth_id" />

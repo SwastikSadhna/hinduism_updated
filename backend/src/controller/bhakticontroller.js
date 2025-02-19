@@ -1,12 +1,11 @@
 const { getFilterQuery } = require("../middleware/filterHelper")
 const BhaktiModel = require('../model/bhaktimodel');
-
+const {uploadPath} = require("../middleware/fileupload")
 
 const GetAllBhakti = async (req, res) => {
     try {
 
         const bhakti = await BhaktiModel.GetAllBhakti();
-
         if (bhakti.length > 0) {
             res.status(200).json(bhakti);
         } else {
@@ -87,14 +86,20 @@ const AddBhakti = async (req, res) => {
             title: req.body.title,
             description: req.body?.description || '',
             keyword: req.body?.keyword || [],
-            image: req.body?.image || "",
             category: req.body?.category || "",
             content: req.body?.content || "",
             author: req.body?.author || "",
             reference_links: req.body?.reference_links || [],
+            image: ''
         }
         console.log(data)
         if (data.title != "" && data.content != "" && data.category != "") {
+            
+            const filename = req.file?.filename;
+            if(filename){
+                data.image = uploadPath(req,filename);
+            }
+
             const bhakti = await BhaktiModel.AddBhakti({ ...data })
             res.status(200).json(bhakti[0]);
         }
@@ -123,16 +128,22 @@ const UpdateBhakti = async (req, res) => {
         id: req.body.id,
         title: req.body.title,
         description: req.body.description,
-        keyword: req.body.keyword,
-        image: req.body.image,
+        keyword: req.body.keyword || [],
+        image: '',
         category: req.body.category,
         content: req.body.content,
         author: req.body.author,
-        reference_links: req.body?.reference_links,
+        reference_links: req.body?.reference_links || [],
     }
-    console.log(data)
+   
     try {
         if (data.title != "" && data.content != "" && data.category != "") {
+            const filename = req.file?.filename;
+            console.log(req.file)
+            if(filename){
+                data.image = uploadPath(req,filename);
+            }
+            console.log(data)
             const bhakti = await BhaktiModel.UpdateBhakti({ ...data })
             res.status(200).json(bhakti[0]);
         }
