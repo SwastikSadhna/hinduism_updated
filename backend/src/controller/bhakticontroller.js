@@ -139,9 +139,9 @@ const UpdateBhakti = async (req, res) => {
     console.log(data)
    
     try {
-        if (data.title != "" && data.content != "" && data.category != "") {
+        if ((data.title != "" && data.content != "" && data.category != "") 
+            && (data.title != 'null' && data.content != 'null')) {
             const filename = req.file?.filename;
-            console.log(req.file)
             if(filename){
                 data.image = uploadPath(req,filename);
             }

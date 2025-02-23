@@ -129,7 +129,7 @@ const updateTemple = async (req, res)=>{
             images: req.body.images
         }
         data.id = req.params.id;
-        if(data.name == "" || data.description == ""){
+        if((data.name == "" || data.description == "") && (data.name == null || data.description)){
             res.status(400).json({message: "Temple name and description are required fields."})
         }
         else{

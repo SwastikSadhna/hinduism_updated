@@ -1,5 +1,6 @@
 const Sloka = require("../model/slokmodel")
 const toArray = require("../middleware/toArray")
+const {uploadPath} = require("../middleware/fileupload")
 
 const getAllSloka = async (req, res) => {
     try {
@@ -106,9 +107,15 @@ const updateSloka = async (req, res) => {
             image: req.body?.image,
             sloka: req.body?.sloka
         }
+        console.log(req.file)
         data.id = req.params.id;
         
-        if(data.title != "" && data.description != ""){
+        if(data.title != "" && data.description != "" && data.title != "null" && data.sloka != "null"){
+            const filename = req.file?.filename;
+            if(filename){
+                console.log("file ",filename)
+                data.image = uploadPath(req,filename);
+            }
             const sloka = await Sloka.updateSloka({...data})
             console.log(sloka)
             res.status(201).json(sloka);
@@ -116,6 +123,7 @@ const updateSloka = async (req, res) => {
             res.status(400).json({message: "title and description are required"})
         }
     }catch(e){
+        console.log(e)
         res.status(500).json({message: "Error updating sloka", error: e})
     }
 }
