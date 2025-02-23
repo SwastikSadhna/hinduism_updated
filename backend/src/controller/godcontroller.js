@@ -104,6 +104,7 @@ const updateGod = async (req, res) => {
         image: req.body.image,
         keyword: req.body.keyword || [],
     }
+    console.log(data)
 
 
     try {

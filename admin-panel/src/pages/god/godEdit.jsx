@@ -8,7 +8,7 @@ const GodEdit = () => (
             <TextInput source="description" />
             <ArrayInput source="keyword">
                 <SimpleFormIterator>
-                    <TextInput source="keyword" />
+                <TextInput/>
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>

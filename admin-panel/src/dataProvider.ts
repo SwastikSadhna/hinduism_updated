@@ -24,7 +24,6 @@ const formatImageUrls = (data: any) => {
         data.image = `http://localhost:3000/${data.image}`;
         if(data.images)
             data.images = data.images.map((image)=> `http://localhost:3000/${image}`)
-    console.log(data)
     return data;
 };
 

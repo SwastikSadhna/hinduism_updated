@@ -12,7 +12,7 @@ const bookEdit = () => {
             <TextField source="year" />
             <ArrayInput source="keyword">
                 <SimpleFormIterator>
-                    <TextInput source="keyword" />
+                <TextInput/>
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>

@@ -1,6 +1,7 @@
 const { getFilterQuery } = require("../middleware/filterHelper")
 const BhaktiModel = require('../model/bhaktimodel');
 const {uploadPath} = require("../middleware/fileupload")
+const toArray = require("../middleware/toArray")
 
 const GetAllBhakti = async (req, res) => {
     try {
@@ -85,11 +86,11 @@ const AddBhakti = async (req, res) => {
         const data = {
             title: req.body.title,
             description: req.body?.description || '',
-            keyword: req.body?.keyword || [],
+            keyword: toArray(req.body?.keyword) || [],
             category: req.body?.category || "",
             content: req.body?.content || "",
             author: req.body?.author || "",
-            reference_links: req.body?.reference_links || [],
+            reference_links: toArray(req.body?.reference_links) || [],
             image: ''
         }
         console.log(data)
@@ -128,13 +129,14 @@ const UpdateBhakti = async (req, res) => {
         id: req.body.id,
         title: req.body.title,
         description: req.body.description,
-        keyword: req.body.keyword || [],
+        keyword: toArray(req.body.keyword) || [],
         image: '',
         category: req.body.category,
         content: req.body.content,
         author: req.body.author,
-        reference_links: req.body?.reference_links || [],
+        reference_links: toArray(req.body?.reference_links) || [],
     }
+    console.log(data)
    
     try {
         if (data.title != "" && data.content != "" && data.category != "") {
