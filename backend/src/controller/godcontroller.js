@@ -79,9 +79,13 @@ const addGod = async (req, res) => {
         image: req.body?.image || "",
         keyword: req.body?.keyword || [],
     }
+    console.log(data)
 
     try {
+
+        console.log(data.name)
         if (data.name != "" && data.description != "") {
+            console.log(data.name)
             const god = await godmodel.addGod(data);
             res.status(200).json(god[0]);
         } else {
@@ -94,16 +98,17 @@ const addGod = async (req, res) => {
 
 const updateGod = async (req, res) => {
     const data = {
-        id: req.body.id,
+        id: req.params.id,
         name: req.body.name,
         description: req.body.description,
         image: req.body.image,
-        keyword: req.body.keyword,
+        keyword: req.body.keyword || [],
     }
+
 
     try {
         if (data.name != "" && data.description != "") {
-            const god = await godmodel.addGod(data);
+            const god = await godmodel.updateGod(data);
             res.status(200).json(god[0]);
         } else {
             res.status(404).json({ message: "god not added" });

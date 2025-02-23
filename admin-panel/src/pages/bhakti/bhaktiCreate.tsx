@@ -18,7 +18,7 @@ const bhaktiCreate = () => {
                 </SimpleFormIterator>
             </ArrayInput>
             <TextInput source="content" />
-            <ReferenceInput source="category" reference="bhakti/categories" >
+            <ReferenceInput source="category" reference="bhakti-categories" >
                 <SelectInput optionText="name" />
             </ReferenceInput>
         </SimpleForm>
