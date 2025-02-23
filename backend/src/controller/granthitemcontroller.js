@@ -41,4 +41,48 @@ const searchItem = async (req, res) => {
     }
 }
 
+const addGranthItem = async() => {
+    try {
+        const data = {
+            title: req.body?.title,
+            description: req.body?.description || '',
+            image: '',
+            link: req.body?.link || '',
+            granth_id: req.body?.granth_id || '',
+            author: req.body?.author || '',
+        }
+
+        if(data.name != "" && data.description != "") {
+            const result = await GranthModel.addGranthItem({...data});
+            res.status(200).json(result[0]);
+        } else {
+            res.status(400).json({message: "granthItem data not found"});
+        }
+    } catch(error) {
+        res.status(500).json({message: "something gone wrong"});
+    }
+}
+
+const updateGranthItem = async() => {
+    try {
+        const data = {
+            title: req.body?.title,
+            description: req.body?.description || '',
+            image: '',
+            link: req.body?.link || '',
+            granth_id: req.body?.granth_id || '',
+            author: req.body?.author || '',
+        }
+
+        if(data.name != "" && data.description != "") {
+            const result = await GranthModel.updateGranthItem({...data});
+            res.status(200).json(result[0]);
+        } else {
+            res.status(400).json({message: "granthItem data not found"});
+        }
+    } catch(error) {
+        res.status(500).json({message: "something gone wrong"});
+    }
+}
+
 module.exports = {searchItem, getGranthItems, geTAllGranthItems};
