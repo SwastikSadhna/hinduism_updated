@@ -1,5 +1,6 @@
 const { getFilterQuery } = require("../middleware/filterHelper");
 const bookmodel = require("../model/bookmodel");
+const toArray = require("../middleware/toArray")
 
 const GetAllBooks = async (req, res) => {
     try {
@@ -69,7 +70,7 @@ const addBook = async (req, res) => {
         author: req.body?.author || "",
         image: req.body?.image || "",
         cover_image: req.body?.cover_image || "",
-        keyword: req.body?.keyword || [],
+        keyword: toArray(req.body?.keyword) || [],
         year: req.body?.year || "",
     }
 
@@ -94,7 +95,7 @@ const updateBook = async (req, res) => {
         author: req.body.author,
         image: req.body.image,
         cover_image: req.body.cover_image,
-        keyword: req.body.keyword,
+        keyword: toArray(req.body.keyword),
         year: req.body.year,
     }
 

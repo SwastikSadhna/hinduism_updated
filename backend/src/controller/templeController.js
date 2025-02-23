@@ -1,4 +1,5 @@
 const { getFilterQuery } = require("../middleware/filterHelper")
+const toArray = require("../middleware/toArray")
 const Temple = require("../model/templeModel")
 
 const getAllTemples = async (req, res) => {
@@ -92,12 +93,12 @@ const addTemple = async (req, res)=>{
             description: req.body?.description,
             cover_image: req.body?.cover_image,
             map_url: req.body?.map_url,
-            reference_link: req.body?.reference_link || [],
+            reference_link: toArray(req.body?.reference_link) || [],
             god: req.body?.god,
             location: req.body?.location || '',
-            importance: req.body?.importance || [],
-            keyword: req.body?.keyword || [],
-            images: req.body?.images || []
+            importance: toArray(req.body?.importance) || [],
+            keyword: toArray(req.body?.keyword) || [],
+            images: toArray(req.body?.images) || []
         }
 
         if(data.name == "" || data.description == ""){

@@ -1,4 +1,5 @@
 const Sloka = require("../model/slokmodel")
+const toArray = require("../middleware/toArray")
 
 const getAllSloka = async (req, res) => {
     try {
@@ -76,7 +77,7 @@ const createSloka = async (req, res)=>{
         const data = {
             title: req.body.title,
             description: req.body?.description || '',
-            keyword: req.body?.keyword || [],
+            keyword: toArray(req.body?.keyword) || [],
             explaination: req.body?.explaination || '',
             image: req.body?.image || '',
             sloka: req.body?.sloka || ''
@@ -100,7 +101,7 @@ const updateSloka = async (req, res) => {
         const data = {
             title: req.body.title,
             description: req.body?.description,
-            keyword: req.body?.keyword,
+            keyword: toArray(req.body?.keyword),
             explaination: req.body?.explaination,
             image: req.body?.image,
             sloka: req.body?.sloka
