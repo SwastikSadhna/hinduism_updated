@@ -11,4 +11,19 @@ const getGranthDetails = async (id) => {
     return result.rows;
 }
 
-module.exports = {getAllGranth, getGranthDetails}
+const addGranth = async (data) => {
+    const result = await pool.query(granthQuery.AddGranth, [data.title, data.description, data.image]);
+    return result.rows;
+}
+
+const updateGranth = async (data) => {
+    const result = await pool.query(granthQuery.UpdateGranth, [data.title, data.description, data.image, data.id]);
+    return result.rows;
+}
+
+const deleteGranth = async(id) => {
+    const result = await pool.query(granthQuery.DeleteGranth, [id]);
+    return result.rows;
+}
+
+module.exports = {getAllGranth, getGranthDetails, addGranth, updateGranth, deleteGranth};
