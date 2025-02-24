@@ -5,3 +5,15 @@ GET http://localhost:3000/granthitem/2
 ###
 // search for granth items
 GET http://localhost:3000/granthitem/search?q=R
+
+###
+// add Granth
+POST http://localhost:3000/granthitem/
+
+###
+// update Granth
+PUT http://localhost:3000/granthitem/2
+
+###
+// delete granth
+DELETE http://localhost:3000/granthitem/11

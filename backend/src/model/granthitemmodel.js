@@ -17,12 +17,12 @@ const geTAllGranthItems = async () => {
 }
 
 const addGranthItem = async(data) => {
-    const items = await pool.query(queries.AddGranthItem, [data.title, data.description, data.image, data.link, data.granth_id, data.author]);
+    const items = await pool.query(queries.AddGranthItem, [data.title, data.description, data.image, data.link, data.granth_id, data.author, data.year]);
     return items.rows;
 }
 
 const updateGranthItem = async(data) => {
-    const items = await pool.query(queries.UpdateGranthItem, [data.title, data.description, data.image, data.link, data.granth_id, data.author, data.id]);
+    const items = await pool.query(queries.UpdateGranthItem, [data.title, data.description, data.image, data.link, data.granth_id, data.author, data.year, data.id]);
     return items.rows;
 }
 

@@ -4,3 +4,15 @@ GET http://localhost:3000/granth/
 ###
 // get granthitems by granth id
 GET http://localhost:3000/granth/1
+
+###
+// add Granth
+POST http://localhost:3000/granth/
+
+###
+// update Granth
+PUT http://localhost:3000/granth/2
+
+###
+// delete granth
+DELETE http://localhost:3000/granth/11

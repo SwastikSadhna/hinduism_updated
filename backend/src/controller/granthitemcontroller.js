@@ -50,6 +50,7 @@ const addGranthItem = async() => {
             link: req.body?.link || '',
             granth_id: req.body?.granth_id || '',
             author: req.body?.author || '',
+            year: req.body?.year || '',
         }
 
         if(data.name != "" && data.description != "") {
@@ -66,6 +67,7 @@ const addGranthItem = async() => {
 const updateGranthItem = async() => {
     try {
         const data = {
+            id: req.params.id,
             title: req.body?.title,
             description: req.body?.description || '',
             image: '',
@@ -85,4 +87,13 @@ const updateGranthItem = async() => {
     }
 }
 
-module.exports = {searchItem, getGranthItems, geTAllGranthItems};
+const deleteGranthItem = async() => {
+    try {
+        const result = await GranthModel.deleteGranthItem(req.params.id);
+        res.status(200).json({message: "granthItem deleted successfully"});
+    } catch(error) {
+        res.status(500).json({message: "something gone wrong"});
+    }
+}
+
+module.exports = {searchItem, getGranthItems, geTAllGranthItems, addGranthItem, updateGranthItem, deleteGranthItem};
