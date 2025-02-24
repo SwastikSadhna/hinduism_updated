@@ -24,9 +24,14 @@ const storage = multer.diskStorage({
     }
 });
 
-// Function to get the file path
-const uploadPath = (req, filename) => {
-    return `uploads/${removeSlashes(req.baseUrl || 'default').toLowerCase()}/${filename}`;
+// Function to construct file paths
+const uploadPath = (req, filenames) => {
+    const basePath = removeSlashes(req.baseUrl || 'uploads/temples').toLowerCase();
+
+    if (Array.isArray(filenames)) {
+        return filenames.map(filename => `uploads/${basePath}/${filename.filename}`);
+    }
+    return `uploads/${basePath}/${filenames}`;
 };
 
 // Multer Upload Middleware

@@ -3,7 +3,7 @@ GET http://localhost:3000/temples
 
 ###
 // get temples by id
-GET http://localhost:3000/temples/3
+GET http://localhost:3000/temples/11
 
 ###
 // get temples names by search query

@@ -1,6 +1,8 @@
 const { getFilterQuery } = require("../middleware/filterHelper");
 const bookmodel = require("../model/bookmodel");
 const toArray = require("../middleware/toArray")
+const {uploadPath} = require("../middleware/fileupload")
+
 
 const GetAllBooks = async (req, res) => {
     try {
@@ -75,7 +77,15 @@ const addBook = async (req, res) => {
     }
 
     try {
-        if(data.title != "", data.description != "", data.author != "", data.cover_image != "") {
+        if(data.title != "" && data.description != "" && data.title != "null" && data.description != "null" ){
+            const imagefilename = req.files && req.files["image"][0]?.filename;
+            const coverimgfilename = req.files && req.files["cover_image"][0]?.filename;
+            if(imagefilename){
+                data.image = uploadPath(req,imagefilename);
+            }
+            if(coverimgfilename){
+                data.cover_image = uploadPath(req,coverimgfilename);
+            }
             const book = await bookmodel.AddBook({...data});
             res.status(200).json(book[0]);
         } else {
@@ -100,13 +110,24 @@ const updateBook = async (req, res) => {
     }
 
     try {
-        if(data.title != "", data.description != "", data.author != "", data.cover_image != "") {
-            const book = await bookmodel.AddBook({...data});
+        if(data.title != "" && data.description != "" && data.title != "null" && data.description != "null" ) {
+
+            const imagefilename = req.files && req.files["image"]?.at(0)?.filename;
+            const coverimgfilename = req.files && req.files["cover_image"]?.at(0)?.filename;
+            if(imagefilename){
+                data.image = uploadPath(req,imagefilename);
+            }
+            if(coverimgfilename){
+                data.cover_image = uploadPath(req,coverimgfilename);
+            }
+            const book = await bookmodel.UpdateBook({...data});
+            console.log(book)
             res.status(200).json(book[0]);
         } else {
             res.status(400).json({message: "book not updated!"});
         }
     } catch(e) {
+        console.log(e)
         res.status(500).json({error: e, message: "something gone wrong"});
     }
 }

@@ -189,7 +189,11 @@ const addCategory = async (req, res) => {
     }
 
     try {
-        if (data.name != "") {
+        if (data.name != "" && data.description != "" && data.name != 'null' && data.description != 'null') {
+            const filename = req.file?.filename;
+            if(filename){
+                data.image = uploadPath(req,filename);
+            }
             const category = await BhaktiModel.addCategory({ ...data });
             res.status(200).json(category[0]);
         } else {
@@ -207,10 +211,16 @@ const updateCategory = async (req, res) => {
         description: req.body?.description || '',
         image: req.body?.image || '',
     }
+
+    console.log(data)
     try {
-        if (data.name != "") {
+        if (data.name != "" && data.name != "null" && data.description != "" && data.description != "null") {
+            const filename = req.file?.filename;
+            if(filename){
+                data.image = uploadPath(req,filename);
+            }
             const category = await BhaktiModel.updateCategory({ ...data });
-            res.status(200).json(category);
+            res.status(200).json(category[0]);
         } else {
             res.status(404).json({ message: 'bhakticategory not updated !' })
         }

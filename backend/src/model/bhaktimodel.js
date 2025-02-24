@@ -57,7 +57,7 @@ const addCategory = async (data) => {
 }
 
 const updateCategory = async (data) => {
-    const result = await pool.query(bhakticategory.updateCategory, [data.name, data.image, data.description]);
+    const result = await pool.query(bhakticategory.updateCategory, [data.id, data.name, data.image, data.description]);
     return result.rows;
 }
 

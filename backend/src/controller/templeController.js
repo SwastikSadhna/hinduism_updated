@@ -1,5 +1,6 @@
 const { getFilterQuery } = require("../middleware/filterHelper")
 const toArray = require("../middleware/toArray")
+const {uploadPath} = require("../middleware/fileupload")
 const Temple = require("../model/templeModel")
 
 const getAllTemples = async (req, res) => {
@@ -116,23 +117,34 @@ const addTemple = async (req, res)=>{
 
 const updateTemple = async (req, res)=>{
     try{
+        console.log(req.body)
         const data = {
             name: req.body.name,
             description: req.body.description,
             cover_image: req.body.cover_image,
             map_url: req.body.map_url,
-            reference_link: req.body.reference_link,
+            reference_link: toArray(req.body.reference_link),
             god: req.body.god,
             location: req.body.location,
-            importance: req.body.importance,
+            importance: toArray(req.body.importance,true) || [],
             keywords: req.body.keywords,
-            images: req.body.images
+            images: []
         }
         data.id = req.params.id;
         if((data.name == "" || data.description == "") && (data.name == null || data.description)){
             res.status(400).json({message: "Temple name and description are required fields."})
         }
         else{
+            console.log(req.files)
+            const imagefilename = req.files && req.files["images"];
+            const coverimgfilename = req.files && req.files["cover_image"]?.at(0)?.filename;
+            if(imagefilename){
+                data.images = uploadPath(req,imagefilename);
+            }
+            if(coverimgfilename){
+                data.cover_image = uploadPath(req,coverimgfilename);
+            }
+            console.log(data)
             const temple = await Temple.updateTemple({...data});
             res.status(200).json(temple)
         }

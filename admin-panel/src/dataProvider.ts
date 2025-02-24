@@ -12,16 +12,35 @@ const prepareFormData = (data: any) => {
     Object.keys(data).forEach((key) => {
         if (key === "image" && data[key]?.rawFile) {
             formData.append(key, data[key].rawFile); 
+            return
+        } 
+        if (key === "images" && Array.isArray(data[key])) {
+            data[key].forEach((file) => {
+                if (file.rawFile) {
+                    formData.append(key, file.rawFile); // Append each file separately
+                }
+            });
+            return;
+        } 
+        if (key === "importance" && Array.isArray(data[key])) {
+            // Flatten any nested arrays and stringify as JSON
+            const flatImportance = data[key].flat(Infinity); // Removes extra nesting
+            formData.append(key, JSON.stringify(flatImportance));
+            return;
+        }
+        if (key === "cover_image" && data[key]?.rawFile) {
+            formData.append(key, data[key].rawFile); 
         } else {
             formData.append(key, data[key]);
         }
     });
-
+    console.log(formData)
     return formData;
 };
 
 const formatImageUrls = (data: any) => {
         data.image = `http://localhost:3000/${data.image}`;
+        data.cover_image = `http://localhost:3000/${data.cover_image}`; 
         if(data.images)
             data.images = data.images.map((image)=> `http://localhost:3000/${image}`)
     return data;
@@ -33,7 +52,7 @@ const dataProvider = {
             headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
         });
         return {
-            data: formatImageUrls(data), // List of records
+            data: data, // List of records
             total: data.length, // Total count
         };
     },
@@ -42,7 +61,7 @@ const dataProvider = {
         const { data } = await api.get(`/${resource}/${params.id}`, {
             headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
         });
-        return { data: formatImageUrls(data[0]) };
+        return { data: data[0] };
     },
 
     create: async (resource: string, params: { data: any }) => {
