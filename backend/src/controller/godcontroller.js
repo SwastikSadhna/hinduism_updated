@@ -1,5 +1,7 @@
 const godmodel = require('../model/godmodel');
+const {uploadPath} = require("../middleware/fileupload")
 const toArray = require("../middleware/toArray")
+
 
 const GetAllGod = async (req, res) => {
     try {
@@ -109,7 +111,12 @@ const updateGod = async (req, res) => {
 
 
     try {
-        if (data.name != "" && data.description != "") {
+        if (data.name != "" && data.description != "" && data.name != "null" && data.description != "null" ) {
+            const imageFile = req.file?.filename;
+            console.log(req.file)
+            if (imageFile) {
+                data.image = uploadPath(req, imageFile);
+            }
             const god = await godmodel.updateGod(data);
             res.status(200).json(god[0]);
         } else {
