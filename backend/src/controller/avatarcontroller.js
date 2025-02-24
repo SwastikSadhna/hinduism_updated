@@ -76,12 +76,18 @@ const addAvatar = async (req, res) => {
 
     try {
         if (data.name != "" && data.yuga != "" && data.description != "", data.god_ref != "") {
+            const image = req.file?.["image"]?.at(0)?.filename;
+        
+            if (image) {
+                data.image = uploadPath(req, image);
+            }
             const avatar = await AvatarModel.AddAvatar({ ...data });
-            req.status(200).json(avatar[0]);
+            return res.status(200).json(avatar[0]);
         } else {
             return res.status(400).json({ error: "tample data not found" });
         }
     } catch (e) {
+        console.log(e)
         res.status(500).json({ error: e, message: "somethin gone wrong" });
     }
 }
@@ -90,7 +96,7 @@ const updateAvatar = async (req, res) => {
     const data = {
         id: req.body.id,
         name: req.body.name,
-        image: req.body.image,
+        image: '',
         yuga: req.body.yuga,
         book: req.body.book,
         description: req.body.description,
@@ -103,12 +109,18 @@ const updateAvatar = async (req, res) => {
 
     try {
         if (data.name != "" && data.yuga != "" && data.description != "", data.god_ref != "") {
+            const image = req.file?.["image"]?.at(0)?.filename;
+        
+            if (image) {
+                data.image = uploadPath(req, image);
+            }
             const avatar = await AvatarModel.UpdateAvatar({ ...data });
-            req.status(200).json(avatar[0]);
+            return res.status(200).json(avatar[0]);
         } else {
             return res.status(400).json({ error: "all fields required!" });
         }
     } catch (e) {
+        console.log(e)
         res.status(500).json({ error: e, message: "somethin gone wrong" });
     }
 }

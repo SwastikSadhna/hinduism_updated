@@ -8,12 +8,13 @@ const api = axios.create({
 
 const prepareFormData = (data: any) => {
     const formData = new FormData();
-    
+
     Object.keys(data).forEach((key) => {
-        if (key === "image" && data[key]?.rawFile) {
+        if (key === "cover_image" && data[key]?.rawFile) {
             formData.append(key, data[key].rawFile); 
-            return
+            return;
         } 
+
         if (key === "images" && Array.isArray(data[key])) {
             data[key].forEach((file) => {
                 if (file.rawFile) {
@@ -22,21 +23,33 @@ const prepareFormData = (data: any) => {
             });
             return;
         } 
+
         if (key === "importance" && Array.isArray(data[key])) {
-            // Flatten any nested arrays and stringify as JSON
-            const flatImportance = data[key].flat(Infinity); // Removes extra nesting
-            formData.append(key, JSON.stringify(flatImportance));
+            const formattedImportance = data[key].map((item) => {
+                const importanceItem: any = { ...item };
+
+                // If there's a file, append it separately
+                if (item.file?.rawFile) {
+                    formData.append("importance_files", item.file.rawFile); // Store separately
+                    importanceItem.file = item.file.rawFile.name; // Store filename in JSON
+                }
+
+                return importanceItem;
+            });
+
+            // Store structured data as JSON
+            formData.append("importance", JSON.stringify(formattedImportance));
             return;
         }
-        if (key === "cover_image" && data[key]?.rawFile) {
-            formData.append(key, data[key].rawFile); 
-        } else {
-            formData.append(key, data[key]);
-        }
+
+        // Default case for other fields
+        formData.append(key, data[key]);
     });
-    console.log(formData)
+
+    console.log("Prepared FormData:", formData);
     return formData;
 };
+
 
 const formatImageUrls = (data: any) => {
         data.image = `http://localhost:3000/${data.image}`;

@@ -87,37 +87,69 @@ const getChardhamTemples = async (req, res) => {
     }
 }
 
-const addTemple = async (req, res)=>{
-    try{
+const addTemple = async (req, res) => {
+    try {
+        console.log("Received Body:", req.body);
+        console.log("Received Files:", req.files);
+
         const data = {
-            name: req.body?.name,
-            description: req.body?.description,
-            cover_image: req.body?.cover_image,
-            map_url: req.body?.map_url,
-            reference_link: toArray(req.body?.reference_link) || [],
-            god: req.body?.god,
-            location: req.body?.location || '',
-            importance: toArray(req.body?.importance) || [],
-            keyword: toArray(req.body?.keyword) || [],
-            images: toArray(req.body?.images) || []
+            name: req.body.name,
+            description: req.body.description,
+            cover_image: req.body.cover_image,
+            map_url: req.body.map_url,
+            reference_link: toArray(req.body.reference_link) || [],
+            god: req.body.god,
+            location: req.body.location || '',
+            importance: [],
+            keyword: toArray(req.body.keyword) || [],
+            images: []
+        };
+
+        // Validate required fields
+        if (!data.name || !data.description) {
+            return res.status(400).json({ message: "Temple name and description are required fields." });
         }
 
-        if(data.name == "" || data.description == ""){
-            res.status(400).json({message: "Temple name and description are required fields."})
+        // Handle images and cover image uploads
+        const imageFiles = req.files?.["images"];
+        const coverImageFile = req.files?.["cover_image"]?.at(0)?.filename;
+        
+        if (imageFiles) {
+            data.images = uploadPath(req, imageFiles);
         }
-        else{
-            const temple = await Temple.addTemple({...data});
-            res.status(200).json(temple)
+        if (coverImageFile) {
+            data.cover_image = uploadPath(req, coverImageFile);
         }
-    }catch(e){
-        console.log(e)
-        res.status(500).json({message: "Error occurred while adding temple", error: e})
+
+        // Handle importance field (JSON + File Uploads)
+        const importanceJSON = toArray(req.body.importance, true) || [];
+        const importanceFiles = req.files?.["importance_files"] || [];
+
+        data.importance = importanceJSON.map((item, index) => {
+            if (importanceFiles[index]) {
+                item.file = uploadPath(req, importanceFiles[index].filename); // Save file path
+            }
+            return item;
+        });
+
+        data.importance = JSON.stringify(data.importance); // Convert importance to JSON string
+
+        console.log("Processed Data:", data);
+
+        // Add the temple record
+        const temple = await Temple.addTemple({ ...data });
+        res.status(200).json(temple);
+        
+    } catch (e) {
+        console.error("Error adding temple:", e);
+        res.status(500).json({ message: "Error occurred while adding temple", error: e });
     }
-}
+};
 
-const updateTemple = async (req, res)=>{
-    try{
-        console.log(req.body)
+
+const updateTemple = async (req, res) => {
+    try {
+
         const data = {
             name: req.body.name,
             description: req.body.description,
@@ -126,33 +158,47 @@ const updateTemple = async (req, res)=>{
             reference_link: toArray(req.body.reference_link),
             god: req.body.god,
             location: req.body.location,
-            importance: toArray(req.body.importance,true) || [],
+            importance: [], 
             keywords: req.body.keywords,
             images: []
-        }
+        };
+
         data.id = req.params.id;
-        if((data.name == "" || data.description == "") && (data.name == null || data.description)){
-            res.status(400).json({message: "Temple name and description are required fields."})
+
+        if (!data.name || !data.description) {
+            return res.status(400).json({ message: "Temple name and description are required fields." });
         }
-        else{
-            console.log(req.files)
-            const imagefilename = req.files && req.files["images"];
-            const coverimgfilename = req.files && req.files["cover_image"]?.at(0)?.filename;
-            if(imagefilename){
-                data.images = uploadPath(req,imagefilename);
-            }
-            if(coverimgfilename){
-                data.cover_image = uploadPath(req,coverimgfilename);
-            }
-            console.log(data)
-            const temple = await Temple.updateTemple({...data});
-            res.status(200).json(temple)
+
+        const imageFiles = req.files?.["images"];
+        const coverImageFile = req.files?.["cover_image"]?.at(0)?.filename;
+        
+        if (imageFiles) {
+            data.images = uploadPath(req, imageFiles);
         }
-    }catch(e){
-        console.log(e)
-        res.status(500).json({message: "Error occurred while updating temple", error: e})
+        if (coverImageFile) {
+            data.cover_image = uploadPath(req, coverImageFile);
+        }
+        const importanceJSON = toArray(req.body.importance, true) || [];
+        const importanceFiles = req.files?.["importance_files"] || [];
+
+        data.importance = importanceJSON.map((item, index) => {
+            if (importanceFiles[index]) {
+                item.file = uploadPath(req, importanceFiles[index].filename); // Save file path
+            }
+            return item;
+        });
+
+        data.importance = JSON.stringify(data.importance)
+
+        const temple = await Temple.updateTemple({ ...data });
+        res.status(200).json(temple);
+        
+    } catch (e) {
+        console.error("Error updating temple:", e);
+        res.status(500).json({ message: "Error occurred while updating temple", error: e });
     }
-}
+};
+
 
 const deleteTemple = async (req, res)=>{
     try{
