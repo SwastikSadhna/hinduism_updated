@@ -22,7 +22,7 @@ const AddBook = async (data) => {
 }
 
 const UpdateBook = async (data) => {
-    const result = await pool.query(bookquery.UpdateBook, [data._id, data.title, data.description, data.link, data.author, data.image, data.cover_image, data.keyword, data.year]);
+    const result = await pool.query(bookquery.UpdateBook, [data.id, data.title, data.description, data.link, data.author, data.image, data.cover_image, data.keyword, data.year]);
     return result.rows;
 }
 

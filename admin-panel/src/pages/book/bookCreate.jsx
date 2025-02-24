@@ -1,22 +1,22 @@
-import { ArrayInput, SimpleFormIterator, SimpleForm, TextInput,  Edit } from "react-admin";
+import { ArrayInput, SimpleFormIterator, SimpleForm, TextInput,  Create, ImageInput } from "react-admin";
 
 const bookCreate = () => {
-    return (<Edit>
+    return (<Create>
         <SimpleForm>
-            <TextField source="title" />
-            <TextField source="description" />
-            <TextField source="link" />
-            <TextField source="author" />
-            <TextField source="image" />
-            <TextField source="cover_image" />
-            <TextField source="year" />
+            <TextInput source="title" />
+            <TextInput source="description" />
+            <TextInput source="link" />
+            <TextInput source="author" />
+            <ImageInput source="image" />
+            <ImageInput source="cover_image" />
+            <TextInput source="year" />
             <ArrayInput source="keyword">
                 <SimpleFormIterator>
                     <TextInput source="keyword" />
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>
-    </Edit>)
+    </Create>)
 }
 
 export default bookCreate;

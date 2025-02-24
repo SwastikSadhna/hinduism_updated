@@ -6,7 +6,7 @@ const BookList = () =>{
 
     return (
     <List>
-        <Datagrid bulkActionButtons={hasPermission("delete", "book") && <BulkDeleteButton />}>
+        <Datagrid>
             <TextField source="id" />
             <TextField source="title" />
             <FunctionField label="description" render={(record) => `${record.description.substring(0, 50)}...`} />

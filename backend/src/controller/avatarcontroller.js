@@ -1,4 +1,5 @@
 const AvatarModel = require('../model/avatarmodel');
+const toArray = require("../middleware/toArray")
 
 const GetAllAvatars = async (req, res) => {
     try {
@@ -66,11 +67,11 @@ const addAvatar = async (req, res) => {
         yuga: req.body?.yuga || "",
         book: req.body?.book || "",
         description: req.body?.description || "",
-        festivals: req.body?.festivals || [],
-        temples: req.body?.temples || [],
+        festivals: toArray(req.body?.festivals) || [],
+        temples: toArray(req.body?.temples) || [],
         god_ref: req.body?.god_ref || "",
-        sloka: req.body?.sloka || [],
-        reference_links: req.body?.reference_links || [],
+        sloka: toArray(req.body?.sloka) || [],
+        reference_links: toArray(req.body?.reference_links) || [],
     }
 
     try {
@@ -93,11 +94,11 @@ const updateAvatar = async (req, res) => {
         yuga: req.body.yuga,
         book: req.body.book,
         description: req.body.description,
-        festivals: req.body.festivals,
-        temples: req.body.temples,
+        festivals: toArray(req.body.festivals),
+        temples: toArray(req.body.temples),
         god_ref: req.body.god_ref,
-        sloka: req.body.sloka,
-        reference_links: req.body.reference_links,
+        sloka: toArray(req.body.sloka),
+        reference_links: toArray(req.body.reference_links),
     }
 
     try {

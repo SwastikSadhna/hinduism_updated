@@ -14,7 +14,7 @@ const bhaktiCreate = () => {
             <TextInput source="author" />
             <ArrayInput source="reference_links">
                 <SimpleFormIterator>
-                    <TextInput source="reference_links" />
+                    <TextInput />
                 </SimpleFormIterator>
             </ArrayInput>
             <TextInput source="content" />

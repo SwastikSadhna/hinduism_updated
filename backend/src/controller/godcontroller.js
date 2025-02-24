@@ -1,4 +1,5 @@
 const godmodel = require('../model/godmodel');
+const toArray = require("../middleware/toArray")
 
 const GetAllGod = async (req, res) => {
     try {
@@ -77,7 +78,7 @@ const addGod = async (req, res) => {
         name: req.body.name,
         description: req.body?.description || "",
         image: req.body?.image || "",
-        keyword: req.body?.keyword || [],
+        keyword: toArray(req.body?.keyword) || [],
     }
     console.log(data)
 
@@ -102,7 +103,7 @@ const updateGod = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         image: req.body.image,
-        keyword: req.body.keyword || [],
+        keyword: toArray(req.body.keyword) || [],
     }
     console.log(data)
 
