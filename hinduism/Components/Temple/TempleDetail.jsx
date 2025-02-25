@@ -1,37 +1,38 @@
 import { imageDetails } from "../../resources"
 import { useMemo } from "react"
+import API_CONFIG from "../../src/config/api"
 
 const templeSpecialities = [
   {
-    resource: imageDetails.Rathyatra.src,
+    file: imageDetails.Rathyatra.src,
     title: "Rath Yatra (Chariot Festival)",
     description: "An annual festival where grand chariots carry the idols of Lord Jagannath, Balabhadra, and Subhadra.",
   },
   {
-    resource: "https://example.com/world-largest-kitchen.mp4",
+    file: "https://example.com/world-largest-kitchen.mp4",
     title: "World's Largest Kitchen",
     description:
       "The temple's kitchen can prepare meals for over 100,000 devotees daily, following ancient traditions.",
   },
   {
-    resource: null,
+    file: null,
     title: "Mystical Flag Ritual",
     description:
       "The flag atop the temple flies in the opposite direction of the wind, a phenomenon yet to be explained.",
   },
   {
-    resource: imageDetails.Rathyatra.src,
+    file: imageDetails.Rathyatra.src,
     title: "No Shadow of the Temple",
     description: "At any time of the day, the temple's shadow is not visible, adding to its mystical aura.",
   },
   {
-    resource: "https://example.com/sacred-wooden-idols.mp4",
+    file: "https://example.com/sacred-wooden-idols.mp4",
     title: "Sacred Wooden Idols",
     description:
       "The deities are carved from sacred neem wood and are replaced every 12 years during the Nabakalebara ritual.",
   },
   {
-    resource: null,
+    file: null,
     title: "Mahaprasad",
     description: "The temple offers Mahaprasad, a divine meal cooked in earthen pots using unique methods.",
   },
@@ -43,8 +44,8 @@ const isVideo = (url) => /\.(mp4|webm|ogg)$/.test(url)
 export function TempleSpecialityGrid({importance}) {
   const sortedSpecialities = useMemo(() => {
     return [...templeSpecialities].sort((a, b) => {
-      if (a.resource && !b.resource) return -1
-      if (!a.resource && b.resource) return 1
+      if (a.file && !b.file) return -1
+      if (!a.file && b.file) return 1
       return 0
     })
   }, [])
@@ -70,18 +71,18 @@ export function TempleSpecialityGrid({importance}) {
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
-              {speciality.resource && (
+              {speciality.file && (
                 <div className="relative h-48 overflow-hidden">
-                  {isImage(speciality.resource) && (
+                  {isImage(speciality.file) && (
                     <img
-                      src={speciality.resource || "/placeholder.svg"}
+                      src={`${API_CONFIG.baseUrl}/${speciality.file}` || "/placeholder.svg"}
                       alt={speciality.title}
                       className="object-cover w-full h-full"
                     />
                   )}
-                  {isVideo(speciality.resource) && (
+                  {isVideo(speciality.file) && (
                     <video
-                      src={speciality.resource}
+                      src={`${API_CONFIG.baseUrl}/${speciality.file}`}
                       className="object-cover w-full h-full"
                       autoPlay
                       loop
@@ -91,8 +92,8 @@ export function TempleSpecialityGrid({importance}) {
                   )}
                 </div>
               )}
-              <div className={`p-6 ${!speciality.resource ? "h-full flex flex-col justify-center" : ""}`}>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">{speciality.title}</h3>
+              <div className={`p-6 ${!speciality.file ? "h-full flex flex-col justify-center" : ""}`}>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">{speciality.key} - {speciality.text}</h3>
                 <p className="text-gray-600">{speciality.description}</p>
               </div>
             </div>

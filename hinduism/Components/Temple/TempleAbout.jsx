@@ -1,5 +1,6 @@
 // import Image from "next/image"
 import { imageDetails } from "../../resources"
+import API_CONFIG from "../../src/config/api"
 
 export function About(props) {
   return (
@@ -8,7 +9,7 @@ export function About(props) {
         <div className="grid gap-8 md:grid-cols-2 md:gap-12">
           <div className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]">
             <img
-              src={props.image}
+              src={`${API_CONFIG.baseUrl}/${props.image}`}
               alt="Temple Architecture"
               width={600}
               height={400}

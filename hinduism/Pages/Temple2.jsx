@@ -19,8 +19,9 @@ export default function Home() {
       axios
         .get(`${API_CONFIG.baseUrl}/temples/${id}`)
         .then((res) => {
-          setTempleData(res.data);
-          setImages(res.data?.images || []);
+          console.log(res.data[0])
+          setTempleData(res.data[0]);
+          setImages(res.data[0]?.images?.map(image=>`${API_CONFIG.baseUrl}/${image}`) || []);
         })
         .catch((err) => {
           console.log(err.response?.data?.message || "An error occurred");
@@ -30,9 +31,9 @@ export default function Home() {
   
   return (
     <div className="min-h-screen">
-      <Header name={templeData?.name} location={templeData?.location} image={ templeData?.cover_image} />
-      <About name={templeData?.name} description={templeData?.description} image={templeData?.images == null? imageDetails.Temple.src: templeData?.images?.at(0) } />
-      <ImageSlider images={templeData?.images == null || templeData?.images?.length == 0? [imageDetails.Temple.src]: templeData?.images} />
+      <Header name={templeData?.name} location={templeData?.location} image={ `${API_CONFIG.baseUrl}/${templeData?.cover_image}`} />
+      <About name={templeData?.name} description={templeData?.description} image={ templeData?.images?.length < 1? imageDetails.Temple.src: templeData?.images?.at(0) } />
+      <ImageSlider images={images} />
       <TempleSpecialityGrid importance={templeData?.importance == null ? []: templeData?.importance} />
       {/* <Footer /> */}
     </div>
