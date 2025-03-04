@@ -2,7 +2,9 @@ const Sloka = require("../controller/slokacontroller")
 const express = require("express")
 const router = express.Router();
 const {verifyToken, checkPermission} = require("../middleware/authentication")
-const {upload} = require("../middleware/fileupload")
+const {upload} = require("../middleware/fileupload");
+const { limitdata } = require("../middleware/limitdata");
+
 
 router.get("/", Sloka.getAllSloka)
 router.get("/keywords", Sloka.slokaKeywords)

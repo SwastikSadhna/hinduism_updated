@@ -18,6 +18,7 @@ const path = require("path");
 
 app.use(cors({
     origin: "*",
+    exposedHeaders: ["X-Total-Count"], 
 }))
 
 app.use(express.json())
