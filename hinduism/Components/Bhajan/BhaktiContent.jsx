@@ -32,9 +32,13 @@ export default function Content() {
           />
         </div>
 
-        {/* Right side Bhajan Content with scrollable text */}
-        <div className="w-2/3 bg-[#f5e6d3] rounded-lg p-6 shadow-sm h-[50vh] overflow-y-auto flex flex-col items-center">
-          <div className="space-y-4 text-gray-800 text-center">
+        {/* Right side Bhajan Content with dynamic background */}
+        <div
+          className={`w-2/3 rounded-lg p-6 shadow-sm h-[50vh] overflow-y-auto flex flex-col items-center transition-all duration-300 ${
+            bhajanContent.length === 0 ? "text-white" : "bg-[#f5e6d3] text-gray-800"
+          }`}
+        >
+          <div className="space-y-4 text-center">
             {bhajanContent.length > 0 ? (
               bhajanContent.map((line, index) => <p key={index}>{line}</p>)
             ) : (
@@ -48,16 +52,6 @@ export default function Content() {
           </div>
         </div>
       </div>
-
-      {/* Show download button only when content is empty */}
-      {bhajanContent.length === 0 && (
-        <button
-          onClick={handleDownload}
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-        >
-          Download Bhajan
-        </button>
-      )}
     </div>
   );
 }
