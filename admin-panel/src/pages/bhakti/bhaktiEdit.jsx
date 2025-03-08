@@ -1,4 +1,4 @@
-import {Edit, SimpleForm, TextInput, ReferenceInput,ArrayInput, SimpleFormIterator, NumberInput, ImageInput} from "react-admin"
+import {Edit, SimpleForm, TextInput, ReferenceInput,ArrayInput, SimpleFormIterator, FileInput, ImageInput} from "react-admin"
 
 const BhaktiEdit = () => (
   <Edit>
@@ -11,6 +11,7 @@ const BhaktiEdit = () => (
                 </SimpleFormIterator>
             </ArrayInput>
             <ImageInput source="image" />
+            <FileInput source="file" />
             <TextInput source="author" />
             <ArrayInput source="reference_links">
             <SimpleFormIterator>

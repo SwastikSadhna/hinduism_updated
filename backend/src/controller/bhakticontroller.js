@@ -91,14 +91,19 @@ const AddBhakti = async (req, res) => {
             content: req.body?.content || "",
             author: req.body?.author || "",
             reference_links: toArray(req.body?.reference_links) || [],
-            image: ''
+            image: '',
+            file:''
         }
-        console.log(data)
-        if (data.title != "" && data.content != "" && data.category != "") {
+        console.log(req.files)
+        if (data.title != ""  && data.category != "") {
             
-            const filename = req.file?.filename;
-            if(filename){
-                data.image = uploadPath(req,filename);
+            const image = req.files?.["image"]?.at(0)?.filename;
+            const file = req.files?.["file"]?.at(0)?.filename;
+            if(image){
+                data.image = uploadPath(req,image);
+            }
+            if(file){
+                data.file = uploadPath(req,file);
             }
 
             const bhakti = await BhaktiModel.AddBhakti({ ...data })
@@ -135,17 +140,20 @@ const UpdateBhakti = async (req, res) => {
         content: req.body.content,
         author: req.body.author,
         reference_links: toArray(req.body?.reference_links) || [],
+        file:''
     }
-    console.log(data)
-   
     try {
-        if ((data.title != "" && data.content != "" && data.category != "") 
+        if ((data.title != "" && data.category != "") 
             && (data.title != 'null' && data.content != 'null')) {
-            const filename = req.file?.filename;
-            if(filename){
-                data.image = uploadPath(req,filename);
+            const image = req.files?.["image"]?.at(0)?.filename;
+            const file = req.files?.["file"]?.at(0)?.filename;
+            if(image){
+                data.image = uploadPath(req,image);
             }
-            console.log(data)
+            if(file){
+                data.file = uploadPath(req,file);
+            }
+            console.log(req.files)
             const bhakti = await BhaktiModel.UpdateBhakti({ ...data })
             res.status(200).json(bhakti[0]);
         }

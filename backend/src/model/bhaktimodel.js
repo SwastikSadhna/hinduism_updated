@@ -27,7 +27,7 @@ const FilterBhakti = async (query) => {
 }
 
 const AddBhakti = async (data) =>{
-    const result = await pool.query(bhaktiquery.AddBhakti, [data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links])
+    const result = await pool.query(bhaktiquery.AddBhakti, [data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links, data.file])
     return result.rows;
 }
 
@@ -37,7 +37,7 @@ const DeleteBhakti = async (id) =>{
 }
 
 const UpdateBhakti = async (data)=>{
-    const result = await pool.query(bhaktiquery.UpdateBhakti, [data.id, data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links])
+    const result = await pool.query(bhaktiquery.UpdateBhakti, [data.id, data.title, data.description, data.keyword, data.image, data.category, data.content, data.author, data.reference_links, data.file])
     return result.rows;
 }
 

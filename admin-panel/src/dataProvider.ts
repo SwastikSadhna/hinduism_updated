@@ -21,6 +21,11 @@ const prepareFormData = (data: any) => {
             return;
         }
 
+        if (key === "file" && data[key]?.rawFile) {
+            formData.append(key, data[key].rawFile);
+            return;
+        }
+
         if (key === "images" && Array.isArray(data[key])) {
             data[key].forEach((file) => {
                 if (file.rawFile) {

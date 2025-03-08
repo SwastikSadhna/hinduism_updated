@@ -12,6 +12,7 @@ const BhaktiShow = () => {
             <TextField source="description" />
             <TextField source="keyword" />
             <TextField source="image" />
+            <TextField source="file" />
             <TextField source="author" />
             <TextField source="reference_links" />
             <TextField source="content" />
