@@ -19,6 +19,7 @@ import Shlok from "../Pages/Shlok";
 import { ContentProvider } from "../Components/Bhakti/ContentContext";
 import Templepage from "../Components/Home/Templepage";
 import VishnuAvatarsApp from '../Pages/Avatar';
+import Bhajan from "../Pages/Bhajan"
 import Granth from "../Components/Granth/Granth";
 import ShlokaPage from "../Components/ALL-SHLOKAS/ShlokaPage"; // Import ShlokaPage
 
@@ -37,8 +38,8 @@ function App() {
                         <Route path="/About" element={<About />} />
                         <Route path="/Bhakti" element={<Bhakti />} />
                         <Route path="/Routine/Shlok" element={<Shlok />} />
-                        <Route path="/Bhakti/*" element={<BhaktiLayout />}>
-                            <Route path="bhajans" element={<BhajanContent />} />
+                        <Route path="/Bhakti/*" element={<BhaktiLayout />} />
+                            <Route path="bhajans" element={<BhajanContent />} >
                             <Route path="duha" element={<DuhaContent />} />
                             <Route path="chhand" element={<ChhandContent />} />
                             <Route path="vedas" element={<VedaContent />} />
@@ -46,6 +47,7 @@ function App() {
                         </Route>
                         <Route path="/Granth/Granth" element={<Granth />} />
                         <Route path="/ALL-SHLOKAS/ShlokaPage" element={<ShlokaPage />} /> {/* Route to ShlokaPage */}
+                            <Route path="Bhajan" element={<Bhajan />} />
                         <Route path="/Templepage" element={<Templepage />} />
                         <Route path="/Avatar" element={<VishnuAvatarsApp />} />
                     </Routes>
