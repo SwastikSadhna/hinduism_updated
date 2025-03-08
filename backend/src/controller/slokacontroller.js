@@ -4,15 +4,29 @@ const {uploadPath} = require("../middleware/fileupload")
 
 const getAllSloka = async (req, res) => {
     try {
-        const sloka = await Sloka.getAllSloka();
-        if (sloka.length > 0)
-            res.status(200).json(sloka);
-        else
+        let { _page, _limit } = req.query;
+
+        page = parseInt(_page) || 1;
+        perPage = parseInt(_limit) || 10;
+
+        const offset = (page - 1) * perPage;
+        const limit = perPage;
+
+        const { data, total } = await Sloka.getAllSloka(limit, offset);
+
+        if (data.length > 0) {
+            
+            res.set("X-Total-Count", total.toString());  // Needed for React-Admin
+            res.status(200).json(data);
+        } else {
             res.status(404).json({ message: "No sloka found" });
+        }
     } catch (err) {
+        console.error(err);
         res.status(500).json({ message: "Error fetching sloka" });
     }
-}
+};
+
 
 const getSlokadetails = async (req, res) => {
     try {

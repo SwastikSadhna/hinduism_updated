@@ -11,73 +11,93 @@ const prepareFormData = (data: any) => {
 
     Object.keys(data).forEach((key) => {
         if (key === "cover_image" && data[key]?.rawFile) {
-            formData.append(key, data[key].rawFile); 
+            formData.append(key, data[key].rawFile);
             return;
-        } 
+        }
 
         if (key === "image" && data[key]?.rawFile) {
-            formData.append(key, data[key].rawFile); 
+            formData.append(key, data[key].rawFile);
             return;
-        } 
+        }
 
         if (key === "images" && Array.isArray(data[key])) {
             data[key].forEach((file) => {
                 if (file.rawFile) {
-                    formData.append(key, file.rawFile); // Append each file separately
+                    formData.append(key, file.rawFile);
                 }
             });
             return;
-        } 
+        }
 
         if (key === "importance" && Array.isArray(data[key])) {
             const formattedImportance = data[key].map((item) => {
                 const importanceItem: any = { ...item };
 
-                // If there's a file, append it separately
                 if (item.file?.rawFile) {
-                    formData.append("importance_files", item.file.rawFile); // Store separately
-                    importanceItem.file = item.file.rawFile.name; // Store filename in JSON
+                    formData.append("importance_files", item.file.rawFile);
+                    importanceItem.file = item.file.rawFile.name;
                 }
 
                 return importanceItem;
             });
 
-            // Store structured data as JSON
             formData.append("importance", JSON.stringify(formattedImportance));
             return;
         }
 
-        // Default case for other fields
         formData.append(key, data[key]);
     });
 
-    console.log("Prepared FormData:", formData);
     return formData;
 };
 
-
 const formatImageUrls = (data: any) => {
+    if (data.image) {
         data.image = `http://localhost:3000/${data.image}`;
-        data.cover_image = `http://localhost:3000/${data.cover_image}`; 
-        if(data.images)
-            data.images = data.images.map((image)=> `http://localhost:3000/${image}`)
+    }
+    if (data.cover_image) {
+        data.cover_image = `http://localhost:3000/${data.cover_image}`;
+    }
+    if (data.images) {
+        data.images = data.images.map((image: string) => `http://localhost:3000/${image}`);
+    }
     return data;
 };
 
 const dataProvider = {
     getList: async (resource: string, params: any) => {
-        const { data } = await api.get(`/${resource}`, {
-            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+        const { page, perPage } = params.pagination;
+        const { field, order } = params.sort;
+
+        const query = new URLSearchParams({
+            _page: String(page),
+            _limit: String(perPage),
+            _sort: field,
+            _order: order,
         });
+
+        // Apply filters dynamically
+        if (params.filter) {
+            Object.keys(params.filter).forEach((key) => {
+                query.append(key, params.filter[key]);
+            });
+        }
+
+        const url = `/${resource}?${query.toString()}`;
+        const { data, headers } = await api.get(url, {
+            headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` },
+        });
+
+        console.log(headers)
+
         return {
-            data: data, // List of records
-            total: data.length, // Total count
+            data: data.map(formatImageUrls),
+            total: parseInt(headers["x-total-count"], 10) || data.length,
         };
     },
-
     getOne: async (resource: string, params: { id: number }) => {
         const { data } = await api.get(`/${resource}/${params.id}`, {
-            headers: { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
+            "headers": { "authorization": `Bearer ${JSON.parse(localStorage.getItem("auth"))?.token}` }
         });
         return { data: data[0] };
     },

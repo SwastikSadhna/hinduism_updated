@@ -2,10 +2,15 @@ const { getFilterQuery } = require("../middleware/filterHelper");
 const slokaquery = require("../query/slokaqueries")
 const pool = require("../db")
 
-const getAllSloka = async () => {
-    const sloka = await pool.query(slokaquery.GetAllSloka);
-    return sloka.rows;
-}
+const getAllSloka = async (limit, offset) => {
+    const slokaData = await pool.query(slokaquery.GetAllSloka, [limit, offset]);
+    const totalCount = await pool.query(`SELECT COUNT(*) FROM public."slokas"`);
+
+    return {
+        data: slokaData.rows,
+        total: parseInt(totalCount.rows[0].count, 10),
+    };
+};
 
 const GetSlokaDetails = async (id) => {
     const sloka = await pool.query(slokaquery.GetSlokaDetails, [id]);
