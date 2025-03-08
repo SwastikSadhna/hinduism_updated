@@ -8,7 +8,7 @@ const GranthitemShow = () => (
             <TextField source="description" />
             <ImageField source="image" />
             <TextField source="link" />
-            <ReferenceField source="granth_id" reference="granths" />
+            <TextField source="granth_id" />
             <TextField source="author" />
             <TextField source="year" />
         </SimpleShowLayout>

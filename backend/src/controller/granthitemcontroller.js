@@ -5,7 +5,7 @@ const getGranthItems = async (req, res) => {
         const id = req.params.id
         const items = await GranthModel.getGranthItems(id)
         if (items.length > 0)
-            res.status(200).json({ message: "Granthitems retrieved successfully", count: items.length, data: items })
+            res.status(200).json(items)
         else
             res.status(404).json({ message: "No items found" })
     }
@@ -41,10 +41,10 @@ const searchItem = async (req, res) => {
     }
 }
 
-const addGranthItem = async() => {
+const addGranthItem = async(req, res) => {
     try {
         const data = {
-            title: req.body?.title,
+            title: req.body?.title || '',
             description: req.body?.description || '',
             image: '',
             link: req.body?.link || '',
@@ -53,18 +53,22 @@ const addGranthItem = async() => {
             year: req.body?.year || '',
         }
 
+        console.log(data)
+
         if(data.name != "" && data.description != "") {
             const result = await GranthModel.addGranthItem({...data});
+            // console.log(result);
             res.status(200).json(result[0]);
         } else {
             res.status(400).json({message: "granthItem data not found"});
         }
     } catch(error) {
-        res.status(500).json({message: "something gone wrong"});
+        console.log(error)
+        res.status(500).json({message: "something gone wrong", error: error});
     }
 }
 
-const updateGranthItem = async() => {
+const updateGranthItem = async(req, res) => {
     try {
         const data = {
             id: req.params.id,
@@ -87,7 +91,7 @@ const updateGranthItem = async() => {
     }
 }
 
-const deleteGranthItem = async() => {
+const deleteGranthItem = async(req, res) => {
     try {
         const result = await GranthModel.deleteGranthItem(req.params.id);
         res.status(200).json({message: "granthItem deleted successfully"});

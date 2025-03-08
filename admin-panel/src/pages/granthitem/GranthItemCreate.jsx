@@ -7,7 +7,7 @@ const GranthitemCreate = () => (
             <TextInput source="description" />
             <TextInput source="image" />
             <TextInput source="link" />
-            <ReferenceInput source="granth_id" reference="granths" />
+            <ReferenceInput source="granth_id" reference="granth" />
             <TextInput source="author" />
             <TextInput source="year" />
         </SimpleForm>

@@ -85,13 +85,21 @@ const App = () => {
                 </CustomRoutes>
 
                 {hasPermission("read","bhakti") && <Resource name="bhakti" list={bhaktiList} show={bhaktiShow} create={hasPermission('create','bhakti') && bhaktiCreate} edit={hasPermission('update','bhakti') && BhaktiEdit} icon={AutoStoriesIcon} />}
+
                 {hasPermission("read","bhakticategory") && <Resource name="bhakti-categories" list={CategoryList} show={CategoryShow} create={hasPermission("create","bhakticategory") && CategoryCreate} edit={hasPermission("update","bhakticategory") && CategoryEdit} icon={CategoryIcon} />}
+
                 {hasPermission("read","book") && <Resource name="book" list={bookList} show={BookShow} create={<BookCreate />} edit={hasPermission("update","book") && <BookEdit />} icon={BookIcon} />}
+
                 {hasPermission("read","temple") &&<Resource name="temples" list={TempleList} show={TempleShow} edit={hasPermission('update','temple') && <TempleEdit />} create={hasPermission('create','temple') && TempleCreate} icon={TempleHinduIcon} />}
+
                 {hasPermission("read","avatar") &&<Resource name="avatar" list={avatarList} show={AvatarShow} create={hasPermission("create","avatar") && AvatarCreate} edit={hasPermission("update","avatar") && AvatarEdit} icon={PersonIcon} />}
+
                 {hasPermission("read","god") && <Resource name="god" list={GodList} show={GodShow} create={hasPermission('create', 'god') && GodCreate} edit={hasPermission('update','god') && GodEdit} icon={CollectionsBookmarkIcon} />}
+
                 {hasPermission("read","sloka") && <Resource name="sloka" list={SlokaList} show={SlokaShow} create={hasPermission('create','sloka') && SlokaCreate} edit={hasPermission("update",'sloka') && SlokaEdit}  icon={MenuBookIcon} />}
+                
                 {hasPermission("read","granth") && <Resource name="granth" list={GranthList} show={GranthShow} create={hasPermission('create','granth') && GranthCreate} edit={hasPermission('update','granth') && GranthEdit} icon={LibraryBooksIcon} />}
+                
                 {hasPermission("read","granthitem") && <Resource name="granthitem" list={GranthItemList} show={GranthItemShow} create={hasPermission('create','granthitem') && GranthItemCreate} edit={hasPermission('update','granthitem') && GranthItemEdit} icon={LibraryBooksIcon} />}
                 
             </Admin>

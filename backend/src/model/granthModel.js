@@ -13,6 +13,7 @@ const getGranthDetails = async (id) => {
 
 const addGranth = async (data) => {
     const result = await pool.query(granthQuery.AddGranth, [data.title, data.description, data.image]);
+    console.log(result.rows)
     return result.rows;
 }
 
@@ -23,6 +24,7 @@ const updateGranth = async (data) => {
 
 const deleteGranth = async(id) => {
     const result = await pool.query(granthQuery.DeleteGranth, [id]);
+    console.log(result.rows)
     return result.rows;
 }
 

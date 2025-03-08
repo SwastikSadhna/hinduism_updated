@@ -5,7 +5,7 @@ const GranthEdit = () => (
         <SimpleForm>
             <TextInput source="title" />
             <TextInput source="description" />
-            <ImageInput source="images" />
+            <ImageInput source="image" />
         </SimpleForm>
     </Edit>
 );

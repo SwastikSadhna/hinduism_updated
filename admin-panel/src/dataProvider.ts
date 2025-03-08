@@ -16,6 +16,7 @@ const prepareFormData = (data: any) => {
         }
 
         if (key === "image" && data[key]?.rawFile) {
+        console.log(key)
             formData.append(key, data[key].rawFile);
             return;
         }
@@ -48,6 +49,7 @@ const prepareFormData = (data: any) => {
         formData.append(key, data[key]);
     });
 
+    console.log(formData)
     return formData;
 };
 
@@ -104,6 +106,7 @@ const dataProvider = {
 
     create: async (resource: string, params: { data: any }) => {
         const formData = prepareFormData(params.data);
+        console.log(params.data)
 
         const { data } = await api.post(`/${resource}`, formData, {
             headers: { 
