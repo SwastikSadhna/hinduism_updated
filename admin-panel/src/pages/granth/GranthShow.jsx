@@ -6,7 +6,7 @@ const GranthShow = () => (
             <TextField source="id" />
             <TextField source="title" />
             <TextField source="description" />
-            <ImageField source="images" />
+            <ImageField source="image" />
         </SimpleShowLayout>
     </Show>
 );

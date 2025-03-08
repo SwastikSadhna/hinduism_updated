@@ -5,7 +5,7 @@ const GranthCreate = () => (
         <SimpleForm>
             <TextInput source="title" />
             <TextInput source="description" />
-            <ImageInput source="images" />
+            <ImageInput source="image" />
         </SimpleForm>
     </Create>
 );

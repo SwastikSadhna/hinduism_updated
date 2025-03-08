@@ -18,6 +18,7 @@ const geTAllGranthItems = async () => {
 
 const addGranthItem = async(data) => {
     const items = await pool.query(queries.AddGranthItem, [data.title, data.description, data.image, data.link, data.granth_id, data.author, data.year]);
+    console.log(items.rows);
     return items.rows;
 }
 

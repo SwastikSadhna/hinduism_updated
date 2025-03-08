@@ -19,9 +19,7 @@ const getGranthDetails = async (req, res) => {
         const id = req.params.id;
         const result = await granthModel.getGranthDetails(id);
         if (result.length > 0) {
-            const items = await getGranthItems(id);
-            console.log(result[0])
-            res.status(200).json({ granth: result[0], items: items })
+            res.status(200).json(result)
         }
         else
             res.status(404).json({ message: "No granth found" })
@@ -33,16 +31,18 @@ const getGranthDetails = async (req, res) => {
 const addGranth = async (req, res) => {
     try {
         const data = {
-            title: req.body.title,
+            title: req.body?.title || '',
             description: req.body?.description || '',
-            image: req.body?.image || '',
+            image: '',
         }
+        console.log(req.body)
 
         if (data.title != "" && data.description != "") {
             const result = await granthModel.addGranth({ ...data });
             res.status(200).json(result[0]);
         } else {
             res.status(404).json({ message: "granth not found" });
+            console.log("yoyo")
         }
     } catch (error) {
         res.status(500).json({ error: error, message: "something gone wrong" });
@@ -71,7 +71,7 @@ const updateGranth = async (req, res) => {
 
 const deleteGranth = async (req, res) => {
     try {
-        const result = await granthModel.deleteGranth({...data});
+        const result = await granthModel.deleteGranth(req.params.id);
         res.status(200).json({message: "granth deleted successfuly"});
     } catch(error) {
         res.status(500).json({ error: error, message: "something gone wrong" });
