@@ -7,7 +7,7 @@ import Loading from '../../../Pages/Loading'
 import ErrorPage from '../../../Pages/ErrorPage'
 import { useParams } from 'react-router-dom'
 
-export default function BhajanContent() {
+export default function SmritiContent() {
 
   const { activeCategory, handleFilter } = useContent()
   const [bhajans, setBhajans] = new useState([])
@@ -15,7 +15,7 @@ export default function BhajanContent() {
   
 
   useEffect(() => {
-    axios.get(API_CONFIG.baseUrl + "/bhakti/type/3").then((res) => {
+    axios.get(API_CONFIG.baseUrl + "/bhakti/type/12").then((res) => {
         console.log(res.data)
         setBhajans(res.data)
         setIsLoading(false)

@@ -46,6 +46,7 @@ export default function DuhaContent() {
   return (
     <div className="space-y-4">
       {isLoading == true? <Loading /> :duhas?.length > 0 ? duhas?.map((duha, index) => (
+        <a href={`/Bhakti/View/${duha.id}`} >
         <div
           key={index}
           className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
@@ -66,6 +67,7 @@ export default function DuhaContent() {
             </button>
           </div>
         </div>
+        </a>
       )) : <ErrorPage code={404} message={"No Items Found"}/> }
     </div>
   )

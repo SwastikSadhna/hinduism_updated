@@ -22,6 +22,7 @@ import VishnuAvatarsApp from "../Pages/Avatar";
 import Bhajan from "../Pages/Bhajan";
 import Granth from "../Components/Granth/Granth";
 import ShlokaPage from "../Components/ALL-SHLOKAS/ShlokaPage"; // Import ShlokaPage
+import SmritiContent from "../Components/Bhakti/Content/SmritiContent";
 
 function App() {
   return (
@@ -40,12 +41,13 @@ function App() {
             <Route path="/Routine/Shlok" element={<Shlok />} />
             <Route path="/Bhakti/*" element={<BhaktiLayout />}>
               <Route path="bhajans" element={<BhajanContent />} />
-              <Route path="bhajans/:id" element={<Bhajan />} />{" "}
+              <Route path="View/:id" element={<Bhajan />} />{" "}
               {/* Dynamic Bhajan Route */}
               <Route path="duha" element={<DuhaContent />} />
               <Route path="chhand" element={<ChhandContent />} />
               <Route path="vedas" element={<VedaContent />} />
               <Route path="devtas" element={<DevtasContent />} />
+              <Route path="Smriti" element={<SmritiContent />} />
             </Route>
             <Route path="/Granth/Granth" element={<Granth />} />
             <Route

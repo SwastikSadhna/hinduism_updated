@@ -88,6 +88,7 @@ export default function DeviDevtasContent() {
       {/* Devi Devas Details */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {devtas.map((deva, index) => (
+          <a href={`/Bhakti/View/${deva.id}`} >
           <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
             <div className="mb-3">
               <h3 className="font-semibold text-xl flex items-center">
@@ -113,8 +114,10 @@ export default function DeviDevtasContent() {
               />
             </div>
           </div>
+          </a>
         ))}
       </div>
     </div>
+    
   );
 }

@@ -26,7 +26,7 @@ export default function Sidebar() {
     { id: '33 Koti Devtas', name: '33 Koti Devtas', icon: <FaOm />, path: '/Bhakti/Devtas' },
     { id: 'vedas', name: 'Vedas', icon: <FaScroll />, path: '/Bhakti/Vedas' },
     { id: '108 Upnisads', name: 'Upnisads', icon: <FaBook />, path: '/Bhakti/Upnisads' },
-    { id: 'Smritis', name: 'Smritis', icon: <FaPrayingHands />, path: '/Bhakti/Smritis' },
+    { id: 'Smritis', name: 'Smritis', icon: <FaPrayingHands />, path: '/Bhakti/Smriti' },
   ]
 
   const handleCategoryClick = (category) => {

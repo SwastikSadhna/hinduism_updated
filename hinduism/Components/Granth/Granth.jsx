@@ -30,15 +30,15 @@ export default function GranthPage() {
       {/* Main Content (Right) */}
       {isLoading ? <div className="block w-full"><Loading /></div> : <main className="flex-1 p-8 overflow-y-auto w-full">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold text-orange-500 mb-4">{granth.title}</h1>
+          <h1 className="text-3xl font-bold text-orange-500 mb-4">{granth?.title}</h1>
           <p className="text-gray-600 mb-8">
-            {granth.description}
+            {granth?.description}
           </p>
 
           {/* List of Granth Items */}
-          {granthitem.length > 0 ? (
+          {granthitem?.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {granthitem.map((item) => (
+              {granthitem?.map((item) => (
                 <ItemCard item={item} setSelectedItem={setSelectedItem} key={item.id}/>
               ))}
             </div>
