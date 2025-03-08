@@ -2,7 +2,7 @@ import { IoInformationCircleOutline } from "react-icons/io5"
 
 export default function Header() {
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white z-10 p-4 border-b">
+    <div className="top-0 left-0 right-0 bg-white z-10 p-4 border-b">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-2xl font-semibold text-center mb-2">Bhakti Title</h1>
         <p className="text-gray-600 text-center text-sm mb-2">Bhajan short description. About the bhajan or content.</p>
