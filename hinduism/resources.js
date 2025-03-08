@@ -56,10 +56,15 @@ import AshtangYoga from './src/Resources/Daily-Routine/Ashtanga Yoga.jpg'
 import YinYoga from './src/Resources/Daily-Routine/Yin Yoga.jpg'
 import HathaYoga from './src/Resources/Daily-Routine/Hatha Yoga.jpg'
 import Yoga from './src/Resources/Daily-Routine/Yoga.jpg'
+import Spiritual from "./src/Resources/Bhajan/Spiritual.png"
 import VinyasaYoga from './src/Resources/Daily-Routine/Vinyasa Yoga.jpg'
 
 const images = [Rammandir, logo, loading, carousel2, Dhwarika, Rameshwaram, Jagganathpuri, Badrinath, Sanatan, Brahma, Vishnu, Shiv, Temple, HeroImage];
 const imageDetails = {
+    Spiritual:{
+        src: Spiritual,
+        alt: "Spiritual Image",
+    },
     Yoga:{
         src : Yoga,
         alt : "Yoga Image",
