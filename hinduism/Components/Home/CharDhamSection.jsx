@@ -43,11 +43,7 @@ export default function CharDhamSection() {
       
       temp.forEach((temple, index) => {
         if(temple.cover_image){
-          if(temple.cover_image.startsWith("http")){
-            temp[index].cover_image = temple.cover_image
-          }else{
-              temp[index].cover_image = API_CONFIG.baseUrl + temp[index].cover_image
-          }
+              temp[index].cover_image = `${API_CONFIG.baseUrl}/${temp[index].cover_image}`
         }
       })
       console.log(temp)

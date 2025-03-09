@@ -159,11 +159,12 @@ const updateTemple = async (req, res) => {
             god: req.body.god,
             location: req.body.location,
             importance: [], 
-            keywords: req.body.keywords,
+            keyword: toArray(req.body.keyword),
             images: []
         };
 
         data.id = req.params.id;
+        console.log(req.body)
 
         if (!data.name || !data.description) {
             return res.status(400).json({ message: "Temple name and description are required fields." });

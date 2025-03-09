@@ -36,7 +36,7 @@ const TempleEdit = () => (
 
             <ArrayInput source="keyword">
                 <SimpleFormIterator>
-                    <TextInput source="word" />
+                    <TextInput  />
                 </SimpleFormIterator>
             </ArrayInput>
 
