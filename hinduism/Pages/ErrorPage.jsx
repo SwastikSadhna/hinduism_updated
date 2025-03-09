@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { imageDetails } from "../resources";
 
-const ErrorPage = ({code, message}) => {
+const ErrorPage = ({code = 500, message = "Internal Server Error"}) => {
     return <div className="flex flex-col items-center justify-center bg-gray-50 text-foreground p-4 w-full">
     <div className="w-full max-w-md text-center align-center">
       <img src={imageDetails.error.src} width={200} className="ml-12"></img>

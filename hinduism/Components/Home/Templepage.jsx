@@ -69,7 +69,7 @@ export default function Templepage() {
 
   return (
     <>
-    {isLoading || error ? isLoading ? <Loading />: <ErrorPage code={404} message={"Temples not found"} />: 
+    {isLoading || error ? isLoading ? <Loading />: <ErrorPage code={500} message={"Internal Server Error"} />: 
     <div className="relative min-h-screen bg-gray-900">
       {/* Main Slider */}
       

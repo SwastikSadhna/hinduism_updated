@@ -12,6 +12,7 @@ export default function SmritiContent() {
   const { activeCategory, handleFilter } = useContent()
   const [bhajans, setBhajans] = new useState([])
   const [isLoading, setIsLoading] = new useState(true)
+  const [error, setError] = new useState(false)
   
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function SmritiContent() {
     }).catch((err) => {
       console.log(err)
       setIsLoading(false)
+      setError(true)
       })
   },[])
 
@@ -30,9 +32,10 @@ export default function SmritiContent() {
   }, [activeCategory])
 
   return (
+    <>
+    {isLoading || error ? isLoading ? <Loading />: <ErrorPage /> :
     <div className="space-y-4">
-      {isLoading == true ? <Loading /> :
-        bhajans?.length > 0? bhajans?.map((bhajan) => (
+       { bhajans?.length > 0? bhajans?.map((bhajan) => (
         <a href={`/Bhakti/View/${bhajan.id}`} >
         <div
           key={bhajan.title}
@@ -57,9 +60,10 @@ export default function SmritiContent() {
           </div>
         </div>
         </a>
-        )) : <ErrorPage code={404} message={"No Items Found"}/>
+        )) : <ErrorPage code={404} message={"No Items Found"}/>}
+        </div>
       }
-    </div>
+      </>
   )
 }
 
