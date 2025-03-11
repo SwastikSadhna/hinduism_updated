@@ -64,7 +64,7 @@ const FilterBhakti = async (req, res) => {
         if (Object.keys(req.query).length == 0) {
             return res.status(400).json({ message: "no filter applied, bad request" });
         }
-
+        console.log(req.query)
         const filter = req.query;
         const query = getFilterQuery(filter);
         const bhakti = await BhaktiModel.FilterBhakti(query);

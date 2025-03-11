@@ -28,7 +28,7 @@ export default function SmritiContent() {
   },[])
 
   useEffect(() => {
-      handleFilter("/bhakti/filter", setBhajans, 3)
+      handleFilter("/bhakti/filter", setBhajans, 12)
   }, [activeCategory])
 
   return (

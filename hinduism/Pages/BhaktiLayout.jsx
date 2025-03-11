@@ -20,12 +20,12 @@ export default function BhaktiLayout() {
   try {
     const response = await axios.get(API_CONFIG.baseUrl + "/bhakti/filter/options");
     const data = response.data[0];
-    const categories = Object.keys(data).map((key) => ({
+    const categories = Object.keys(data)?.map((key) => ({
       name: key,
       options: data[key],
     }));
 
-    const defaultCategories = Object.keys(data).map((key) => ({
+    const defaultCategories = Object.keys(data)?.map((key) => ({
       [key]: [],
     }));
 
@@ -42,8 +42,8 @@ export default function BhaktiLayout() {
   const handleCategoryChange = (option, categoryName) => {
     setTempFilters((prevFilters) => {
       const categoryFilters = prevFilters[categoryName] || [];
-      const updatedCategoryFilters = categoryFilters.includes(option)
-        ? categoryFilters.filter((item) => item !== option)
+      const updatedCategoryFilters = categoryFilters?.includes(option)
+        ? categoryFilters?.filter((item) => item !== option)
         : [...categoryFilters, option];
 
       return {
@@ -95,11 +95,11 @@ export default function BhaktiLayout() {
 
            {/* Filter options */}
 <div className="mb-4">
-  {filters.map(category => (
+  {filters?.map(category => (
     <div key={category.name} >
       <h3>{category.name}</h3>
       <div className='grid grid-cols-4'> 
-      {category.options.map(option => (
+      {category?.options?.map(option => (
         <div key={option}>
           <input
             type="checkbox"
