@@ -12,7 +12,7 @@ const vishnuAvatars = [
     era: "Satya Yuga",
     symbolism: "Preservation of knowledge and life",
     iconColor: "from-blue-500 to-cyan-500",
-    image: "/src/Resources/Avatars/Matsya-avatar.png",
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop",
   },
   {
     name: "Kurma",
