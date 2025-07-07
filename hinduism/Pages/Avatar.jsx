@@ -12,7 +12,7 @@ const vishnuAvatars = [
     era: "Satya Yuga",
     symbolism: "Preservation of knowledge and life",
     iconColor: "from-blue-500 to-cyan-500",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop",
+    image: "/src/Resources/Avatars/Matsya-avatar.png",
   },
   {
     name: "Kurma",
@@ -150,7 +150,7 @@ const shivaAvatars = [
     era: "Treta Yuga",
     symbolism: "Devotion and strength",
     iconColor: "from-orange-500 to-red-500",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop",
+    image: "/src/Resources/Avatars/Hanuman.jpg"
   },
 ]
 
