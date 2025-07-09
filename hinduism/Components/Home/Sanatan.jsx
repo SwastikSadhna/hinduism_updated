@@ -2,7 +2,7 @@ import { imageDetails } from "../../resources";
 
 const Sanatan = () => {
   return (
-    <section className="sanatan w-full flex flex-col gap-10 justify-center items-center h-auto">
+    <section className="sanatan w-full flex flex-col gap-4 justify-center items-center h-auto">
       <div className="w-full h-auto flex flex-col justify-center items-center mt-2 p-4">
         <h2 className="font-bold text-6xl bg-gradient-to-r from-[#FF7722] to-[#FFD700] text-transparent bg-clip-text">What is Sanatan !</h2>
         <p className="text-center w-[95%] text-lg mt-2 text-gray-700">
@@ -10,7 +10,7 @@ const Sanatan = () => {
         </p>
       </div>
       <img
-        className="h-[40vh] shadow-lg object-contain rounded"
+        className="h-[40vh] shadow-lg object-contain rounded-t"
         src={imageDetails.Sanatan4.src}
         alt="An illustrative image about Sanatan Dharma"
       />

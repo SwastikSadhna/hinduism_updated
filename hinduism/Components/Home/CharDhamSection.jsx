@@ -81,7 +81,7 @@ export default function CharDhamSection() {
             </p>
 
             <Link to="/Templepage">
-              <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-full card-btn-animate transition-all duration-300 mb-16" style={{ opacity: 0 }}>
+              <button className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-tl-3xl rounded-br-3xl card-btn-animate transition-all duration-300 mb-16" style={{ opacity: 0 }}>
                 Explore
               </button>
             </Link>

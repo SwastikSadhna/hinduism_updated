@@ -34,7 +34,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex rounded-2xl items-center text-lg text-[#33281E] tracking-wide gap-10">
+        <div className="hidden md:flex rounded-2xl items-center text-[#33281E] tracking-wide gap-8">
           <Link to="/" className="hover:text-[#FF7722]">Home</Link>
           <Link to="/Books" className="hover:text-[#FF7722]">Books</Link>
           <Link to="/Avatar" className="hover:text-[#FF7722]">Avatar</Link>
