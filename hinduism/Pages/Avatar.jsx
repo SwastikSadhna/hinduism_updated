@@ -196,11 +196,11 @@ export default function AvatarsPage() {
         <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="vishnu" className="text-lg">
-              <FaCrown className="mr-2 h-5 w-5" />
+              {/* <FaCrown className="mr-2 h-5 w-5" /> */}
               Vishnu Avatars
             </TabsTrigger>
             <TabsTrigger value="shiva" className="text-lg">
-              <FaFire className="mr-2 h-5 w-5" />
+              {/* <FaFire className="mr-2 h-5 w-5" /> */}
               Shiva Avatars
             </TabsTrigger>
           </TabsList>
