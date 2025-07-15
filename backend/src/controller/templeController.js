@@ -5,13 +5,26 @@ const Temple = require("../model/templeModel")
 
 const getAllTemples = async (req, res) => {
     try { 
-        const temples = await Temple.getAllTemples()
-        if (temples)
+        let temples = await Temple.getAllTemples()
+        if (temples){
+
+            if (temples.length === 0) {
+                return res.status(404).json({ message: "No temples found" });
+            }
+
+            temples = temples.map(temple => {
+                return {
+                    ...temple,
+                    cover_image: temple.cover_image ? `${process.env.IMG_SOURCE}${temple.cover_image}` : null,
+                }
+            })
             res.status(200).json(temples)
+        }
         else
             res.status(404).json({ message: "No temples found" })
     }
     catch (err) {
+        console.error("Error retrieving temples:", err);
         res.status(500).json({ message: "Error occurred while retrieving temples", error: err })
     }
 }
@@ -19,9 +32,13 @@ const getAllTemples = async (req, res) => {
 const getTempleById = async (req, res) => {
     try {
         const id = req.params.id;
-        const temple = await Temple.getTempleById(id);
+        let temple = await Temple.getTempleById(id);
         if (temple.length>0){
-            res.status(200).json(temple)}
+            
+            temple[0].cover_image = `${process.env.IMG_SOURCE}${temple[0].cover_image}` || null;
+
+            res.status(200).json(temple)
+        }
         else
             res.status(404).json({ message: "Temple not found" })
     } catch (err) {
@@ -32,10 +49,14 @@ const getTempleById = async (req, res) => {
 const searchTemple = async (req, res) => {
     try {
         const query = req.query.q;
-        const result = await Temple.searchTemple(query);
-        if (result.length > 0)
+        let result = await Temple.searchTemple(query);
+        if (result.length > 0) {
+            result = result.map(temple => ({
+                ...temple,
+                cover_image: temple.cover_image ? `${process.env.IMG_SOURCE}${temple.cover_image}` : null
+            }));
             res.status(200).json(result)
-        else
+        } else
             res.status(404).json({ message: "No temples found for "+query })
     } catch (err) {
         res.status(500).json({ message: `Error occurred while searching temple query`, error: err })
@@ -50,10 +71,14 @@ const filterTemple = async (req, res) => {
         }
         
         const query = getFilterQuery(filter);
-        const result = await Temple.filterTemple(query)
-        if (result.length > 0)
+        let result = await Temple.filterTemple(query)
+        if (result.length > 0) {
+            result = result.map(temple => ({
+                ...temple,
+                cover_image: temple.cover_image ? `${process.env.IMG_SOURCE}${temple.cover_image}` : null
+            }));
             res.status(200).json(result)
-        else
+        } else
             res.status(404).json({ message: "No temples found" })
     } catch (err) {
         res.status(500).json({message: "Error occurred while filtering temple" , error: err})
@@ -77,10 +102,14 @@ const templeKeywords = async (req, res) => {
 
 const getChardhamTemples = async (req, res) => {
     try {
-        const temples = await Temple.GetChardham();
-        if (temples)
+        let temples = await Temple.GetChardham();
+        if (temples) {
+            temples = temples.map(temple => ({
+                ...temple,
+                cover_image: temple.cover_image ? `${process.env.IMG_SOURCE}${temple.cover_image}` : null
+            }));
             res.status(200).json(temples)
-        else
+        } else
             res.status(404).json({ message: "No temples found" })
     } catch (err) {
         res.status(500).json({ message: "Error occurred while retrieving Chardham temples", error: err });

@@ -2,11 +2,10 @@ import { imageDetails } from "../../resources"
 import API_CONFIG from "../../src/config/api"
 
 export function Header({ name, location, image }) {
-  const cover_image = image == null ? imageDetails.TempleJagganath.src : image
   
   return (
     <header className="relative w-full h-[90vh] bg-[100% 100%] bg-no-repeat bg-center flex flex-col justify-center items-start text-white px-8" 
-      style={{ backgroundImage: `url(${cover_image?.startsWith("http")? cover_image: API_CONFIG.baseUrl +cover_image})` }}>
+      style={{ backgroundImage: `url(${image})` }}>
       {/* Overlay to enhance text visibility */}
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       

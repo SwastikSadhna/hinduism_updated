@@ -85,7 +85,7 @@ export default function Templepage() {
               {slides.map((slide, index) => (
                 <div key={slide.id} className="absolute top-0 left-0 w-full h-full" style={{ left: `${index * 100}%` }}>
                   <img
-                    src={`${API_CONFIG.baseUrl}/${slide.cover_image}`}
+                    src={`${slide.cover_image}`}
                     alt={slide.title}
                     className="w-full h-full object-cover"
                   />
@@ -132,7 +132,7 @@ export default function Templepage() {
                   }`}
                 >
                   <img
-                    src={`${API_CONFIG.baseUrl}/${slide.cover_image}`}
+                    src={`${slide.cover_image}`}
                     alt={slide.name}
                     className="w-full h-full object-cover"
                   />
