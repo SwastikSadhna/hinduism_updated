@@ -5,10 +5,9 @@ import { imageDetails } from "../../resources";
 const Hero = () => {
   return (
     <div
-      className="hero-section min-h-screen w-full bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      className="hero-section min-w-screen w-full bg-cover bg-center bg-no-repeat relative overflow-hidden h-[94vh] sm:h-[90vh] lg:h-[95vh]"
       style={{
         backgroundImage: `url(${imageDetails.HeroImage3.src})`,
-        height: "100vh",
         width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -19,19 +18,22 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/30 animate-fade-in" />
 
       <div className="content-container relative z-10 p-8 md:p-10 animate-slide-up">
-        {/* <h2 className="font-bold text-6xl text-white mb-3 w-[60%] animate-title">
-          LORD KRISHNA SAY SOMETHING
+        <h2 className="font-bold text-yellow-300 text-4xl sm:text-6xl mb-3 md:w-[70%] animate-title">
+          SHREE KRISHNA SAY
         </h2>
-        <p className="w-[50%] text-gray-300 animate-text mb-8">
+        {/* <p className="w-[50%] text-gray-300 animate-text mb-8">
           Explore the essence of spirituality and devotion in the context of
           Sanatan Dharma.
         </p> */}
-        <div className="w-[60%] animate-quote">
+        <blockquote className="md:w-[65%] animate-text mb-8 text-2xl text-white italic">
+            "It is better to live your own destiny imperfectly than to live an imitation of somebody else's life with perfection."
+          </blockquote>
+        {/* <div className="w-[60%] animate-quote">
           <p className="text-xl text-yellow-300 font-bold mb-2 tracking-wider">Shri Krishna says:</p>
           <blockquote className="text-2xl text-white italic">
             "It is better to live your own destiny imperfectly than to live an imitation of somebody else's life with perfection."
           </blockquote>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

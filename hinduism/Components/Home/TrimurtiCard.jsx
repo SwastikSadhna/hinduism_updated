@@ -1,6 +1,6 @@
 const Card = ({ title, description, image }) => {
   return (
-    <div className="group relative bg-white rounded-tl-3xl rounded-br-full hover:rounded-br-3xl shadow-lg hover:shadow-2xl transition-all duration-100 transform hover:-translate-y-2 overflow-hidden max-w-sm">
+    <div className="group relative bg-white rounded-tl-full rounded-br-full hover:rounded-br-3xl hover:rounded-tl-3xl shadow-lg hover:shadow-2xl transition-all duration-100 transform hover:-translate-y-2 overflow-hidden max-w-sm pt-32 hover:pt-10 -mt-10">
       <div className="relative h-64 overflow-hidden">
         <img
           src={image || "/placeholder.svg?height=256&width=384"}
