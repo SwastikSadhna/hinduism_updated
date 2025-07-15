@@ -83,6 +83,7 @@ const filterSloka = async (req, res) => {
             res.status(404).json({ message: "No sloka found" });
 
     } catch (err) {
+        console.error(err);
         res.status(500).json({ message: "Error filtering sloka" });
     }
 }

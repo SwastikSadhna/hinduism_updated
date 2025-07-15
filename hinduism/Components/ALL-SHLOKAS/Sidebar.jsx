@@ -7,13 +7,11 @@ const Sidebar = ({ selectedCategory, setSelectedCategory, setGranth, setGranthIt
     setIsLoading(true)
     setSelectedCategory(category);
     try {
-      let q = categories.map((val)=>`_keyword=${val}`)
-      console.log(q)
-      const response = await axios.get(`${API_CONFIG.baseUrl}/sloka/filter?`+q.join("&"));
-      console.log(response)
+      let q = `_keyword=${category}`;
+      const response = await axios.get(`${API_CONFIG.baseUrl}/sloka/filter?`+q);
       setIsLoading(false)
-      setGranth(response.data.granth);
-      setGranthItem(response.data.items);
+      setGranth(response.data);
+      setGranthItem(response.data);
     } catch (error) {
       console.error("Error fetching granth data:", error);
     }

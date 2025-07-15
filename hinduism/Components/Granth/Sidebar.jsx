@@ -7,12 +7,15 @@ const Sidebar = ({ selectedCategory, setSelectedCategory, setGranth, setGranthIt
     setIsLoading(true)
     setSelectedCategory(category);
     try {
-      const response = await axios.get(`${API_CONFIG.baseUrl}/granth/${id}`);
+      const response = await axios.get(`${API_CONFIG.baseUrl}/granthitem/${id}`);
       console.log(response)
       setIsLoading(false)
-      setGranth(response.data.granth);
-      setGranthItem(response.data.items);
+      setGranth(response.data);
+      setGranthItem(response.data);
     } catch (error) {
+      setIsLoading(false)
+      setGranth({});
+      setGranthItem([]);
       console.error("Error fetching granth data:", error);
     }
   };
